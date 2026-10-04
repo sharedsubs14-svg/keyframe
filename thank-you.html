@@ -23,15 +23,16 @@ s.parentNode.insertBefore(t,s)}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1411312853753013');
 fbq('track', 'PageView');
-// Purchase: this page only opens after a completed Razorpay payment.
-// Counted once per browser (or once per payment id, if Razorpay passes one)
-// so a refresh or a revisit never reports a second sale.
+// Purchase: reported only when Razorpay hands back a payment id in the URL,
+// so opening this page without paying never counts as a sale. Keyed on that
+// id, so a refresh or a revisit never reports the same payment twice.
 (function () {
   var id = '';
-  try { id = new URLSearchParams(location.search).get('razorpay_payment_id') || ''; } catch (e) {}
-  var key = 'kf-purchase-' + (id || 'sunday-shoot');
+  try { id = (new URLSearchParams(location.search).get('razorpay_payment_id') || '').trim(); } catch (e) {}
+  if (!id) return;
+  var key = 'kf-purchase-' + id;
   try { if (localStorage.getItem(key)) return; localStorage.setItem(key, '1'); } catch (e) {}
-  fbq('track', 'Purchase', { value: 49, currency: 'INR', content_name: 'The Sunday Shoot' }, id ? { eventID: id } : {});
+  fbq('track', 'Purchase', { value: 49, currency: 'INR', content_name: 'The Sunday Shoot' }, { eventID: id });
 })();
 </script>
 <noscript><img height="1" width="1" style="display:none"
