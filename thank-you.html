@@ -28,7 +28,7 @@ fbq('track', 'PageView');
 // id, so a refresh or a revisit never reports the same payment twice.
 (function () {
   var id = '';
-  try { id = (new URLSearchParams(location.search).get('razorpay_payment_id') || '').trim(); } catch (e) {}
+  try { var q = new URLSearchParams(location.search); id = (q.get('payment_id') || q.get('razorpay_payment_id') || '').trim(); } catch (e) {}
   if (!id) return;
   var key = 'kf-purchase-' + id;
   try { if (localStorage.getItem(key)) return; localStorage.setItem(key, '1'); } catch (e) {}
