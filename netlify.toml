@@ -1,0 +1,14 @@
+# Geo pricing. The geo edge function stamps the visitor's country into the
+# homepage so the right price is already in the HTML when it arrives.
+#
+# There is deliberately no [build] section here, so Netlify keeps using the
+# publish settings already configured in the dashboard, and the existing
+# _redirects file keeps working as before.
+
+[[edge_functions]]
+  path = "/"
+  function = "geo"
+
+[[edge_functions]]
+  path = "/index.html"
+  function = "geo"

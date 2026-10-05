@@ -92,13 +92,13 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
         <p style="animation:var(--revA,none);animation-delay:200ms;animation-fill-mode:both;margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.68;color:var(--body,#A49EB0);max-width:38ch;text-wrap:pretty">In one sitting, a blank idea becomes a finished film. The only AI workshop worth three hours of your Sunday.</p>
 
         <div style="animation:var(--revA,none);animation-delay:300ms;animation-fill-mode:both;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
-          <span style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH1);line-height:0.95;letter-spacing:-0.018em;color:var(--ink,#FFFFFF)"><span style="font-family:'Inter',sans-serif;font-weight:500;font-size:0.68em;letter-spacing:0;vertical-align:0.06em">₹</span>49</span>
-          <span style="font-family:'Inter',sans-serif;font-size:19px;color:var(--dim,#6F6A7A);text-decoration:line-through">₹500</span>
-          <sc-if value="{{ showDiscount }}" hint-placeholder-val="{{ true }}"><span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:8px;white-space:nowrap;background:rgba(124,58,237,0.12);border:1px solid rgba(168,85,247,0.34);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4);font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent,#7C3AED)">90% off</span></sc-if>
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH1);line-height:0.95;letter-spacing:-0.018em;color:var(--ink,#FFFFFF)"><span style="font-family:'Inter',sans-serif;font-weight:500;font-size:0.68em;letter-spacing:0;vertical-align:0.06em">{{ curSym }}</span>{{ priceNow }}</span>
+          <span style="font-family:'Inter',sans-serif;font-size:19px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ priceWas }}</span>
+          <sc-if value="{{ showDiscount }}" hint-placeholder-val="{{ true }}"><span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:8px;white-space:nowrap;background:rgba(124,58,237,0.12);border:1px solid rgba(168,85,247,0.34);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4);font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent,#7C3AED)">{{ priceOff }}</span></sc-if>
         </div>
 
         <div style="animation:var(--revA,none);animation-delay:400ms;animation-fill-mode:both;display:flex;flex-direction:column;gap:10px;width:100%;max-width:440px"><sc-if value="{{ showInvite }}" hint-placeholder-val="{{ true }}"><a href="{{ inviteUrl }}" target="_blank" rel="noopener" style="align-self:flex-end;display:inline-flex;align-items:center;min-height:28px;font-family:'Inter',sans-serif;font-size:16px;font-weight:500;line-height:1.3;color:var(--strong,#E8E5EE);text-decoration:underline;text-decoration-color:var(--line2,#221D2C);text-underline-offset:4px;white-space:nowrap;transition:color 0.25s ease-out,text-decoration-color 0.25s ease-out" style-hover="color:var(--accent,#C4B5FD);text-decoration-color:var(--accent,#C4B5FD)">Have an invite code?</a></sc-if>
-        <a href="#price" style="animation:var(--revA,none);animation-delay:0ms;animation-fill-mode:none;display:inline-flex;align-items:center;justify-content:center;width:100%;max-width:440px;min-height:60px;padding:16px 30px;border-radius:14px;background:var(--btn,#FFFFFF);color:var(--btnInk,#000000);font-family:'Inter',sans-serif;font-weight:600;font-size:17px;letter-spacing:0.01em;border:1px solid transparent;transition:box-shadow 0.45s ease-out,background 0.5s cubic-bezier(0.22,0.61,0.36,1),border-color 0.45s ease-out,color 0.3s ease-out,transform 0.45s cubic-bezier(0.22,0.61,0.36,1),backdrop-filter 0.5s ease-out" style-hover="background:radial-gradient(130% 120% at 16% -10%,rgba(168,85,247,0.4) 0%,rgba(124,58,237,0.24) 45%,rgba(124,58,237,0.14) 100%),var(--glass);color:var(--ink,#FFFFFF);border-color:rgba(168,85,247,0.45);box-shadow:inset 0 1px 0 rgba(255,255,255,0.5),0 22px 56px -30px rgba(88,28,180,0.55);backdrop-filter:blur(30px) saturate(1.8);-webkit-backdrop-filter:blur(30px) saturate(1.8);transform:translateY(-2px)">Reserve my seat · ₹49</a></div>
+        <a href="#price" style="animation:var(--revA,none);animation-delay:0ms;animation-fill-mode:none;display:inline-flex;align-items:center;justify-content:center;width:100%;max-width:440px;min-height:60px;padding:16px 30px;border-radius:14px;background:var(--btn,#FFFFFF);color:var(--btnInk,#000000);font-family:'Inter',sans-serif;font-weight:600;font-size:17px;letter-spacing:0.01em;border:1px solid transparent;transition:box-shadow 0.45s ease-out,background 0.5s cubic-bezier(0.22,0.61,0.36,1),border-color 0.45s ease-out,color 0.3s ease-out,transform 0.45s cubic-bezier(0.22,0.61,0.36,1),backdrop-filter 0.5s ease-out" style-hover="background:radial-gradient(130% 120% at 16% -10%,rgba(168,85,247,0.4) 0%,rgba(124,58,237,0.24) 45%,rgba(124,58,237,0.14) 100%),var(--glass);color:var(--ink,#FFFFFF);border-color:rgba(168,85,247,0.45);box-shadow:inset 0 1px 0 rgba(255,255,255,0.5),0 22px 56px -30px rgba(88,28,180,0.55);backdrop-filter:blur(30px) saturate(1.8);-webkit-backdrop-filter:blur(30px) saturate(1.8);transform:translateY(-2px)">{{ seatCta }}</a></div>
 
         <div style="animation:var(--revA,none);animation-delay:500ms;animation-fill-mode:both;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;background-image:linear-gradient(90deg,var(--lineT),var(--line,#15121B) 8%,var(--line,#15121B) 92%,var(--lineT));background-size:100% 1px;background-repeat:no-repeat;background-position:0 0;padding-top:20px;width:100%;max-width:440px">
           <div style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH3);line-height:1.2;color:var(--strong,#E8E5EE)">{{ sessionLabel }}</div>
@@ -151,7 +151,7 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
       <div style="max-width:800px;padding-left:clamp(22px,3vw,44px);background-image:linear-gradient(180deg,var(--accent,#C4B5FD),rgba(124,58,237,0));background-size:2px 100%;background-repeat:no-repeat;background-position:0 0;display:flex;flex-direction:column;gap:clamp(18px,2.2vw,26px)">
         <div style="font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)">the promise</div>
         <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(40px,5.4vw,74px);line-height:1.02;letter-spacing:-0.024em;color:var(--ink,#FFFFFF);max-width:17ch;text-wrap:pretty">Sit through it. If it wasn't worth it, I pay you back.</h2>
-        <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.7;color:var(--body,#A49EB0);max-width:52ch;text-wrap:pretty">Attend the whole session. If by the end ₹49 feels like too much, message within 24 hours. Full refund, no argument.</p>
+        <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.7;color:var(--body,#A49EB0);max-width:52ch;text-wrap:pretty">Attend the whole session. If by the end {{ priceFull }} feels like too much, message within 24 hours. Full refund, no argument.</p>
       </div>
     </div>
   </section>
@@ -283,7 +283,7 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
       <div style="max-width:800px;padding-left:clamp(22px,3vw,44px);background-image:linear-gradient(180deg,var(--accent,#C4B5FD),rgba(124,58,237,0));background-size:2px 100%;background-repeat:no-repeat;background-position:0 0;display:flex;flex-direction:column;gap:clamp(18px,2.2vw,26px)">
         <div style="font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)">the promise</div>
         <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(40px,5.4vw,74px);line-height:1.02;letter-spacing:-0.024em;color:var(--ink,#FFFFFF);max-width:17ch;text-wrap:pretty">Sit through it. If it wasn't worth it, I pay you back.</h2>
-        <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.7;color:var(--body,#A49EB0);max-width:52ch;text-wrap:pretty">Attend the whole session. If by the end ₹49 feels like too much, message within 24 hours. Full refund, no argument.</p>
+        <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.7;color:var(--body,#A49EB0);max-width:52ch;text-wrap:pretty">Attend the whole session. If by the end {{ priceFull }} feels like too much, message within 24 hours. Full refund, no argument.</p>
       </div>
     </div>
   </section>
@@ -294,14 +294,14 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
       <div style="display:flex;flex-direction:column;gap:18px;max-width:700px">
         <div style="position:relative;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)"><span aria-hidden="true" style="position:absolute;left:-0.05em;bottom:-0.22em;z-index:-1;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(96px,11vw,160px);line-height:1;letter-spacing:-0.04em;color:rgba(var(--chapRGB,255,255,255),var(--chapO,0));pointer-events:none;user-select:none;font-variant:normal;text-transform:none">05</span><span style="position:relative">what you walk away with</span></div>
         <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH2);line-height:1.02;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">You keep the tools after the session ends.</h2>
-        <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.68;color:var(--body,#A49EB0);max-width:58ch;text-wrap:pretty">Four assets, priced separately, included with your seat. ₹5,000 worth of them.</p>
+        <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.68;color:var(--body,#A49EB0);max-width:58ch;text-wrap:pretty">Four assets, priced separately, included with your seat. {{ bundleVal }} worth of them.</p>
       </div>
 
       <div style="display:flex;flex-direction:column;gap:clamp(18px,2.4vw,28px)">
         <div data-rise="0" style="position:sticky;top:calc(var(--navH,76px) + 14px);z-index:1;margin-bottom:66px;display:flex;flex-direction:column;gap:16px;padding:clamp(26px,3vw,44px);border-radius:var(--rad,36px);background:var(--tint1);border:1px solid var(--glassLine);box-shadow:0 -1px 0 var(--glassHi) inset,0 -18px 40px -24px rgba(0,0,0,0.25),0 26px 50px -34px rgba(0,0,0,0.5);opacity:0;transform:translateY(34px) scale(0.972);transition:opacity 0.72s cubic-bezier(0.22,0.61,0.36,1) 0s,transform 0.92s cubic-bezier(0.22,0.61,0.36,1) 0s;backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)">
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
             <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;background:var(--accent,#C4B5FD);color:var(--accentInk,#0B0A0E);font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.08em;text-transform:uppercase">free</span>
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;color:var(--dim,#6F6A7A);text-decoration:line-through">₹2,000</span>
+            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ itmA }}</span>
             <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;letter-spacing:0.06em;color:var(--muted,#8E8899)">custom GPT · 10+ PDFs</span>
           </div>
           <h3 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH2);line-height:1.1;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">The Director's Desk, a custom GPT board</h3>
@@ -310,7 +310,7 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
         <div data-rise="1" style="position:sticky;top:calc(var(--navH,76px) + 36px);z-index:2;margin-bottom:44px;display:flex;flex-direction:column;gap:16px;padding:clamp(26px,3vw,44px);border-radius:var(--rad,36px);background:var(--tint2);border:1px solid var(--glassLine);box-shadow:0 -1px 0 var(--glassHi) inset,0 -18px 40px -24px rgba(0,0,0,0.25),0 26px 50px -34px rgba(0,0,0,0.5);opacity:0;transform:translateY(34px) scale(0.972);transition:opacity 0.72s cubic-bezier(0.22,0.61,0.36,1) 0.11s,transform 0.92s cubic-bezier(0.22,0.61,0.36,1) 0.11s;backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)">
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
             <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;background:var(--accent,#C4B5FD);color:var(--accentInk,#0B0A0E);font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.08em;text-transform:uppercase">free</span>
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;color:var(--dim,#6F6A7A);text-decoration:line-through">₹1,000</span>
+            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ itmB }}</span>
             <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;letter-spacing:0.06em;color:var(--muted,#8E8899)">one-page PDF</span>
           </div>
           <h3 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH3);line-height:1.1;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">The Shot Breakdown Sheet</h3>
@@ -319,7 +319,7 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
         <div data-rise="2" style="position:sticky;top:calc(var(--navH,76px) + 58px);z-index:3;margin-bottom:22px;display:flex;flex-direction:column;gap:16px;padding:clamp(26px,3vw,44px);border-radius:var(--rad,36px);background:var(--tint3);border:1px solid var(--glassLine);box-shadow:0 -1px 0 var(--glassHi) inset,0 -18px 40px -24px rgba(0,0,0,0.25),0 26px 50px -34px rgba(0,0,0,0.5);opacity:0;transform:translateY(34px) scale(0.972);transition:opacity 0.72s cubic-bezier(0.22,0.61,0.36,1) 0.22s,transform 0.92s cubic-bezier(0.22,0.61,0.36,1) 0.22s;backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)">
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
             <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;background:var(--accent,#C4B5FD);color:var(--accentInk,#0B0A0E);font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.08em;text-transform:uppercase">free</span>
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;color:var(--dim,#6F6A7A);text-decoration:line-through">₹1,000</span>
+            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ itmB }}</span>
             <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;letter-spacing:0.06em;color:var(--muted,#8E8899)">PDF · every prompt</span>
           </div>
           <h3 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH3);line-height:1.1;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">The Prompt Ledger</h3>
@@ -328,7 +328,7 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
         <div data-rise="3" style="position:sticky;top:calc(var(--navH,76px) + 80px);z-index:4;margin-bottom:0px;display:flex;flex-direction:column;gap:16px;padding:clamp(26px,3vw,44px);border-radius:var(--rad,36px);background:var(--tint4);border:1px solid var(--glassLine);box-shadow:0 -1px 0 var(--glassHi) inset,0 -18px 40px -24px rgba(0,0,0,0.25),0 26px 50px -34px rgba(0,0,0,0.5);opacity:0;transform:translateY(34px) scale(0.972);transition:opacity 0.72s cubic-bezier(0.22,0.61,0.36,1) 0.33s,transform 0.92s cubic-bezier(0.22,0.61,0.36,1) 0.33s;backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)">
           <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
             <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;background:var(--accent,#C4B5FD);color:var(--accentInk,#0B0A0E);font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.08em;text-transform:uppercase">free</span>
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;color:var(--dim,#6F6A7A);text-decoration:line-through">₹1,000</span>
+            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ itmB }}</span>
             <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;letter-spacing:0.06em;color:var(--muted,#8E8899)">printable PDF</span>
           </div>
           <h3 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH3);line-height:1.1;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">The Continuity Checklist</h3>
@@ -345,8 +345,8 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
       <div style="width:100%;max-width:560px;background:var(--glass);border:1px solid var(--glassLine);border-radius:20px;backdrop-filter:blur(28px) saturate(1.5);-webkit-backdrop-filter:blur(28px) saturate(1.5);box-shadow:inset 0 1px 0 var(--glassHi),inset 0 -1px 0 rgba(0,0,0,0.06);padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:20px;transition:background 0.5s cubic-bezier(0.22,0.61,0.36,1),border-color 0.45s ease-out,box-shadow 0.55s ease-out,transform 0.55s cubic-bezier(0.22,0.61,0.36,1),backdrop-filter 0.5s ease-out" style-hover="background:radial-gradient(130% 110% at 14% -10%,rgba(168,85,247,0.26) 0%,rgba(124,58,237,0.11) 45%,rgba(124,58,237,0.04) 100%),var(--glass);border-color:rgba(168,85,247,0.38);box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -20px 44px -28px rgba(124,58,237,0.5),0 28px 70px -34px rgba(88,28,180,0.5);backdrop-filter:blur(34px) saturate(1.9);-webkit-backdrop-filter:blur(34px) saturate(1.9);transform:translateY(-3px)">
         <div style="font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)">reserve your seat</div>
         <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
-          <span style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH1);line-height:0.92;letter-spacing:-0.022em;color:var(--ink,#FFFFFF)"><span style="font-family:'Inter',sans-serif;font-weight:500;font-size:0.68em;letter-spacing:0;vertical-align:0.06em">₹</span>49</span>
-          <span style="font-family:'Inter',sans-serif;font-size:19px;color:var(--dim,#6F6A7A);text-decoration:line-through">₹500</span>
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH1);line-height:0.92;letter-spacing:-0.022em;color:var(--ink,#FFFFFF)"><span style="font-family:'Inter',sans-serif;font-weight:500;font-size:0.68em;letter-spacing:0;vertical-align:0.06em">{{ curSym }}</span>{{ priceNow }}</span>
+          <span style="font-family:'Inter',sans-serif;font-size:19px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ priceWas }}</span>
         </div>
         <div style="display:flex;flex-direction:column;gap:12px;background-image:linear-gradient(90deg,var(--lineT),var(--line,#15121B) 8%,var(--line,#15121B) 92%,var(--lineT));background-size:100% 1px;background-repeat:no-repeat;background-position:0 0;padding-top:20px">
           <sc-for list="{{ includes }}" as="inc" hint-placeholder-count="5">
@@ -357,9 +357,9 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
           </sc-for>
         </div>
         <div style="display:flex;flex-direction:column;gap:8px"><sc-if value="{{ showInvite }}" hint-placeholder-val="{{ true }}"><a href="{{ inviteUrl }}" target="_blank" rel="noopener" style="align-self:flex-end;display:inline-flex;align-items:center;min-height:28px;font-family:'Inter',sans-serif;font-size:16px;font-weight:500;line-height:1.3;color:var(--strong,#E8E5EE);text-decoration:underline;text-decoration-color:var(--line2,#221D2C);text-underline-offset:4px;white-space:nowrap;transition:color 0.25s ease-out,text-decoration-color 0.25s ease-out" style-hover="color:var(--accent,#C4B5FD);text-decoration-color:var(--accent,#C4B5FD)">Have an invite code?</a></sc-if>
-        <div style="position:relative;width:100%;display:flex"><div style="position:relative;overflow:hidden;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:100%;min-height:68px;padding:14px 24px;border-radius:14px;background:linear-gradient(140deg,#8B4BF0 0%,#7C3AED 46%,#5B21B6 100%);color:#FFFFFF;border:1px solid rgba(196,181,253,0.5);box-shadow:inset 0 1px 0 rgba(255,255,255,0.32),0 16px 40px -22px rgba(124,58,237,0.75);font-family:'Inter',sans-serif;transition:box-shadow 0.4s ease-out,transform 0.4s cubic-bezier(0.22,0.61,0.36,1),filter 0.4s ease-out" style-hover="transform:translateY(-2px);filter:brightness(1.08);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),0 24px 60px -24px rgba(124,58,237,0.95)"><span style="font-weight:600;font-size:18px;letter-spacing:-0.005em">Reserve my seat · ₹49</span><span style="font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#FFFFFF">launch price, 90% off</span><div ref="{{ rzpMount }}" style="position:absolute;inset:0;z-index:2;opacity:0.001;pointer-events:none;display:flex;align-items:center;justify-content:center"></div></div></div></div>
+        <div style="position:relative;width:100%;display:flex"><div style="position:relative;overflow:hidden;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:100%;min-height:68px;padding:14px 24px;border-radius:14px;background:linear-gradient(140deg,#8B4BF0 0%,#7C3AED 46%,#5B21B6 100%);color:#FFFFFF;border:1px solid rgba(196,181,253,0.5);box-shadow:inset 0 1px 0 rgba(255,255,255,0.32),0 16px 40px -22px rgba(124,58,237,0.75);font-family:'Inter',sans-serif;transition:box-shadow 0.4s ease-out,transform 0.4s cubic-bezier(0.22,0.61,0.36,1),filter 0.4s ease-out" style-hover="transform:translateY(-2px);filter:brightness(1.08);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),0 24px 60px -24px rgba(124,58,237,0.95)"><span style="font-weight:600;font-size:18px;letter-spacing:-0.005em">{{ seatCta }}</span><span style="font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#FFFFFF">launch price, 90% off</span><div ref="{{ rzpMount }}" style="position:absolute;inset:0;z-index:2;opacity:0.001;pointer-events:none;display:flex;align-items:center;justify-content:center"></div></div></div></div>
         <div style="display:flex;flex-direction:column;gap:6px">
-          <div style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.55;color:var(--dim,#6F6A7A)">Secure payment via Razorpay. UPI, cards, netbanking.</div>
+          <div style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.55;color:var(--dim,#6F6A7A)">{{ payMethods }}</div>
           <div style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.55;color:var(--dim,#6F6A7A)">100% refund if you attend fully and it wasn't worth it.</div>
         </div>
       </div>
@@ -437,8 +437,8 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
       <div style="display:flex;align-items:center;gap:20px;flex:none">
         <sc-if value="{{ desk }}" hint-placeholder-val="{{ true }}">
           <div style="display:flex;align-items:baseline;gap:10px">
-            <span style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;letter-spacing:-0.018em;color:var(--ink,#FFFFFF)"><span style="font-family:'Inter',sans-serif;font-weight:500;font-size:0.68em;letter-spacing:0;vertical-align:0.06em">₹</span>49</span>
-            <span style="font-family:'Inter',sans-serif;font-size:16px;color:var(--dim,#6F6A7A);text-decoration:line-through">₹500</span>
+            <span style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;letter-spacing:-0.018em;color:var(--ink,#FFFFFF)"><span style="font-family:'Inter',sans-serif;font-weight:500;font-size:0.68em;letter-spacing:0;vertical-align:0.06em">{{ curSym }}</span>{{ priceNow }}</span>
+            <span style="font-family:'Inter',sans-serif;font-size:16px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ priceWas }}</span>
           </div>
         </sc-if>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px"><sc-if value="{{ showInvite }}" hint-placeholder-val="{{ true }}"><a href="{{ inviteUrl }}" target="_blank" rel="noopener" style="align-self:flex-end;display:inline-flex;align-items:center;min-height:28px;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;line-height:1.3;color:var(--strong,#E8E5EE);text-decoration:underline;text-decoration-color:var(--line2,#221D2C);text-underline-offset:4px;white-space:nowrap;transition:color 0.25s ease-out,text-decoration-color 0.25s ease-out" style-hover="color:var(--accent,#C4B5FD);text-decoration-color:var(--accent,#C4B5FD)">Have an invite code?</a></sc-if>
@@ -474,6 +474,50 @@ class Component extends DCLogic {
     ['assets/gallery/g09.jpg', 2560, 1440], ['assets/gallery/g14.jpg', 2752, 1536], ['assets/gallery/g04.jpg', 1312, 736],
     ['assets/gallery/g18.jpg', 5504, 3072], ['assets/gallery/g08.jpg', 2560, 1440]
   ];
+  // Geo pricing. Three tiers, one block. Change a price here and every place it
+  // appears on the page follows. The visitor's country arrives as window.KF_COUNTRY,
+  // set by the Netlify edge function in netlify/edge-functions/geo.js.
+  static PRICING = {
+    INR: {
+      cur: '\u20b9', now: '49', was: '\u20b9500', off: '90% off',
+      bundle: '\u20b95,000', itmA: '\u20b92,000', itmB: '\u20b91,000',
+      pay: 'Secure payment via Razorpay. UPI, cards, netbanking.',
+      button: 'pl_ThaUpu2aqAfz6b'
+    },
+    AED: {
+      cur: 'AED ', now: '49', was: 'AED 500', off: '90% off',
+      bundle: 'AED 5,000', itmA: 'AED 2,000', itmB: 'AED 1,000',
+      pay: 'Secure payment via Razorpay. Cards and wallets.',
+      button: 'pl_TkGd72jTJKbpf0'
+    },
+    USD: {
+      cur: '$', now: '19', was: '$99', off: '80% off',
+      bundle: '$249', itmA: '$99', itmB: '$50',
+      pay: 'Secure payment via Razorpay. Cards and wallets.',
+      button: 'pl_TkGbvlvMC1L3NT'
+    }
+  };
+  // Nearby markets priced in rupees alongside India.
+  static GEO_INR = ['IN', 'NP', 'BD', 'PK', 'LK', 'BT', 'MM', 'AF'];
+
+  _tier() {
+    if (this._tierC) return this._tierC;
+    let cc = '';
+    try { cc = String(window.KF_COUNTRY || '').trim().toUpperCase(); } catch (e) {}
+    if (!cc) {
+      // No country header, so the edge function did not run (local preview or a
+      // direct file open). The device time zone is a reasonable stand-in.
+      try {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (/Calcutta|Kolkata|Colombo|Dhaka|Karachi|Kathmandu|Thimphu|Yangon|Kabul/i.test(tz)) cc = 'IN';
+        else if (/Dubai/i.test(tz)) cc = 'AE';
+      } catch (e) {}
+    }
+    const key = Component.GEO_INR.indexOf(cc) >= 0 ? 'INR' : (cc === 'AE' ? 'AED' : 'USD');
+    this._tierC = Component.PRICING[key];
+    return this._tierC;
+  }
+
   _savedTheme() { try { return localStorage.getItem('kf-theme') === 'dark' ? 'dark' : 'light'; } catch (e) { return 'light'; } }
   _setTheme = t => { this.setState({ theme: t }, () => this._applyBody()); this._applyBody(t); try { localStorage.setItem('kf-theme', t); } catch (e) {} };
   _applyBody(t) { document.body.style.background = (t || this.state.theme) === 'light' ? '#F5F1EA' : '#000000'; }
@@ -871,7 +915,7 @@ class Component extends DCLogic {
       const s = document.createElement('script');
       s.src = 'https://checkout.razorpay.com/v1/payment-button.js';
       s.async = true;
-      s.setAttribute('data-payment_button_id', 'pl_ThaUpu2aqAfz6b');
+      s.setAttribute('data-payment_button_id', this._tier().button);
       f.appendChild(s);
       el.appendChild(f);
     };
@@ -971,6 +1015,7 @@ class Component extends DCLogic {
 
   renderVals() {
     const P = Object.assign({}, this.props, this.L), S = this.state;
+    const T = this._tier();
     const calm = this._calm();
     const n = P.galleryTiles ?? 28;
     const heroMode = P.heroVideo ?? 'full-bleed';
@@ -1049,7 +1094,7 @@ class Component extends DCLogic {
       ['Do I need to buy tools before Sunday?', 'No. Watch first, decide later. The pack lists the free tiers and what each paid tool actually costs.'],
       ['Can I attend on my phone?', 'Yes. The live workshop runs on a phone. A laptop just makes the prompts easier to read.'],
       ['Is this the full course?', 'No. The full Keyframe course runs 45 to 50 hours across ten chapters. People in the room get an offer that goes nowhere else.'],
-      ["Why ₹49, and what if it's not worth it?", 'A paid seat shows up, and the room is better for it. Sit through the whole thing, and if it wasn\u2019t worth it, message within 24 hours for a full refund.']
+      ["Why " + T.cur + T.now + ", and what if it's not worth it?", 'A paid seat shows up, and the room is better for it. Sit through the whole thing, and if it wasn\u2019t worth it, message within 24 hours for a full refund.']
     ];
 
     const invite = P.inviteCode ?? true;
@@ -1165,7 +1210,17 @@ class Component extends DCLogic {
       })),
       barStyle: ((P.stickyBar ?? true) ? 'display:flex;' : 'display:none;') + 'height:' + (invite ? (S.mob ? '96px' : '106px') : (S.mob ? '78px' : '92px')) + ';--barBtnH:' + (invite && S.mob ? '48px' : '52px'),
       barLive: S.mob ? this._barDate() + ' · 11am' : this._barDate() + ' · 11am ist · live workshop',
-      barCta: S.mob ? 'Reserve ₹49' : 'Reserve · ₹49',
+      curSym: T.cur,
+      priceNow: T.now,
+      priceWas: T.was,
+      priceOff: T.off,
+      priceFull: T.cur + T.now,
+      seatCta: 'Reserve my seat \u00b7 ' + T.cur + T.now,
+      bundleVal: T.bundle,
+      itmA: T.itmA,
+      itmB: T.itmB,
+      payMethods: T.pay,
+      barCta: S.mob ? 'Reserve ' + T.cur + T.now : 'Reserve · ' + T.cur + T.now,
       showInvite: invite,
       inviteUrl: (P.inviteFormUrl || '').trim() || 'https://forms.gle/ZB5vk7DNB2CdivBf7'
     };
