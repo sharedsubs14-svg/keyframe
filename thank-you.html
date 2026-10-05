@@ -23,17 +23,6 @@ s.parentNode.insertBefore(t,s)}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1411312853753013');
 fbq('track', 'PageView');
-// Purchase: reported only when Razorpay hands back a payment id in the URL,
-// so opening this page without paying never counts as a sale. Keyed on that
-// id, so a refresh or a revisit never reports the same payment twice.
-(function () {
-  var id = '';
-  try { var q = new URLSearchParams(location.search); id = (q.get('payment_id') || q.get('razorpay_payment_id') || '').trim(); } catch (e) {}
-  if (!id) return;
-  var key = 'kf-purchase-' + id;
-  try { if (localStorage.getItem(key)) return; localStorage.setItem(key, '1'); } catch (e) {}
-  fbq('track', 'Purchase', { value: 49, currency: 'INR', content_name: 'The Sunday Shoot' }, { eventID: id });
-})();
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"/></noscript>
