@@ -181,7 +181,7 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"/></
 
   <h1>You're in.<br><span>See you Sunday.</span></h1>
 
-  <div class="when"><b>Sunday 11 October</b> &nbsp;&middot;&nbsp; 11:00am to 2:00pm IST</div>
+  <div class="when" id="kf-when"><b>Sunday 11 October</b> &nbsp;&middot;&nbsp; 11:00am to 2:00pm IST</div>
 
   <p class="body">One thing left. The session link, the reminders and everything you need on the day go out through the WhatsApp community. Join it now so nothing reaches you late.</p>
 
@@ -214,5 +214,41 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"/></
   </div>
 </footer>
 
+<script>
+// Session date and time in the buyer's own time zone, matched to the price tier
+// they paid in. Keep the country lists and times in step with the PRICING block
+// in index.html. The line above is the fallback if this script doesn't run.
+(function () {
+  var el = document.getElementById('kf-when');
+  if (!el) return;
+  var cc = '';
+  try { cc = String(window.KF_COUNTRY || '').trim().toUpperCase(); } catch (e) {}
+  if (!cc) {
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      if (/Calcutta|Kolkata|Colombo|Dhaka|Karachi|Kathmandu|Thimphu|Yangon|Kabul/i.test(tz)) cc = 'IN';
+      else if (/Dubai/i.test(tz)) cc = 'AE';
+    } catch (e) {}
+  }
+  var INR = ['IN', 'NP', 'BD', 'PK', 'LK', 'BT', 'MM', 'AF'];
+  var tier = INR.indexOf(cc) >= 0
+    ? { off: 330, time: '11:00am to 2:00pm IST' }
+    : cc === 'AE'
+      ? { off: 240, time: '9:30am to 12:30pm Dubai time' }
+      : { off: 0, time: '5:30am to 8:30am UTC' };
+
+  // Same rule as the homepage: next Sunday 11:00 IST, held until the session
+  // ends at 14:00 IST, never earlier than the first session on 11 October 2026.
+  var IST = 330 * 60000, now = Date.now(), ist = new Date(now + IST);
+  var start = Date.UTC(ist.getUTCFullYear(), ist.getUTCMonth(), ist.getUTCDate() + ((7 - ist.getUTCDay()) % 7), 11, 0) - IST;
+  var first = Date.UTC(2026, 9, 11, 11, 0) - IST;
+  var utc = now < first + 3 * 3600000 ? first : (now >= start + 3 * 3600000 ? start + 7 * 86400000 : start);
+
+  var d = new Date(utc + tier.off * 60000);
+  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  el.innerHTML = '<b>' + days[d.getUTCDay()] + ' ' + d.getUTCDate() + ' ' + months[d.getUTCMonth()] + '</b> &nbsp;&middot;&nbsp; ' + tier.time;
+})();
+</script>
 </body>
 </html>

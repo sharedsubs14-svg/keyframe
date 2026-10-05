@@ -1,5 +1,6 @@
 # Geo pricing. The geo edge function stamps the visitor's country into the
-# homepage so the right price is already in the HTML when it arrives.
+# homepage and the thank-you page, so the right price and session time are
+# already in the HTML when it arrives.
 #
 # There is deliberately no [build] section here, so Netlify keeps using the
 # publish settings already configured in the dashboard, and the existing
@@ -11,4 +12,12 @@
 
 [[edge_functions]]
   path = "/index.html"
+  function = "geo"
+
+[[edge_functions]]
+  path = "/thank-you"
+  function = "geo"
+
+[[edge_functions]]
+  path = "/thank-you.html"
   function = "geo"
