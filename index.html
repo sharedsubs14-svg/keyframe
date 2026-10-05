@@ -482,19 +482,22 @@ class Component extends DCLogic {
       cur: '\u20b9', now: '49', was: '\u20b9500', off: '90% off',
       bundle: '\u20b95,000', itmA: '\u20b92,000', itmB: '\u20b91,000',
       pay: 'Secure payment via Razorpay. UPI, cards, netbanking.',
-      button: 'pl_ThaUpu2aqAfz6b'
+      button: 'pl_ThaUpu2aqAfz6b',
+      tzOff: 330, timeLong: '11am to 2pm IST', timeShort: '11am', timeBar: '11am ist'
     },
     AED: {
       cur: 'AED ', now: '49', was: 'AED 500', off: '90% off',
-      bundle: 'AED 5,000', itmA: 'AED 2,000', itmB: 'AED 1,000',
+      bundle: 'AED 899', itmA: 'AED 359', itmB: 'AED 180',
       pay: 'Secure payment via Razorpay. Cards and wallets.',
-      button: 'pl_TkGd72jTJKbpf0'
+      button: 'pl_TkGd72jTJKbpf0',
+      tzOff: 240, timeLong: '9:30am to 12:30pm Dubai time', timeShort: '9:30am', timeBar: '9:30am dubai time'
     },
     USD: {
       cur: '$', now: '19', was: '$99', off: '80% off',
-      bundle: '$249', itmA: '$99', itmB: '$50',
+      bundle: '$49', itmA: '$19', itmB: '$10',
       pay: 'Secure payment via Razorpay. Cards and wallets.',
-      button: 'pl_TkGbvlvMC1L3NT'
+      button: 'pl_TkGbvlvMC1L3NT',
+      tzOff: 0, timeLong: '5:30am to 8:30am UTC', timeShort: '5:30 utc', timeBar: '5:30am utc'
     }
   };
   // Nearby markets priced in rupees alongside India.
@@ -535,20 +538,20 @@ class Component extends DCLogic {
     return { utc: utc, ist: new Date(utc + OFF) };
   }
   _barDate() {
-    // short session date for the sticky bar, e.g. "sun, 11 oct"
-    const d = this._next().ist;
+    // short session date for the sticky bar, e.g. "sun, 11 oct", in the tier's time zone
+    const d = new Date(this._next().utc + this._tier().tzOff * 60000);
     return ['sun','mon','tue','wed','thu','fri','sat'][d.getUTCDay()] + ', ' + d.getUTCDate() + ' '
       + ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'][d.getUTCMonth()];
   }
   _tick = () => {
-    const n = this._next();
+    const n = this._next(), T = this._tier(), loc = new Date(n.utc + T.tzOff * 60000);
     const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
     const ms = n.utc - Date.now();
     const m = Math.max(0, Math.floor(ms / 60000)), dd = Math.floor(m / 1440), h = Math.floor((m % 1440) / 60), mi = m % 60;
     const p = x => String(x).padStart(2, '0');
     this.setState({
       cd: ms <= 0 ? 'live now' : p(dd) + 'd · ' + p(h) + 'h · ' + p(mi) + 'm',
-      label: 'Sunday, ' + n.ist.getUTCDate() + ((d => (d % 100 >= 11 && d % 100 <= 13) ? 'th' : ({1:'st',2:'nd',3:'rd'}[d % 10] || 'th'))(n.ist.getUTCDate())) + ' ' + months[n.ist.getUTCMonth()] + ' · 11am to 2pm IST'
+      label: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][loc.getUTCDay()] + ', ' + loc.getUTCDate() + ((d => (d % 100 >= 11 && d % 100 <= 13) ? 'th' : ({1:'st',2:'nd',3:'rd'}[d % 10] || 'th'))(loc.getUTCDate())) + ' ' + months[loc.getUTCMonth()] + ' · ' + T.timeLong
     });
   };
   _evenStack = () => {
@@ -1110,7 +1113,7 @@ class Component extends DCLogic {
       showDiscount: !!(P.showDiscount ?? false),
       promiseEarly: !!(P.promiseFirst ?? true),
       promiseLate: !(P.promiseFirst ?? true),
-      sessionLabel: S.label || 'Sunday · 11am to 2pm IST',
+      sessionLabel: S.label || 'Sunday · ' + T.timeLong,
       countdown: S.cd || 'counting down',
       sliderRef: this.sliderRef,
       sliderDown: this._down,
@@ -1209,7 +1212,7 @@ class Component extends DCLogic {
         i: S.faq === i ? 'transform:rotate(-135deg) translate(-2px,-2px)' : 'transform:rotate(45deg) translateY(-3px)'
       })),
       barStyle: ((P.stickyBar ?? true) ? 'display:flex;' : 'display:none;') + 'height:' + (invite ? (S.mob ? '96px' : '106px') : (S.mob ? '78px' : '92px')) + ';--barBtnH:' + (invite && S.mob ? '48px' : '52px'),
-      barLive: S.mob ? this._barDate() + ' · 11am' : this._barDate() + ' · 11am ist · live workshop',
+      barLive: S.mob ? this._barDate() + ' · ' + T.timeShort : this._barDate() + ' · ' + T.timeBar + ' · live workshop',
       curSym: T.cur,
       priceNow: T.now,
       priceWas: T.was,
