@@ -490,6 +490,7 @@ class Component extends DCLogic {
       bundle: 'AED 899', itmA: 'AED 359', itmB: 'AED 180',
       pay: 'Secure payment via Razorpay. Cards and wallets.',
       button: 'pl_TkGd72jTJKbpf0',
+      link: '', // AED Payment Page URL goes here
       tzOff: 240, timeLong: '9:30am to 12:30pm Dubai time', timeShort: '9:30am', timeBar: '9:30am dubai time'
     },
     USD: {
@@ -497,6 +498,7 @@ class Component extends DCLogic {
       bundle: '$49', itmA: '$19', itmB: '$10',
       pay: 'Secure payment via Razorpay. Cards and wallets.',
       button: 'pl_TkGbvlvMC1L3NT',
+      link: '', // USD Payment Page URL goes here
       tzOff: 0, timeLong: '5:30am to 8:30am UTC', timeShort: '5:30 utc', timeBar: '5:30am utc'
     }
   };
@@ -910,6 +912,21 @@ class Component extends DCLogic {
   _rzp = el => {
     if (!el || this._rzpEl === el) return;
     this._rzpEl = el;
+    // Razorpay payment buttons only accept Indian payments. A tier with a `link`
+    // sends the visitor to a Razorpay Payment Page instead, which does take
+    // international cards. The invisible layer over the purple button becomes
+    // that link.
+    const link = this._tier().link;
+    if (link) {
+      el.textContent = '';
+      const a = document.createElement('a');
+      a.href = link;
+      a.setAttribute('aria-label', 'Reserve my seat');
+      a.style.cssText = 'position:absolute;inset:0;display:block';
+      el.appendChild(a);
+      el.style.pointerEvents = 'auto';
+      return;
+    }
     const ready = () => el.querySelector('iframe, .razorpay-payment-button, a[href*="razorpay"], button');
     const inject = () => {
       if (ready()) return;
