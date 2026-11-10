@@ -12,6 +12,9 @@ create table if not exists public.reveals (
   count int not null default 0,
   primary key (user_id, day)
 );
+-- Daily caps per signed-in person: `count` is prompt reveals (10 a day), `reads` is Reverse SLATE reads (2 a day).
+-- Safe to run again: this only adds the column if it is missing.
+alter table public.reveals add column if not exists reads int not null default 0;
 -- Lock both tables so only the backend (service key) can touch them.
 alter table public.users enable row level security;
 alter table public.reveals enable row level security;

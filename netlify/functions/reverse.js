@@ -1,5 +1,6 @@
 // REVERSE SLATE backend. Someone uploads a still; Claude Haiku reads it and answers with the five SLATE decisions,
-// choosing the nearest option from the same lists the board uses. Each read counts as one of the day's reveals.
+// choosing the nearest option from the same lists the board uses. Reads have their own daily cap (REVERSE_DAILY_LIMIT, 2 unless set),
+// counted apart from prompt reveals.
 // Uses the same keys as generate.js. Nothing is stored: the image is read once and dropped.
 
 const { recordSignup } = require('../lib/signup.js');
@@ -7,7 +8,7 @@ global.window = global.window || {};
 require('../../js/options.js');
 const O = global.window.SLATE_OPTIONS;
 const MODEL = process.env.REVERSE_MODEL || process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5';
-const DAILY_LIMIT = parseInt(process.env.DAILY_LIMIT || '10', 10);
+const READS_LIMIT = parseInt(process.env.REVERSE_DAILY_LIMIT || '2', 10);
 
 // The current Haiku thinks before it answers unless asked to keep it light. That thinking counts toward max_tokens
 // and can arrive as the first block of the reply. So: ask for low effort, leave room in max_tokens, and read the
@@ -60,9 +61,12 @@ exports.handler = async (event) => {
   const rest = `${SUPABASE_URL}/rest/v1`;
   const day = new Date(Date.now() + 5.5 * 3600 * 1000).toISOString().slice(0, 10);
   await recordSignup({ rest, svc, user, source: 'slate-reverse' });
-  const rows = await (await fetch(`${rest}/reveals?user_id=eq.${user.id}&day=eq.${day}&select=count`, { headers: svc })).json();
-  const used = Array.isArray(rows) && rows[0] ? rows[0].count : 0;
-  if (used >= DAILY_LIMIT) return json(429, { error: `That's ${DAILY_LIMIT} for today, reveals and reads together. It resets at midnight IST.` }, cors);
+  // If the count cannot be read, nothing is read: the cap must never fail open.
+  const q = await fetch(`${rest}/reveals?user_id=eq.${user.id}&day=eq.${day}&select=count,reads`, { headers: svc });
+  if (!q.ok) return json(503, { error: 'The reader is busy. Try again in a moment.' }, cors);
+  const rows = await q.json(), row = Array.isArray(rows) && rows[0] ? rows[0] : null;
+  const used = row ? (row.reads || 0) : 0;
+  if (used >= READS_LIMIT) return json(429, { error: `That's ${READS_LIMIT} reads for today. Reverse SLATE resets at midnight IST.`, remaining: 0 }, cors);
 
   let body; try { body = JSON.parse(event.body || '{}'); } catch (e) { return json(400, { error: 'Bad request' }, cors); }
   const img = Buffer.from(String(body.image || ''), 'base64');
@@ -86,9 +90,9 @@ exports.handler = async (event) => {
   const clean = { subject: String(read.subject || '').slice(0, 140) };
   Object.keys(LISTS).forEach(k => { const r = read[k] || {}, i = parseInt(r.i, 10); if (Number.isFinite(i) && LISTS[k][i]) clean[k] = { i, sure: r.sure === true, why: String(r.why || '').slice(0, 110) }; });
 
-  if (used === 0) await fetch(`${rest}/reveals`, { method: 'POST', headers: svc, body: JSON.stringify({ user_id: user.id, email: user.email || '', day, count: 1 }) });
-  else await fetch(`${rest}/reveals?user_id=eq.${user.id}&day=eq.${day}`, { method: 'PATCH', headers: svc, body: JSON.stringify({ count: used + 1 }) });
-  return json(200, { read: clean, remaining: DAILY_LIMIT - used - 1 }, cors);
+  if (!row) await fetch(`${rest}/reveals`, { method: 'POST', headers: svc, body: JSON.stringify({ user_id: user.id, email: user.email || '', day, count: 0, reads: 1 }) });
+  else await fetch(`${rest}/reveals?user_id=eq.${user.id}&day=eq.${day}`, { method: 'PATCH', headers: svc, body: JSON.stringify({ reads: used + 1 }) });
+  return json(200, { read: clean, remaining: READS_LIMIT - used - 1 }, cors);
 };
 
 function json(statusCode, obj, headers) { return { statusCode, headers: Object.assign({ 'Content-Type': 'application/json' }, headers), body: JSON.stringify(obj) }; }
