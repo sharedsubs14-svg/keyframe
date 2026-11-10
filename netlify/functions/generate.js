@@ -1,5 +1,6 @@
 // SLATE backend. Runs on Netlify, keeps every key hidden.
-// Flow: check the user's sign-in → count today's reveals (max DAILY_LIMIT) → write the prompt with Claude → return it.
+// Flow: check the user's sign-in → count today's prompts (max DAILY_LIMIT, 10 unless set) → write the prompt with Claude → return it.
+// Reverse SLATE reads are counted separately, in reverse.js.
 // Env vars (set in Netlify → Site configuration → Environment variables):
 //   ANTHROPIC_API_KEY, SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_KEY, SHEET_WEBHOOK_URL (optional), DAILY_LIMIT (optional)
 
@@ -57,8 +58,11 @@ exports.handler = async (event) => {
 
   // 3. Today's count (IST day so the reset feels right for India).
   const day = new Date(Date.now() + 5.5 * 3600 * 1000).toISOString().slice(0, 10);
-  const rows = await (await fetch(`${rest}/reveals?user_id=eq.${user.id}&day=eq.${day}&select=count`, { headers: svc })).json();
-  const used = Array.isArray(rows) && rows[0] ? rows[0].count : 0;
+  // If the count cannot be read, nothing is written: the cap must never fail open.
+  const q = await fetch(`${rest}/reveals?user_id=eq.${user.id}&day=eq.${day}&select=count`, { headers: svc });
+  if (!q.ok) return json(503, { error: 'The writer is busy. Try again in a moment.' }, cors);
+  const rows = await q.json(), row = Array.isArray(rows) && rows[0] ? rows[0] : null;
+  const used = row ? (row.count || 0) : 0;
   if (used >= DAILY_LIMIT) return json(429, { error: `That's ${DAILY_LIMIT} reveals for today. The sheet resets at midnight IST.`, remaining: 0 }, cors);
 
   // 4. Write the prompt.
@@ -86,7 +90,8 @@ exports.handler = async (event) => {
   if (!prompt) return json(502, { error: 'Empty prompt returned' }, cors);
 
   // 5. Count it.
-  if (used === 0) await fetch(`${rest}/reveals`, { method: 'POST', headers: svc, body: JSON.stringify({ user_id: user.id, email, day, count: 1 }) });
+  // The day's row may already exist with no prompts on it, made by a Reverse SLATE read, so go by the row, not the count.
+  if (!row) await fetch(`${rest}/reveals`, { method: 'POST', headers: svc, body: JSON.stringify({ user_id: user.id, email, day, count: 1 }) });
   else await fetch(`${rest}/reveals?user_id=eq.${user.id}&day=eq.${day}`, { method: 'PATCH', headers: svc, body: JSON.stringify({ count: used + 1 }) });
 
   return json(200, { prompt, remaining: DAILY_LIMIT - used - 1, model }, cors);

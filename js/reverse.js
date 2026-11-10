@@ -51,6 +51,7 @@
           const r = await fetch(URL_, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + session.access_token }, body: JSON.stringify({ image: $('#rPrev').src.split(',')[1] }) });
           const data = await r.json().catch(() => ({})); if (!r.ok) throw new Error(data.error || 'That did not go through. Try again in a minute.');
           read = data.read;
+          if (typeof data.remaining === 'number') A.toast(data.remaining > 0 ? `READ · ${data.remaining} MORE TODAY` : 'READ · THAT WAS YOUR LAST ONE TODAY');
         } else { await new Promise(r => setTimeout(r, 1100)); read = roughRead(cv); A.toast('PREVIEW READ · THE LIVE SITE READS IT WITH CLAUDE'); }
         paint();
       } catch (e) { msg.textContent = e.message || 'That image could not be opened. Try a JPG or PNG.'; }

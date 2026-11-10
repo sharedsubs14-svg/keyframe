@@ -366,7 +366,7 @@
   const openAuth = (reason) => {
     authReason = reason || 'reveal';
     if (!AUTH_TXT) AUTH_TXT = { t: $('#authTitle').textContent, s: $('#authModal .small').textContent };
-    if (authReason === 'reverse') { $('#authSub').textContent = 'Reverse SLATE'; $('#authTitle').textContent = 'Read any frame.'; $('#authModal .small').textContent = 'Sign in free once, then drop the frame in again. Ten reads and reveals a day, nothing to pay.'; }
+    if (authReason === 'reverse') { $('#authSub').textContent = 'Reverse SLATE'; $('#authTitle').textContent = 'Read any frame.'; $('#authModal .small').textContent = 'Sign in free once, then drop the frame in again. Two reads a day, nothing to pay.'; }
     else if (authReason === 'upload') { $('#authSub').textContent = 'Daily Frame'; $('#authTitle').textContent = 'Post it to the wall.'; $('#authModal .small').textContent = 'Sign in free once. Your name never shows on the wall. Signing in only keeps spam and bots out.'; }
     else { $('#authTitle').textContent = AUTH_TXT.t; $('#authModal .small').textContent = AUTH_TXT.s; }
     $('#authModal').hidden = false; $('#googleBtn').focus();
