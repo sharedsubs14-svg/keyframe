@@ -1,11 +1,11 @@
 // SLATE backend. Runs on Netlify, keeps every key hidden.
-// Flow: check the user's sign-in → count today's prompts (max DAILY_LIMIT, 10 unless set) → write the prompt with Claude → return it.
-// Reverse SLATE reads are counted separately, in reverse.js.
+// Flow: check the user's sign-in → hold this call's cost against the person's daily allowance → write the prompt with Claude → return it.
+// The allowance is money, not a count: one rupee per person per day unless set, shared with Reverse SLATE and the wall check. See ../lib/budget.js.
 // Env vars (set in Netlify → Site configuration → Environment variables):
-//   ANTHROPIC_API_KEY, SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_KEY, SHEET_WEBHOOK_URL (optional), DAILY_LIMIT (optional)
+//   ANTHROPIC_API_KEY, SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_KEY, SHEET_WEBHOOK_URL (optional), DAILY_BUDGET_INR (optional, default 1), USD_INR (optional, default 90)
 
 const { recordSignup } = require('../lib/signup.js');
-const DAILY_LIMIT = parseInt(process.env.DAILY_LIMIT || '10', 10);
+const { hold, settle } = require('../lib/budget.js');
 const MODEL = process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5';
 
 // The current Haiku thinks before it answers unless asked to keep it light. That thinking counts toward max_tokens
@@ -56,18 +56,21 @@ exports.handler = async (event) => {
   // A plain "I just signed in" ping from the page: the sign-up is recorded above, nothing is written, nothing is counted.
   if (body.hello) return json(200, { ok: true }, cors);
 
-  // 3. Today's count (IST day so the reset feels right for India).
+  // 3. Today's allowance (IST day so the reset feels right for India). The most this call could cost is put on
+  //    hold first; if the day's allowance cannot cover it, or the hold cannot be placed, nothing is written.
   const day = new Date(Date.now() + 5.5 * 3600 * 1000).toISOString().slice(0, 10);
-  // If the count cannot be read, nothing is written: the cap must never fail open.
-  const q = await fetch(`${rest}/reveals?user_id=eq.${user.id}&day=eq.${day}&select=count`, { headers: svc });
-  if (!q.ok) return json(503, { error: 'The writer is busy. Try again in a moment.' }, cors);
-  const rows = await q.json(), row = Array.isArray(rows) && rows[0] ? rows[0] : null;
-  const used = row ? (row.count || 0) : 0;
-  if (used >= DAILY_LIMIT) return json(429, { error: `That's ${DAILY_LIMIT} reveals for today. The sheet resets at midnight IST.`, remaining: 0 }, cors);
+  const ctx = { rest, svc, user, day, model: MODEL };
+  const h = await hold(Object.assign({ maxIn: 4000, maxOut: 1500 }, ctx));
+  if (h.error) return json(503, { error: 'The writer is busy. Try again in a moment.' }, cors);
+  if (h.over) return json(429, { error: 'That’s today’s free allowance used. It resets at midnight IST.', left: 0 }, cors);
 
   // 4. Write the prompt.
   const model = GUIDES[body.model] ? body.model : 'universal';
-  const d = body.decisions || {};
+  // Every field is cut to a sane length, so one request can never be made to cost more than the hold above.
+  const raw = body.decisions && typeof body.decisions === 'object' ? body.decisions : {};
+  const clip = (v, n) => String(v == null ? '' : v).slice(0, n).trim();
+  const d = { subject: clip(raw.subject, 400), lighting: clip(raw.lighting, 400), camera: clip(raw.camera, 400), time: clip(raw.time, 400), mood: clip(raw.mood, 400), advanced: clip(raw.advanced, 600),
+    unspecified: Array.isArray(raw.unspecified) ? raw.unspecified.slice(0, 6).map(x => clip(x, 40)).filter(Boolean) : [] };
   const lines = [
     `SUBJECT + ACTION: ${d.subject || 'unspecified'}`,
     `LIGHTING + ENVIRONMENT: ${d.lighting || 'unspecified'}`,
@@ -75,26 +78,28 @@ exports.handler = async (event) => {
     `TIME OF DAY: ${d.time || 'unspecified'}`,
     `EMOTION + GENRE: ${d.mood || 'unspecified'}`,
     d.advanced ? `ANNOTATIONS: ${d.advanced}` : null,
-    Array.isArray(d.unspecified) && d.unspecified.length ? `LEFT TO THE MODEL (do not invent): ${d.unspecified.join(', ')}` : null
+    d.unspecified.length ? `LEFT TO THE MODEL (do not invent): ${d.unspecified.join(', ')}` : null
   ].filter(Boolean).join('\n');
 
-  const ai = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: { 'x-api-key': ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'Content-Type': 'application/json' },
-    body: JSON.stringify(Object.assign({ model: MODEL, max_tokens: 1500, system: SYSTEM + '\n\n' + GUIDES[model], messages: [{ role: 'user', content: `Director's decisions:\n${lines}\n\nWrite the prompt.` }] }, TUNE))
-  });
-  if (!ai.ok) { const t = await ai.text(); return json(502, { error: 'The writer is busy. Try again in a moment.', detail: t.slice(0, 200) }, cors); }
+  let ai;
+  try {
+    ai = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'x-api-key': ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.assign({ model: MODEL, max_tokens: 1500, system: SYSTEM + '\n\n' + GUIDES[model], messages: [{ role: 'user', content: `Director's decisions:\n${lines}\n\nWrite the prompt.` }] }, TUNE))
+    });
+  } catch (e) { ai = null; }
+  // A call that never produced an answer is refunded in full.
+  if (!ai || !ai.ok) { const t = ai ? await ai.text() : ''; await settle(Object.assign({ held: h.held, usage: null }, ctx)); return json(502, { error: 'The writer is busy. Try again in a moment.', detail: t.slice(0, 200) }, cors); }
   const out = await ai.json();
+  const prompt = out.stop_reason === 'refusal' ? '' : textOf(out);
+
+  // 5. Swap the hold for what the call really cost, from Claude's own token count, and count the prompt if one came back.
+  const left = await settle(Object.assign({ held: h.held, usage: out.usage || null, prompts: prompt ? 1 : 0 }, ctx));
   if (out.stop_reason === 'refusal') return json(422, { error: 'That one can’t be written here. Change the subject and try again.' }, cors);
-  const prompt = textOf(out);
   if (!prompt) return json(502, { error: 'Empty prompt returned' }, cors);
 
-  // 5. Count it.
-  // The day's row may already exist with no prompts on it, made by a Reverse SLATE read, so go by the row, not the count.
-  if (!row) await fetch(`${rest}/reveals`, { method: 'POST', headers: svc, body: JSON.stringify({ user_id: user.id, email, day, count: 1 }) });
-  else await fetch(`${rest}/reveals?user_id=eq.${user.id}&day=eq.${day}`, { method: 'PATCH', headers: svc, body: JSON.stringify({ count: used + 1 }) });
-
-  return json(200, { prompt, remaining: DAILY_LIMIT - used - 1, model }, cors);
+  return json(200, { prompt, left, model }, cors);
 };
 
 function json(status, obj, headers) { return { statusCode: status, headers: { 'Content-Type': 'application/json', ...headers }, body: JSON.stringify(obj) }; }

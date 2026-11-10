@@ -8,7 +8,7 @@ Until this is done the site is live but locked: people can use the drafting tabl
 |---|---|---|
 | GitHub | Stores the website files. Already set up | Free |
 | Netlify | Puts the site on the internet and runs the hidden backend that keeps your Claude key secret. Already set up | Free |
-| Supabase | Google sign-in, the daily caps (10 prompts and 2 Reverse SLATE reads per person), and the Daily Frame wall and its images | Free to start |
+| Supabase | Google sign-in, the daily allowance of ₹1 per person, and the Daily Frame wall and its images | Free to start |
 | Google Cloud | Lets Supabase show "Continue with Google" | Free |
 | Anthropic | The Claude key that writes prompts and checks uploaded images | Pay as you go, about ₹0.02 a reveal |
 | Google Sheet | Where every new sign-up's email lands | Free |
@@ -109,7 +109,7 @@ Daily Frame No. 001 is set to 11 November 2026, in `js/briefs.js`.
 ## Part 7 · Add the secret keys in Netlify (5 min)
 
 1. app.netlify.com, open the keyframe24.ai site, then **Site configuration**, then **Environment variables**.
-2. Click **Add a variable**, then **Add a single variable**. Do this once for each line. `DAILY_LIMIT` is prompts per person per day and `REVERSE_DAILY_LIMIT` is Reverse SLATE reads per person per day; leave either out and the site uses 10 and 2:
+2. Click **Add a variable**, then **Add a single variable**. Do this once for each line:
 
    | Key | Value |
    |---|---|
@@ -118,10 +118,8 @@ Daily Frame No. 001 is set to 11 November 2026, in `js/briefs.js`.
    | `SUPABASE_ANON_KEY` | your publishable key |
    | `SUPABASE_SERVICE_KEY` | your secret key |
    | `SHEET_WEBHOOK_URL` | your Apps Script web app URL |
-   | `DAILY_LIMIT` | `10` |
-   | `REVERSE_DAILY_LIMIT` | `2` |
 
-   Optional: `WALL_DAILY_LIMIT` (posts per person per day, default 3) and `WALL_REPORTS_TO_HIDE` (reports that take a frame down, default 3).
+   Optional: `DAILY_BUDGET_INR` (rupees of Claude use per person per day, default 1), `USD_INR` (the rupee rate used for that sum, default 90), `WALL_DAILY_LIMIT` (posts per person per day, default 3) and `WALL_REPORTS_TO_HIDE` (reports that take a frame down, default 3).
 
 The keys are picked up by the next deploy. That happens by itself when Claude publishes your two values from Part 6. If you add or change a key later, go to **Deploys**, then **Trigger deploy**, then **Deploy site**.
 
@@ -142,7 +140,7 @@ Once Claude has published your two values, open `https://keyframe24.ai` in a pri
 - [ ] A new row appears in the `SLATE sign-ups` sheet within a few seconds. The same person also shows in Supabase under **Authentication**, **Users**, and in **Table Editor**, `users`.
 - [ ] The Daily Frame shows today's brief and the countdown. Click **Post your frame**, upload any image you made, post it. It appears on the wall. (A refusal message means the image check said no. That is the check working.)
 - [ ] Open the frame on the wall and click **Open this sheet on the board**.
-- [ ] In **Reverse SLATE**, drop in any film still. Five rows fill in, and **Open this sheet on the board** loads them. A third read on the same day is refused: the cap is two a day.
+- [ ] In **Reverse SLATE**, drop in any film still. Five rows fill in, and **Open this sheet on the board** loads them. A small note shows how much of the day's allowance is left.
 - [ ] On your phone: the same checks, quickly.
 
 If sign-in bounces back with an error, it is almost always one address with a typo: the redirect URL in Part 8, or the JavaScript origin in Part 3b. Compare them character by character, including `https://` and no slash at the end of the origin.
@@ -154,7 +152,7 @@ If sign-in bounces back with an error, it is almost always one address with a ty
 Open Claude Code on this repo and say what you want. Claude pushes the change and gives you a link to merge. Netlify updates the live site about a minute after the merge. Examples:
 
 - "Change the brief for 12 November in js/briefs.js to: A tea stall in heavy fog."
-- "Change the daily prompt limit to 15" or "allow 5 Reverse SLATE reads a day." (These are Netlify settings: Part 7, change `DAILY_LIMIT` or `REVERSE_DAILY_LIMIT`, then **Deploys**, **Trigger deploy**, **Deploy site**.)
+- "Raise the daily allowance to ₹2 a person." (This one is a Netlify setting: Part 7, add `DAILY_BUDGET_INR` with the value `2`, then **Deploys**, **Trigger deploy**, **Deploy site**.)
 - "Add a new option 'Ring light' to the lights list in js/options.js."
 
 Where things live, if you ever want to look yourself:
@@ -180,6 +178,17 @@ Every person who signs in with Google is recorded in three places, the first tim
 
 Nobody gets a prompt, a Reverse SLATE read or a wall post without signing in. The check runs on the server, so it cannot be skipped from the browser.
 
+## The daily allowance
+
+Each signed-in person can use ₹1 of Claude a day. There is no separate limit on prompts or on Reverse SLATE reads: a person spends the rupee however they like, and it renews at midnight India time.
+
+- At normal sizes ₹1 is about 39 prompt reveals, or about 24 Reverse SLATE reads, or any mix of the two. The image check on a wall post draws on it too, at about ₹0.01 a post.
+- The cost of each call is worked out from the token counts Claude reports back, at the model's price, at ₹90 to the dollar.
+- Before each call the site sets aside the most that call could cost, and hands back the difference afterwards. That is why the cap holds even if someone fires many requests at once, and why a person is stopped a little before the full rupee is gone.
+- When it runs out the person sees: "That's today's free allowance used. It resets at midnight IST."
+- To see who used what: Supabase, **Table Editor**, `reveals`. One row per person per day, with `spend` in rupees, `count` (prompts) and `reads`.
+- To change it: add `DAILY_BUDGET_INR` in Netlify (Part 7) with the new number of rupees, then redeploy. The ₹1 default assumes the Haiku 5.5 model the site ships with.
+
 ## Looking after the Daily Frame wall
 
 - **Remove a frame by hand**: Supabase, **Table Editor**, `entries`. Find the row, double-click its `status` cell, type `hidden`, press Enter. It disappears on the next refresh.
@@ -190,4 +199,4 @@ Nobody gets a prompt, a Reverse SLATE read or a wall post without signing in. Th
 ## What it costs to run
 
 - GitHub, Netlify, Supabase, Google: free at launch scale.
-- Claude: about ₹0.02 per prompt reveal, about ₹0.04 per Reverse SLATE read and under ₹0.01 per wall upload. The daily caps (10 prompts, 2 Reverse SLATE reads, 3 wall posts) hold the heaviest single user to about ₹0.30 a day, about ₹9 a month.
+- Claude: about ₹0.02 per prompt reveal, about ₹0.04 per Reverse SLATE read and under ₹0.01 per wall upload. No person can cost more than ₹1 a day, about ₹30 a month, however they use the site. See "The daily allowance" below.
