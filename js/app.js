@@ -358,15 +358,15 @@
       const res = await fetch(CFG.FUNCTION_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + session.access_token }, body: JSON.stringify({ model: state.model, decisions: describe() }) });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Could not write the prompt');
-      state.revealed = data.prompt; state.revealedSig = signature(); $('#quota').textContent = `${data.remaining} reveals left today`; render();
+      state.revealed = data.prompt; state.revealedSig = signature(); $('#quota').textContent = typeof data.left === 'number' ? `${data.left}% of today’s allowance left` : ''; render();
     } catch (err) { note(err.message); }
-    finally { state.busy = false; $('#revealBtn').classList.remove('busy'); $('#veilNote').textContent = 'Free. Sign in once. Ten a day.'; }
+    finally { state.busy = false; $('#revealBtn').classList.remove('busy'); $('#veilNote').textContent = 'Free. Sign in once. A daily allowance, no card.'; }
   }
   let authReason = 'reveal', AUTH_TXT = null;
   const openAuth = (reason) => {
     authReason = reason || 'reveal';
     if (!AUTH_TXT) AUTH_TXT = { t: $('#authTitle').textContent, s: $('#authModal .small').textContent };
-    if (authReason === 'reverse') { $('#authSub').textContent = 'Reverse SLATE'; $('#authTitle').textContent = 'Read any frame.'; $('#authModal .small').textContent = 'Sign in free once, then drop the frame in again. Two reads a day, nothing to pay.'; }
+    if (authReason === 'reverse') { $('#authSub').textContent = 'Reverse SLATE'; $('#authTitle').textContent = 'Read any frame.'; $('#authModal .small').textContent = 'Sign in free once, then drop the frame in again. Nothing to pay.'; }
     else if (authReason === 'upload') { $('#authSub').textContent = 'Daily Frame'; $('#authTitle').textContent = 'Post it to the wall.'; $('#authModal .small').textContent = 'Sign in free once. Your name never shows on the wall. Signing in only keeps spam and bots out.'; }
     else { $('#authTitle').textContent = AUTH_TXT.t; $('#authModal .small').textContent = AUTH_TXT.s; }
     $('#authModal').hidden = false; $('#googleBtn').focus();

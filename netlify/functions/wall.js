@@ -7,6 +7,7 @@
 
 const crypto = require('crypto');
 const { recordSignup } = require('../lib/signup.js');
+const { hold, settle } = require('../lib/budget.js');
 const MODEL = process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5';
 
 // The current Haiku thinks before it answers unless asked to keep it light. That thinking counts toward max_tokens
@@ -68,16 +69,23 @@ exports.handler = async (event) => {
   if (!isJpeg(full) || !isJpeg(tile)) return json(400, { error: 'That image did not come through. Try again.' }, cors);
   if (full.length > 3.5e6 || tile.length > 6e5) return json(413, { error: 'That image is too large.' }, cors);
 
+  // The image check calls Claude too, so it draws on the same daily allowance as prompts and reads.
+  const ctx = { rest, svc, user, day, model: MODEL };
+  const h = await hold(Object.assign({ maxIn: 5200, maxOut: 1024 }, ctx));
+  if (h.error) return json(503, { error: 'The check is busy. Try again in a minute.' }, cors);
+  if (h.over) return json(429, { error: 'That’s today’s free allowance used. It resets at midnight IST.' }, cors);
+
   // Screen the small copy with Claude. If the check itself fails, nothing is posted.
-  let verdict = null;
+  let verdict = null, usage = null;
   try {
     const ai = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: { 'x-api-key': ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'Content-Type': 'application/json' },
       body: JSON.stringify(Object.assign({ model: MODEL, max_tokens: 1024, system: SCREEN, messages: [{ role: 'user', content: [{ type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: tile.toString('base64') } }, { type: 'text', text: 'Screen this image.' }] }] }, TUNE))
     });
-    if (ai.ok) { const out = await ai.json(); if (out.stop_reason === 'refusal') verdict = { allow: false }; else { const m = textOf(out).match(/\{[\s\S]*\}/); verdict = m ? JSON.parse(m[0]) : null; } }
+    if (ai.ok) { const out = await ai.json(); usage = out.usage || null; if (out.stop_reason === 'refusal') verdict = { allow: false }; else { const m = textOf(out).match(/\{[\s\S]*\}/); verdict = m ? JSON.parse(m[0]) : null; } }
   } catch (e) { verdict = null; }
+  await settle(Object.assign({ held: h.held, usage }, ctx));
   if (!verdict) return json(503, { error: 'The check is busy. Try again in a minute.' }, cors);
   if (verdict.allow !== true) return json(422, { error: `This one can't go on the wall${verdict.reason ? ': ' + String(verdict.reason).slice(0, 80) : '.'}` }, cors);
 

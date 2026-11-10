@@ -1,6 +1,6 @@
 // REVERSE SLATE backend. Someone uploads a still; Claude Haiku reads it and answers with the five SLATE decisions,
-// choosing the nearest option from the same lists the board uses. Reads have their own daily cap (REVERSE_DAILY_LIMIT, 2 unless set),
-// counted apart from prompt reveals.
+// choosing the nearest option from the same lists the board uses. A read draws on the person's daily allowance,
+// which is money, not a count: one rupee a day unless set, shared with prompts. See ../lib/budget.js.
 // Uses the same keys as generate.js. Nothing is stored: the image is read once and dropped.
 
 const { recordSignup } = require('../lib/signup.js');
@@ -8,7 +8,7 @@ global.window = global.window || {};
 require('../../js/options.js');
 const O = global.window.SLATE_OPTIONS;
 const MODEL = process.env.REVERSE_MODEL || process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5';
-const READS_LIMIT = parseInt(process.env.REVERSE_DAILY_LIMIT || '2', 10);
+const { hold, settle } = require('../lib/budget.js');
 
 // The current Haiku thinks before it answers unless asked to keep it light. That thinking counts toward max_tokens
 // and can arrive as the first block of the reply. So: ask for low effort, leave room in max_tokens, and read the
@@ -61,27 +61,29 @@ exports.handler = async (event) => {
   const rest = `${SUPABASE_URL}/rest/v1`;
   const day = new Date(Date.now() + 5.5 * 3600 * 1000).toISOString().slice(0, 10);
   await recordSignup({ rest, svc, user, source: 'slate-reverse' });
-  // If the count cannot be read, nothing is read: the cap must never fail open.
-  const q = await fetch(`${rest}/reveals?user_id=eq.${user.id}&day=eq.${day}&select=count,reads`, { headers: svc });
-  if (!q.ok) return json(503, { error: 'The reader is busy. Try again in a moment.' }, cors);
-  const rows = await q.json(), row = Array.isArray(rows) && rows[0] ? rows[0] : null;
-  const used = row ? (row.reads || 0) : 0;
-  if (used >= READS_LIMIT) return json(429, { error: `That's ${READS_LIMIT} reads for today. Reverse SLATE resets at midnight IST.`, remaining: 0 }, cors);
-
   let body; try { body = JSON.parse(event.body || '{}'); } catch (e) { return json(400, { error: 'Bad request' }, cors); }
   const img = Buffer.from(String(body.image || ''), 'base64');
   if (!(img.length > 3 && img[0] === 0xFF && img[1] === 0xD8)) return json(400, { error: 'That image did not come through. Try again.' }, cors);
   if (img.length > 1.5e6) return json(413, { error: 'That image is too large.' }, cors);
 
-  let read = null;
+  // The most this read could cost is put on hold against the person's daily allowance first. If the allowance
+  // cannot cover it, or the hold cannot be placed, nothing is read.
+  const ctx = { rest, svc, user, day, model: MODEL };
+  const h = await hold(Object.assign({ maxIn: 6200, maxOut: 1500 }, ctx));
+  if (h.error) return json(503, { error: 'The reader is busy. Try again in a moment.' }, cors);
+  if (h.over) return json(429, { error: 'That’s today’s free allowance used. It resets at midnight IST.', left: 0 }, cors);
+
+  let read = null, usage = null;
   try {
     const ai = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: { 'x-api-key': ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'Content-Type': 'application/json' },
       body: JSON.stringify(Object.assign({ model: MODEL, max_tokens: 1500, system: SYSTEM, messages: [{ role: 'user', content: [{ type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: img.toString('base64') } }, { type: 'text', text: 'Read this frame.' }] }] }, TUNE))
     });
-    if (ai.ok) { const out = await ai.json(); if (out.stop_reason === 'refusal') read = { refuse: true }; else { const m = textOf(out).match(/\{[\s\S]*\}/); read = m ? JSON.parse(m[0]) : null; } }
+    if (ai.ok) { const out = await ai.json(); usage = out.usage || null; if (out.stop_reason === 'refusal') read = { refuse: true }; else { const m = textOf(out).match(/\{[\s\S]*\}/); read = m ? JSON.parse(m[0]) : null; } }
   } catch (e) { read = null; }
+  // Swap the hold for what the read really cost. A read that never produced an answer is refunded in full.
+  const left = await settle(Object.assign({ held: h.held, usage, reads: read && !read.refuse ? 1 : 0 }, ctx));
   if (!read) return json(502, { error: 'The reader is busy. Try again in a moment.' }, cors);
   if (read.refuse) return json(422, { error: 'This frame can’t be read here.' }, cors);
 
@@ -90,9 +92,7 @@ exports.handler = async (event) => {
   const clean = { subject: String(read.subject || '').slice(0, 140) };
   Object.keys(LISTS).forEach(k => { const r = read[k] || {}, i = parseInt(r.i, 10); if (Number.isFinite(i) && LISTS[k][i]) clean[k] = { i, sure: r.sure === true, why: String(r.why || '').slice(0, 110) }; });
 
-  if (!row) await fetch(`${rest}/reveals`, { method: 'POST', headers: svc, body: JSON.stringify({ user_id: user.id, email: user.email || '', day, count: 0, reads: 1 }) });
-  else await fetch(`${rest}/reveals?user_id=eq.${user.id}&day=eq.${day}`, { method: 'PATCH', headers: svc, body: JSON.stringify({ reads: used + 1 }) });
-  return json(200, { read: clean, remaining: READS_LIMIT - used - 1 }, cors);
+  return json(200, { read: clean, left }, cors);
 };
 
 function json(statusCode, obj, headers) { return { statusCode, headers: Object.assign({ 'Content-Type': 'application/json' }, headers), body: JSON.stringify(obj) }; }
