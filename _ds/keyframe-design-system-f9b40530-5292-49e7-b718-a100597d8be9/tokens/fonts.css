@@ -1,0 +1,13 @@
+/* Keyframe — Web fonts
+   Display:  Epilogue 800        (hero headlines, section titles)
+   Wordmark: Cormorant Garamond  (logo lockup only — never body)
+   Body/UI:  Inter 400–600       (all body, buttons, labels, UI)
+   Mono:     SF Mono / ui-monospace (code, hex, technical labels)
+
+   Fonts are delivered from Google Fonts. To self-host, drop the .woff2
+   binaries in assets/fonts/ and replace these @import lines with local
+   @font-face rules — the family names below stay the same. */
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');

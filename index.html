@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SLATE by Keyframe</title>
+<meta name="description" content="A free drafting table for AI images. Five decisions, one directed prompt, written for the model you use.">
+<link rel="canonical" href="https://keyframe24.ai/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SLATE by Keyframe">
+<meta property="og:title" content="SLATE by Keyframe">
+<meta property="og:description" content="A free drafting table for AI images. Five decisions, one directed prompt, written for the model you use.">
+<meta property="og:url" content="https://keyframe24.ai/">
+<meta property="og:image" content="https://keyframe24.ai/img/open/boxer-plate.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Patrick+Hand&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script>
+// SLATE config. Leave the two Supabase values empty to run in preview mode (no sign-in, no backend).
+window.SLATE_CONFIG = {
+  SUPABASE_URL: '',
+  SUPABASE_ANON_KEY: '',
+  FUNCTION_URL: '/.netlify/functions/generate'
+};
+try { var t = localStorage.getItem('slate_theme'); document.documentElement.dataset.theme = t || 'light'; } catch (e) { document.documentElement.dataset.theme = 'light'; }
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1411312853753013');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top glass">
+  <a class="brand" href="#top" aria-label="SLATE by Keyframe, back to the top"><span class="brand-word" data-l="SLATE">SLATE</span><span class="brand-by">by Keyframe</span></a>
+  <nav class="topnav">
+    <a href="#play" class="hide-sm">Drafting table</a>
+    <a href="#reverse" class="hide-sm">Reverse SLATE</a>
+    <a href="#daily" class="hide-sm">Daily Frame</a>
+    <a href="#letters" class="hide-sm">The five</a>
+    <button type="button" class="theme" id="themeBtn" aria-label="Switch theme"><span class="theme-dot"></span><span id="themeLabel">LIGHT</span></button>
+    <button type="button" class="btn line" id="authBtn">Sign in</button>
+  </nav>
+</header>
+
+<main>
+  <!-- OPENING: one real photograph, split into layers. The photos, the words and the labels all come from js/opening-frames.js. -->
+  <section id="top" class="open" aria-label="Walk onto the set">
+    <div class="op-pin" id="opPin">
+      <div class="op-lines" id="opLines">
+        <p class="on">Every frame is five decisions.<small>scroll, and walk onto the set</small></p>
+        <p><span></span><small></small></p><p><span></span><small></small></p><p><span></span><small></small></p><p><span></span><small></small></p><p><span></span><small></small></p>
+      </div>
+      <div class="op-scale" id="opScale" aria-hidden="true"><div class="op-world" id="opWorld">
+        <div class="op-floor"></div>
+        <div class="op-cel op-bd" id="opBd">
+          <img class="bd-dull" id="opDull" alt="" decoding="async"><img class="bd-noon" id="opNoon" alt="" decoding="async"><img class="bd-gold" id="opGold" alt="" decoding="async"><img class="bd-final" id="opFinal" alt="" decoding="async">
+          <i class="bd-vig" id="opVig"></i>
+        </div>
+        <div class="op-tag" id="opTagL"></div>
+        <div class="op-tag" id="opTagT"></div>
+        <div class="op-cel op-sub" id="opSub">
+          <svg viewBox="0 0 2048 1152" preserveAspectRatio="none"><path id="opOutline" d=""/></svg>
+          <img id="opSubImg" alt="" decoding="async">
+        </div>
+        <div class="op-tag" id="opTagS"></div>
+        <div class="op-cel op-gate" id="opGate"><i class="tv"></i><i class="th"></i><b class="bar t"></b><b class="bar b"></b></div>
+        <div class="op-tag" id="opTagA"></div>
+        <div class="op-tag" id="opTagE"></div>
+        <div class="op-card" id="opCam"><svg width="276" height="192" viewBox="-30 -24 60 42" style="margin:-96px 0 0 -138px"><rect class="acc" x="-24" y="-13" width="30" height="26" rx="3"/><rect class="acc" x="6" y="-8" width="12" height="16" rx="2"/><rect class="acc" x="-16" y="-20" width="12" height="7" rx="1"/></svg></div>
+      </div></div>
+      <div class="op-hud" id="opHud" aria-hidden="true"><span data-l="S">S</span><span data-l="L">L</span><span data-l="A">A</span><span data-l="T">T</span><span data-l="E">E</span></div>
+      <div class="op-flash" id="opFlash" aria-hidden="true"></div>
+      <div class="op-end entry-copy" id="opEnd">
+        <p class="op-action">Action. Your turn.</p>
+        <h1 class="entry-h">Who is in your frame, and what are they doing<span class="caret" aria-hidden="true"></span></h1>
+        <div class="entry-opts" id="entryOpts"></div>
+        <form class="entry-own" id="entryForm">
+          <label class="sr" for="entryInput">Type your own subject</label>
+          <input id="entryInput" type="text" placeholder="or type anything, in any language" autocomplete="off">
+          <button type="submit" class="btn solid">Start the sheet</button>
+        </form>
+      </div>
+      <span class="op-cue" id="opCue" aria-hidden="true">scroll ↓</span>
+      <div class="op-review" id="opReview" hidden></div>
+    </div>
+  </section>
+
+  <section id="play" class="play">
+    <div class="play-head">
+      <p class="note" id="note" aria-live="polite">Sheet 01. Pick a subject to start.</p>
+      <div class="meter">
+        <span class="eyebrow dim">specified</span>
+        <span class="ticks" id="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="count" id="count">0 / 5</span>
+        <button type="button" class="chip" id="randomBtn" title="Fill every blank the way the model would on its own">Random</button>
+        <button type="button" class="chip" id="autoBtn" title="Fill only the blanks, matched to what you chose">Auto-complete</button>
+      </div>
+    </div>
+
+    <div class="table">
+      <div class="board">
+        <div class="halo" id="halo" aria-hidden="true"></div>
+        <div class="sheet">
+          <svg id="stage" viewBox="0 0 800 450" role="img" aria-label="Live blueprint of the shot">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" class="gridline"/></pattern>
+              <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="hatchline"/></pattern>
+              <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop id="skyTop" offset="0" stop-color="#3A6AB0"/><stop id="skyBot" offset="1" stop-color="#A8CCF0"/></linearGradient>
+              <linearGradient id="coneG" gradientUnits="userSpaceOnUse" x1="230" y1="118" x2="400" y2="270"><stop id="cone1" offset="0" stop-color="#F4EFE6" stop-opacity=".55"/><stop id="cone2" offset="1" stop-color="#F4EFE6" stop-opacity=".03"/></linearGradient>
+              <radialGradient id="glowG"><stop id="glow1" offset="0" stop-color="#F4EFE6" stop-opacity=".9"/><stop id="glow2" offset="1" stop-color="#F4EFE6" stop-opacity="0"/></radialGradient>
+              <path id="personPath" d="M394 228 L406 228 L407 234 Q422 236 428 244 L434 300 Q434 306 429 306 L424 262 L422 300 L421 372 L405 372 L402 310 L398 310 L395 372 L379 372 L378 300 L376 262 L371 306 Q366 306 366 300 L372 244 Q378 236 393 234 Z"/>
+              <circle id="personHead" cx="400" cy="212" r="15"/>
+              <g id="personTpl"><path class="body" d="M394 228 L406 228 L407 234 Q422 236 428 244 L434 300 Q434 306 429 306 L424 262 L422 300 L421 372 L405 372 L402 310 L398 310 L395 372 L379 372 L378 300 L376 262 L371 306 Q366 306 366 300 L372 244 Q378 236 393 234 Z"/><circle class="body" cx="400" cy="212" r="15"/><path d="M400 312 L400 292" class="ink thin"/></g>
+              <clipPath id="personClip"><use href="#personPath"/><use href="#personHead"/></clipPath>
+            </defs>
+
+            <rect class="paper" width="800" height="450"/>
+            <rect width="800" height="450" fill="url(#grid)"/>
+            <rect id="sky" width="800" height="250" fill="url(#skyG)" opacity=".1"/>
+            <path class="ink faint" d="M40 250 Q400 -170 760 250" stroke-dasharray="2 7"/>
+            <g id="sunG"><circle id="sun" cx="400" cy="44" r="13" fill="#FFE9A8"/><circle class="pulse" id="sunPulse" cx="400" cy="44" r="18"/><circle class="hit" id="sunHit" cx="400" cy="44" r="30"/><text id="sunLab" class="mono lab" x="400" y="28" text-anchor="middle"></text></g>
+            <line x1="0" y1="250" x2="800" y2="250" class="ink" stroke-opacity=".6"/>
+            <g class="ink faint"><line x1="400" y1="250" x2="-300" y2="450"/><line x1="400" y1="250" x2="0" y2="450"/><line x1="400" y1="250" x2="200" y2="450"/><line x1="400" y1="250" x2="400" y2="450"/><line x1="400" y1="250" x2="600" y2="450"/><line x1="400" y1="250" x2="800" y2="450"/><line x1="400" y1="250" x2="1100" y2="450"/><line x1="0" y1="282" x2="800" y2="282"/><line x1="0" y1="330" x2="800" y2="330"/><line x1="0" y1="400" x2="800" y2="400"/></g>
+
+            <g id="rig">
+              <line id="stand" class="ink" x1="230" y1="130" x2="230" y2="396"/>
+              <path id="feet" class="ink" d="M214 404 L230 396 L246 404"/>
+              <polygon id="cone" fill="url(#coneG)" points="0,0"/>
+              <g id="lamp" transform="translate(230 118)">
+                <circle id="glow" r="30" fill="url(#glowG)"/>
+                <path class="inkfill" d="M-18 -11 H4 V11 H-18 Z"/>
+                <path class="ink" d="M4 -11 L14 -17 M4 11 L14 17"/>
+                <circle id="bulb" cx="4" cy="0" r="4" fill="#F4EFE6"/>
+                <circle class="pulse" r="20"/>
+                <circle class="hit" id="lampHit" r="32"/>
+              </g>
+              <text id="lampLab" class="mono lab" x="230" y="84" text-anchor="middle"></text>
+            </g>
+
+            <g id="crowd" opacity="0">
+              <g data-person="crowd" transform="translate(115 136) scale(.5)"></g>
+              <g data-person="crowd" transform="translate(175 140) scale(.5)"></g>
+              <g data-person="crowd" transform="translate(420 138) scale(.5)"></g>
+              <g data-person="crowd" transform="translate(490 136) scale(.5)"></g>
+            </g>
+            <ellipse id="floorShadow" cx="400" cy="374" rx="60" ry="8" class="shadowfill"/>
+            <g id="hero"><g data-person="main"></g><g clip-path="url(#personClip)"><rect id="shade" x="400" y="190" width="30" height="190" fill="url(#hatch)"/></g></g>
+            <g id="second" opacity="0"><g data-person="main" transform="translate(880 0) scale(-1 1)"></g></g>
+            <g id="cart" opacity="0"><path class="inkfill" d="M444 270 L550 270 L540 256 L454 256 Z"/><path class="ink" d="M458 270 V312 M536 270 V312"/><rect class="inkfill" x="448" y="312" width="96" height="40"/><circle class="inkfill" cx="466" cy="362" r="9"/><circle class="inkfill" cx="526" cy="362" r="9"/></g>
+            <g id="product" opacity="0"><rect class="inkfill" x="340" y="330" width="120" height="42"/><path class="inkfill" d="M388 330 L388 284 Q388 274 394 270 L394 254 L406 254 L406 270 Q412 274 412 284 L412 330 Z"/><path class="ink thin" d="M390 296 H410 M390 312 H410"/></g>
+            <g id="vehicle" opacity="0"><path class="inkfill" d="M240 360 L240 332 Q246 320 270 318 L322 314 Q350 290 380 286 L472 286 Q502 290 522 314 L552 318 Q566 322 566 340 L566 360 Z"/><path class="ink thin" d="M344 314 L380 292 L466 292 L496 314 Z M420 292 V314"/><circle class="inkfill" cx="296" cy="362" r="17"/><circle class="inkfill" cx="510" cy="362" r="17"/></g>
+            <g id="animal" opacity="0"><ellipse class="inkfill" cx="396" cy="330" rx="50" ry="17"/><circle class="inkfill" cx="452" cy="308" r="13"/><path class="ink" d="M444 298 L440 286 L450 294 M462 298 L466 287 L458 294 M364 342 V372 M380 344 V372 M414 344 V372 M430 342 V372 M348 326 Q330 316 332 300"/></g>
+            <text id="actLab" class="hand" x="446" y="318"></text>
+
+            <path id="ots" class="inkfill" opacity="0" d="M-10 452 L-10 330 Q50 286 120 300 Q170 312 184 452 Z"/>
+            <g id="frameG" transform="translate(400 280)">
+              <rect id="frame" class="acc dash" x="-190" y="-107" width="380" height="214"/>
+              <g id="thirds" class="acc faint"><line id="t1"/><line id="t2"/><line id="t3"/><line id="t4"/></g>
+              <line id="dim" class="acc"/><line id="dimL" class="acc"/><line id="dimR" class="acc"/>
+              <text id="dimLab" class="mono acc-text" text-anchor="middle"></text>
+            </g>
+            <g id="frust" class="acc faint"><line id="fr1"/><line id="fr2"/><line id="fr3"/><line id="fr4"/></g>
+            <g id="camG" transform="translate(160 300)">
+              <g id="camBody"><rect class="camfill" x="-24" y="-13" width="30" height="26" rx="3"/><rect class="camfill" x="6" y="-8" width="12" height="16" rx="2"/><rect class="camfill" x="-16" y="-20" width="12" height="7" rx="1"/></g>
+              <circle class="pulse" r="24"/>
+              <circle class="hit" id="camHit" r="34"/>
+            </g>
+            <text id="camLab" class="mono acc-text" x="136" y="270"></text>
+            <rect id="tint" width="800" height="450" fill="#000" opacity="0"/>
+            <text id="caption" x="776" y="434" text-anchor="end" class="mono acc-text"></text>
+          </svg>
+          <div class="stage-hint" id="stageHint">drag the lamp, camera or sun · pinch for lens</div>
+          <div class="slop glass" id="slop" role="status" tabindex="0" aria-label="Slop score 100 percent" title="How much of this frame is still what the model would pick on its own. Get it to zero.">
+            <span class="slop-k">slop</span><span class="slop-num"><span id="slopN">100</span><small>%</small></span>
+            <span class="slop-bar" aria-hidden="true"><i id="slopBar"></i></span>
+            <span class="slop-left" id="slopLeft">all of it is the model’s</span>
+          </div>
+          <div class="lensctl glass" role="group" aria-label="Lens"><button type="button" id="lensMinus" aria-label="Wider lens">−</button><span id="lensVal">lens</span><button type="button" id="lensPlus" aria-label="Longer lens">+</button></div>
+        </div>
+
+        <div class="strip" id="strip" role="tablist" aria-label="The five decisions"><span class="strip-ind" id="stripInd" aria-hidden="true"></span></div>
+
+        <div class="drawer glass">
+          <div id="panels"></div>
+        </div>
+      </div>
+
+      <aside class="prompt glass">
+        <span class="eyebrow">issued for</span>
+        <div class="tabs" id="modelTabs" role="tablist"></div>
+        <div class="promptbox" id="promptbox">
+          <p class="prompttext blurred" id="prompttext" aria-hidden="true"></p>
+          <div class="veil" id="veil">
+            <button type="button" class="btn wandbtn" id="revealBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20 14 10"/><path d="M15 4l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/><path d="M19 11l.6 1.2 1.4.6-1.4.6L19 14.6l-.6-1.2-1.4-.6 1.4-.6z"/></svg>
+              Reveal the prompt
+            </button>
+            <span class="tiny" id="veilNote">Free. Sign in once. Ten a day.</span>
+          </div>
+        </div>
+        <div class="prompt-actions" id="promptActions" hidden>
+          <button type="button" class="chip" id="copyBtn">Copy prompt</button>
+          <span class="tiny" id="quota"></span>
+        </div>
+        <div class="director" id="director">
+          <span class="eyebrow">you direct like</span>
+          <p class="dt-name empty" id="dtName">Make three decisions to find out.</p>
+          <p class="small" id="dtLine"></p>
+          <div class="dt-actions"><button type="button" class="chip" id="feedBtn" disabled>Feed card</button><button type="button" class="chip" id="storyBtn" disabled>Story card</button><button type="button" class="chip" id="shareBtn" disabled>Share</button></div>
+        </div>
+        <p class="small">Random fills every blank the way the model would on its own. That is slop. Auto-complete fills only your blanks, matched to what you already chose.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="reverse" class="reverse" aria-labelledby="rTitle">
+    <div class="rev-copy">
+      <h2 class="daily-h" id="rTitle">Reverse SLATE</h2>
+      <p class="daily-how rev-how">Drop in any frame you love. A film still, an ad, your own shot. Get back the five decisions that made it, then open them on the board and change one.</p>
+      <div class="drop rev-drop" id="rDrop">
+        <img id="rPrev" alt="The frame being read">
+        <button type="button" class="drop-in" id="rPick"><b>Choose a frame</b><span>or drop it here · JPG, PNG, WebP</span></button>
+        <span class="rev-scan" aria-hidden="true"></span>
+        <input type="file" id="rFile" accept="image/*" hidden>
+      </div>
+      <p class="pmsg" id="rMsg" role="alert"></p>
+      <p class="tiny">The frame is read once and never stored. Each read counts as one of your ten a day.</p>
+    </div>
+    <div class="rev-sheet">
+      <ul class="rrows" id="rRows"></ul>
+      <button type="button" class="btn solid wide" id="rOpen" disabled>Open this sheet on the board</button>
+    </div>
+  </section>
+
+  <section id="daily" class="daily" aria-labelledby="dBrief">
+    <div class="daily-head">
+      <div class="daily-brief">
+        <h2 class="daily-h" id="dBrief">Today's brief</h2>
+        <p class="daily-twist" id="dTwist" hidden></p>
+        <div class="daily-rule"><span class="rule-chip" id="dRule" hidden></span><span class="daily-clock">new brief in <b id="dClock">--:--:--</b></span></div>
+        <p class="daily-closed" id="dClosed" hidden></p>
+      </div>
+      <div class="daily-cta">
+        <p class="daily-how">One brief a day, one SLATE call locked. Shoot it in any model, post it, then see how everyone else shot the same idea. Open anyone's sheet and remix it.</p>
+        <button type="button" class="btn line" id="dUse">Build it on the board</button>
+        <button type="button" class="btn wandbtn" id="dPost">Post your frame</button>
+        <p class="tiny">Make it in any model. No names on the wall.</p>
+      </div>
+    </div>
+    <div class="daily-bar"><button type="button" class="dnew" id="dNew" hidden></button></div>
+    <div class="wall" id="wall" aria-label="Frames people made for this brief"></div>
+  </section>
+
+  <section id="letters" class="letters rise">
+    <a href="#play" class="col" data-go="S"><span class="n">01</span><span class="big" data-l="S">S</span><span class="t">Subject + action</span><span class="d">Who is in the frame, and the one verb that moves them. One verb beats three adjectives.</span></a>
+    <a href="#play" class="col" data-go="L"><span class="n">02</span><span class="big" data-l="L">L</span><span class="t">Lighting + environment</span><span class="d">Where the key sits, how hard it falls, and the world it falls on.</span></a>
+    <a href="#play" class="col" data-go="A"><span class="n">03</span><span class="big" data-l="A">A</span><span class="t">Angle + lensing</span><span class="d">Where the camera stands and which glass is on it. This is what makes a frame look shot, not generated.</span></a>
+    <a href="#play" class="col" data-go="T"><span class="n">04</span><span class="big" data-l="T">T</span><span class="t">Time of day</span><span class="d">Sun height sets colour, contrast and shadow length before any grade does.</span></a>
+    <a href="#play" class="col" data-go="E"><span class="n">05</span><span class="big" data-l="E">E</span><span class="t">Emotion + genre</span><span class="d">What the viewer should feel, and which genre's palette carries it.</span></a>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-brand">
+    <a class="brand" href="#top"><span class="brand-word" data-l="SLATE">SLATE</span><span class="brand-by">by Keyframe</span></a>
+    <p>Random is what the model picks. Specified is what you pick.</p>
+  </div>
+  <nav class="foot-links" aria-label="Keyframe elsewhere">
+    <a href="https://www.instagram.com/keyframe24.ai/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span class="fl-t"><span>Instagram</span><b>@keyframe24.ai</b></span></a>
+    <a href="https://www.linkedin.com/in/vishwasgirdher/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.84-1.9 3.78-1.9 4.04 0 4.86 2.5 4.86 5.9V21h-4v-5.1c0-1.3-.03-2.9-1.85-2.9-1.85 0-2.15 1.4-2.15 2.8V21h-4z"/></svg><span class="fl-t"><span>LinkedIn</span><b>Vishwas Girdher</b></span></a>
+    <a href="https://x.com/GirdherVishwas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78zm-1.08 16.17h1.7L7.4 4.74H5.58z"/></svg><span class="fl-t"><span>X</span><b>@GirdherVishwas</b></span></a>
+  </nav>
+  <p class="foot-copy"><span>© 2026 Keyframe</span><a href="/terms" target="_blank" rel="noopener">Terms</a><a href="/privacy" target="_blank" rel="noopener">Privacy</a><a href="/contact" target="_blank" rel="noopener">Contact</a></p>
+</footer>
+
+<div class="modal" id="authModal" hidden>
+  <div class="modal-card glass" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <svg class="wandart" width="120" height="100" viewBox="0 0 140 120" aria-hidden="true"><defs><linearGradient id="wg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4C1D95"/><stop offset="1" stop-color="#C4B5FD"/></linearGradient></defs><g class="wand"><path d="M22 104 L88 38" stroke="url(#wg)" stroke-width="7" stroke-linecap="round"/><path d="M22 104 L36 90" stroke="#F2C14E" stroke-width="7" stroke-linecap="round"/></g><g class="sparks"><path class="spark" d="M96 20 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z"/><path class="spark s2" d="M118 46 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z"/><path class="spark s3" d="M74 14 l1.6 4 4 1.6 -4 1.6 -1.6 4 -1.6 -4 -4 -1.6 4 -1.6z"/><circle class="spark s2" cx="128" cy="26" r="2" fill="#F2C14E"/></g></svg>
+    <p class="eyebrow" id="authSub">5 of 5 specified</p>
+    <h2 id="authTitle">Your prompt is ready.</h2>
+    <p class="small">Sign in free to reveal it. Ten reveals a day, every model, nothing to pay, no card.</p>
+    <button type="button" class="btn solid wide" id="googleBtn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23 12.3c0-.8-.1-1.5-.2-2.3H12v4.4h6.2c-.3 1.4-1.1 2.6-2.3 3.4v2.8h3.7c2.2-2 3.4-5 3.4-8.3z"/><path fill="#34A853" d="M12 24c3.1 0 5.7-1 7.6-2.8l-3.7-2.8c-1 .7-2.3 1.1-3.9 1.1-3 0-5.5-2-6.4-4.7H1.8v2.9C3.7 21.4 7.6 24 12 24z"/><path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.4-.4-2.2s.1-1.5.4-2.2V7.5H1.8C1 9 .6 10.5.6 12.1s.4 3.1 1.2 4.6l3.8-2.9z"/><path fill="#EA4335" d="M12 4.7c1.7 0 3.2.6 4.4 1.7l3.3-3.3C17.7 1.2 15.1 0 12 0 7.6 0 3.7 2.6 1.8 6.3l3.8 2.9c.9-2.7 3.4-4.5 6.4-4.5z"/></svg>Continue with Google</button>
+    <button type="button" class="btn line wide" id="closeAuth">Not now</button>
+    <p class="tiny">Your decisions stay exactly as you left them. We email you about Keyframe workshops, rarely, and you can stop that in one tap.</p>
+  </div>
+</div>
+
+<div class="modal" id="postModal" hidden>
+  <div class="modal-card post-card" role="dialog" aria-modal="true" aria-labelledby="pTitle">
+    <p class="eyebrow" id="pNo">Daily Frame</p>
+    <h2 id="pTitle">Post your frame</h2>
+    <p class="small" id="pBrief"></p>
+    <div class="drop" id="pDrop">
+      <img id="pPrev" alt="Your frame">
+      <button type="button" class="drop-in" id="pPick"><b>Choose an image</b><span>or drop it here · JPG, PNG, WebP</span></button>
+      <input type="file" id="pFile" accept="image/*" hidden>
+    </div>
+    <label class="field"><span>Made with</span><select id="pModel"></select></label>
+    <label class="check"><input type="checkbox" id="pSheet"><span id="pSheetTxt">Attach my SLATE sheet</span></label>
+    <label class="check"><input type="checkbox" id="pOk"><span>I made this with AI. No real people's faces, nothing explicit, nothing that isn't mine to post.</span></label>
+    <p class="pmsg" id="pMsg" role="alert"></p>
+    <button type="button" class="btn wandbtn wide" id="pSend" disabled>Post to the wall</button>
+    <button type="button" class="btn line wide" id="pCancel">Not now</button>
+    <p class="tiny">No names, no profiles. Every image is checked before it goes up, and the location data inside your file is stripped. Three posts a day.</p>
+  </div>
+</div>
+
+<div class="modal" id="frameModal" hidden>
+  <div class="modal-card frame-card" role="dialog" aria-modal="true" aria-labelledby="fNo">
+    <div class="f-img"><img id="fImg" alt=""></div>
+    <div class="f-side">
+      <div class="f-top"><span class="eyebrow" id="fCount"></span><button type="button" class="f-x" id="fClose" aria-label="Close">×</button></div>
+      <p class="eyebrow f-no" id="fNo"></p>
+      <div class="f-slop" id="fSlopBox"><b id="fSlop"></b><span>slop</span></div>
+      <p class="f-model" id="fModel"></p>
+      <ul class="f-lines" id="fLines"></ul>
+      <div class="f-act">
+        <button type="button" class="btn solid wide" id="fOpen">Open this sheet on the board</button>
+        <div class="f-nav"><button type="button" class="btn line" id="fPrev" aria-label="Previous frame">←</button><button type="button" class="btn line" id="fNext" aria-label="Next frame">→</button><button type="button" class="f-report" id="fReport">Report</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<canvas id="cardCanvas" width="1080" height="1350" hidden></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="js/options.js"></script>
+<script src="js/app.js"></script>
+<script src="js/opening-frames.js"></script>
+<script src="js/opening.js"></script>
+<script src="js/briefs.js"></script>
+<script src="js/daily.js"></script>
+<script src="js/reverse.js"></script>
+</body>
+</html>

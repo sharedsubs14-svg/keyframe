@@ -1,0 +1,11 @@
+# SLATE by Keyframe. Plain HTML, CSS and JavaScript: there is no build step.
+# Netlify publishes the repo as it is and runs the three backend functions in netlify/functions
+# (generate, reverse, wall). Those read their keys from Netlify's environment variables, never from a file.
+# Which addresses are hidden or rewritten is in the _redirects file.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"

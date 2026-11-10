@@ -1,0 +1,20 @@
+# Clean addresses for the policy pages. SLATE's footer links to them, and so do payment processors.
+/about      /About%20Us.dc.html              200
+/privacy    /Privacy%20Policy.dc.html        200
+/refund     /Refund%20Policy.dc.html         200
+/terms      /Terms%20and%20Conditions.dc.html 200
+/pricing    /pricing.html                    200
+/delivery   /delivery.html                   200
+/contact    /contact.html                    200
+
+# The Sunday Shoot site is kept in the repo as a backup only. It is not part of the live site.
+/backup-sunday-shoot/*   /404.html   404!
+
+# Setup and working files that live in the repo but are not web pages.
+/tools/*            /404.html   404!
+/SETUP.md           /404.html   404!
+/README.md          /404.html   404!
+/supabase.sql       /404.html   404!
+/sheet-webhook.gs   /404.html   404!
+/netlify.toml       /404.html   404!
+/seed/README.md     /404.html   404!

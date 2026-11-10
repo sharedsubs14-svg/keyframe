@@ -1,0 +1,51 @@
+/* Keyframe — Spacing, radii, borders, shadows, motion
+   Restrained and cinematic. Small radii, hairline borders, low-key shadows,
+   the occasional soft purple glow on interactive accents. No loud effects. */
+
+:root {
+  /* --- Spacing (8px base) --- */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* --- Radii (restrained) --- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;   /* default card */
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* --- Borders --- */
+  --border-width: 1px;
+  --border: var(--border-width) solid var(--border-hairline);
+
+  /* --- Shadows (dark UI — depth + soft accent glow) --- */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.6);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.55);
+  --shadow-lg: 0 24px 64px rgba(0,0,0,0.65);
+  --glow-accent: 0 0 0 1px color-mix(in oklab, var(--royal) 40%, transparent),
+                 0 8px 32px color-mix(in oklab, var(--royal) 35%, transparent);
+
+  /* --- Gradients (used sparingly — ends in Plum) --- */
+  --gradient-accent: linear-gradient(135deg, var(--royal) 0%, var(--imperial) 60%, var(--plum) 100%);
+  --gradient-veil: linear-gradient(180deg, transparent 0%, var(--void) 100%);
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur-base: 200ms; /* @kind other */
+  --dur-slow: 360ms; /* @kind other */
+
+  /* --- Layout --- */
+  --container-max: 1200px;
+  --container-prose: 680px;
+}

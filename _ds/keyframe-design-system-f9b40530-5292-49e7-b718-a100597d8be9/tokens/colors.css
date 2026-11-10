@@ -1,0 +1,52 @@
+/* Keyframe — Colour
+   True black is the foundation. Purple signals intelligence and depth.
+   Cream carries all the reading. Nothing competes with the work.
+   Backgrounds are Void or Obsidian only. No light modes in core brand assets. */
+
+:root {
+  /* --- Surfaces (darkest to raised) --- */
+  --void: #000000;        /* page background */
+  --obsidian: #0A0610;    /* surface · panels · default background */
+  --elevated: #120A1C;    /* cards · raised elements */
+
+  /* --- Accent (purple) --- */
+  --royal: #7C3AED;       /* primary accent · CTA · active states (web/interactive) */
+  --orchid: #A855F7;      /* hover states · secondary accent */
+  --imperial: #5B21B6;    /* deep accent variant */
+  --plum: #2E1065;        /* darkest accent · gradient ends */
+  --lavender: #C4B5FD;    /* soft logo phi tone — wordmark phi, logomark */
+
+  /* --- Lines --- */
+  --hairline: #1E1530;    /* borders · dividers */
+
+  /* --- Text (warm, never cold white) --- */
+  --cream: #F0E2C8;       /* primary text · logo wordmark */
+  --orchid-gray: #B3AAC4; /* secondary text · body copy */
+  --mauve-muted: #6E6680; /* tertiary text · metadata · watermarks */
+
+  /* --- Metallic alt --- */
+  --champagne: #D9C089;   /* warm alt accent · metallic. Never used alongside purple. */
+
+  /* ============================================================
+     Semantic aliases — reference these in components, not raw names
+     ============================================================ */
+  --bg-page: var(--void);
+  --bg-surface: var(--obsidian);
+  --bg-card: var(--elevated);
+  --bg-card-hover: #18102510;
+
+  --text-primary: var(--cream);
+  --text-secondary: var(--orchid-gray);
+  --text-tertiary: var(--mauve-muted);
+  --text-on-accent: #FFFFFF;
+
+  --border-hairline: var(--hairline);
+  --border-strong: #2A2040;
+
+  --accent: var(--royal);
+  --accent-hover: var(--orchid);
+  --accent-deep: var(--imperial);
+  --accent-soft: var(--lavender);
+
+  --focus-ring: color-mix(in oklab, var(--royal) 60%, transparent);
+}

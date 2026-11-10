@@ -1,0 +1,7017 @@
+{
+ "note": "House frames for the Daily Frame wall, briefs 1 to 20. id = brief.frame. prompt is what was sent to Seedream 5 Pro, followed by the fixed tail below. slate is the sheet shown on the wall. magnific is the creation identifier in the Magnific project \"SLATE wall house frames\".",
+ "tail": "No text, captions, watermarks or logos anywhere in the frame.",
+ "tail_photo": "Photographic film still, natural skin texture, real lens behaviour.",
+ "briefs": {
+  "1": {
+   "b": "A goodbye at a railway station.",
+   "t": "The one leaving is the one smiling.",
+   "lock": "Lens = 135mm telephoto"
+  },
+  "2": {
+   "b": "The first customer at a chai stall, 5am.",
+   "t": "No faces anywhere in the frame.",
+   "lock": "Hour = Dawn"
+  },
+  "3": {
+   "b": "Someone reading a letter they were never meant to find.",
+   "lock": "Light = Soft window"
+  },
+  "4": {
+   "b": "A wedding, seen from the kitchen.",
+   "t": "The bride is not in the frame.",
+   "lock": "Lens = 24mm wide"
+  },
+  "5": {
+   "b": "The last person in the office at night.",
+   "lock": "Light = Practical neon"
+  },
+  "6": {
+   "b": "A kite caught on a power line.",
+   "t": "Someone is still holding the string.",
+   "lock": "Angle = Low angle"
+  },
+  "7": {
+   "b": "A barber’s chair, mid-conversation.",
+   "lock": "Angle = Over the shoulder"
+  },
+  "8": {
+   "b": "Two strangers under one umbrella.",
+   "t": "Neither is looking at the other.",
+   "lock": "Hour = Night"
+  },
+  "9": {
+   "b": "A child’s first day at school, from the parent’s side of the gate.",
+   "lock": "Feeling = Longing"
+  },
+  "10": {
+   "b": "A rooftop during a power cut.",
+   "lock": "Hour = Blue hour"
+  },
+  "11": {
+   "b": "A delivery rider waiting on an order that is running late.",
+   "lock": "Genre = Documentary"
+  },
+  "12": {
+   "b": "A fisherman coming home with an empty net.",
+   "lock": "Light = Backlit rim"
+  },
+  "13": {
+   "b": "The ten seconds before a performer walks on stage.",
+   "lock": "Light = Top light"
+  },
+  "14": {
+   "b": "Grandmother’s hands making rotis.",
+   "t": "Frame only the hands.",
+   "lock": "Lens = 85mm portrait"
+  },
+  "15": {
+   "b": "A phone ringing in an empty room.",
+   "lock": "Genre = Horror"
+  },
+  "16": {
+   "b": "A hospital waiting room at 3am.",
+   "t": "Someone just got good news.",
+   "lock": "Feeling = Joy"
+  },
+  "17": {
+   "b": "Wrestlers in a mud akhada before sunrise.",
+   "lock": "Hour = Dawn"
+  },
+  "18": {
+   "b": "A flooded street and a kid with a paper boat.",
+   "lock": "Angle = Overhead"
+  },
+  "19": {
+   "b": "A tailor’s shop the night before Diwali.",
+   "lock": "Light = Low-key single source"
+  },
+  "20": {
+   "b": "Someone rehearsing a speech in a mirror.",
+   "lock": "Feeling = Tension"
+  }
+ },
+ "frames": [
+  {
+   "id": "1.01",
+   "brief": 1,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "A young soldier leans out of a moving train door, grinning, one arm raised high. On the platform his mother stands still with both hands on her bag and does not wave. 135mm from far down the platform, iron columns stacked flat between them. Low sun from behind the train, dust hanging in it. Documentary still, visible grain.",
+   "slate": {
+    "a": 0,
+    "lens": 4,
+    "t": 1,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a young soldier grinning from a moving train door, his mother still on the platform",
+     "l": "low sun behind the train, dust over the platform",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.02",
+   "brief": 1,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: a young woman laughing behind a barred train window, palm flat on the glass; her father outside, jaw tight, eyes down. L: green tube light inside the coach, blue dusk on the platform. A: 135mm, eye level, shot through a passing crowd. T: blue hour. E: melancholy, a romance told from the father's side.",
+   "slate": {
+    "a": 0,
+    "lens": 4,
+    "t": 4,
+    "em": 3,
+    "e": 1,
+    "own": {
+     "s": "a daughter laughing behind a train window, her father outside",
+     "l": "green tube light in the coach, blue dusk on the platform",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.03",
+   "brief": 1,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "EXT. SMALL TOWN STATION, DAWN. The last coach pulls out. A boy of twelve presses against the window bars, waving with both hands, shouting something happy. Foreground, soft: the back of his grandfather's head and one raised hand. 135mm, low angle from the platform edge. Sun rising behind the train, fields beyond.",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 1,
+    "lens": 4,
+    "t": 0,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a boy waving from the last coach window, his grandfather on the platform",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.04",
+   "brief": 1,
+   "n": 4,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Light first: flat grey monsoon sky, no shadows, a wet platform giving back a dull sheen. In it, an old woman in a white sari sits at the train door with a cloth bundle, beaming like a child. Her three grown sons stand in a row below, all crying. 135mm, eye level, faces stacked close by the long lens. Calm, observational.",
+   "slate": {
+    "a": 0,
+    "lens": 4,
+    "t": 3,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "an old woman leaving on a pilgrimage, beaming, her sons in tears",
+     "l": "flat grey monsoon light on a wet platform",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.05",
+   "brief": 1,
+   "n": 5,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "135mm, wide open, so the platform lights melt into discs. Two friends in their twenties: one steps up into the coach with a guitar case on his back, laughing over his shoulder; the other stays on the platform, hands in pockets, half lit by a red signal lamp. Night. Film noir mood, deep blacks, one colour accent.",
+   "slate": {
+    "l": 7,
+    "a": 0,
+    "lens": 4,
+    "t": 5,
+    "em": 3,
+    "e": 0,
+    "own": {
+     "s": "two friends on a night platform, the one with the guitar boarding and laughing",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.06",
+   "brief": 1,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "He got the job in the city. That is why he is smiling. A thin man in a checked shirt stands in the train door holding a steel trunk, smiling down. His wife looks up at him with a baby on her hip and says nothing. High angle from the footbridge, 135mm, hard noon sun, bleached concrete, short shadows.",
+   "slate": {
+    "a": 2,
+    "lens": 4,
+    "t": 2,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a migrant worker smiling from the train door with a steel trunk, his wife and baby below",
+     "l": "hard noon sun on bleached concrete",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.07",
+   "brief": 1,
+   "n": 7,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "Black and white. Over her shoulder, out of focus in the foreground: a woman's turned-away cheek and one earring. Sharp in the distance, a man on the coach steps, smiling back at her, hand lifted. The coach windows carry a row of reflected platform lamps. 135mm, night, heavy grain, film noir.",
+   "slate": {
+    "a": 5,
+    "lens": 4,
+    "t": 5,
+    "em": 0,
+    "e": 0,
+    "own": {
+     "s": "a man boarding with a smile while the woman he leaves turns away",
+     "l": "sodium platform lamps reflected along the coach windows",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.08",
+   "brief": 1,
+   "n": 8,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Composition: the frame is mostly empty platform, pale concrete crossed by long column shadows. Top left, a train sliding out, one arm waving from a door, a white grin just readable. Bottom right, one small figure standing very still. High angle from the footbridge on a 135mm. First light of dawn, backlit haze. Melancholy.",
+   "slate": {
+    "l": 3,
+    "a": 2,
+    "lens": 4,
+    "t": 0,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "one arm waving from a train, one figure alone on an emptied platform",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.09",
+   "brief": 1,
+   "n": 9,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Palette: faded turquoise coach, mustard scarf, grey sky, nothing else saturated. A student with a backpack bends down from the coach step, laughing, while her grandmother holds her face and kisses her forehead. The grandmother's eyes are shut tight. 135mm, eye level, soft overcast light from the open side of the platform. Joy in the young face, loss in the old one.",
+   "slate": {
+    "l": 4,
+    "a": 0,
+    "lens": 4,
+    "t": 3,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a student laughing as her grandmother kisses her forehead at the coach door",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.10",
+   "brief": 1,
+   "n": 10,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "railway platform, golden hour, backlit, a small brown dog sitting at the platform edge seen from behind and low, ears up, 135mm telephoto, beyond it a departing train with a man leaning out, laughing, calling to the dog, long shadows, dust, shallow focus on the dog, longing, documentary photograph, film grain",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 4,
+    "t": 1,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a small dog watching its owner wave from a departing train",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.11",
+   "brief": 1,
+   "n": 11,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "No full faces. Frame only this: two hands at the edge of a train door, an older hand with glass bangles letting go of a younger one. Far behind, soft and unreadable except for the smile, the face of the girl who is leaving. 135mm, eye level, soft daylight from the platform side. Longing. A romance in one gesture.",
+   "slate": {
+    "l": 4,
+    "a": 0,
+    "lens": 4,
+    "t": 3,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "two hands letting go at a train door, a smiling face soft behind them",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.12",
+   "brief": 1,
+   "n": 12,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "The second after the whistle. Rain coming down hard. A man stands in the coach doorway, soaked and grinning, water running off the door frame onto his shoulders. Below, a woman under a black umbrella looks up at him without a smile. 135mm, eye level, rain compressed into a grey curtain between them. Overcast afternoon.",
+   "slate": {
+    "a": 0,
+    "lens": 4,
+    "t": 3,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "a man grinning in a dripping coach doorway, a woman with an umbrella below",
+     "l": "hard rain, grey light, wet steel",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.13",
+   "brief": 1,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Hand-painted animation still, gouache backgrounds, clean line work. A girl leans at a train window waving a handkerchief, laughing. On the platform her small brother stands holding their father's hand, mouth turned down. Telephoto compression, the train long and flat behind her. Warm evening light, pastel sky.",
+   "slate": {
+    "a": 0,
+    "lens": 4,
+    "t": 1,
+    "em": 4,
+    "own": {
+     "s": "a girl waving from a train window, her little brother on the platform",
+     "l": "flat painted evening light, pastel sky",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.14",
+   "brief": 1,
+   "n": 14,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Nobody came to see him off. A man of twenty with one backpack stands in the coach door smiling at the empty platform as if someone were there. The only other person is a chai seller who has stopped pouring to watch him. Dutch tilt, 135mm, split light from a single platform lamp, blue hour. Tension, a thriller's first frame.",
+   "slate": {
+    "l": 2,
+    "a": 4,
+    "lens": 4,
+    "t": 4,
+    "em": 1,
+    "e": 2,
+    "own": {
+     "s": "a young man smiling at an empty platform from the coach door",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "1.15",
+   "brief": 1,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Silhouette only. A figure stands in the door of the last coach, one hand on the rail, waving a cap in wide arcs. You cannot see the face but the whole body is laughing. On the platform, three still silhouettes. 135mm, low angle, the sun a flat orange disc right behind the train. Defiance. A western, with a train instead of a horse.",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 1,
+    "lens": 4,
+    "t": 1,
+    "em": 7,
+    "e": 4,
+    "own": {
+     "s": "a silhouette on the footboard waving a cap into the sunset",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.01",
+   "brief": 2,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "Two pairs of hands and nothing above the wrists. The seller pours tea in a long stream from a dented aluminium kettle into a small ribbed glass. The customer's hand waits beside it, holding a coin. 85mm, eye level with the counter. One blue gas flame from below, the first grey of dawn behind. Calm. Documentary.",
+   "slate": {
+    "a": 0,
+    "lens": 3,
+    "t": 0,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "two pairs of hands at a chai stall, tea poured in a long stream",
+     "l": "one blue gas flame, first grey light behind",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.02",
+   "brief": 2,
+   "n": 2,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "S: a wooden stall counter from directly above: a steaming glass, a saucer of rusk, the seller's hand wiping a ring of spilt tea, the customer's hand reaching in. L: one bare bulb straight overhead. A: overhead, 50mm. T: dawn, before the street wakes. E: calm, documentary. No faces, only hands and objects.",
+   "slate": {
+    "l": 8,
+    "env": 6,
+    "a": 3,
+    "lens": 2,
+    "t": 0,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a chai stall counter from directly above, one glass, two hands",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.03",
+   "brief": 2,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "EXT. HIGHWAY CHAI STALL, 5AM. A man wrapped in a brown shawl stands with his back to us, glass in hand, facing an empty road. The seller is only an arm reaching into frame with the kettle. Steam rim-lit by the first band of light on the horizon. 35mm, eye level. Longing. A western with tea.",
+   "slate": {
+    "l": 3,
+    "env": 7,
+    "a": 0,
+    "lens": 1,
+    "t": 0,
+    "em": 0,
+    "e": 4,
+    "own": {
+     "s": "a man in a shawl at a highway chai stall, seen from behind",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.04",
+   "brief": 2,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: a low dawn sun directly behind the stall, turning every thread of steam white. Through the steam, a kettle spout and one sleeve reaching for the first glass. Everything else falls to silhouette, no faces readable. 85mm, eye level. Awe at a very small thing. Clean enough for a tea commercial.",
+   "slate": {
+    "l": 3,
+    "a": 0,
+    "lens": 3,
+    "t": 0,
+    "em": 2,
+    "e": 7,
+    "own": {
+     "s": "steam rising off a kettle, one sleeve reaching through it",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.05",
+   "brief": 2,
+   "n": 5,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "24mm on the ground. Under a wooden bench: a pair of dusty boots, a glass of tea set down on the dirt beside them, a sleeping dog's tail. Above bench height the frame cuts off, no faces. Behind, the wheels of a parked truck and one hurricane lamp. Dawn, cold blue with one warm point. Melancholy.",
+   "slate": {
+    "l": 5,
+    "env": 7,
+    "a": 1,
+    "lens": 0,
+    "t": 0,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "a truck driver's dusty boots under a chai stall bench, a glass set down beside them",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.06",
+   "brief": 2,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "She has just finished a twelve hour shift. Over her shoulder, from behind: the back of a nurse's head and her white collar, a glass of tea raised halfway, the stall owner's hands sliding change across a wet counter. Road still shining from the night's rain. 50mm, dawn, backlit. Calm. No face in frame.",
+   "slate": {
+    "l": 3,
+    "env": 0,
+    "a": 5,
+    "lens": 2,
+    "t": 0,
+    "em": 6,
+    "e": 1,
+    "own": {
+     "s": "a night-shift nurse seen from behind, the first glass of the day in her hand",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.07",
+   "brief": 2,
+   "n": 7,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Black and white, hard grain. A narrow lane. On a closed shutter, the tall shadow of a chai seller lifting a kettle. In the single pool of lamplight, only a customer's hand holding out a glass. No faces, the shadows do the acting. 50mm, eye level, just before dawn. Tension, film noir.",
+   "slate": {
+    "l": 5,
+    "env": 5,
+    "a": 0,
+    "lens": 2,
+    "t": 0,
+    "em": 1,
+    "e": 0,
+    "own": {
+     "s": "a chai seller's shadow on a shutter, one customer's hand in the lamplight",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.08",
+   "brief": 2,
+   "n": 8,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "Palette: brass yellow, bottle green, one red sleeve, grey everything else. A brass kettle on coals, a green glass being filled, the red woollen sleeve of the first customer resting on the counter. The frame cuts at the shoulders, no faces. 85mm, soft grey dawn light with no hard shadows. Calm, product-clean.",
+   "slate": {
+    "a": 0,
+    "lens": 3,
+    "t": 0,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "a brass kettle, a green glass and a red sleeve at a chai stall",
+     "l": "soft grey dawn light with no hard shadows",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.09",
+   "brief": 2,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "roadside chai stall, winter fog, dawn, 135mm telephoto, two gloved hands wrapped around a small steaming glass, breath and steam mixing, seller as a blurred shape behind, no faces, backlit by a weak sun in fog, bare trees, muted colour, documentary photograph, film grain",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 0,
+    "lens": 4,
+    "t": 0,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "gloved hands around a glass of chai in winter fog",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.10",
+   "brief": 2,
+   "n": 10,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "The second the milk boils over. White foam climbing over the rim of a blackened saucepan, the seller's hand already reaching for the knob, the customer's fingers frozen mid-drum on the counter. High angle, 50mm, hands only. One gas flame as the only light. Dawn outside, still dark in here. Tension over nothing.",
+   "slate": {
+    "l": 5,
+    "a": 2,
+    "lens": 2,
+    "t": 0,
+    "em": 1,
+    "own": {
+     "s": "milk boiling over a saucepan while a hand reaches for the flame",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.11",
+   "brief": 2,
+   "n": 11,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "Hold on the handlebars. A newspaper bundle strapped to a bicycle, one foot on the ground, one hand stretched out to take a glass from the seller's hand. Low angle from wheel height, 35mm, so the frame ends at the rider's chest. Sky going pale orange behind. Joy, the small daily kind.",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 1,
+    "t": 0,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a newspaper cyclist's hand taking tea without getting off the bicycle",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.12",
+   "brief": 2,
+   "n": 12,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Watercolour storyboard frame, loose ink lines, paper texture showing. A tin-roofed chai stall at dawn, a seller and one customer both drawn from behind, steam as a few dry brush strokes. Pale orange wash in the sky, blue-grey street. Eye level, 35mm framing. Calm.",
+   "slate": {
+    "a": 0,
+    "lens": 1,
+    "t": 0,
+    "em": 6,
+    "own": {
+     "s": "a chai stall at dawn, seller and customer both drawn from behind",
+     "l": "flat washed dawn light, pale orange sky",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.13",
+   "brief": 2,
+   "n": 13,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Close on a wire tray of six small glasses, five still empty, one full and being lifted out by a thumb and two fingers. Behind, soft: sacks of sugar, a stack of steel saucers, a market not yet open. 85mm, high angle, soft light from the stall's open front. Dawn. Calm. No faces.",
+   "slate": {
+    "l": 4,
+    "env": 6,
+    "a": 2,
+    "lens": 3,
+    "t": 0,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "six tea glasses on a wire tray, the first one being lifted",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.14",
+   "brief": 2,
+   "n": 14,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "The cap is on the counter. That is all we see of him, that and one hand around a glass, a wristwatch, a cane leaning on the bench. The seller's hands count coins into a tin. Side light from a single lantern, half of everything in shadow. 50mm, eye level, dawn. Melancholy, a noir after the night shift.",
+   "slate": {
+    "l": 0,
+    "a": 0,
+    "lens": 2,
+    "t": 0,
+    "em": 3,
+    "e": 0,
+    "own": {
+     "s": "a constable's cap on a chai counter, his hand around a glass",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "2.15",
+   "brief": 2,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Composition: nine tenths of the frame is empty road and dark sky with one pale strip of dawn. Small, left of centre, a chai stall glowing from one lamp. One figure stands at it, seen from behind, too far for a face. 24mm, eye level. Longing.",
+   "slate": {
+    "l": 5,
+    "env": 7,
+    "a": 0,
+    "lens": 0,
+    "t": 0,
+    "em": 0,
+    "e": 4,
+    "own": {
+     "s": "one lit chai stall on an empty road, a single figure far away seen from behind",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.01",
+   "brief": 3,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "She was only emptying the pockets before giving the coat away. A woman of sixty sits on the edge of a bed, a man's grey coat across her knees, an unfolded letter in both hands. Soft window light from the left, the far side of her face in shade. 85mm, eye level. Overcast afternoon. Melancholy.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 3,
+    "t": 3,
+    "em": 3,
+    "e": 1,
+    "own": {
+     "s": "a widow reading a letter found in her husband's coat pocket",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.02",
+   "brief": 3,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: a man of thirty kneeling on a stone floor beside an open tin trunk, reading a yellowed letter, his other hand still inside the trunk. L: soft window light, one shaft with dust in it. A: high angle, 35mm. T: golden hour. E: longing, shot like a documentary. The handwriting is too soft to read.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 2,
+    "lens": 1,
+    "t": 1,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a son reading a letter from his father's tin trunk",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.03",
+   "brief": 3,
+   "n": 3,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "INT. BEDROOM, DAY. A young housemaid stands with a half-made bed behind her, reading a letter she has just found under the mattress. Over her shoulder we see the page, writing blurred, and the open door beyond it. Soft window light. 50mm. Overcast. Tension: someone could walk in.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 5,
+    "lens": 2,
+    "t": 3,
+    "em": 1,
+    "e": 2,
+    "own": {
+     "s": "a housemaid reading a letter she found under a mattress",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.04",
+   "brief": 3,
+   "n": 4,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "Light first: a small north window, soft and cold, falling on a wooden table. An old postman in a khaki shirt sits with an opened envelope, reading, cycle clips still on his trousers. Tea untouched. 85mm, eye level, dawn. Melancholy. Film noir restraint, no drama in the face.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 3,
+    "t": 0,
+    "em": 3,
+    "e": 0,
+    "own": {
+     "s": "an old postman reading an undelivered letter at his kitchen table",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.05",
+   "brief": 3,
+   "n": 5,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "50mm, square frame, the subject dead centre. A bride in half her jewellery, hair still loose, sits at a dressing table reading a folded letter she found under the bangles. Soft window light through a net curtain, mehndi on her hands. Dawn. Longing. Romance, the complicated kind.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 2,
+    "t": 0,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "a bride on her wedding morning reading a letter found in a jewellery box",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.06",
+   "brief": 3,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "Only hands. From directly above: two hands holding a creased letter, around them on a mosaic floor a spill of old photographs, a ribbon, an emptied biscuit tin. Soft daylight from a window out of frame, no hard shadow. 50mm, overhead. The writing is too soft to read. Melancholy. Documentary.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 3,
+    "lens": 2,
+    "t": 3,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "two hands holding a creased letter above a floor of scattered photographs",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.07",
+   "brief": 3,
+   "n": 7,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "She knows she should stop reading. A girl of eleven in a school uniform sits on a staircase with her bag still on, reading a letter meant for her older sister. Low angle from the foot of the stairs, 35mm. Soft light from a landing window, late afternoon gold. Tension.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 1,
+    "lens": 1,
+    "t": 1,
+    "em": 1,
+    "own": {
+     "s": "a schoolgirl reading her older sister's letter on a staircase",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.08",
+   "brief": 3,
+   "n": 8,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Wide and still. A room where every piece of furniture is under a white sheet. One sheet has been pulled off a writing desk. A man stands at the desk reading a single page. Soft window light from tall shutters, 24mm, eye level, overcast. Dread, a horror film before anything happens.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 0,
+    "t": 3,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "a man reading a letter in a room of dust-sheeted furniture",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.09",
+   "brief": 3,
+   "n": 9,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Black and white. Over the shoulder into a dressing table mirror: an old woman reading a letter, and in the mirror her face, eyes moving along the lines. A comb and a tin of powder on the table. Soft window light from behind the camera. 85mm, late afternoon. Longing.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 5,
+    "lens": 3,
+    "t": 1,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "an old woman reading a love letter, her face in a dressing mirror",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.10",
+   "brief": 3,
+   "n": 10,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "soft window light, bare rented room, a young man crouched by a wall with a loose brick pulled out, reading a folded letter, brick dust on his fingers, low angle, 35mm, noon light through a barred window, plaster walls, awe and unease, thriller still, film grain",
+   "slate": {
+    "l": 4,
+    "a": 1,
+    "lens": 1,
+    "t": 2,
+    "em": 2,
+    "e": 2,
+    "own": {
+     "s": "a tenant reading a letter pulled from behind a loose brick",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.11",
+   "brief": 3,
+   "n": 11,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "Palette: indigo sari, lime-washed wall, the white of one page. A woman stands in a doorway reading a letter that was not addressed to her, one hand flat against the door frame. Soft light from a window across the room. 85mm, eye level, blue hour coming on. Melancholy.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 3,
+    "t": 4,
+    "em": 3,
+    "e": 1,
+    "own": {
+     "s": "a soldier's wife reading a letter in a doorway",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.12",
+   "brief": 3,
+   "n": 12,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "The moment he realises it is real. A boy of thirteen at a library table, an old book open, a letter that fell out of it now flat under his hands, his mouth slightly open. High angle, 50mm. Soft light from tall library windows, overcast. Awe.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 2,
+    "lens": 2,
+    "t": 3,
+    "em": 2,
+    "own": {
+     "s": "a boy reading a letter that fell out of a library book",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.13",
+   "brief": 3,
+   "n": 13,
+   "ratio": "16:9",
+   "illustrated": true,
+   "prompt": "Ink and wash illustration, muted greys with one warm tone. A woman stands in a small kitchen reading a letter, the envelope torn open on the counter beside a pressure cooker. Soft window light drawn as a pale block across her. Eye level, 35mm framing. Melancholy.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 1,
+    "t": 3,
+    "em": 3,
+    "own": {
+     "s": "a woman reading a letter in a small kitchen, in ink and wash",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.14",
+   "brief": 3,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Dutch tilt. A government office after hours, towers of string-tied files. A thin clerk reads a personal letter someone left inside a returned file, glancing sideways at the door. Soft window light, grey and flat. 50mm. Overcast. Tension, film noir.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 4,
+    "lens": 2,
+    "t": 3,
+    "em": 1,
+    "e": 0,
+    "own": {
+     "s": "a clerk reading a personal letter left inside a returned file",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "3.15",
+   "brief": 3,
+   "n": 15,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "Hold on his hands first and let the face stay soft. An old man in a cane chair, 135mm from across the room, reading a letter that was kept from him for forty years. Soft window light from the left, golden hour outside the glass. Longing.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 4,
+    "t": 1,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "an old man reading a reply that was hidden from him for forty years",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.01",
+   "brief": 4,
+   "n": 1,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "A heavy-set halwai in a vest stirs a kadhai the size of a cartwheel, sweat on his neck, laughing at something off frame. Behind him an open doorway full of fairy lights and the blur of a wedding. 24mm, eye level, close enough to feel the heat. Coal fire from below. Night. Joy, documentary. The bride is not in the frame.",
+   "slate": {
+    "a": 0,
+    "lens": 0,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a halwai stirring a giant kadhai while wedding lights glow through the doorway",
+     "l": "coal fire from below, fairy lights through the door",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.02",
+   "brief": 4,
+   "n": 2,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "S: six women sitting in a ring on the kitchen floor rolling puris, one mid-laugh with flour on her cheek. L: one tube light overhead, steam drifting through it. A: high angle, 24mm, the ring of women filling the frame. T: night, the wedding audible but not visible. E: joy, documentary. The bride is nowhere in the frame.",
+   "slate": {
+    "l": 8,
+    "a": 2,
+    "lens": 0,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "six women rolling puris on a kitchen floor during a wedding",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.03",
+   "brief": 4,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "INT. WEDDING KITCHEN TENT, NIGHT. Foreground, huge in the wide lens: a tray of orange jalebis. Behind it, a small boy in a too-big sherwani with one hand already on a jalebi, eyes on the cooks who have their backs turned. Low angle, 24mm. Warm bulb light. Joy. No bride in frame.",
+   "slate": {
+    "a": 1,
+    "lens": 0,
+    "t": 5,
+    "em": 4,
+    "own": {
+     "s": "a small boy stealing a jalebi from a tray in a wedding kitchen",
+     "l": "warm bulb light, sodium spill from the tent outside",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.04",
+   "brief": 4,
+   "n": 4,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Light first: behind him the white glare of the wedding floodlights spilling over a tent wall, turning steam into a halo. In front, in shade, a young caterer sits on an upturned crate with his head back against the wall, eyes closed, apron stained. 24mm, eye level. Night. Melancholy.",
+   "slate": {
+    "l": 3,
+    "env": 5,
+    "a": 0,
+    "lens": 0,
+    "t": 5,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "a tired caterer sitting on a crate behind a wedding kitchen",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.05",
+   "brief": 4,
+   "n": 5,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "24mm, straight down. A grid of forty steel thalis on a blue tarpaulin, five pairs of hands ladling dal, rice and a square of barfi into each. Even white light from work lamps. No faces, no bride, only the pattern and the hands. Night. Calm, commercial-clean.",
+   "slate": {
+    "l": 6,
+    "a": 3,
+    "lens": 0,
+    "t": 5,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "forty thalis being plated in a wedding kitchen, seen from above",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.06",
+   "brief": 4,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "Everyone thinks she is checking the kheer. A woman in a silk sari stands alone at a stove with her back half turned, wiping her eyes with the end of her pallu. Through the window beside her, marigold strings and moving figures, no bride among them. 24mm, eye level, soft window light, golden hour. Melancholy.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 0,
+    "t": 1,
+    "em": 3,
+    "e": 1,
+    "own": {
+     "s": "an aunt crying alone by the stove while the wedding goes on outside",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.07",
+   "brief": 4,
+   "n": 7,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "Black and white. The kitchen's back door stands open on an alley. On the step: a tuba, two trumpets and a bass drum set down by bandsmen who are eating from leaf plates just out of the light. Low angle, 24mm, the tuba's bell huge in the foreground. Blue hour. Calm.",
+   "slate": {
+    "l": 3,
+    "env": 5,
+    "a": 1,
+    "lens": 0,
+    "t": 4,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a wedding band's brass instruments resting at the kitchen back door",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.08",
+   "brief": 4,
+   "n": 8,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "Palette: steel grey, soap white, and pink and green points of fairy light broken up in the wash water. Two men squat at an outdoor tap scrubbing a mountain of steel plates. High angle, 24mm. The coloured light comes only from the wedding tent behind them. Night. Calm.",
+   "slate": {
+    "l": 7,
+    "a": 2,
+    "lens": 0,
+    "t": 5,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "two dishwashers at an outdoor tap, wedding lights broken up in the wash water",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.09",
+   "brief": 4,
+   "n": 9,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "wedding kitchen, night, 24mm wide, a groom in a cream sherwani and turban drinking water straight from a steel jug, cooks grinning at him, steam, one bare bulb, marigold garland still around his neck, joy, candid, romance, film grain, the bride not in frame",
+   "slate": {
+    "l": 5,
+    "a": 0,
+    "lens": 0,
+    "t": 5,
+    "em": 4,
+    "e": 1,
+    "own": {
+     "s": "a groom slipping into the wedding kitchen for a drink of water",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.10",
+   "brief": 4,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The party is still going. Two small cousins in wedding clothes have fallen asleep on a pile of flour sacks in the corner of the kitchen, one with a balloon string still around his wrist. A cook steps past carrying a pot. High angle, 24mm. One warm bulb. Night. Calm.",
+   "slate": {
+    "l": 5,
+    "a": 2,
+    "lens": 0,
+    "t": 5,
+    "em": 6,
+    "own": {
+     "s": "two small cousins asleep on flour sacks in a wedding kitchen",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.11",
+   "brief": 4,
+   "n": 11,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "She has run every wedding kitchen in this family for fifty years. Low angle, 24mm: a tiny grandmother in a white sari holds a ladle to her lips, one finger raised at three large cooks who wait for the verdict. Side light from the open tent flap, golden hour. Defiance.",
+   "slate": {
+    "l": 0,
+    "a": 1,
+    "lens": 0,
+    "t": 1,
+    "em": 7,
+    "e": 5,
+    "own": {
+     "s": "a grandmother tasting the dal and giving orders to three cooks",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.12",
+   "brief": 4,
+   "n": 12,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Wide. A clay tandoor at frame left throws orange light across a row of cooks slapping naan onto its walls. Sparks. Far right, through a gap in the tent, the cold white blur of the wedding stage, empty of the bride. 24mm, eye level. Night. Awe.",
+   "slate": {
+    "l": 5,
+    "a": 0,
+    "lens": 0,
+    "t": 5,
+    "em": 2,
+    "own": {
+     "s": "a tandoor's glow on a row of cooks, the wedding a cold blur beyond",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.13",
+   "brief": 4,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Painted animation still, soft gouache, warm palette. A street dog sits very upright at the open door of a wedding kitchen, tail sweeping the ground, watching a cook carry a tray of kebabs past. Lanterns and bunting behind. Low angle, wide framing. Blue hour. Longing.",
+   "slate": {
+    "l": 3,
+    "env": 5,
+    "a": 1,
+    "lens": 0,
+    "t": 4,
+    "em": 0,
+    "own": {
+     "s": "a street dog waiting politely at the door of a wedding kitchen",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.14",
+   "brief": 4,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Close and wide at once: 24mm a hand's width from a tray of kheer bowls, a cook's fingers laying silver leaf on each with a small brush. The kitchen stretches away behind, soft. Daylight from the tent's open side, overcast. High angle. Calm.",
+   "slate": {
+    "l": 4,
+    "a": 2,
+    "lens": 0,
+    "t": 3,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "a cook's fingers laying silver leaf on bowls of kheer",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "4.15",
+   "brief": 4,
+   "n": 15,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "The music outside has just stopped mid-song. A young waiter stands frozen in the kitchen doorway with a full tray, half lit by the wedding lights, half by the kitchen bulb. Behind him every cook has turned to look. Dutch tilt, 24mm. Night. Tension. The bride is not in frame.",
+   "slate": {
+    "l": 2,
+    "a": 4,
+    "lens": 0,
+    "t": 5,
+    "em": 1,
+    "e": 2,
+    "own": {
+     "s": "a waiter frozen in the kitchen doorway with a full tray as the music stops",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.01",
+   "brief": 5,
+   "n": 1,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "A woman in her thirties sits alone in an open-plan office, shoes off, chin on her fist. Her face takes cold light from the monitor on one side and pink light from a letterless neon tube outside the window on the other. Every other desk is dark. 35mm, eye level. Night. Melancholy, noir.",
+   "slate": {
+    "l": 7,
+    "env": 2,
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 3,
+    "e": 0,
+    "own": {
+     "s": "a woman at her desk lit by a monitor and a pink tube outside the window",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.02",
+   "brief": 5,
+   "n": 2,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "S: a night guard in uniform walking between empty desks with a torch, seen over his shoulder, his reflection in the window glass laid over the city. L: green neon from an exit lamp and a blue tube across the street, no words visible. A: over the shoulder, 50mm. T: night. E: calm, documentary.",
+   "slate": {
+    "l": 7,
+    "env": 2,
+    "a": 5,
+    "lens": 2,
+    "t": 5,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a night guard on his rounds, reflected in a dark office window",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.03",
+   "brief": 5,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "INT. OFFICE FLOOR, NIGHT. A janitor mops a long aisle. The wet floor carries a stripe of red neon from a tube on the far wall. Low angle, 24mm, the mop head close to the lens, cubicles running to a vanishing point. He is whistling. Calm.",
+   "slate": {
+    "l": 7,
+    "a": 1,
+    "lens": 0,
+    "t": 5,
+    "em": 6,
+    "own": {
+     "s": "a janitor mopping an office aisle that reflects red neon",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.04",
+   "brief": 5,
+   "n": 4,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Light first: one blue neon strip above a row of desks, slightly too bright. Under it a man asleep with his cheek on a keyboard, glasses pushed up, a cold cup beside him. High angle, 50mm. Night. Melancholy.",
+   "slate": {
+    "l": 7,
+    "a": 2,
+    "lens": 2,
+    "t": 5,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "a man asleep on his keyboard under a blue neon strip",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.05",
+   "brief": 5,
+   "n": 5,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "40mm anamorphic, flares off the glass. A young founder eats instant noodles alone at the head of a twelve seat meeting table, laptop closed. Magenta and cyan neon from the corridor bends across the glass walls. Night. Longing. It looks like the slow scene in a science fiction film.",
+   "slate": {
+    "l": 7,
+    "a": 0,
+    "lens": 5,
+    "t": 5,
+    "em": 0,
+    "e": 3,
+    "own": {
+     "s": "a founder eating noodles alone in a glass meeting room",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.06",
+   "brief": 5,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "She is on the ninth floor. From the street, 135mm, low angle: a dark office tower with a single lit window and one small figure standing at it. Below, a letterless neon bar above a closed shop smears across the wet road. Night, after rain. Longing, film noir.",
+   "slate": {
+    "l": 7,
+    "env": 0,
+    "a": 1,
+    "lens": 4,
+    "t": 5,
+    "em": 0,
+    "e": 0,
+    "own": {
+     "s": "one lit window in a dark office tower, a small figure standing in it",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.07",
+   "brief": 5,
+   "n": 7,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "Black and white with deep blacks. A young man with a headset sits alone among rows of switched-off screens, listening, saying nothing. A neon tube behind him rims his hair and shoulders. 85mm, eye level. Night. Tension: we cannot hear what he hears.",
+   "slate": {
+    "l": 7,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 1,
+    "e": 2,
+    "own": {
+     "s": "a call-centre worker with a headset, alone among switched-off screens",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.08",
+   "brief": 5,
+   "n": 8,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "Palette: teal neon, brown leather, one yellow duster. A middle-aged cleaner sits back in the boss's big chair with her feet up on the desk, duster in her lap, grinning at the ceiling. Teal light from a tube outside the window. Low angle, 35mm. Night. Joy.",
+   "slate": {
+    "l": 7,
+    "env": 2,
+    "a": 1,
+    "lens": 1,
+    "t": 5,
+    "em": 4,
+    "own": {
+     "s": "a cleaner sitting in the boss's chair with her feet up",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.09",
+   "brief": 5,
+   "n": 9,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "open-plan office at night, overhead view, 24mm, a dark grid of cubicles with exactly one lit, a person hunched at it, violet neon edge light along one wall, cables, coffee cups, empty chairs, melancholy, science fiction mood, film grain",
+   "slate": {
+    "l": 7,
+    "a": 3,
+    "lens": 0,
+    "t": 5,
+    "em": 3,
+    "e": 3,
+    "own": {
+     "s": "an office from above, one cubicle lit in a dark grid",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.10",
+   "brief": 5,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The moment before going home. A woman stands in a lift lobby with her bag on her shoulder and her eyes closed, forehead almost touching the steel doors. A green neon arrow above the lift is the only light. 50mm, eye level. Night. Calm.",
+   "slate": {
+    "l": 7,
+    "a": 0,
+    "lens": 2,
+    "t": 5,
+    "em": 6,
+    "own": {
+     "s": "a woman waiting at the lift with her eyes closed, a green neon arrow above",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.11",
+   "brief": 5,
+   "n": 11,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Nobody asked him to. A grey-haired man in a loosened tie walks along the window sill with a steel jug, watering each office plant. Orange neon from a tube outside lights the leaves from behind. 35mm, eye level. Night. Calm.",
+   "slate": {
+    "l": 7,
+    "env": 2,
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "a man in a loosened tie watering the office plants at midnight",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.12",
+   "brief": 5,
+   "n": 12,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Dutch tilt, wide. A long ledger office from another decade. One accountant still at his desk. The neon tube above him flickers, the rest of the room is dark and the far door stands open. 35mm. Night. Dread, a horror film that is mostly waiting.",
+   "slate": {
+    "l": 7,
+    "a": 4,
+    "lens": 1,
+    "t": 5,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "an accountant alone in a ledger office under a flickering tube",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.13",
+   "brief": 5,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Soft pastel illustration, flat shapes, grain texture. Over the shoulder of a young intern zipping a backpack: an empty office, chairs pushed in, a pink neon squiggle on the wall, city lights in the window. Night. Longing.",
+   "slate": {
+    "l": 7,
+    "a": 5,
+    "lens": 2,
+    "t": 5,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "an intern zipping her backpack under a pink neon squiggle",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.14",
+   "brief": 5,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "No face. Under a desk: a pair of formal shoes kicked off, socked feet resting on a carton, a bag, a tangle of chargers. A band of yellow neon from the corridor lies across the floor tiles. Low angle, 35mm. Night. Calm.",
+   "slate": {
+    "l": 7,
+    "a": 1,
+    "lens": 1,
+    "t": 5,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "shoes kicked off under a desk, a band of yellow neon across the floor",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "5.15",
+   "brief": 5,
+   "n": 15,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "Hold on the black screen. Over his shoulder, a switched-off monitor showing his reflection, tie loose, and behind the reflection a red neon line from the server room door. Everyone else has gone home. 85mm. Night. Melancholy, film noir.",
+   "slate": {
+    "l": 7,
+    "a": 5,
+    "lens": 3,
+    "t": 5,
+    "em": 3,
+    "e": 0,
+    "own": {
+     "s": "a man looking at his own reflection in a switched-off monitor",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.01",
+   "brief": 6,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "A boy of ten stands on a flat rooftop with his arm stretched up, the string running tight from his fist to a red paper kite caught on an overhead wire. Low angle from the roof floor, 35mm, his face small against a huge sky. Golden hour, sun behind the wires. He has not let go yet. Longing.",
+   "slate": {
+    "l": 3,
+    "env": 4,
+    "a": 1,
+    "lens": 1,
+    "t": 1,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a boy on a rooftop still holding the string of a kite caught on a wire",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.02",
+   "brief": 6,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: an old man in a wool cap holding a wooden spool against his chest, the string rising out of frame to a torn green kite on the wires. L: last light behind the wires, his face in open shade. A: low angle, 85mm. T: blue hour. E: melancholy, documentary. He is still winding, very slowly.",
+   "slate": {
+    "l": 3,
+    "env": 5,
+    "a": 1,
+    "lens": 3,
+    "t": 4,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "an old man with a wooden spool, his kite hanging from the wires above the lane",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.03",
+   "brief": 6,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "EXT. TERRACE, KITE FESTIVAL, NOON. Five young men shouting at the sky, spools spinning. One of them has stopped: his string runs straight up to a yellow kite pinned on a power line, and he is laughing about it. Low angle, 24mm, wires cutting the frame, dozens of kites beyond. Hard winter sun. Joy.",
+   "slate": {
+    "a": 1,
+    "lens": 0,
+    "t": 2,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "kite fighters on a terrace, one string leading up to a kite stuck on the lines",
+     "l": "hard winter sun, a sky full of kites",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.04",
+   "brief": 6,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: a narrow lane in shadow, a strip of gold sky above it. From a second floor window one bare arm reaches out holding a kite string. Follow the string up to a pink kite caught where the wires cross. Low angle from the lane, 35mm. Golden hour. Longing.",
+   "slate": {
+    "l": 3,
+    "env": 5,
+    "a": 1,
+    "lens": 1,
+    "t": 1,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "a hand out of a window holding a string that rises to a caught kite",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.05",
+   "brief": 6,
+   "n": 5,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "24mm pointed almost straight up from waist height. The string enters at the bottom edge from a fist we barely see and climbs to a blue kite caught on three sagging wires. Flat white overcast sky, one crow on the line. Nothing else. Calm.",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 0,
+    "t": 3,
+    "em": 6,
+    "own": {
+     "s": "a kite string rising from the bottom of the frame to a kite on the wires",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.06",
+   "brief": 6,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "It was her first kite. A small girl sits on her father's shoulders on a rooftop, spool in both hands, the string leading up to the wires where the kite hangs by its tail. Both are looking up, both are smiling anyway. Low angle, 50mm, golden hour, sun behind them. Joy.",
+   "slate": {
+    "l": 3,
+    "env": 4,
+    "a": 1,
+    "lens": 2,
+    "t": 1,
+    "em": 4,
+    "e": 1,
+    "own": {
+     "s": "a girl on her father's shoulders holding the spool, both looking up at the caught kite",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.07",
+   "brief": 6,
+   "n": 7,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Black and white, high contrast. Three crows sit on a wire beside a paper kite that hangs like a fourth bird. Far below in the corner of the frame, a boy's head and raised hand, still holding the string. Low angle, 135mm, overcast. Melancholy.",
+   "slate": {
+    "l": 2,
+    "a": 1,
+    "lens": 4,
+    "t": 3,
+    "em": 3,
+    "e": 0,
+    "own": {
+     "s": "three crows on a wire beside a caught kite, a boy below holding the string",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.08",
+   "brief": 6,
+   "n": 8,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Palette: one red kite, black wires, a turquoise wall, white noon sky. In the lower corner a hand with a thread wound around two fingers. Low angle, 50mm, even bright light with small shadows. High noon. Calm, clean as a poster.",
+   "slate": {
+    "l": 6,
+    "env": 5,
+    "a": 1,
+    "lens": 2,
+    "t": 2,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "a red kite on black wires against a turquoise wall, a hand holding the string",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.09",
+   "brief": 6,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "after the rain, wet street, low angle, 35mm, an orange kite caught on dripping overhead wires, a child in a yellow raincoat standing in a puddle below still holding the string, reflections of wires in the water, overcast light breaking, longing, documentary photograph, film grain",
+   "slate": {
+    "l": 3,
+    "env": 0,
+    "a": 1,
+    "lens": 1,
+    "t": 3,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a kite caught on wet wires after rain, a child in a raincoat below with the string",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.10",
+   "brief": 6,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The second the wind drops. A young man on a water tank feels the string go slack in his hand and looks up at his kite folding against the wires. Low angle, 85mm, his jaw and throat lit from behind by a low sun. Golden hour. Tension.",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 3,
+    "t": 1,
+    "em": 1,
+    "own": {
+     "s": "a young man looking up as his string goes slack against the wires",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.11",
+   "brief": 6,
+   "n": 11,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "He flew kites from this balcony for sixty years. A grandfather in a chair at the railing holds the string, eyes on the wires where the kite is stuck. His grandson stands beside the chair looking at him, not at the kite. Low angle from the street, 50mm, soft late light. Longing.",
+   "slate": {
+    "l": 4,
+    "a": 1,
+    "lens": 2,
+    "t": 1,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a grandfather on a balcony holding a kite string while his grandson watches the wires",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.12",
+   "brief": 6,
+   "n": 12,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Composition: the top half of the frame is a web of wires hung with dozens of torn, faded kites. Only one is new, and only one string leads from it down to a small figure on a rooftop at the bottom edge. Low angle, 24mm. Blue hour, the first window lights coming on. Awe.",
+   "slate": {
+    "l": 3,
+    "env": 4,
+    "a": 1,
+    "lens": 0,
+    "t": 4,
+    "em": 2,
+    "e": 5,
+    "own": {
+     "s": "dozens of old kites tangled on power lines and one live string leading down to a rooftop",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.13",
+   "brief": 6,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Paper cut-out animation still, layered card, soft drop shadows between the layers. A boy on a rooftop holds a white thread that runs up to a diamond kite caught on two black wires. Sun as a flat orange circle. Low angle framing. Longing.",
+   "slate": {
+    "a": 1,
+    "lens": 1,
+    "t": 1,
+    "em": 0,
+    "own": {
+     "s": "a boy holding a kite string below a caught kite, in paper cut-out animation",
+     "l": "flat layered paper light, warm evening",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.14",
+   "brief": 6,
+   "n": 14,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "Night. One street lamp. In its cone, a white kite caught on the wires, turning slowly. Below at the edge of the light, a man in his twenties still holds the spool, face half in shadow. Low angle, 40mm anamorphic, the lamp flaring. Longing, film noir.",
+   "slate": {
+    "l": 5,
+    "env": 5,
+    "a": 1,
+    "lens": 5,
+    "t": 5,
+    "em": 0,
+    "e": 0,
+    "own": {
+     "s": "a kite caught in the light of a street lamp at night, a man below with the spool",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "6.15",
+   "brief": 6,
+   "n": 15,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "He sold forty today and flew one himself. A kite seller stands by his cart of stacked paper kites, head tipped back, grinning at the one he just lost to the wires, string still in his hand. Low angle, 35mm, old market street, golden hour. Joy.",
+   "slate": {
+    "l": 3,
+    "env": 6,
+    "a": 1,
+    "lens": 1,
+    "t": 1,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a kite seller beside his cart, looking up at one of his own kites on the wires",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.01",
+   "brief": 7,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "Over the barber's shoulder into a cracked mirror: a customer with half his face in white lather, laughing so hard the barber has had to lift the razor away. A tube light above the mirror, calendars with the print too soft to read, a transistor radio. 35mm. Night. Joy. Documentary.",
+   "slate": {
+    "a": 5,
+    "lens": 1,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a customer laughing through shaving lather, seen over the barber's shoulder",
+     "l": "one tube light above a cracked mirror",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.02",
+   "brief": 7,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: a roadside barber under a banyan tree, a customer in a wooden chair, a small mirror nailed to the trunk; the barber is mid-sentence, comb raised. L: open shade under the tree, hard white sun on the road behind. A: over the customer's shoulder, 50mm. T: high noon. E: calm, documentary.",
+   "slate": {
+    "a": 5,
+    "lens": 2,
+    "t": 2,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a roadside barber under a banyan tree, a mirror nailed to the trunk",
+     "l": "open shade under the tree, hard sun beyond",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.03",
+   "brief": 7,
+   "n": 3,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "INT. OLD SALOON, NIGHT. Over the customer's shoulder: the barber has stopped cutting and is making a point with his scissors, eyebrows up. One warm bulb from the side, half his face in shadow. Bottles of coloured tonic on a shelf behind. 85mm. The argument is friendly, the light is not. Tension, film noir.",
+   "slate": {
+    "l": 0,
+    "a": 5,
+    "lens": 3,
+    "t": 5,
+    "em": 1,
+    "e": 0,
+    "own": {
+     "s": "a barber making a point with his scissors, seen over the customer's shoulder",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.04",
+   "brief": 7,
+   "n": 4,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "Light first: one window, soft and grey, falling across a red barber chair with a plank laid over its arms. On the plank a boy of four under a white cape, lip trembling, while the barber talks to him. Over the father's shoulder, his own face in the mirror. 50mm. Overcast. Longing.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 5,
+    "lens": 2,
+    "t": 3,
+    "em": 0,
+    "own": {
+     "s": "a boy's first haircut, his father watching in the mirror",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.05",
+   "brief": 7,
+   "n": 5,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "40mm anamorphic. Over the barber's shoulder into two facing mirrors: the same chair, the same two men talking, repeated smaller and smaller into green distance. A pink neon tube runs along the top of the glass. Night. Awe. A barbershop shot like science fiction.",
+   "slate": {
+    "l": 7,
+    "a": 5,
+    "lens": 5,
+    "t": 5,
+    "em": 2,
+    "e": 3,
+    "own": {
+     "s": "a barber and customer repeated down a wall of mirrors",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.06",
+   "brief": 7,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "He is getting married in four hours. Over the shoulder of a friend holding up a phone: the groom in the barber's chair with lather on his jaw, trying not to laugh, the barber telling him to hold still. Soft dawn light through the open shopfront. 35mm. Joy.",
+   "slate": {
+    "l": 4,
+    "a": 5,
+    "lens": 1,
+    "t": 0,
+    "em": 4,
+    "e": 1,
+    "own": {
+     "s": "a groom being shaved on his wedding morning while his friends tease him",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.07",
+   "brief": 7,
+   "n": 7,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Black and white. A village barber works on a charpai in an open field. Over the old farmer's shoulder we see the barber's face, listening, razor paused, sun low behind him rimming his hair. 50mm. Golden hour. Calm. Documentary.",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 5,
+    "lens": 2,
+    "t": 1,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a village barber listening to an old farmer on a charpai",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.08",
+   "brief": 7,
+   "n": 8,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Palette: sea-green walls, a red leather chair, white lather, steel. Over the barber's shoulder the mirror holds the customer's face, mid-word, eyes on the barber. Even daylight from the open shopfront, noon. 85mm. Calm. Clean enough to be an advertisement.",
+   "slate": {
+    "l": 6,
+    "a": 5,
+    "lens": 3,
+    "t": 2,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "a barber and customer talking in a sea-green saloon with one red chair",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.09",
+   "brief": 7,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "barber shop in a narrow lane at night, over the shoulder, 50mm, single bulb, mirror showing an old customer smiling under a striped cape, barber's hand frozen with a comb mid-story, hair clippings on the floor, warm low-key light, joy, documentary photograph, film grain",
+   "slate": {
+    "l": 5,
+    "env": 5,
+    "a": 5,
+    "lens": 2,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a barber telling a story with the comb still in the customer's hair",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.10",
+   "brief": 7,
+   "n": 10,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "The razor stops moving when he gets to the important part. Over the customer's shoulder, tight: the barber's hand holding a straight razor a finger's width from the lathered throat, his face behind it mid-sentence. One low lamp. 85mm. Night. Tension.",
+   "slate": {
+    "l": 5,
+    "a": 5,
+    "lens": 3,
+    "t": 5,
+    "em": 1,
+    "e": 2,
+    "own": {
+     "s": "a straight razor paused at a customer's throat while the barber talks",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.11",
+   "brief": 7,
+   "n": 11,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "Over the shoulder of a young woman barber in an apron: in the mirror an old lady with wet silver hair laughs with her head thrown back. Bright even light, pink walls, plastic flowers. 85mm. Noon. Joy.",
+   "slate": {
+    "l": 6,
+    "a": 5,
+    "lens": 3,
+    "t": 2,
+    "em": 4,
+    "e": 7,
+    "own": {
+     "s": "a woman barber and an old lady laughing in a small-town salon",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.12",
+   "brief": 7,
+   "n": 12,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "Over the barber's shoulder the mirror holds three things: the customer's tired face, the barber's mouth still talking, and behind them both the open shopfront with rain coming down on the street. Grey daylight, no lamps on. 50mm. Overcast. Melancholy.",
+   "slate": {
+    "a": 5,
+    "lens": 2,
+    "t": 3,
+    "em": 3,
+    "own": {
+     "s": "two faces in a barber's mirror with a monsoon street behind them",
+     "l": "grey rain light through the open shopfront",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.13",
+   "brief": 7,
+   "n": 13,
+   "ratio": "16:9",
+   "illustrated": true,
+   "prompt": "Hand-drawn animation still, thick outlines, flat colour, slightly wobbly lines. Over the round shoulder of a barber: a mirror, a customer with a towel around his neck telling a story with both hands. Warm afternoon colour. Joy.",
+   "slate": {
+    "a": 5,
+    "lens": 1,
+    "t": 1,
+    "em": 4,
+    "own": {
+     "s": "a barber and his customer mid-chat, in a hand-drawn animation style",
+     "l": "flat warm interior light, drawn",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.14",
+   "brief": 7,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "No faces. Over the barber's shoulder and down: his hands with comb and scissors, the top of a grey head, and from under the white cape one of the customer's hands, palm up, explaining something. Soft window light. 85mm. Overcast. Calm.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 5,
+    "lens": 3,
+    "t": 3,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a barber's hands and comb, the customer's hand gesturing from under the cape",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "7.15",
+   "brief": 7,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Last over. Over the customer's shoulder, in the mirror: both men have stopped talking and are staring at a small radio on the shelf, the scissors hanging open in the barber's hand. One tube light overhead. 35mm. Night. Tension, documentary.",
+   "slate": {
+    "l": 8,
+    "a": 5,
+    "lens": 1,
+    "t": 5,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "a barber and customer both watching a radio in the mirror during a cricket match",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.01",
+   "brief": 8,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "A schoolteacher with a cloth bag and a mason with cement on his forearms stand shoulder to shoulder under one black umbrella at a bus stop. She watches the road to the left, he watches the rain to the right. Neon from a closed shop colours the wet street. 85mm, eye level. Night. Longing.",
+   "slate": {
+    "l": 7,
+    "env": 0,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "a schoolteacher and a mason sharing one umbrella at a bus stop",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.02",
+   "brief": 8,
+   "n": 2,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "S: a black umbrella from directly above, two pairs of shoes showing at its edge, one polished, one rubber sandals. L: pink and green neon broken up in the puddles around them. A: overhead, 50mm. T: night, steady rain. E: calm. The two pairs of feet point in different directions.",
+   "slate": {
+    "l": 7,
+    "env": 0,
+    "a": 3,
+    "lens": 2,
+    "t": 5,
+    "em": 6,
+    "own": {
+     "s": "one umbrella from directly above, two pairs of shoes at its edge",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.03",
+   "brief": 8,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "EXT. CROSSING, NIGHT, RAIN. From behind: two strangers under one umbrella waiting for the light to change. Her head is turned left, his right. Headlights from the cross traffic rim both of them and the umbrella's edge. 40mm anamorphic, eye level, long flares on the wet road. Longing, film noir.",
+   "slate": {
+    "l": 3,
+    "env": 0,
+    "a": 0,
+    "lens": 5,
+    "t": 5,
+    "em": 0,
+    "e": 0,
+    "own": {
+     "s": "two figures under one umbrella at a red light, seen from behind",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.04",
+   "brief": 8,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: one pair of headlights directly behind them, rain turned to white needles. Two silhouettes under one umbrella, standing close and facing opposite ways. Low angle, 85mm. Night. Tension: we do not know why either of them is out here.",
+   "slate": {
+    "l": 3,
+    "env": 0,
+    "a": 1,
+    "lens": 3,
+    "t": 5,
+    "em": 1,
+    "e": 2,
+    "own": {
+     "s": "two silhouettes under one umbrella facing opposite ways in headlights",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.05",
+   "brief": 8,
+   "n": 5,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "135mm through the window of a moving bus, water streaking the glass. On the pavement two strangers share a yellow umbrella. He is reading a folded newspaper, she is looking at her shoes. Sodium street light. Night. Melancholy.",
+   "slate": {
+    "a": 0,
+    "lens": 4,
+    "t": 5,
+    "em": 3,
+    "e": 1,
+    "own": {
+     "s": "two strangers under an umbrella seen through a rain-streaked bus window",
+     "l": "sodium street light through wet glass",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.06",
+   "brief": 8,
+   "n": 6,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "She offered. He is a foot taller, so now he is holding it. Two strangers stand in a narrow lane under a small floral umbrella, each staring at a different closed shutter. One bulb above a doorway is the only light. 50mm, eye level. Night. Tension, the romantic kind.",
+   "slate": {
+    "l": 5,
+    "env": 5,
+    "a": 0,
+    "lens": 2,
+    "t": 5,
+    "em": 1,
+    "e": 1,
+    "own": {
+     "s": "a tall man holding a short woman's umbrella, each staring at a different shutter",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.07",
+   "brief": 8,
+   "n": 7,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "Black and white. An old man holds a large umbrella over himself and a girl in headphones on an open railway platform. He looks down the track, she looks at the ground. One top light on a pole above them, rain like chalk lines. 85mm, eye level. Night. Melancholy.",
+   "slate": {
+    "l": 8,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "an old man and a girl in headphones under one umbrella on a railway platform",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.08",
+   "brief": 8,
+   "n": 8,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "Palette: one yellow umbrella, grey rain, red tail lights, nothing else. Beneath the umbrella a woman in an office sari and a delivery man holding his helmet. Their eyes are on different sides of the road. 35mm, eye level. Night. Calm.",
+   "slate": {
+    "l": 7,
+    "env": 0,
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "a yellow umbrella, grey rain and red tail lights, two strangers beneath",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.09",
+   "brief": 8,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "night, heavy monsoon rain, old market, a broken black umbrella with one rib bent, two strangers under it, a porter and a college student, looking in opposite directions, lantern light from a tea stall, wet stone, 50mm, eye level, small smile on one face, joy, documentary photograph",
+   "slate": {
+    "l": 5,
+    "env": 6,
+    "a": 0,
+    "lens": 2,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "two strangers under a broken umbrella beside a tea stall in heavy rain",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.10",
+   "brief": 8,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The second the bus passes. A sheet of spray hangs in the air, lit by the bus's tail lights. Under one umbrella two strangers lean away from it in opposite directions, eyes shut. 35mm, eye level. Night. Tension.",
+   "slate": {
+    "l": 3,
+    "env": 0,
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 1,
+    "own": {
+     "s": "two strangers under one umbrella leaning away from each other as a bus throws spray",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.11",
+   "brief": 8,
+   "n": 11,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Only the reflection. A puddle on a black road holds two upside-down figures under one umbrella and a blue neon line above them. Raindrop rings keep breaking the picture. High angle, 35mm. Even in the reflection they are looking different ways. Night. Longing.",
+   "slate": {
+    "l": 7,
+    "env": 0,
+    "a": 2,
+    "lens": 1,
+    "t": 5,
+    "em": 0,
+    "own": {
+     "s": "two strangers under an umbrella reflected upside down in a puddle",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.12",
+   "brief": 8,
+   "n": 12,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Under a fruit seller's huge patched umbrella at a night market: a monk in maroon robes and a biker still wearing his helmet, a pile of oranges between them. The monk studies the oranges, the biker studies the rain. One hanging bulb. 35mm, eye level. Night. Joy.",
+   "slate": {
+    "l": 5,
+    "env": 6,
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a monk and a biker sheltering under a fruit seller's big umbrella at a night market",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.13",
+   "brief": 8,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Painted animation still, loose brushwork, rain as long pale strokes. Two strangers under a red umbrella at a tram stop, a wide gap of politeness between their shoulders, faces turned apart. Blue night, amber windows. Longing. Romance.",
+   "slate": {
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "two strangers under one umbrella in the rain, as a painted animation still",
+     "l": "painted night light, blue and amber",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.14",
+   "brief": 8,
+   "n": 14,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Dutch tilt. Two men in dark suits share one umbrella outside a tall gate. Each is watching a different car parked across the road. Split light: one side of each face lit by a street lamp, the other gone. 50mm. Night, thin rain. Tension, thriller.",
+   "slate": {
+    "l": 2,
+    "env": 0,
+    "a": 4,
+    "lens": 2,
+    "t": 5,
+    "em": 1,
+    "e": 2,
+    "own": {
+     "s": "two men in suits sharing an umbrella, each watching a different car",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "8.15",
+   "brief": 8,
+   "n": 15,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "The umbrella belongs to neither of them now. A wet street dog has sat down between two strangers under one umbrella and is looking straight into the lens. Above it the two people look away from each other and from the dog. Low angle, 35mm, neon in the puddles. Night. Joy.",
+   "slate": {
+    "l": 7,
+    "env": 0,
+    "a": 1,
+    "lens": 1,
+    "t": 5,
+    "em": 4,
+    "own": {
+     "s": "a street dog sitting between two strangers under one umbrella",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.01",
+   "brief": 9,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "Over a mother's shoulder: her fingers tight around the bars of a school gate. Beyond the bars, small and sharp, a girl of four in a new uniform walks away with a bag bigger than her back. Morning sun on the playground, shade on this side. 85mm. Longing. Documentary.",
+   "slate": {
+    "a": 5,
+    "lens": 3,
+    "t": 0,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a mother gripping the school gate while her small daughter walks in",
+     "l": "soft morning shade at the gate, sun on the playground",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.02",
+   "brief": 9,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: a father's hand through the bars of a school gate, fingertips touching the fingertips of his small son on the other side. L: early sun behind the boy, rim on his hair. A: eye level with the hands, 85mm. T: just after dawn. E: longing. Faces soft, the hands sharp.",
+   "slate": {
+    "l": 3,
+    "a": 0,
+    "lens": 3,
+    "t": 0,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "a father's fingertips touching his son's through the bars of a school gate",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.03",
+   "brief": 9,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "EXT. SCHOOL GATE, EARLY MORNING. A row of parents pressed to the gate, all leaning the same way. Across the road, apart from them, a father in a faded work vest stands beside his cycle rickshaw watching the same gate. 24mm, eye level, from behind the father. Flat early light. Longing.",
+   "slate": {
+    "a": 0,
+    "lens": 0,
+    "t": 0,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a row of parents at a school gate, one father standing apart across the road",
+     "l": "flat early light, a little mist",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.04",
+   "brief": 9,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: low sun behind the school building, every child's hair lit like a filament. One small boy has stopped in the stream of children and turned to look back at the gate. We are at the gate, on a 135mm, bars soft in the foreground. Longing.",
+   "slate": {
+    "l": 3,
+    "a": 0,
+    "lens": 4,
+    "t": 1,
+    "em": 0,
+    "own": {
+     "s": "a small boy turning to look back from inside the school gate",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.05",
+   "brief": 9,
+   "n": 5,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "24mm on the ground at the foot of the gate. The bars rise like a fence of giants. Beside the lens, a pair of worn sandals that will not step forward. Far inside, a tiny figure in uniform sits alone on a bench. Bright even morning light. Low angle. Longing.",
+   "slate": {
+    "l": 6,
+    "a": 1,
+    "lens": 0,
+    "t": 2,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a parent's shoes at the foot of a school gate, a tiny child far inside",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.06",
+   "brief": 9,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "She should have left ten minutes ago. A mother in a nurse's uniform stands at the school gate, bag on her shoulder, watching the classroom door her son went through. Other parents have gone. Soft overcast light. 50mm, eye level, from beside her. Longing.",
+   "slate": {
+    "l": 4,
+    "a": 0,
+    "lens": 2,
+    "t": 3,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a nurse in uniform at the school gate, already late for her shift",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.07",
+   "brief": 9,
+   "n": 7,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Black and white. Over the shoulder of a grandfather leaning on a cane: a wide playground, and in the middle of it one small girl walking toward a teacher, looking back over her shoulder at him. Low morning sun behind her. 85mm. Longing.",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 5,
+    "lens": 3,
+    "t": 1,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a grandfather with a cane watching his granddaughter cross the playground",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.08",
+   "brief": 9,
+   "n": 8,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Palette: school blue, gate rust, one yellow water bottle. Through the bars, a small child stands very straight in a line of other children, bottle hanging to her knees. A parent's knuckles on the bar make the foreground. 50mm, eye level, soft overcast light. Longing.",
+   "slate": {
+    "l": 4,
+    "a": 0,
+    "lens": 2,
+    "t": 3,
+    "em": 0,
+    "e": 7,
+    "own": {
+     "s": "a child's blue uniform and yellow bottle seen through a rusty gate",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.09",
+   "brief": 9,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "school gate from the parents' side, early morning, 35mm, eye level, backs of parents waving, a line of small children in new uniforms going in, one child crying, one waving back, dust in low sun, backlit, longing, documentary photograph, film grain",
+   "slate": {
+    "l": 3,
+    "a": 0,
+    "lens": 1,
+    "t": 1,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "parents waving at a school gate as children file inside",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.10",
+   "brief": 9,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The second the gate closes. Over the mother's shoulder: a watchman in khaki swings the iron gate shut, and through the narrowing gap a small face under a too-big cap looks back. Her hand is still raised. Side light from the low sun. 35mm. Longing.",
+   "slate": {
+    "l": 0,
+    "a": 5,
+    "lens": 1,
+    "t": 0,
+    "em": 0,
+    "own": {
+     "s": "a watchman closing the school gate on a mother's raised hand",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.11",
+   "brief": 9,
+   "n": 11,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "First day, and it is raining. Two parents share an umbrella at the school gate. Inside, their daughter in a yellow raincoat stands at the foot of the stairs, not climbing them yet. 50mm, eye level, from just behind the parents. Overcast. Longing.",
+   "slate": {
+    "a": 0,
+    "lens": 2,
+    "t": 3,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "two parents under one umbrella at the gate, their child in a raincoat going in",
+     "l": "grey rain light, wet road",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.12",
+   "brief": 9,
+   "n": 12,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Composition: left third, a parked scooter with a child's small helmet hanging from the handlebar. Right third, the school gate, closed. Between them a father stands with his own helmet in his hand, not leaving. Low angle, 35mm, golden morning sun behind him. Longing.",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 1,
+    "t": 1,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a father beside his scooter outside a school, a tiny helmet hanging from the handle",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.13",
+   "brief": 9,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Pencil and watercolour illustration, soft edges, paper grain. A mother holds the bars of a school gate. Inside, a very small child with a very large bag walks toward a doorway full of yellow light. Morning. Longing.",
+   "slate": {
+    "a": 0,
+    "lens": 1,
+    "t": 0,
+    "em": 0,
+    "own": {
+     "s": "a mother at a school gate watching her child walk in, in soft pencil and watercolour",
+     "l": "soft washed morning light",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.14",
+   "brief": 9,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Only hands. A steel lunchbox passes through the bars of a school gate from a large hand with a wedding ring to a very small one. High angle, 85mm, soft overcast light, the gate's paint chipped. Longing.",
+   "slate": {
+    "l": 4,
+    "a": 2,
+    "lens": 3,
+    "t": 3,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a steel lunchbox passed through the bars of a school gate",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "9.15",
+   "brief": 9,
+   "n": 15,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "From a high balcony on a 135mm: the gate is a dark line across the frame. On the near side, a crowd of parents' heads. On the far side, small children in rows on a sunlit playground. One child is standing sideways, looking back. Bright morning. Longing.",
+   "slate": {
+    "l": 6,
+    "a": 2,
+    "lens": 4,
+    "t": 2,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a school gate from above: parents on one side, children in rows on the other",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.01",
+   "brief": 10,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "A family has carried two charpais up to the roof because the fans have stopped. A grandmother fans a sleeping child with a folded newspaper. One kerosene lantern on the parapet, the town dark behind it, the sky still deep blue. 35mm, eye level. Blue hour. Calm. Documentary.",
+   "slate": {
+    "l": 5,
+    "env": 4,
+    "a": 0,
+    "lens": 1,
+    "t": 4,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a family on charpais on a dark rooftop, a grandmother fanning a sleeping child",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.02",
+   "brief": 10,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: three children on a rooftop making a shadow rabbit on the side of a water tank with a torch. L: the torch is the only hard light; the sky gives a low blue fill. A: low angle, 35mm. T: blue hour, during a power cut, no lit windows anywhere. E: joy.",
+   "slate": {
+    "l": 5,
+    "env": 4,
+    "a": 1,
+    "lens": 1,
+    "t": 4,
+    "em": 4,
+    "own": {
+     "s": "children making shadow puppets on a water tank with a torch",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.03",
+   "brief": 10,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "EXT. ROOFTOP, BLUE HOUR, POWER CUT. A man sits on the parapet with his back to us, looking over a city with no lights at all, only headlights moving in the streets like slow sparks. 24mm, eye level. The last blue of the sky rims his shoulders. Longing. Almost science fiction.",
+   "slate": {
+    "l": 3,
+    "env": 4,
+    "a": 0,
+    "lens": 0,
+    "t": 4,
+    "em": 0,
+    "e": 3,
+    "own": {
+     "s": "a man sitting on the parapet above a blacked-out city",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.04",
+   "brief": 10,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: one candle inside a ring of notebooks stood on edge to block the wind. It lights a student's face from below, her textbook, a steel tumbler. Behind her, a dark skyline and a deep blue sky. High angle, 85mm. Blue hour. Defiance: the exam is tomorrow.",
+   "slate": {
+    "l": 5,
+    "env": 4,
+    "a": 2,
+    "lens": 3,
+    "t": 4,
+    "em": 7,
+    "e": 5,
+    "own": {
+     "s": "a student studying by one candle on a rooftop",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.05",
+   "brief": 10,
+   "n": 5,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "135mm from a far rooftop, the neighbourhood flattened into steps. On almost every roof, one small flame and a few dark figures around it. No electric light anywhere. Blue hour, the sky a shade lighter than the buildings. Awe.",
+   "slate": {
+    "l": 5,
+    "env": 4,
+    "a": 0,
+    "lens": 4,
+    "t": 4,
+    "em": 2,
+    "e": 5,
+    "own": {
+     "s": "rooftops stacked by a long lens, a candle on every one",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.06",
+   "brief": 10,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "No fan downstairs, no light, so they came up here with a mango and a knife. A young couple sits against the water tank, laughing, juice on their wrists. The last blue light rims their profiles; a candle sits unlit beside them. 50mm, eye level. Blue hour. Joy. Romance.",
+   "slate": {
+    "l": 3,
+    "env": 4,
+    "a": 0,
+    "lens": 2,
+    "t": 4,
+    "em": 4,
+    "e": 1,
+    "own": {
+     "s": "a couple sharing a mango on a dark rooftop",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.07",
+   "brief": 10,
+   "n": 7,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Black and white. Two neighbours stand at the edges of their own rooftops, talking across the gap, each a dark shape against a paler sky. A third roof behind them holds a line of washing. 50mm, eye level. Blue hour. Calm.",
+   "slate": {
+    "l": 3,
+    "env": 4,
+    "a": 0,
+    "lens": 2,
+    "t": 4,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "two neighbours talking across the gap between their rooftops",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.08",
+   "brief": 10,
+   "n": 8,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "Palette: the last deep blue of the sky and one orange flame, nothing else. A woman carries a clay lamp across the rooftop, her hand cupped around it, the flame lighting her palm and chin. 85mm, eye level. Blue hour. Calm.",
+   "slate": {
+    "l": 5,
+    "env": 4,
+    "a": 0,
+    "lens": 3,
+    "t": 4,
+    "em": 6,
+    "own": {
+     "s": "a woman carrying a single flame across a blue rooftop",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.09",
+   "brief": 10,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "rooftop at the edge of an old town, power cut, blue hour, 24mm wide, a family eating dinner in a circle on a mat by one lantern, steel plates, a pot, a sleeping dog, dark houses all around, first stars, low-key warm light, joy, documentary photograph",
+   "slate": {
+    "l": 5,
+    "env": 4,
+    "a": 0,
+    "lens": 0,
+    "t": 4,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a family eating dinner by lantern on a rooftop in a power cut",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.10",
+   "brief": 10,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The second after the whole street goes dark. A girl has stopped halfway up the last flight to the roof and turned to look back: below her, every window black. Low angle, 35mm, her outline against a band of blue sky. Blue hour. Awe.",
+   "slate": {
+    "l": 3,
+    "env": 4,
+    "a": 1,
+    "lens": 1,
+    "t": 4,
+    "em": 2,
+    "own": {
+     "s": "a girl stopped on the roof stairs, looking back at a city that has just gone dark",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.11",
+   "brief": 10,
+   "n": 11,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "From directly above, wide. A dark neighbourhood of flat roofs, water tanks and stairwells. Scattered points of candle flame. On one roof, a ring of people around a lamp, their shadows thrown outward like spokes. 24mm, overhead. Blue hour. Awe.",
+   "slate": {
+    "l": 5,
+    "env": 4,
+    "a": 3,
+    "lens": 0,
+    "t": 4,
+    "em": 2,
+    "e": 5,
+    "own": {
+     "s": "a blacked-out neighbourhood from above, one rooftop ringed with people around a lamp",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.12",
+   "brief": 10,
+   "n": 12,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "The radio still works. An old man holds a battery radio to his ear on a rooftop and turns the dial with one finger; a family sits around him on the floor, waiting. One candle stuck in a bottle. 50mm, eye level. Blue hour. Calm.",
+   "slate": {
+    "l": 5,
+    "env": 4,
+    "a": 0,
+    "lens": 2,
+    "t": 4,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "an old man tuning a battery radio on a rooftop while the family listens",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.13",
+   "brief": 10,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Painted animation background style, soft gradients, tiny careful details. A rooftop with a charpai, a water tank, a line of clothes, and one lantern. Two children lie on their backs looking up. The town below is dark, the sky is ten shades of blue. Calm.",
+   "slate": {
+    "a": 0,
+    "lens": 0,
+    "t": 4,
+    "em": 6,
+    "own": {
+     "s": "a rooftop in a power cut, in a painted animation style",
+     "l": "painted blue dusk, one warm lamp",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.14",
+   "brief": 10,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "With the street lamps dead the stars have come out early. A boy sits on a rooftop floor with his arm around a dog, both looking up. Low angle, 50mm, their heads dark against a deep blue sky with the first stars showing. Blue hour. Awe.",
+   "slate": {
+    "l": 3,
+    "env": 4,
+    "a": 1,
+    "lens": 2,
+    "t": 4,
+    "em": 2,
+    "own": {
+     "s": "a boy and his dog on a parapet watching the first stars",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "10.15",
+   "brief": 10,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Four boys crouch around a carrom board on a rooftop. One candle at the board's edge. The striker is about to be flicked and nobody is breathing. High angle, 35mm, the dark town and blue sky beyond them. Blue hour. Tension.",
+   "slate": {
+    "l": 5,
+    "env": 4,
+    "a": 2,
+    "lens": 1,
+    "t": 4,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "four boys playing carrom by candlelight on a rooftop",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.01",
+   "brief": 11,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "A delivery rider sits side-saddle on his parked scooter outside a small restaurant, helmet still on, eyes fixed on the kitchen door. A plain insulated bag hangs open on his back. Neon from the shopfront lies in the wet road. 50mm, eye level. Night. Tension. Documentary, no logos anywhere.",
+   "slate": {
+    "l": 7,
+    "env": 0,
+    "a": 0,
+    "lens": 2,
+    "t": 5,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "a delivery rider on his parked scooter watching a restaurant's kitchen door",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.02",
+   "brief": 11,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: a delivery rider sitting on the kerb with a wet towel over his head, plain delivery bag between his knees, looking at his wristwatch. L: white noon sun on the road, he is in a thin strip of awning shade. A: eye level, 35mm. T: high noon. E: melancholy, documentary.",
+   "slate": {
+    "a": 0,
+    "lens": 1,
+    "t": 2,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "a delivery rider sitting on the kerb in noon heat with a towel on his head",
+     "l": "white noon sun, a strip of awning shade",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.03",
+   "brief": 11,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "EXT. CLOUD KITCHEN, NIGHT. Six riders on six scooters in a row, compressed by a 135mm into one wall of helmets and plain bags. Five are talking. The one in sharp focus is looking at his watch again. Steam from a vent drifts through the sodium light. Eye level. Tension. Documentary.",
+   "slate": {
+    "a": 0,
+    "lens": 4,
+    "t": 5,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "six delivery riders waiting outside a kitchen, one of them checking the time again",
+     "l": "sodium street light, steam from the kitchen vent",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.04",
+   "brief": 11,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: a red neon tube above a restaurant door, rain coming through it in red threads. Under the awning a delivery rider stands with his visor up, drops on the helmet, looking in through the glass at the kitchen. 85mm, eye level. Night. Melancholy. Documentary.",
+   "slate": {
+    "l": 7,
+    "env": 0,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "a rider sheltering under an awning in the rain, drops on his visor",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.05",
+   "brief": 11,
+   "n": 5,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "135mm from inside the kitchen. Foreground, soft: a cook's arm, a flame, steel. Sharp beyond the window glass: a delivery rider on the pavement, weight on one foot, looking straight in at us. Grey daylight outside. Overcast. Tension. Documentary.",
+   "slate": {
+    "l": 4,
+    "a": 0,
+    "lens": 4,
+    "t": 3,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "a delivery rider seen through a restaurant window past the cooks",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.06",
+   "brief": 11,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "The order is twenty minutes late and he has made a friend. A delivery rider crouches by his scooter breaking a biscuit in half for a stray dog. His plain insulated bag sits on the seat. Low angle, 35mm, low sun behind them both. Golden hour. Joy. Documentary.",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 1,
+    "t": 1,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a delivery rider feeding a stray dog while he waits",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.07",
+   "brief": 11,
+   "n": 7,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "Black and white. An old man who has delivered lunches by bicycle for forty years waits outside a kitchen in an old market, one hand on the saddle, a stack of steel tiffin carriers on the rack. Side light, half his face in shade. 85mm, eye level. Overcast. Calm. Documentary.",
+   "slate": {
+    "l": 0,
+    "env": 6,
+    "a": 0,
+    "lens": 3,
+    "t": 3,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "an old man who delivers by bicycle, waiting with a tiffin carrier",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.08",
+   "brief": 11,
+   "n": 8,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Palette: one plain orange delivery bag, blue dusk, a doorway of white kitchen light. The rider stands in profile between the blue and the white, hands in his jacket pockets, waiting. 50mm, eye level. Blue hour. Longing. Documentary.",
+   "slate": {
+    "l": 7,
+    "a": 0,
+    "lens": 2,
+    "t": 4,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "an orange delivery bag against blue dusk and a white kitchen doorway",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.09",
+   "brief": 11,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "delivery rider asleep sitting up on a parked scooter, arms folded, helmet on the mirror, plain insulated bag, narrow alley behind a restaurant, one bulb above the back door, steam, wet ground, 35mm, eye level, night, melancholy, documentary photograph, film grain, no logos",
+   "slate": {
+    "l": 5,
+    "env": 5,
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "a delivery rider asleep sitting up on his scooter outside a restaurant",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.10",
+   "brief": 11,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The second the door opens. Low angle, 35mm: a rider who has been slumped on his scooter straightens up, already reaching out, as a hand holding a paper bag comes through a bright doorway. Light from the kitchen rims him from behind. Night. Joy. Documentary.",
+   "slate": {
+    "l": 3,
+    "env": 5,
+    "a": 1,
+    "lens": 1,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a rider straightening up as the kitchen door finally opens",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.11",
+   "brief": 11,
+   "n": 11,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "From directly above, 24mm. A dozen scooters parked like spokes around one lit doorway. Riders stand in twos and threes; one sits alone on the step with his chin in his hand. One lamp over the door throws every shadow outward. Night. Calm. Documentary.",
+   "slate": {
+    "l": 8,
+    "a": 3,
+    "lens": 0,
+    "t": 5,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "delivery scooters parked like spokes around one doorway, seen from above",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.12",
+   "brief": 11,
+   "n": 12,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "In the restaurant window: the reflection of a woman delivery rider on her scooter, arms crossed, chin up, and through her reflection the cooks moving inside. Rain has just stopped. 50mm, eye level, soft grey light. Overcast. Defiance. Documentary.",
+   "slate": {
+    "l": 4,
+    "env": 0,
+    "a": 0,
+    "lens": 2,
+    "t": 3,
+    "em": 7,
+    "e": 5,
+    "own": {
+     "s": "a woman delivery rider reflected in a restaurant window",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.13",
+   "brief": 11,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Reportage sketchbook drawing, fast ink line, two flat washes of colour, notes left out. A delivery rider sits on a kerb beside his scooter with his helmet in his lap, looking at a doorway. Evening. Melancholy. It should feel drawn on the spot.",
+   "slate": {
+    "a": 0,
+    "lens": 1,
+    "t": 4,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "a delivery rider waiting on a kerb, drawn as a reportage sketch",
+     "l": "loose sketched evening light",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.14",
+   "brief": 11,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "No face. A rider's gloved fingers drum on the lid of a plain insulated bag strapped to a scooter seat. Behind, soft: a restaurant doorway, legs passing. High angle, 85mm, soft overcast light. Tension. Documentary.",
+   "slate": {
+    "l": 4,
+    "a": 2,
+    "lens": 3,
+    "t": 3,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "a rider's fingers drumming on a plain delivery bag",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "11.15",
+   "brief": 11,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "He has given up being angry. A delivery rider lies back along his scooter seat with his feet on the handlebars, looking at the sky. Behind him a highway restaurant glows; trucks pass. Low angle, 24mm. Blue hour. Calm. Documentary.",
+   "slate": {
+    "l": 3,
+    "env": 7,
+    "a": 1,
+    "lens": 0,
+    "t": 4,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a delivery rider lying back on his scooter seat looking at the sky",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.01",
+   "brief": 12,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "A fisherman walks up the beach toward us with a dry, empty net folded over one shoulder. The sun is low behind him, rimming his shoulders and the net's edge; his face is in shade and he is not hiding it. 85mm, eye level, the sea a white line behind. Golden hour. Melancholy. Documentary.",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 0,
+    "lens": 3,
+    "t": 1,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "a fisherman walking up the beach with an empty net over his shoulder",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.02",
+   "brief": 12,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: a fisherman coming up a sand path with an empty net, seen over the shoulder of his wife, who stands in the doorway of their hut. L: the last light behind him, a rim on his hair and on the net. A: over the shoulder, 50mm. T: blue hour, a lamp lit inside. E: longing.",
+   "slate": {
+    "l": 3,
+    "a": 5,
+    "lens": 2,
+    "t": 4,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "a wife in a doorway watching her husband come up the path with an empty net",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.03",
+   "brief": 12,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "EXT. FISHING BEACH, DAWN. A line of beached wooden boats in silhouette. Between two of them one man walks inland dragging an empty net that leaves a line in the sand. The sun comes up directly behind him. 24mm, eye level. Melancholy. Framed like a western.",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 0,
+    "lens": 0,
+    "t": 0,
+    "em": 3,
+    "e": 4,
+    "own": {
+     "s": "a lone fisherman dragging an empty net past beached boats at dawn",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.04",
+   "brief": 12,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: low sun straight into the lens, broken into diamonds by the mesh of a net held up in the foreground. Through the mesh, a fisherman's face in shadow, looking at what he did not catch. Low angle, 35mm. Golden hour. Dread, the slow kind about money.",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 1,
+    "t": 1,
+    "em": 5,
+    "own": {
+     "s": "a fisherman seen through the mesh of his own empty net",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.05",
+   "brief": 12,
+   "n": 5,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "135mm from far down the beach, the air shimmering. A fisherman walks home along the tide line, empty net on his shoulder, stacked flat against a sea of white glare. A rim of light on his arm and hat. Golden hour. Calm. Documentary.",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 0,
+    "lens": 4,
+    "t": 1,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a fisherman walking home along the tide line in evening haze",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.06",
+   "brief": 12,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "His children do not care about the net. Three of them run down the beach at him; he has dropped the empty net and is holding out his empty palms, laughing. Sun behind them all, sand kicked up into the light. 50mm, eye level. Golden hour. Joy. Documentary.",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 0,
+    "lens": 2,
+    "t": 1,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "children running to a fisherman who shows them his empty hands",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.07",
+   "brief": 12,
+   "n": 7,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Black and white. An old fisherman sits on an upturned boat mending an empty net with a wooden needle. The last light is behind him, a white line along his forearms and the threads. 85mm, eye level. Blue hour. Melancholy.",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 0,
+    "lens": 3,
+    "t": 4,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "an old fisherman mending an empty net on an upturned boat",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.08",
+   "brief": 12,
+   "n": 8,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "Palette: silver sea, faded pink shirt, green nylon net, dark skin. A fisherman stands at the water's edge with the empty net gathered in his arms, the light behind him coming through thin cloud. 85mm, eye level. Overcast. Melancholy, composed like a magazine cover.",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 0,
+    "lens": 3,
+    "t": 3,
+    "em": 3,
+    "e": 7,
+    "own": {
+     "s": "a fisherman in a faded pink shirt carrying a green nylon net against a silver sea",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.09",
+   "brief": 12,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "fisherman wading ashore from a small wooden boat, empty net over his arm, low sun behind him, rim light on the water drops, wet lungi, gulls, low angle, 35mm, golden hour, tired face, chin up, defiance, documentary photograph, film grain",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 1,
+    "lens": 1,
+    "t": 1,
+    "em": 7,
+    "e": 5,
+    "own": {
+     "s": "a fisherman wading ashore from a small boat with an empty net",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.10",
+   "brief": 12,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The second he lets go of it. An empty net falls in a heap at the door of a palm-leaf hut. We see the fisherman from behind, backlit by the dusk, and past him the lamp-lit room where someone has looked up. 35mm, eye level. Blue hour. Melancholy.",
+   "slate": {
+    "l": 3,
+    "a": 0,
+    "lens": 1,
+    "t": 4,
+    "em": 3,
+    "e": 1,
+    "own": {
+     "s": "a fisherman dropping his empty net at the door of his hut",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.11",
+   "brief": 12,
+   "n": 11,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "High angle. Wet sand shining with low dawn light from the top of the frame. One line of footprints and beside it the wavering drag mark of a net lead up from the sea to a small figure near the top edge, edged with light. 35mm. Dawn. Melancholy.",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 2,
+    "lens": 1,
+    "t": 0,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "one line of footprints and a net's drag mark up a wet beach, seen from above",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.12",
+   "brief": 12,
+   "n": 12,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "River, not sea. A fisherman poles a bamboo raft home through mist, an empty basket and a folded net at his feet. The rising sun sits behind him inside the mist and draws a soft rim around his hat. 135mm, eye level. Dawn. Calm.",
+   "slate": {
+    "l": 3,
+    "a": 0,
+    "lens": 4,
+    "t": 0,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a river fisherman poling a bamboo raft home in mist with an empty basket",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.13",
+   "brief": 12,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Painted animation still, flat shapes, visible brush texture. A small fisherman walks up a wide beach at sunset with an empty net over his shoulder, his outline edged in orange from the sun behind him. A cat follows a few steps back. Melancholy.",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 0,
+    "lens": 1,
+    "t": 1,
+    "em": 3,
+    "own": {
+     "s": "a fisherman walking home at sunset with an empty net, as a painted animation still",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.14",
+   "brief": 12,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "The cat came down to the boats as usual. It sits on the prow looking into the empty net with great seriousness, lit from behind so its whiskers shine. The fisherman's hands are just visible, coiling rope. Low angle, 50mm. Golden hour. Joy.",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 2,
+    "t": 1,
+    "em": 4,
+    "own": {
+     "s": "a cat on a boat's prow looking into an empty net",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "12.15",
+   "brief": 12,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "A storm is coming in from the sea and one crack of light under the cloud backlights him. A fisherman stands on the sand folding his empty net carefully for tomorrow. Low angle, 24mm, the sky taking two thirds of the frame. Defiance. Documentary.",
+   "slate": {
+    "l": 3,
+    "env": 3,
+    "a": 1,
+    "lens": 0,
+    "t": 3,
+    "em": 7,
+    "e": 5,
+    "own": {
+     "s": "a fisherman folding his empty net under a storm sky, ready to go again",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.01",
+   "brief": 13,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "A classical dancer in full costume stands in the wings with her eyes closed and one hand already shaped in a mudra. A single work light directly above her head lights the jasmine in her hair and leaves her eyes in shadow. Past the curtain, the stage glows. 85mm, eye level. Night. Calm.",
+   "slate": {
+    "l": 8,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a classical dancer in the wings with her eyes closed",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.02",
+   "brief": 13,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: a stand-up comic in a plain shirt gripping the edge of a black curtain, seen over his shoulder; beyond it a microphone on an empty stage. L: one hard top light on the microphone, a weaker one above him. A: over the shoulder, 35mm. T: night. E: tension. Ten seconds to go.",
+   "slate": {
+    "l": 8,
+    "a": 5,
+    "lens": 1,
+    "t": 5,
+    "em": 1,
+    "own": {
+     "s": "a stand-up comic gripping the edge of the curtain",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.03",
+   "brief": 13,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "INT. SCHOOL HALL, BACKSTAGE. A child of seven dressed as a tree, cardboard branches on both arms, waits in the wings with a teacher's hand on one shoulder. A single bulb overhead. Low angle, 24mm, the branches filling the frame. Joy, with fear in it.",
+   "slate": {
+    "l": 8,
+    "a": 1,
+    "lens": 0,
+    "em": 4,
+    "own": {
+     "s": "a child dressed as a tree waiting in the wings of a school play",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.04",
+   "brief": 13,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: one bulb hanging directly above, straight down, so the crown throws a shadow over the eyes. A kathakali performer in full green makeup and layered skirt stands very still behind the stage, breathing. 85mm, eye level. Night. Awe. Documentary.",
+   "slate": {
+    "l": 8,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 2,
+    "e": 5,
+    "own": {
+     "s": "a kathakali performer in full makeup under one hanging lamp",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.05",
+   "brief": 13,
+   "n": 5,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "85mm, wide open. A qawwal in a white kurta sits cross-legged at the edge of a low stage, fist to his mouth, clearing his throat. The harmonium waits beside his knee. Light falls from one lamp straight above, the audience a dark blur. Night. Calm.",
+   "slate": {
+    "l": 8,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a qawwal clearing his throat beside a waiting harmonium",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.06",
+   "brief": 13,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "The dove is still there. He checks anyway. A magician in a worn velvet coat stands behind the curtain holding his lapel open and looking down into it, smiling. One top light above him, dust in it. High angle, 50mm. Night. Joy.",
+   "slate": {
+    "l": 8,
+    "a": 2,
+    "lens": 2,
+    "t": 5,
+    "em": 4,
+    "own": {
+     "s": "a magician checking a dove inside his coat before going on",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.07",
+   "brief": 13,
+   "n": 7,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Black and white. A trapeze artist stands on a small platform under the roof of a circus tent, clapping chalk from her hands. A single lamp above her turns the chalk dust into a cloud. Low angle, 85mm, ropes going up into the dark. Night. Tension.",
+   "slate": {
+    "l": 8,
+    "a": 1,
+    "lens": 3,
+    "t": 5,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "a trapeze artist chalking her hands under the roof of a circus tent",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.08",
+   "brief": 13,
+   "n": 8,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Palette: velvet red, the white of one top light, a gold border on a costume. A singer stands with her back against the red curtain, eyes down, lips moving through the first line. 50mm, eye level. Night. Calm.",
+   "slate": {
+    "l": 8,
+    "a": 0,
+    "lens": 2,
+    "t": 5,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "a singer in a gold-bordered costume against red velvet, eyes down",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.09",
+   "brief": 13,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "backstage of a village theatre, old market behind, single bulb overhead, an actor in a king's costume and crown drinking water from a steel glass, painted backdrop leaning on a wall, 35mm, eye level, night, calm, documentary photograph, film grain",
+   "slate": {
+    "l": 8,
+    "env": 6,
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a theatre actor in a king's costume backstage, drinking water from a steel glass",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.10",
+   "brief": 13,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The second before the cue. In the foreground a stage manager's hand holds up three fingers. Beyond it, in profile under one overhead lamp, a young violinist with her bow already lifted. 85mm, eye level. Night. Tension.",
+   "slate": {
+    "l": 8,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 1,
+    "e": 2,
+    "own": {
+     "s": "a stage manager counting down on three fingers beside a waiting performer",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.11",
+   "brief": 13,
+   "n": 11,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "Behind a wall of amplifiers a guitarist stands with his head down and his hand flat on the strings to keep them silent. One white top light on him. Through the gaps between the amps, the crowd's light, flaring across a 40mm anamorphic. Low angle. Night. Defiance.",
+   "slate": {
+    "l": 8,
+    "a": 1,
+    "lens": 5,
+    "t": 5,
+    "em": 7,
+    "own": {
+     "s": "a rock guitarist behind the amplifiers with crowd light leaking through",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.12",
+   "brief": 13,
+   "n": 12,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "He has sung this for fifty years and his hands still shake. An old singer sits in a small green room, eyes shut, two fingers resting on the tanpura strings. One lamp above. 85mm, eye level. Night. Longing.",
+   "slate": {
+    "l": 8,
+    "env": 2,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "an old ghazal singer touching the tanpura strings with his eyes shut",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.13",
+   "brief": 13,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Charcoal and pastel drawing, smudged shadows, one hard top light drawn as a cone. A dancer waits in the wings with her arms loose and her head bowed, the stage a block of pale yellow beyond the curtain. Calm.",
+   "slate": {
+    "l": 8,
+    "a": 0,
+    "lens": 2,
+    "t": 5,
+    "em": 6,
+    "own": {
+     "s": "a ballerina waiting in the wings, in a charcoal and pastel drawing",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.14",
+   "brief": 13,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "No face. A drummer sits on a flight case backstage: crossed sticks tapping his thigh, one knee bouncing. A lamp straight above, hard shadows under his hands. High angle, 85mm. Night. Tension.",
+   "slate": {
+    "l": 8,
+    "a": 2,
+    "lens": 3,
+    "t": 5,
+    "em": 1,
+    "own": {
+     "s": "a drummer's crossed sticks and bouncing knee backstage",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "13.15",
+   "brief": 13,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "A puppeteer crouches above a small cloth stage, strings looped over every finger, a king and a horse hanging limp below him. One bulb straight overhead. On the other side of the cloth, the shadows of waiting children's heads. High angle, 35mm. Night. Awe.",
+   "slate": {
+    "l": 8,
+    "a": 2,
+    "lens": 1,
+    "t": 5,
+    "em": 2,
+    "e": 5,
+    "own": {
+     "s": "a puppeteer above a small stage with his puppets hanging still",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.01",
+   "brief": 14,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "Only hands. A grandmother's hands roll a roti on a round wooden board, thin gold bangles sliding on her wrists, flour to the knuckles. Soft window light from the left, flour dust in it. 85mm, eye level with the board. Early morning. Calm. No face in the frame.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 3,
+    "t": 0,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a grandmother's hands rolling a roti in window light",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.02",
+   "brief": 14,
+   "n": 2,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "S: an old woman's hands on a rolling pin, a half-rolled roti, a steel plate of dough balls, a small heap of flour; seen from directly above. L: soft daylight from a window, no hard shadows. A: overhead, 85mm. T: overcast morning. E: calm. Frame only the hands and the board.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 3,
+    "lens": 3,
+    "t": 3,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "a grandmother's hands and a rolling pin from directly above",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.03",
+   "brief": 14,
+   "n": 3,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "INT. VILLAGE KITCHEN, DUSK. The camera sits at the height of the rolling board. Old hands slap a roti from palm to palm; behind them a clay stove throws the only light, orange and low. 85mm, low angle. Blue hour in the doorway. Longing. Only the hands, to the wrist.",
+   "slate": {
+    "l": 5,
+    "a": 1,
+    "lens": 3,
+    "t": 4,
+    "em": 0,
+    "own": {
+     "s": "a grandmother's hands at a clay stove, lit by the fire",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.04",
+   "brief": 14,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: a low sun through the kitchen door, straight into the lens. An old woman's hands clap flour off a roti and the dust goes up white in the light. 85mm, eye level, hands only. Golden hour. Awe. Clean enough for an advertisement.",
+   "slate": {
+    "l": 3,
+    "a": 0,
+    "lens": 3,
+    "t": 1,
+    "em": 2,
+    "e": 7,
+    "own": {
+     "s": "flour dust rising off a grandmother's clapping hands",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.05",
+   "brief": 14,
+   "n": 5,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "85mm, wide open, focus on two thin gold bangles and nothing else. Behind them, soft: old fingers pressing a ball of dough flat. A long frame, mostly out of focus. Soft window light. Overcast. Longing.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 3,
+    "t": 3,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "two thin gold bangles in sharp focus on a wrist dusted with flour",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.06",
+   "brief": 14,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "The first roti never reaches the plate. An old hand lifts a roti off the pan and a small hand is already reaching for it from the edge of the frame. Steam between them. High angle, 85mm, soft window light. Only hands. Joy.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 2,
+    "lens": 3,
+    "t": 3,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a grandmother's hands lifting a roti as a child's small hand reaches for it",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.07",
+   "brief": 14,
+   "n": 7,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Black and white. Side light from one small window, hard enough to cut every wrinkle. An old woman's hands press the heel of the palm into dough. A worn ring. 85mm, eye level. Hands only. Melancholy.",
+   "slate": {
+    "l": 0,
+    "a": 0,
+    "lens": 3,
+    "t": 3,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "an old woman's hands pressing dough, in black and white",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.08",
+   "brief": 14,
+   "n": 8,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "Palette: brass plate, flour white, a faded maroon sleeve, dark wood. A grandmother's hands turn a roti a quarter turn with each roll of the pin. High angle, 85mm, soft window light. Only the hands. Calm.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 2,
+    "lens": 3,
+    "t": 3,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "brass, flour white and a faded maroon sleeve over a rolling board",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.09",
+   "brief": 14,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "old woman's hands rolling roti on a wooden board, glass bangles, flour, steel plate, kitchen window behind with rain on it, soft grey window light, 85mm, eye level, shallow focus, only hands in frame, calm, documentary photograph, film grain",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 3,
+    "t": 3,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a grandmother's hands rolling rotis in a kitchen while it rains outside",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.10",
+   "brief": 14,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The second it puffs. A roti swells into a ball over a blue gas flame, held in steel tongs by an old hand with a thread around the wrist. The flame is the only light. 85mm, eye level, hands only. Night. Awe.",
+   "slate": {
+    "l": 5,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 2,
+    "own": {
+     "s": "a roti puffing over an open flame, held in a grandmother's steel tongs",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.11",
+   "brief": 14,
+   "n": 11,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "No rolling pin. Two old palms pat a thick millet rotla back and forth, turning it between them, cracked at the edges. Low sun from behind through a doorway rims the fingers. Low angle, 85mm. Only hands. Defiance: she will not use the machine.",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 3,
+    "t": 1,
+    "em": 7,
+    "e": 5,
+    "own": {
+     "s": "a grandmother's palms patting a millet rotla flat",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.12",
+   "brief": 14,
+   "n": 12,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Close. A wedding ring worn thin as wire, on a finger pressing into dough. Side light from a window going blue, the other fingers falling into shadow. High angle, 85mm. Blue hour. Longing.",
+   "slate": {
+    "l": 0,
+    "a": 2,
+    "lens": 3,
+    "t": 4,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a wedding ring worn thin on a finger pressing into dough",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.13",
+   "brief": 14,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Coloured pencil drawing on cream paper, soft hatching. An old woman's hands rolling a roti, seen from above and a little to one side: bangles, flour, a round wooden board. Morning light. Calm. Only the hands.",
+   "slate": {
+    "a": 2,
+    "lens": 3,
+    "t": 0,
+    "em": 6,
+    "own": {
+     "s": "an old woman's hands rolling a roti, as a coloured pencil drawing",
+     "l": "soft pencil-drawn window light",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.14",
+   "brief": 14,
+   "n": 14,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "A steel spoon drags ghee across a hot roti and it shines. The old hand holding the spoon is steady; steam rises through a low sun coming from behind. 85mm, eye level, hands only. Golden hour. Joy.",
+   "slate": {
+    "l": 3,
+    "a": 0,
+    "lens": 3,
+    "t": 1,
+    "em": 4,
+    "e": 7,
+    "own": {
+     "s": "a grandmother's hand smearing ghee across a hot roti",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "14.15",
+   "brief": 14,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Two pairs of hands on one rolling pin: an old pair on top, a young pair underneath, learning the pressure. Flour on all four. Soft window light. 85mm, eye level. No faces. Overcast. Longing.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 3,
+    "t": 3,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "an old pair of hands guiding a young pair on a rolling pin",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.01",
+   "brief": 15,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "An old black rotary telephone sits on the bare floor of an empty room, its cord running to a wall socket. It is ringing: the handset is very slightly blurred. Pale rectangles on the walls where pictures hung. High angle, 35mm, soft grey window light. Overcast. Dread. Horror with nothing in it.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 2,
+    "lens": 1,
+    "t": 3,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "an old black rotary phone ringing on the floor of an empty room",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.02",
+   "brief": 15,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: a mobile phone face-up on a wooden table, lit, vibrating its way toward the edge; one chair pushed back; nobody. L: the phone's own glow is the only light, the screen too bright to read. A: eye level with the table top, 85mm. T: night. E: tension, horror.",
+   "slate": {
+    "l": 5,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 1,
+    "e": 6,
+    "own": {
+     "s": "a mobile phone lit up and vibrating across a table in a dark room",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.03",
+   "brief": 15,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "INT. CORRIDOR, NIGHT. A very long corridor, doors all closed. At the far end, under the only working ceiling lamp, a telephone on a wooden stool. It is ringing. 24mm, eye level, the walls leaning in. Dread. Horror.",
+   "slate": {
+    "l": 8,
+    "a": 0,
+    "lens": 0,
+    "t": 5,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "a telephone on a stool at the far end of a long empty corridor",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.04",
+   "brief": 15,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: flat white noon through open windows, curtains blowing in, nothing hidden anywhere. A wall telephone, its receiver off the hook and swinging on the cord as if just dropped. No one in the room. Dutch tilt, 35mm. High noon. Dread: horror in full daylight.",
+   "slate": {
+    "l": 6,
+    "env": 2,
+    "a": 4,
+    "lens": 1,
+    "t": 2,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "a receiver swinging off the hook in a sunlit room",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.05",
+   "brief": 15,
+   "n": 5,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "135mm through the gap of a door left ajar. A strip of room: the corner of a bed with no sheets, a side table, a telephone with its little red light blinking. One lamp somewhere out of sight. Night. Dread. Horror.",
+   "slate": {
+    "l": 5,
+    "env": 2,
+    "a": 0,
+    "lens": 4,
+    "t": 5,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "a ringing telephone seen through the gap of a door left ajar",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.06",
+   "brief": 15,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "The family moved out last week and the line was cut on Friday. A cream telephone on a window sill in a stripped living room, a few packing boxes, ringing. Soft window light going blue. 35mm, eye level. Blue hour. Dread. Horror.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 1,
+    "t": 4,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "a telephone ringing in a house the family left a week ago",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.07",
+   "brief": 15,
+   "n": 7,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Black and white, coarse grain. An empty hospital ward: iron beds stripped to the springs, one overhead lamp, and a wall telephone ringing on the far wall. 50mm, eye level. Night. Dread. Horror.",
+   "slate": {
+    "l": 8,
+    "a": 0,
+    "lens": 2,
+    "t": 5,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "a wall telephone ringing in an empty hospital ward",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.08",
+   "brief": 15,
+   "n": 8,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "Palette: hospital green wall, black telephone, one red cord, grey floor. The telephone hangs dead centre on the wall of an empty room, ringing, and the cord is swaying though nothing has touched it. 50mm, eye level, soft window light. Overcast. Dread. Horror.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 2,
+    "t": 3,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "a black telephone with a red cord on a green wall",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.09",
+   "brief": 15,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "abandoned office floor at night, overturned chairs, ceiling tiles down, a payphone on a pillar with its handset shaking on the hook, one green emergency light, low angle, 24mm, dust, dread, horror still, film grain, nobody in frame",
+   "slate": {
+    "l": 7,
+    "a": 1,
+    "lens": 0,
+    "t": 5,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "a ringing payphone inside an abandoned office",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.10",
+   "brief": 15,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The silence between two rings. A telephone on the floor of an empty bedroom, the coiled cord still trembling from the last one. A street lamp through the window lays one bar of light across it. High angle, 50mm. Night. Tension. Horror.",
+   "slate": {
+    "l": 5,
+    "env": 2,
+    "a": 2,
+    "lens": 2,
+    "t": 5,
+    "em": 1,
+    "e": 6,
+    "own": {
+     "s": "a telephone between two rings, its cord still trembling",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.11",
+   "brief": 15,
+   "n": 11,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "From directly above. A bare room, floor thick with dust. A telephone in the exact centre. One line of footprints leads to it from the door. None lead away. Flat light from a skylight. 35mm, overhead. Overcast. Dread. Horror.",
+   "slate": {
+    "l": 8,
+    "a": 3,
+    "lens": 1,
+    "t": 3,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "a telephone in the middle of a dusty floor with footprints leading to it",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.12",
+   "brief": 15,
+   "n": 12,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "A hotel room with the bedding stripped and the curtains gone. Someone has left the bedside lamp on. On the bare mattress, a telephone, ringing. 35mm, eye level. Night. Dread. Horror.",
+   "slate": {
+    "l": 5,
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "a telephone ringing on a bare mattress in a stripped hotel room",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.13",
+   "brief": 15,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Pen and ink drawing, heavy crosshatching, no colour. An empty room, one pale window, a telephone on a small table drawn with shaky lines to show it ringing. A long black shadow of the table reaches the door. Dread. Horror.",
+   "slate": {
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "a ringing telephone in an empty room, as a crosshatched ink drawing",
+     "l": "crosshatched ink shadows, one pale window",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.14",
+   "brief": 15,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Close on the handset hanging on its cord a hand's width above the floor, turning slowly. Above it, out of focus, the telephone on the wall. Split light from a doorway: half the handset lit, half black. Low angle, 85mm. Night. Dread. Horror.",
+   "slate": {
+    "l": 2,
+    "a": 1,
+    "lens": 3,
+    "t": 5,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "a telephone handset hanging on its cord just above the floor",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "15.15",
+   "brief": 15,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Hold on a switched-off television. In its dark glass, the reflection of the whole empty room behind us, and in the middle of that reflection a telephone with one small light pulsing. 50mm, eye level. Night. Dread. Horror.",
+   "slate": {
+    "l": 5,
+    "env": 2,
+    "a": 0,
+    "lens": 2,
+    "t": 5,
+    "em": 5,
+    "e": 6,
+    "own": {
+     "s": "an empty room reflected in a dead television, a telephone glowing behind",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.01",
+   "brief": 16,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "Three in the morning, a hospital waiting room. A man has just leapt out of a row of plastic chairs with both fists in the air and his mouth open, trying to shout without sound. Around him strangers sleep under shawls. Flat green tube light. 35mm, eye level. Night. Joy. Documentary.",
+   "slate": {
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a man leaping up from a row of plastic chairs while everyone else sleeps",
+     "l": "flat green tube light on a row of plastic chairs",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.02",
+   "brief": 16,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: an old couple standing in the middle of an empty hospital waiting room, holding each other, her face against his chest, both laughing and crying. L: one tube light straight overhead. A: eye level, 85mm. T: 3am, the windows black. E: joy, after a long night of the opposite.",
+   "slate": {
+    "l": 8,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 4,
+    "e": 1,
+    "own": {
+     "s": "an old couple holding each other in an empty waiting room",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.03",
+   "brief": 16,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "INT. HOSPITAL CORRIDOR, 3AM. Foreground: a doctor in scrubs walks toward us, away from them, with a small tired smile. Behind her, soft, a family of five has exploded into hugging. Cold tube light down the corridor, one warm lamp at the nurses' desk. 24mm, eye level. Joy.",
+   "slate": {
+    "a": 0,
+    "lens": 0,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a doctor walking away down a corridor as a family erupts behind her",
+     "l": "cold corridor tubes, one warm lamp at the desk",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.04",
+   "brief": 16,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: the glow of a drinks machine with a blank front, blue-white, in an otherwise dim waiting area. A young man has slid down the wall beside it and sits on the floor with his hands over his face, shoulders shaking, laughing. 85mm, eye level. Night. Joy.",
+   "slate": {
+    "l": 7,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 4,
+    "own": {
+     "s": "a new father laughing and crying against a hospital wall",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.05",
+   "brief": 16,
+   "n": 5,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "135mm down a row of waiting room chairs. Foreground, soft: three sleeping strangers, heads tipped back. Sharp at the far end: a woman sitting bolt upright, both hands over her mouth, eyes shining. Overhead tube light. Night. Joy.",
+   "slate": {
+    "l": 8,
+    "a": 0,
+    "lens": 4,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a woman covering her smile at the end of a row of sleeping strangers",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.06",
+   "brief": 16,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "She wants to wake him and tell him, and she is letting him sleep one more minute. A boy lies asleep across three chairs under his mother's shawl. She kneels beside him, a hand over her own smile. Soft light from the ward door's window. High angle, 50mm. Night. Joy.",
+   "slate": {
+    "l": 4,
+    "a": 2,
+    "lens": 2,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a mother smiling over her son asleep across three waiting room chairs",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.07",
+   "brief": 16,
+   "n": 7,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Black and white. Two grown brothers stand forehead to forehead in a waiting room, gripping each other's shoulders, grinning with their eyes shut. Light from a single desk lamp at the side. 85mm, eye level. Night. Joy.",
+   "slate": {
+    "l": 0,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "two brothers gripping each other's shoulders in a waiting room",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.08",
+   "brief": 16,
+   "n": 8,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Palette: mint walls, orange plastic chairs, one pink box of sweets. Someone has opened the box on a chair at 3am and three hands are reaching into it at once. High angle, 50mm, even tube light. Faces out of frame, the hands are laughing. Night. Joy.",
+   "slate": {
+    "l": 6,
+    "a": 2,
+    "lens": 2,
+    "t": 5,
+    "em": 4,
+    "e": 7,
+    "own": {
+     "s": "a pink box of sweets opened on an orange hospital chair",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.09",
+   "brief": 16,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "hospital corridor at 3am, empty, overhead tube lights, a young woman in a crumpled salwar kameez spinning once with her arms out, dupatta flying, a nurse smiling at the desk far behind, 35mm, eye level, motion blur on the dupatta, joy, film grain",
+   "slate": {
+    "l": 8,
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 4,
+    "e": 1,
+    "own": {
+     "s": "a young woman spinning alone in an empty hospital corridor",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.10",
+   "brief": 16,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The second after the nurse says it. A tiny grandmother has grabbed both of the nurse's hands and is pressing them to her own forehead. The nurse is laughing. Tube light from above, a clock on the wall with its face too soft to read. 50mm, eye level. Night. Joy.",
+   "slate": {
+    "l": 8,
+    "a": 0,
+    "lens": 2,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a grandmother grabbing a nurse's hands in a waiting room",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.11",
+   "brief": 16,
+   "n": 11,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "From directly above, 24mm. Rows of chairs like a grid, most of them holding slumped, sleeping shapes. In one aisle a single figure stands with both arms straight up. Flat overhead light. Night. Joy.",
+   "slate": {
+    "l": 8,
+    "a": 3,
+    "lens": 0,
+    "t": 5,
+    "em": 4,
+    "own": {
+     "s": "rows of waiting room chairs from above, one figure with arms raised",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.12",
+   "brief": 16,
+   "n": 12,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "We are in the waiting room looking at the ward door. Through its small round window: a man in a disposable gown, laughing, holding up one finger and then two, as if he cannot decide how to tell us. Soft light from inside the ward. 50mm, eye level. Night. Joy.",
+   "slate": {
+    "l": 4,
+    "a": 0,
+    "lens": 2,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a father seen through the round window of a ward door, laughing",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.13",
+   "brief": 16,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Gouache illustration, flat shapes, soft greens and one warm yellow. A family of four hugging in the middle of a waiting room at night, a row of empty chairs, a clock, a potted plant. Joy.",
+   "slate": {
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 4,
+    "own": {
+     "s": "a family hugging in a hospital waiting room, in gouache",
+     "l": "flat gouache tube light, soft greens",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.14",
+   "brief": 16,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Only hands. Two hands gripping each other hard on a waiting room armrest, knuckles pale, a hospital visitor band on one wrist with its print too small to read. Then you notice both hands are shaking with laughter. High angle, 85mm, soft light. Night. Joy.",
+   "slate": {
+    "l": 4,
+    "a": 2,
+    "lens": 3,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "two hands gripping each other on a waiting room armrest",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "16.15",
+   "brief": 16,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Over the shoulder of a night janitor leaning on his mop: at the far end of a long waiting room, a family hugging under a tube light. We see only the edge of his cheek, lifted in a smile. 35mm. Night. Joy. Documentary.",
+   "slate": {
+    "l": 8,
+    "a": 5,
+    "lens": 1,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a janitor smiling at a family hugging at the far end of a waiting room",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.01",
+   "brief": 17,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "Two wrestlers in wrestling shorts are locked shoulder to shoulder in red mud, feet dug in, neither moving. Low angle from the edge of the pit, 35mm. The first light comes through the akhada's open doorway behind them and rims their backs. Dawn. Tension. Documentary.",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 1,
+    "t": 0,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "two wrestlers locked together in the red mud of an akhada",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.02",
+   "brief": 17,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: an old guru in a white dhoti sitting on the pit wall with a cane across his knees, watching; two wrestlers a blur of red mud in the foreground. L: soft dawn light from a high window. A: eye level, 85mm, focus on the guru. T: before sunrise. E: calm, documentary.",
+   "slate": {
+    "l": 4,
+    "a": 0,
+    "lens": 3,
+    "t": 0,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "an old wrestling guru watching his students from the edge of the pit",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.03",
+   "brief": 17,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "INT. AKHADA, BEFORE SUNRISE. The pit has been raked into lines. Six wrestlers stand at its edge and bend together to touch the mud to their foreheads. Pale light behind them through arches. 24mm, eye level. Awe. Documentary.",
+   "slate": {
+    "l": 3,
+    "a": 0,
+    "lens": 0,
+    "t": 0,
+    "em": 2,
+    "e": 5,
+    "own": {
+     "s": "wrestlers touching the mud to their foreheads before training",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.04",
+   "brief": 17,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: one shaft of dawn through a roof vent, red dust hanging in it. A wrestler stands in the shaft and throws a handful of earth across his own chest. Low angle, 85mm. Everything outside the shaft is nearly black. Defiance.",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 3,
+    "t": 0,
+    "em": 7,
+    "own": {
+     "s": "a wrestler throwing a handful of red earth into the first light",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.05",
+   "brief": 17,
+   "n": 5,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "135mm, tight. Two faces pressed temple to temple in a clinch, eyes open, mud in the eyebrows, breath showing in the cold. Split light from the doorway: half of each face lit. Dawn. Tension.",
+   "slate": {
+    "l": 2,
+    "a": 0,
+    "lens": 4,
+    "t": 0,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "two wrestlers' faces pressed together in a clinch",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.06",
+   "brief": 17,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "He has lost every bout this week. A trainee of nineteen sits alone on the pit wall before the others arrive, elbows on his knees, looking at the raked mud. Soft grey light from a doorway. High angle, 50mm. Dawn. Longing.",
+   "slate": {
+    "l": 4,
+    "a": 2,
+    "lens": 2,
+    "t": 0,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a young trainee sitting alone at the edge of the pit before training",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.07",
+   "brief": 17,
+   "n": 7,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Black and white. A heavy wrestler swings a wooden mace behind his shoulders, caught at the top of its arc. Low angle, 35mm, a bright doorway behind him, his body a dark shape with a white edge. Dawn. Defiance.",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 1,
+    "t": 0,
+    "em": 7,
+    "e": 5,
+    "own": {
+     "s": "a wrestler swinging a wooden mace behind his shoulders",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.08",
+   "brief": 17,
+   "n": 8,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "Palette: red earth, brown skin, one strip of saffron cloth. A wrestler ties his waistcloth at the edge of the pit, head down, taking his time. Even pale light before the sun is up. 50mm, eye level. Dawn. Calm.",
+   "slate": {
+    "l": 6,
+    "a": 0,
+    "lens": 2,
+    "t": 0,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "red earth, brown skin and one strip of saffron cloth",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.09",
+   "brief": 17,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "akhada courtyard before sunrise, winter, six wrestlers doing squats in a row, steam rising off shoulders, red mud pit, old banyan tree, backlit by a pale sky, 35mm, eye level, calm, documentary photograph, film grain",
+   "slate": {
+    "l": 3,
+    "a": 0,
+    "lens": 1,
+    "t": 0,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "wrestlers warming up in a row with steam rising off their shoulders",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.10",
+   "brief": 17,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The second of the throw. One wrestler has the other clear off the ground, mud flying off both in an arc. Low angle, 35mm, against the pale rectangle of the doorway. Dawn. Tension.",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 1,
+    "t": 0,
+    "em": 1,
+    "own": {
+     "s": "a wrestler lifted clear off the ground in a throw",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.11",
+   "brief": 17,
+   "n": 11,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "From directly above. A square pit of red mud, half still raked in neat lines, half torn up. In the torn half two wrestlers circle each other, arms out. Flat pale light with no shadows. 50mm, overhead. Dawn. Calm.",
+   "slate": {
+    "l": 6,
+    "a": 3,
+    "lens": 2,
+    "t": 0,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a mud wrestling pit from above, two bodies and raked lines",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.12",
+   "brief": 17,
+   "n": 12,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Training is over before the sun is up. Two wrestlers sit on the pit wall, mud drying on their arms, sharing a steel tumbler of milk. In a wall niche behind them one oil lamp burns. 50mm, eye level. Dawn. Calm.",
+   "slate": {
+    "l": 5,
+    "a": 0,
+    "lens": 2,
+    "t": 0,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "two wrestlers resting on the pit wall beside a small oil lamp",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.13",
+   "brief": 17,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Linocut print, two colours, red earth and black, rough carved edges. Two wrestlers grappling in a pit, bodies as bold shapes, the rising sun a plain circle behind them. Low angle. Dawn. Defiance.",
+   "slate": {
+    "a": 1,
+    "lens": 1,
+    "t": 0,
+    "em": 7,
+    "own": {
+     "s": "two wrestlers grappling, as a two-colour linocut print",
+     "l": "flat printed light, two inks",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.14",
+   "brief": 17,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "No faces. A mud-caked hand closes around a mud-caked wrist, tendons standing out, red earth cracking where it has dried. Rim of pale light from behind. 85mm, eye level. Dawn. Tension.",
+   "slate": {
+    "l": 3,
+    "a": 0,
+    "lens": 3,
+    "t": 0,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "a mud-caked hand gripping a mud-caked wrist",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "17.15",
+   "brief": 17,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "A thick rope hangs from the rafters. One wrestler is halfway up it, arms only, legs held straight out. Below, five others stand in the mud looking up. Low angle, 24mm, a pale sky in the open roof behind him. Dawn. Awe.",
+   "slate": {
+    "l": 3,
+    "a": 1,
+    "lens": 0,
+    "t": 0,
+    "em": 2,
+    "e": 5,
+    "own": {
+     "s": "a wrestler halfway up a climbing rope while the others look up",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.01",
+   "brief": 18,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "From directly above. A lane under ankle-deep brown water that holds the grey sky. A child in a yellow raincoat crouches on a doorstep and sets a paper boat on the surface with both hands. 35mm, overhead. Overcast. Joy. Documentary.",
+   "slate": {
+    "a": 3,
+    "lens": 1,
+    "t": 3,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a child in a yellow raincoat launching a paper boat on a flooded lane",
+     "l": "flat grey rain light, the sky reflected in brown water",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.02",
+   "brief": 18,
+   "n": 2,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "S: a white paper boat on brown floodwater, two small hands just letting go of it, rings spreading. L: flat, even, overcast. A: overhead, 85mm, the boat dead centre. T: an overcast afternoon after rain. E: calm. Nothing else in the frame.",
+   "slate": {
+    "l": 6,
+    "a": 3,
+    "lens": 3,
+    "t": 3,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "a white paper boat and two small hands on brown floodwater",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.03",
+   "brief": 18,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "EXT. FLOODED STREET, DAY, FROM ABOVE. Five paper boats drift in a line down the middle of a flooded street. At the end of the line a kid stands shin-deep, folding a sixth. Overhead wires reflect in the water as black lines. 24mm, overhead. Joy.",
+   "slate": {
+    "a": 3,
+    "lens": 0,
+    "t": 3,
+    "em": 4,
+    "own": {
+     "s": "five paper boats in a line on a flooded street, a kid at the end of it",
+     "l": "flat grey light, wires reflected in the water",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.04",
+   "brief": 18,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: the rain has stopped and a low sun sits in the floodwater as a long gold streak. A paper boat is crossing the streak. At the top of the frame, a child's bare feet on a step. 50mm, overhead. Golden hour. Awe.",
+   "slate": {
+    "l": 3,
+    "a": 3,
+    "lens": 2,
+    "t": 1,
+    "em": 2,
+    "own": {
+     "s": "a paper boat crossing the sun's reflection on a flooded lane",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.05",
+   "brief": 18,
+   "n": 5,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "24mm straight down from a third floor balcony. The whole lane is a brown mirror: doorsteps, a parked cycle, the reflection of washing lines. One child on a step, one small white boat a metre out. Soft overcast light. Calm. Documentary.",
+   "slate": {
+    "l": 4,
+    "env": 5,
+    "a": 3,
+    "lens": 0,
+    "t": 3,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a whole flooded lane from a balcony, one child and one paper boat",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.06",
+   "brief": 18,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "The boat is a page from last year's maths notebook, ruled lines showing, the writing too small to read. A boy of eight squats at the edge of the floodwater and blows on it to make it go. 50mm, overhead. Overcast. Joy.",
+   "slate": {
+    "l": 6,
+    "a": 3,
+    "lens": 2,
+    "t": 3,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a paper boat made from a page of last year's notebook",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.07",
+   "brief": 18,
+   "n": 7,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Black and white. From above: a flooded street, rain rings everywhere, a small child standing still under a big black umbrella, and one paper boat already too far out to reach. 35mm, overhead. Overcast. Melancholy.",
+   "slate": {
+    "l": 6,
+    "env": 0,
+    "a": 3,
+    "lens": 1,
+    "t": 3,
+    "em": 3,
+    "e": 5,
+    "own": {
+     "s": "a child and a paper boat on a flooded street, in black and white",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.08",
+   "brief": 18,
+   "n": 8,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "Palette: muddy water, a white paper boat, a pair of red sandals left on a dry step. The kid they belong to is in the water to the shins, bent over the boat. Bright flat light after the rain. 50mm, overhead. Joy.",
+   "slate": {
+    "l": 6,
+    "a": 3,
+    "lens": 2,
+    "t": 2,
+    "em": 4,
+    "e": 7,
+    "own": {
+     "s": "muddy water, white paper and red sandals from above",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.09",
+   "brief": 18,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "overhead view, flooded old market street, brown water, a boy on a doorstep reaching toward a paper boat, a cycle rickshaw passing and leaving a wake, shop awnings, overcast light, 35mm, joy, documentary photograph, film grain",
+   "slate": {
+    "l": 6,
+    "env": 6,
+    "a": 3,
+    "lens": 1,
+    "t": 3,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a boy on a doorstep with a paper boat while a cycle rickshaw passes",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.10",
+   "brief": 18,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The second before it gets there. A paper boat drifts toward a slow swirl in the floodwater. The kid is safe up on a wall at the top of the frame, leaning forward, hands over his mouth. 50mm, overhead. Overcast. Tension.",
+   "slate": {
+    "l": 6,
+    "a": 3,
+    "lens": 2,
+    "t": 3,
+    "em": 1,
+    "own": {
+     "s": "a paper boat drifting toward a swirl in the floodwater",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.11",
+   "brief": 18,
+   "n": 11,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "From above: the circle of a blue umbrella on a flooded lane. From under its edge one small hand reaches out and pushes a paper boat on its way. Rain rings on the water. 50mm, overhead. Overcast. Joy.",
+   "slate": {
+    "l": 6,
+    "a": 3,
+    "lens": 2,
+    "t": 3,
+    "em": 4,
+    "own": {
+     "s": "an umbrella from above, one small hand reaching out to push a paper boat",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.12",
+   "brief": 18,
+   "n": 12,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "A scooter has just pushed through the flood and its wake is rocking the paper boat. Seen from above, the kid on the kerb has thrown both arms up and is laughing at the waves. 35mm, overhead. Overcast. Joy.",
+   "slate": {
+    "l": 6,
+    "env": 0,
+    "a": 3,
+    "lens": 1,
+    "t": 3,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a kid laughing as a scooter's wake rocks his paper boat",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.13",
+   "brief": 18,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Cut-paper collage, torn edges, flat colour. A top-down view of a flooded street in blue-grey paper, a child in a red paper raincoat, a white folded boat, a few paper ripples. Joy.",
+   "slate": {
+    "a": 3,
+    "lens": 1,
+    "t": 3,
+    "em": 4,
+    "own": {
+     "s": "a child and a paper boat on a flooded street, as a cut-paper collage",
+     "l": "flat cut-paper light",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.14",
+   "brief": 18,
+   "n": 14,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "Night, from above. The flooded street holds pink and green neon from the shops in long broken streaks. A paper boat sits in the middle of the colour. At the frame's edge a child on a doorstep, held by the back of the shirt by a parent's hand. 35mm, overhead. Awe.",
+   "slate": {
+    "l": 7,
+    "env": 0,
+    "a": 3,
+    "lens": 1,
+    "t": 5,
+    "em": 2,
+    "own": {
+     "s": "a paper boat on floodwater full of neon reflections at night",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "18.15",
+   "brief": 18,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "From very high, 24mm. Rooftops, water tanks, and between them lanes filled with brown water. In one lane a tiny child on a step and, a little way out, one white dot. Overcast. Awe. Documentary.",
+   "slate": {
+    "l": 6,
+    "a": 3,
+    "lens": 0,
+    "t": 3,
+    "em": 2,
+    "e": 5,
+    "own": {
+     "s": "flooded lanes between rooftops from high above, one tiny child and one white dot",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.01",
+   "brief": 19,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "An old tailor bends over a treadle sewing machine in a shop the width of his arms. One bare bulb hangs above the needle; everything beyond its circle is dark. Finished blouses and kurtas hang around him like an audience. 35mm, eye level. Night. Calm. Documentary.",
+   "slate": {
+    "l": 5,
+    "env": 6,
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "an old tailor at a treadle machine under one bulb, finished clothes hanging around him",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.02",
+   "brief": 19,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: a tailor's hands guiding red silk under a sewing machine needle, a thimble on one finger. L: the machine's small needle lamp, nothing else. A: high angle, 85mm. T: night. E: calm. The gold border on the silk catches the lamp.",
+   "slate": {
+    "l": 5,
+    "a": 2,
+    "lens": 3,
+    "t": 5,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "a tailor's hands guiding silk under the needle lamp",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.03",
+   "brief": 19,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "EXT. NARROW LANE, NIGHT. Every shutter is down except one. The tailor's shop is a small lit box in the dark; inside, one man at a machine; outside, three customers waiting as silhouettes. 24mm, eye level, from across the lane. Longing.",
+   "slate": {
+    "l": 5,
+    "env": 5,
+    "a": 0,
+    "lens": 0,
+    "t": 5,
+    "em": 0,
+    "e": 5,
+    "own": {
+     "s": "a tailor's shop as the only lit box in a dark lane, people waiting outside",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.04",
+   "brief": 19,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: one clay lamp on the table, a flame the size of a thumbnail. It lights a woman tailor's hands and chin as she hems a child's festival dress by hand. 85mm, eye level. Night. Longing.",
+   "slate": {
+    "l": 5,
+    "env": 2,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 0,
+    "e": 1,
+    "own": {
+     "s": "a woman tailor hemming a child's dress by the light of one clay lamp",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.05",
+   "brief": 19,
+   "n": 5,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "85mm portrait. A tailor with a measuring tape around his neck and three pins held in his lips, eyes down on work we cannot see. One bulb above and to the side, the other half of his face gone. Night. Tension: forty orders, one night.",
+   "slate": {
+    "l": 5,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "a tailor with a measuring tape around his neck and pins in his mouth",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.06",
+   "brief": 19,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "Forty blouses are due by morning. The young apprentice has fallen asleep sitting on a bale of cloth, scissors still in his hand. Behind him the master sews on under the shop's one bulb. 50mm, eye level. Night. Calm.",
+   "slate": {
+    "l": 5,
+    "env": 6,
+    "a": 0,
+    "lens": 2,
+    "t": 5,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a young apprentice asleep on a bale of cloth while the master keeps sewing",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.07",
+   "brief": 19,
+   "n": 7,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Black and white. A tailor leans over a cutting table chalking a curve onto dark cloth with one confident stroke. A single lamp hangs low over the table. High angle, 50mm. Night. Calm.",
+   "slate": {
+    "l": 5,
+    "a": 2,
+    "lens": 2,
+    "t": 5,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a tailor chalking a pattern onto dark cloth",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.08",
+   "brief": 19,
+   "n": 8,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Palette: one bulb's amber, marigold-orange thread, deep brown shadow. Close on the spool spinning on top of the machine, the tailor's cheek and spectacles soft behind it. 85mm, eye level. Night. Calm.",
+   "slate": {
+    "l": 5,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 6,
+    "e": 7,
+    "own": {
+     "s": "marigold-orange thread on a spool in a pool of amber light",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.09",
+   "brief": 19,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "tailor's shop in an old market at night, one bare bulb, a tailor pressing a finished kurta with a heavy coal iron, steam, stacks of folded clothes tied with string, a string of unlit festival lamps on the counter, 35mm, eye level, low-key, calm, documentary photograph",
+   "slate": {
+    "l": 5,
+    "env": 6,
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 6,
+    "e": 5,
+    "own": {
+     "s": "a tailor ironing a finished kurta with a coal iron",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.10",
+   "brief": 19,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The second the shears close. Heavy tailor's shears halfway through a length of green silk, the cut edge lifting. One lamp over the table, the tailor's hands and nothing else. High angle, 50mm. Night. Tension: there is no more of this cloth.",
+   "slate": {
+    "l": 5,
+    "a": 2,
+    "lens": 2,
+    "t": 5,
+    "em": 1,
+    "own": {
+     "s": "tailor's shears halfway through a length of green silk",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.11",
+   "brief": 19,
+   "n": 11,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "From directly above. A cutting table under one lamp: chalked cloth, shears, a tape measure in a coil, a pin cushion, a glass of tea. Two hands smoothing the cloth. The edges of the table fall into dark. 35mm, overhead. Night. Calm.",
+   "slate": {
+    "l": 5,
+    "a": 3,
+    "lens": 1,
+    "t": 5,
+    "em": 6,
+    "own": {
+     "s": "a tailor's cutting table from above under one lamp",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.12",
+   "brief": 19,
+   "n": 12,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "A young man stands in front of the shop's trial mirror in a new kurta with the tacking thread still in it, grinning at himself. The tailor kneels at his feet pinning the hem. One bulb above the mirror. 35mm, eye level. Night. Joy.",
+   "slate": {
+    "l": 5,
+    "env": 6,
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 4,
+    "e": 5,
+    "own": {
+     "s": "a customer trying a new kurta in the trial mirror while the tailor pins the hem",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.13",
+   "brief": 19,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Oil pastel drawing on black paper, colour only where the light falls. A tailor at his machine under one bulb, clothes on hangers around him picked out in strokes of pink, green and gold. Night. Calm.",
+   "slate": {
+    "l": 5,
+    "a": 0,
+    "lens": 1,
+    "t": 5,
+    "em": 6,
+    "own": {
+     "s": "a tailor's shop at night, as a lamplit oil pastel drawing",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.14",
+   "brief": 19,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Close on a glass of tea gone cold, a skin on its surface, beside the black wheel of a sewing machine that is turning. One bulb. The tailor is only a moving elbow at the edge of the frame. 85mm, eye level. Night. Melancholy.",
+   "slate": {
+    "l": 5,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 3,
+    "own": {
+     "s": "a glass of tea gone cold beside a sewing machine wheel",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "19.15",
+   "brief": 19,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Midnight. The shutter is half down. From under it, the tailor's arm holds out a parcel wrapped in newspaper with the print too soft to read, to a small girl who has waited with her father. The light from inside the shop is the only light in the lane. Low angle, 35mm. Joy.",
+   "slate": {
+    "l": 5,
+    "env": 5,
+    "a": 1,
+    "lens": 1,
+    "t": 5,
+    "em": 4,
+    "e": 1,
+    "own": {
+     "s": "a tailor handing a parcel under a half-closed shutter to a waiting child",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.01",
+   "brief": 20,
+   "n": 1,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "Over his shoulder into a bathroom mirror: a best man in a half-knotted tie, cue cards in one hand with the writing too small to read, mouth open mid-word. One tube light above the mirror, hard and unkind. 35mm. Night. Tension.",
+   "slate": {
+    "l": 8,
+    "a": 5,
+    "lens": 1,
+    "t": 5,
+    "em": 1,
+    "own": {
+     "s": "a best man rehearsing a toast in a bathroom mirror with cue cards",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.02",
+   "brief": 20,
+   "n": 2,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "S: a schoolgirl of fourteen in uniform at her mother's dressing table, practising a debate speech to her reflection, one finger raised. L: soft window light, early. A: over the shoulder, 50mm. T: dawn, before school. E: tension, documentary. Her free hand is gripping the table edge.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 5,
+    "lens": 2,
+    "t": 0,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "a schoolgirl practising her debate speech at a dressing table",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.03",
+   "brief": 20,
+   "n": 3,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "INT. OFFICE WASHROOM, NIGHT. A man in a lanyard with a blank card stands square to a long mirror and says it again. Three empty basins, three empty mirrors, and him. A green exit lamp tints one side of his face. 24mm, eye level. Tension.",
+   "slate": {
+    "l": 7,
+    "a": 0,
+    "lens": 0,
+    "t": 5,
+    "em": 1,
+    "e": 2,
+    "own": {
+     "s": "a man rehearsing his resignation in an office washroom",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.04",
+   "brief": 20,
+   "n": 4,
+   "ratio": "3:4",
+   "illustrated": false,
+   "prompt": "Light first: a bathroom window at dawn, light from one side only. The mirror is fogged except for one circle wiped clear, and in the circle a woman's mouth and one eye, rehearsing. Half lit, half not. 85mm, eye level. Tension.",
+   "slate": {
+    "l": 2,
+    "a": 0,
+    "lens": 3,
+    "t": 0,
+    "em": 1,
+    "own": {
+     "s": "a woman rehearsing to a small clear circle wiped in a steamed mirror",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.05",
+   "brief": 20,
+   "n": 5,
+   "ratio": "2:3",
+   "illustrated": false,
+   "prompt": "85mm, close. A man's face in a mirror, lips moving, eyes locked on his own eyes and not blinking. A single lamp at the side leaves a triangle of light on the far cheek. Night. Tension. A thriller before anything has happened.",
+   "slate": {
+    "l": 0,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 1,
+    "e": 2,
+    "own": {
+     "s": "a man's lips moving as he stares into his own eyes in a mirror",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.06",
+   "brief": 20,
+   "n": 6,
+   "ratio": "3:2",
+   "illustrated": false,
+   "prompt": "He has to speak in an hour and he has never spoken in front of anyone. A father of the bride in a half-buttoned sherwani stands at a hotel room mirror with a folded page, the writing too small to read. Over his shoulder, 50mm, soft window light, late afternoon. Tension.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 5,
+    "lens": 2,
+    "t": 1,
+    "em": 1,
+    "e": 1,
+    "own": {
+     "s": "a father of the bride rehearsing in a hotel room mirror",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.07",
+   "brief": 20,
+   "n": 7,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Black and white. An old clerk in his best jacket stands in front of a small hallway mirror, a garland box on the table beside him, practising a speech. His hands are behind his back, twisting. Soft grey window light. 50mm, eye level. Overcast. Tension.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 2,
+    "t": 3,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "an old clerk practising his retirement speech in a hallway mirror",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.08",
+   "brief": 20,
+   "n": 8,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "Palette: navy suit, white tiles, one red tie. A young man straightens the tie in a bathroom mirror and starts the speech again from the top, jaw set. Bright even light. 50mm, eye level. Noon. Tension.",
+   "slate": {
+    "l": 6,
+    "a": 0,
+    "lens": 2,
+    "t": 2,
+    "em": 1,
+    "e": 7,
+    "own": {
+     "s": "a navy suit, a white bathroom and one red tie in a mirror",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.09",
+   "brief": 20,
+   "n": 9,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "hostel room at night, single desk lamp, a young woman standing before a small wall mirror rehearsing a speech with index cards, over the shoulder, 35mm, bunk bed and books behind, low-key warm light, tension, documentary photograph, film grain",
+   "slate": {
+    "l": 5,
+    "env": 2,
+    "a": 5,
+    "lens": 1,
+    "t": 5,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "a young woman rehearsing a speech in the mirror of a small hostel room",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.10",
+   "brief": 20,
+   "n": 10,
+   "ratio": "9:16",
+   "illustrated": false,
+   "prompt": "The second she forgets the next line. In the mirror, a woman in a silk sari stands with her mouth a little open and her eyes going to the ceiling. One hand has stopped mid-gesture. Split light from a bedside lamp. 85mm, eye level. Night. Tension.",
+   "slate": {
+    "l": 2,
+    "a": 0,
+    "lens": 3,
+    "t": 5,
+    "em": 1,
+    "own": {
+     "s": "a speaker frozen in a mirror at the moment she forgets the next line",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.11",
+   "brief": 20,
+   "n": 11,
+   "ratio": "16:9",
+   "illustrated": false,
+   "prompt": "A truck driver parked at a highway dhaba leans out of his cab and practises asking a question to his own face in the side mirror. Low sun behind him, his reflection sharp, the road soft. 50mm, eye level. Golden hour. Tension. Romance.",
+   "slate": {
+    "l": 3,
+    "env": 7,
+    "a": 0,
+    "lens": 2,
+    "t": 1,
+    "em": 1,
+    "e": 1,
+    "own": {
+     "s": "a truck driver practising a proposal in his side mirror",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.12",
+   "brief": 20,
+   "n": 12,
+   "ratio": "4:3",
+   "illustrated": false,
+   "prompt": "Her first argument is in ten minutes. A young lawyer in a black coat and white collar bands stands at a courthouse washroom mirror, lips moving, one hand flat on the basin. Over the shoulder, 85mm, soft grey light from a high window. Overcast. Tension.",
+   "slate": {
+    "l": 4,
+    "a": 5,
+    "lens": 3,
+    "t": 3,
+    "em": 1,
+    "e": 2,
+    "own": {
+     "s": "a young lawyer rehearsing her first argument in a courthouse washroom mirror",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.13",
+   "brief": 20,
+   "n": 13,
+   "ratio": "3:2",
+   "illustrated": true,
+   "prompt": "Ink line and flat colour illustration, graphic novel panel. A boy of twelve in a school blazer stands on a stool to see himself in a wardrobe mirror, one hand on his chest, mid-speech. Morning. Tension, the funny kind.",
+   "slate": {
+    "a": 0,
+    "lens": 1,
+    "t": 0,
+    "em": 1,
+    "own": {
+     "s": "a boy rehearsing a speech to a mirror, in ink and flat colour",
+     "l": "flat drawn morning light",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.14",
+   "brief": 20,
+   "n": 14,
+   "ratio": "1:1",
+   "illustrated": false,
+   "prompt": "A cracked hand mirror propped on a windowsill. In it, split by the crack, a young man's face saying the same sentence for the tenth time. Soft window light. 85mm, eye level. Overcast. Tension.",
+   "slate": {
+    "l": 4,
+    "env": 2,
+    "a": 0,
+    "lens": 3,
+    "t": 3,
+    "em": 1,
+    "e": 5,
+    "own": {
+     "s": "a young man rehearsing into a cracked hand mirror on a windowsill",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  },
+  {
+   "id": "20.15",
+   "brief": 20,
+   "n": 15,
+   "ratio": "21:9",
+   "illustrated": false,
+   "prompt": "Over the shoulder of a comedian in a green room: a mirror ringed with bare bulbs, his reflection running the opening line with no smile at all. 40mm anamorphic, the bulbs flaring into ovals. Night. Tension.",
+   "slate": {
+    "l": 7,
+    "a": 5,
+    "lens": 5,
+    "t": 5,
+    "em": 1,
+    "own": {
+     "s": "a comedian running his opening line in a green room mirror ringed with bulbs",
+     "l": "",
+     "a": "",
+     "t": "",
+     "e": ""
+    }
+   }
+  }
+ ]
+}
