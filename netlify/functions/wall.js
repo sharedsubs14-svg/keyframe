@@ -6,7 +6,14 @@
 // Optional env vars: WALL_DAILY_LIMIT (default 3), WALL_REPORTS_TO_HIDE (default 3).
 
 const crypto = require('crypto');
+const { recordSignup } = require('../lib/signup.js');
 const MODEL = process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5';
+
+// The current Haiku thinks before it answers unless asked to keep it light. That thinking counts toward max_tokens
+// and can arrive as the first block of the reply. So: ask for low effort, leave room in max_tokens, and read the
+// answer by block type, never by position. Haiku 4.5 and older reject the effort setting, so they are not sent it.
+const TUNE = /claude-3|haiku-4|sonnet-4-5|sonnet-4-0|opus-4-1|opus-4-0/.test(MODEL) ? {} : { output_config: { effort: 'low' } };
+const textOf = (out) => (Array.isArray(out && out.content) ? out.content : []).filter(b => b && b.type === 'text').map(b => b.text).join('').trim();
 const PER_DAY = parseInt(process.env.WALL_DAILY_LIMIT || '3', 10);
 const HIDE_AT = parseInt(process.env.WALL_REPORTS_TO_HIDE || '3', 10);
 const MODELS = ['GPT Image 2', 'Nano Banana 2.1', 'Seedream 5 Pro', 'Midjourney', 'Something else'];
@@ -36,6 +43,7 @@ exports.handler = async (event) => {
   const svc = Object.assign({ apikey: SUPABASE_SERVICE_KEY, 'Content-Type': 'application/json' }, svcAuth);
   const rest = `${SUPABASE_URL}/rest/v1`;
   const day = new Date(Date.now() + 5.5 * 3600 * 1000).toISOString().slice(0, 10);
+  await recordSignup({ rest, svc, user, source: 'slate-wall' });
 
   // ---------- report ----------
   if (body.action === 'report') {
@@ -66,9 +74,9 @@ exports.handler = async (event) => {
     const ai = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: { 'x-api-key': ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'Content-Type': 'application/json' },
-      body: JSON.stringify({ model: MODEL, max_tokens: 60, system: SCREEN, messages: [{ role: 'user', content: [{ type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: tile.toString('base64') } }, { type: 'text', text: 'Screen this image.' }] }] })
+      body: JSON.stringify(Object.assign({ model: MODEL, max_tokens: 1024, system: SCREEN, messages: [{ role: 'user', content: [{ type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: tile.toString('base64') } }, { type: 'text', text: 'Screen this image.' }] }] }, TUNE))
     });
-    if (ai.ok) { const out = await ai.json(); const txt = (out.content && out.content[0] && out.content[0].text) || ''; const m = txt.match(/\{[\s\S]*\}/); verdict = m ? JSON.parse(m[0]) : null; }
+    if (ai.ok) { const out = await ai.json(); if (out.stop_reason === 'refusal') verdict = { allow: false }; else { const m = textOf(out).match(/\{[\s\S]*\}/); verdict = m ? JSON.parse(m[0]) : null; } }
   } catch (e) { verdict = null; }
   if (!verdict) return json(503, { error: 'The check is busy. Try again in a minute.' }, cors);
   if (verdict.allow !== true) return json(422, { error: `This one can't go on the wall${verdict.reason ? ': ' + String(verdict.reason).slice(0, 80) : '.'}` }, cors);

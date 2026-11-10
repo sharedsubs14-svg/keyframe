@@ -2,11 +2,18 @@
 // choosing the nearest option from the same lists the board uses. Each read counts as one of the day's reveals.
 // Uses the same keys as generate.js. Nothing is stored: the image is read once and dropped.
 
+const { recordSignup } = require('../lib/signup.js');
 global.window = global.window || {};
 require('../../js/options.js');
 const O = global.window.SLATE_OPTIONS;
 const MODEL = process.env.REVERSE_MODEL || process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5';
 const DAILY_LIMIT = parseInt(process.env.DAILY_LIMIT || '10', 10);
+
+// The current Haiku thinks before it answers unless asked to keep it light. That thinking counts toward max_tokens
+// and can arrive as the first block of the reply. So: ask for low effort, leave room in max_tokens, and read the
+// answer by block type, never by position. Haiku 4.5 and older reject the effort setting, so they are not sent it.
+const TUNE = /claude-3|haiku-4|sonnet-4-5|sonnet-4-0|opus-4-1|opus-4-0/.test(MODEL) ? {} : { output_config: { effort: 'low' } };
+const textOf = (out) => (Array.isArray(out && out.content) ? out.content : []).filter(b => b && b.type === 'text').map(b => b.text).join('').trim();
 
 const list = (arr) => arr.map((o, i) => `${i}: ${o.name} (${o.hint})`).join('\n');
 const SYSTEM = `You are a cinematographer reading a single film still. Work out the five SLATE decisions behind it and answer by picking the nearest option from each numbered list. Judge only what is visible.
@@ -52,6 +59,7 @@ exports.handler = async (event) => {
   const svc = Object.assign({ apikey: SUPABASE_SERVICE_KEY, 'Content-Type': 'application/json' }, /^eyJ/.test(SUPABASE_SERVICE_KEY) ? { Authorization: `Bearer ${SUPABASE_SERVICE_KEY}` } : {});
   const rest = `${SUPABASE_URL}/rest/v1`;
   const day = new Date(Date.now() + 5.5 * 3600 * 1000).toISOString().slice(0, 10);
+  await recordSignup({ rest, svc, user, source: 'slate-reverse' });
   const rows = await (await fetch(`${rest}/reveals?user_id=eq.${user.id}&day=eq.${day}&select=count`, { headers: svc })).json();
   const used = Array.isArray(rows) && rows[0] ? rows[0].count : 0;
   if (used >= DAILY_LIMIT) return json(429, { error: `That's ${DAILY_LIMIT} for today, reveals and reads together. It resets at midnight IST.` }, cors);
@@ -66,9 +74,9 @@ exports.handler = async (event) => {
     const ai = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: { 'x-api-key': ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'Content-Type': 'application/json' },
-      body: JSON.stringify({ model: MODEL, max_tokens: 500, system: SYSTEM, messages: [{ role: 'user', content: [{ type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: img.toString('base64') } }, { type: 'text', text: 'Read this frame.' }] }] })
+      body: JSON.stringify(Object.assign({ model: MODEL, max_tokens: 1500, system: SYSTEM, messages: [{ role: 'user', content: [{ type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: img.toString('base64') } }, { type: 'text', text: 'Read this frame.' }] }] }, TUNE))
     });
-    if (ai.ok) { const out = await ai.json(); const txt = (out.content && out.content[0] && out.content[0].text) || ''; const m = txt.match(/\{[\s\S]*\}/); read = m ? JSON.parse(m[0]) : null; }
+    if (ai.ok) { const out = await ai.json(); if (out.stop_reason === 'refusal') read = { refuse: true }; else { const m = textOf(out).match(/\{[\s\S]*\}/); read = m ? JSON.parse(m[0]) : null; } }
   } catch (e) { read = null; }
   if (!read) return json(502, { error: 'The reader is busy. Try again in a moment.' }, cors);
   if (read.refuse) return json(422, { error: 'This frame can’t be read here.' }, cors);

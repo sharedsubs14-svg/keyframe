@@ -3,8 +3,15 @@
 // Env vars (set in Netlify → Site configuration → Environment variables):
 //   ANTHROPIC_API_KEY, SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_KEY, SHEET_WEBHOOK_URL (optional), DAILY_LIMIT (optional)
 
+const { recordSignup } = require('../lib/signup.js');
 const DAILY_LIMIT = parseInt(process.env.DAILY_LIMIT || '10', 10);
 const MODEL = process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5';
+
+// The current Haiku thinks before it answers unless asked to keep it light. That thinking counts toward max_tokens
+// and can arrive as the first block of the reply. So: ask for low effort, leave room in max_tokens, and read the
+// answer by block type, never by position. Haiku 4.5 and older reject the effort setting, so they are not sent it.
+const TUNE = /claude-3|haiku-4|sonnet-4-5|sonnet-4-0|opus-4-1|opus-4-0/.test(MODEL) ? {} : { output_config: { effort: 'low' } };
+const textOf = (out) => (Array.isArray(out && out.content) ? out.content : []).filter(b => b && b.type === 'text').map(b => b.text).join('').trim();
 
 const GUIDES = {
   gpt: `Target: OpenAI GPT Image. Write one or two natural-language paragraphs, like a brief to a photographer. Full sentences, concrete nouns. State the subject first, then setting, light, camera and lens, time of day, mood and colour. Say what should NOT appear in plain words ("no text, no watermark") rather than special syntax. Do not use parameter flags or keyword lists.`,
@@ -43,11 +50,10 @@ exports.handler = async (event) => {
   const rest = `${SUPABASE_URL}/rest/v1`;
 
   // 2. First time? Record them and tell the Google Sheet.
-  const existing = await (await fetch(`${rest}/users?id=eq.${user.id}&select=id`, { headers: svc })).json();
-  if (Array.isArray(existing) && existing.length === 0) {
-    await fetch(`${rest}/users`, { method: 'POST', headers: svc, body: JSON.stringify({ id: user.id, email, name }) });
-    if (SHEET_WEBHOOK_URL) { try { await fetch(SHEET_WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, name, signed_up: new Date().toISOString(), source: 'slate' }) }); } catch (e) {} }
-  }
+  await recordSignup({ rest, svc, user, source: 'slate' });
+  let body; try { body = JSON.parse(event.body || '{}'); } catch (e) { return json(400, { error: 'Bad request' }, cors); }
+  // A plain "I just signed in" ping from the page: the sign-up is recorded above, nothing is written, nothing is counted.
+  if (body.hello) return json(200, { ok: true }, cors);
 
   // 3. Today's count (IST day so the reset feels right for India).
   const day = new Date(Date.now() + 5.5 * 3600 * 1000).toISOString().slice(0, 10);
@@ -56,7 +62,6 @@ exports.handler = async (event) => {
   if (used >= DAILY_LIMIT) return json(429, { error: `That's ${DAILY_LIMIT} reveals for today. The sheet resets at midnight IST.`, remaining: 0 }, cors);
 
   // 4. Write the prompt.
-  let body; try { body = JSON.parse(event.body || '{}'); } catch (e) { return json(400, { error: 'Bad request' }, cors); }
   const model = GUIDES[body.model] ? body.model : 'universal';
   const d = body.decisions || {};
   const lines = [
@@ -72,11 +77,12 @@ exports.handler = async (event) => {
   const ai = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: { 'x-api-key': ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: MODEL, max_tokens: 500, system: SYSTEM + '\n\n' + GUIDES[model], messages: [{ role: 'user', content: `Director's decisions:\n${lines}\n\nWrite the prompt.` }] })
+    body: JSON.stringify(Object.assign({ model: MODEL, max_tokens: 1500, system: SYSTEM + '\n\n' + GUIDES[model], messages: [{ role: 'user', content: `Director's decisions:\n${lines}\n\nWrite the prompt.` }] }, TUNE))
   });
   if (!ai.ok) { const t = await ai.text(); return json(502, { error: 'The writer is busy. Try again in a moment.', detail: t.slice(0, 200) }, cors); }
   const out = await ai.json();
-  const prompt = (out.content && out.content[0] && out.content[0].text || '').trim();
+  if (out.stop_reason === 'refusal') return json(422, { error: 'That one can’t be written here. Change the subject and try again.' }, cors);
+  const prompt = textOf(out);
   if (!prompt) return json(502, { error: 'Empty prompt returned' }, cors);
 
   // 5. Count it.

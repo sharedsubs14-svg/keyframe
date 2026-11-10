@@ -3,6 +3,13 @@
   const O = window.SLATE_OPTIONS;
   const CFG = window.SLATE_CONFIG || {};
   const DEMO = !CFG.SUPABASE_URL || !CFG.SUPABASE_ANON_KEY;
+  // Preview mode is for a local copy only. On a real address with no sign-in set up, nothing gated is handed out:
+  // the reveal, Reverse SLATE and posting all say sign-in opens shortly instead of faking it.
+  const LOCAL = location.protocol === 'file:' || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+  const LOCKED = DEMO && !LOCAL;
+  const soon = () => toast('SIGN-IN OPENS SHORTLY · YOUR SHEET STAYS AS IT IS');
+  // What sits under the blur is never the readable draft on a real address, so removing the blur shows nothing.
+  const veiled = (t) => LOCAL ? t : t.replace(/[A-Za-z0-9]/g, (c, i) => 'etaoinshrdlu'[(c.charCodeAt(0) + i) % 12]);
   const $ = (s, el) => (el || document).querySelector(s);
   const $$ = (s, el) => Array.from((el || document).querySelectorAll(s));
   const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -303,7 +310,7 @@
     drawStage();
     const sig = signature(), pt = $('#prompttext'), veil = $('#veil'), acts = $('#promptActions');
     if (state.revealed && state.revealedSig === sig) { pt.textContent = state.revealed; pt.classList.remove('blurred'); veil.classList.add('off'); acts.hidden = false; }
-    else { pt.textContent = localDraft(); pt.classList.add('blurred'); veil.classList.remove('off'); acts.hidden = true; }
+    else { pt.textContent = veiled(localDraft()); pt.classList.add('blurred'); veil.classList.remove('off'); acts.hidden = true; }
     $$('#modelTabs .tab').forEach(b => b.classList.toggle('on', b.dataset.id === state.model));
     renderDirector();
     renderSlop();
@@ -339,6 +346,7 @@
   async function reveal() {
     if (state.busy) return;
     if (!LETTERS.some(l => letterStatus(l))) { note('Decide at least one thing first, or press Auto-complete.'); return; }
+    if (LOCKED) { soon(); return; }
     if (DEMO) { openAuth(); return; }
     const session = await currentSession();
     if (!session) { openAuth(); return; }
@@ -365,6 +373,7 @@
   };
   const closeAuth = () => { $('#authModal').hidden = true; };
   async function googleSignIn() {
+    if (LOCKED) { closeAuth(); soon(); return; }
     if (DEMO) {
       closeAuth();
       state.revealed = localDraft() + '\n\n(Preview. On the live site Claude rewrites this for ' + O.models.find(m => m.id === state.model).name + ' using its own prompting guide.)';
@@ -381,12 +390,21 @@
   }
   function exportState() { const { s, act, l, env, a, lens, t, em, e, own, adv, model, source } = state; return { s, act, l, env, a, lens, t, em, e, own, adv, model, source }; }
   function importState(o) { Object.assign(state, o); $$('[data-own]').forEach(i => i.value = state.own[i.dataset.own] || ''); Object.entries(state.adv).forEach(([k, v]) => { const sel = $$('.adv-grid label').find(l => l.firstChild.textContent === k); if (sel) $('select', sel).value = v; }); }
+  // Tell the backend once per browser that this person signed in, so the sign-up is recorded even if they never reveal.
+  async function hello(session) {
+    try {
+      if (localStorage.getItem('slate_hello') === session.user.id) return;
+      const r = await fetch(CFG.FUNCTION_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + session.access_token }, body: JSON.stringify({ hello: true }) });
+      if (r.ok) localStorage.setItem('slate_hello', session.user.id);
+    } catch (e) {}
+  }
   async function resumeAfterLogin() {
     if (DEMO) return;
     const session = await currentSession();
     if (session) { $('#authBtn').textContent = 'Sign out'; $('#authBtn').onclick = async () => { await supa.auth.signOut(); location.reload(); }; }
     let pending = null; try { pending = localStorage.getItem('slate_pending'); } catch (e) {}
     if (session && pending) { try { localStorage.removeItem('slate_pending'); importState(JSON.parse(pending)); render(); $('#play').scrollIntoView(); await generate(session); } catch (e) {} }
+    else if (session) hello(session);
   }
 
   // ---------- share card ----------
@@ -625,7 +643,7 @@
     $('#closeAuth').addEventListener('click', closeAuth);
     $('#authModal').addEventListener('click', e => { if (e.target.id === 'authModal') closeAuth(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAuth(); });
-    $('#authBtn').addEventListener('click', () => { if (DEMO) toast('PREVIEW · SIGN-IN IS WIRED ON THE LIVE SITE'); else googleSignIn(); });
+    $('#authBtn').addEventListener('click', () => { if (LOCKED) soon(); else if (DEMO) toast('PREVIEW · SIGN-IN IS WIRED ON THE LIVE SITE'); else googleSignIn(); });
     $('#copyBtn').addEventListener('click', async () => { try { await navigator.clipboard.writeText(state.revealed); toast('COPIED'); } catch (e) { toast('SELECT AND COPY THE TEXT'); } });
     $('#feedBtn').addEventListener('click', () => downloadFormat('feed'));
     $('#storyBtn').addEventListener('click', () => downloadFormat('story'));
@@ -634,7 +652,7 @@
 
     render();
     resumeAfterLogin();
-    window.SLATE_APP = { CFG, DEMO, supa, LISTS, LETTERS, state, render, note, toast, openAuth, currentSession, exportState, importState, slopScore, letterValue, applyBrief,
+    window.SLATE_APP = { CFG, DEMO, LOCKED, soon, supa, LISTS, LETTERS, state, render, note, toast, openAuth, currentSession, exportState, importState, slopScore, letterValue, applyBrief,
       sheetLines: (st) => { const keep = JSON.parse(JSON.stringify(exportState())); if (st) Object.assign(state, st); const out = LETTERS.map(L => [L, letterValue(L) || '']); Object.assign(state, keep); return out; },
       openSheet: (st) => { const base = { s: null, act: null, l: null, env: null, a: null, lens: null, t: null, em: null, e: null, own: { s: '', l: '', a: '', t: '', e: '' }, adv: {}, source: {} }; importState(Object.assign(base, st || {})); render(); $('#play').scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' }); note('This is their sheet. Change one letter and make it yours.'); } };
     document.dispatchEvent(new Event('slate:ready'));

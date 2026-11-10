@@ -2,7 +2,7 @@
 
 The website files are already in this GitHub repo and already connected to Netlify. What is left needs your own logins, so only you can do it: the accounts and the keys. Budget about an hour. Do the parts in order.
 
-Until this is done the site runs in preview mode. It looks complete, but sign-in, real prompts, Reverse SLATE and posting to the wall are switched off.
+Until this is done the site is live but locked: people can use the drafting table and browse the wall, and every gated action (revealing a prompt, Reverse SLATE, posting a frame) answers "sign-in opens shortly". Nothing is handed out without a sign-up.
 
 | Piece | What it does | Cost |
 |---|---|---|
@@ -95,15 +95,16 @@ This is the fiddliest part. Go slowly and copy addresses exactly.
 
 ## Part 6 · Give Claude the two public values (2 min)
 
-In the Claude Code chat, send these two lines from your notes, and the date you want Daily Frame No. 001 to appear:
+In the Claude Code chat, send these two lines from your notes:
 
 ```
 SUPABASE_URL = ...
 SUPABASE_ANON_KEY = ...
-Launch date = ...
 ```
 
-These two are public and are meant to be in the website file. Claude puts them into `index.html`, sets the date in `js/briefs.js`, and pushes. Do not send the two SECRET values.
+These two are public and are meant to be in the website file. Claude puts them into `index.html` and publishes. Do not send the two SECRET values.
+
+Daily Frame No. 001 is set to 11 November 2026, in `js/briefs.js`.
 
 ## Part 7 · Add the secret keys in Netlify (5 min)
 
@@ -121,7 +122,7 @@ These two are public and are meant to be in the website file. Claude puts them i
 
    Optional: `WALL_DAILY_LIMIT` (posts per person per day, default 3) and `WALL_REPORTS_TO_HIDE` (reports that take a frame down, default 3).
 
-The keys are picked up by the next deploy, which is the merge in Part 9.
+The keys are picked up by the next deploy. That happens by itself when Claude publishes your two values from Part 6. If you add or change a key later, go to **Deploys**, then **Trigger deploy**, then **Deploy site**.
 
 ## Part 8 · Tell Supabase the address (2 min)
 
@@ -129,16 +130,15 @@ The keys are picked up by the next deploy, which is the merge in Part 9.
    - **Site URL**: `https://keyframe24.ai`
    - **Redirect URLs**: add `https://keyframe24.ai/**` and `https://www.keyframe24.ai/**`. Save.
 
-## Part 9 · Go live, then test (15 min)
+## Part 9 · Test the live site (15 min)
 
-1. Merge the pull request Claude gives you: **Create pull request**, **Merge pull request**, **Confirm merge**. Netlify publishes in about a minute. This is the moment The Sunday Shoot page leaves keyframe24.ai and SLATE takes its place.
-2. Open `https://keyframe24.ai` in a private or incognito window and check each item:
+Once Claude has published your two values, open `https://keyframe24.ai` in a private or incognito window and check each item:
 
 - [ ] The page loads in light mode. The theme switch works.
 - [ ] Pick a subject. The drawing changes. Drag the lamp, the camera and the sun.
 - [ ] The Slop Score drops as you make your own choices.
 - [ ] Click **Reveal the prompt**, sign in with Google, and a real prompt appears. Switch the model tab and reveal again.
-- [ ] A new row appears in the `SLATE sign-ups` sheet within a few seconds.
+- [ ] A new row appears in the `SLATE sign-ups` sheet within a few seconds. The same person also shows in Supabase under **Authentication**, **Users**, and in **Table Editor**, `users`.
 - [ ] The Daily Frame shows today's brief and the countdown. Click **Post your frame**, upload any image you made, post it. It appears on the wall. (A refusal message means the image check said no. That is the check working.)
 - [ ] Open the frame on the wall and click **Open this sheet on the board**.
 - [ ] In **Reverse SLATE**, drop in any film still. Five rows fill in, and **Open this sheet on the board** loads them.
@@ -168,6 +168,16 @@ Where things live, if you ever want to look yourself:
 - Colours and fonts: the top of `css/style.css`
 - The policy pages, contact, delivery, pricing and the thank-you page: the files at the top of the repo with those names. SLATE's footer links to Terms, Privacy and Contact
 - The Sunday Shoot site: the `backup-sunday-shoot` folder. See README.md
+
+## Where the sign-ups live
+
+Every person who signs in with Google is recorded in three places, the first time they sign in:
+
+- **Your Google Sheet** `SLATE sign-ups`: one row with the time, email, name and what they did first (`slate` for a reveal or a plain sign-in, `slate-reverse`, `slate-wall`). This is the list to work from.
+- **Supabase, Table Editor, `users`**: the same people, as a table.
+- **Supabase, Authentication, Users**: Google's own record of every account, with last sign-in time. It can be exported.
+
+Nobody gets a prompt, a Reverse SLATE read or a wall post without signing in. The check runs on the server, so it cannot be skipped from the browser.
 
 ## Looking after the Daily Frame wall
 

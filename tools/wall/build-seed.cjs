@@ -9,8 +9,8 @@
    Usage:   node tools/wall/build-seed.cjs <folder-of-images>
    Needs:   npm install sharp   (run it inside tools/wall, once)
 
-   A file is matched to a frame by its name: either the frame id (1.01, 14.07 ...) or the
-   Magnific creation identifier recorded for that frame in frames.json. */
+   A file is matched to a frame by its name: the Magnific creation identifier recorded for that
+   frame in frames.json (Magnific's own zip names carry it), or else the frame id (1.01, 14.07 ...). */
 const fs = require('fs'), path = require('path');
 let sharp; try { sharp = require('sharp'); } catch (e) { console.error('sharp is missing. Run: cd tools/wall && npm install sharp'); process.exit(1); }
 
@@ -22,9 +22,10 @@ const pad = (n) => String(n).padStart(2, '0');
 
 function match(name) {
   const base = name.replace(/\.[a-z0-9]+$/i, '');
+  const byMagnific = frames.find(f => f.magnific && base.includes(f.magnific));
+  if (byMagnific) return byMagnific;
   const m = base.match(/(?:^|[^0-9])(\d{1,2}\.\d{2})(?![0-9])/);
-  if (m && byId.has(m[1])) return byId.get(m[1]);
-  return frames.find(f => f.magnific && base.includes(f.magnific)) || null;
+  return m && byId.has(m[1]) ? byId.get(m[1]) : null;
 }
 function walk(dir) { return fs.readdirSync(dir, { withFileTypes: true }).flatMap(d => d.isDirectory() ? walk(path.join(dir, d.name)) : [path.join(dir, d.name)]); }
 

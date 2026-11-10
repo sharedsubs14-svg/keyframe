@@ -39,6 +39,7 @@
       if (!f || busy) return;
       if (!/^image\//.test(f.type)) { msg.textContent = 'That file is not an image.'; return; }
       if (f.size > 25e6) { msg.textContent = 'That image is over 25 MB. Export a smaller copy.'; return; }
+      if (A.LOCKED) { msg.textContent = 'Sign-in opens shortly. Reverse SLATE switches on with it.'; return; }
       let session = null;
       if (!A.DEMO && A.supa) { session = await A.currentSession(); if (!session) { A.openAuth('reverse'); return; } }
       busy = true; const drop = $('#rDrop'); drop.classList.add('busy');

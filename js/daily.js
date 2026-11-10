@@ -211,6 +211,7 @@
     }
     async function beginPost() {
       if (viewing !== today()) return;
+      if (A.LOCKED) { A.soon(); return; }
       if (DEMO || !A.supa) { openPost(); return; }
       const session = await A.currentSession();
       if (!session) { A.openAuth('upload'); return; }

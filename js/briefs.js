@@ -4,7 +4,7 @@
 // (k is which list, i is the position in that list in options.js, counting from 0), n = optional note on the rule.
 // After the last brief the list starts again from the top.
 window.SLATE_BRIEFS = {
-  start: '2026-11-05',
+  start: '2026-11-11',
   list: [
     { b: 'A goodbye at a railway station.', t: 'The one leaving is the one smiling.', k: 'lens', i: 4 },
     { b: 'The first customer at a chai stall, 5am.', t: 'No faces anywhere in the frame.', k: 't', i: 0 },
