@@ -1,0 +1,8 @@
+/* Keyframe Design System — global entry point.
+   Consumers link this one file. It is a list of @imports only.
+   Everything reachable from here ships to consuming projects. */
+
+@import url('./tokens/fonts.css');
+@import url('./tokens/colors.css');
+@import url('./tokens/typography.css');
+@import url('./tokens/spacing.css');

@@ -1,16 +1,34 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>keyframe24.ai</title>
-<link rel="stylesheet" href="assets/kf-mobile.css">
-<script src="./support.js"></script>
-<script src="assets/kf-mobile.js" defer></script>
+<title>SLATE by Keyframe</title>
+<meta name="description" content="A free drafting table for AI images. Five decisions, one directed prompt, written for the model you use.">
+<link rel="canonical" href="https://keyframe24.ai/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SLATE by Keyframe">
+<meta property="og:title" content="SLATE by Keyframe">
+<meta property="og:description" content="A free drafting table for AI images. Five decisions, one directed prompt, written for the model you use.">
+<meta property="og:url" content="https://keyframe24.ai/">
+<meta property="og:image" content="https://keyframe24.ai/img/open/boxer-plate.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Patrick+Hand&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script>
+// SLATE config. Leave the two Supabase values empty to run in preview mode (no sign-in, no backend).
+window.SLATE_CONFIG = {
+  SUPABASE_URL: '',
+  SUPABASE_ANON_KEY: '',
+  FUNCTION_URL: '/.netlify/functions/generate'
+};
+try { var t = localStorage.getItem('slate_theme'); document.documentElement.dataset.theme = t || 'light'; } catch (e) { document.documentElement.dataset.theme = 'light'; }
+</script>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -30,1205 +48,310 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 </head>
 <body>
-<x-dc>
-<helmet>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>keyframe24.ai</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Caveat:wght@500&display=swap">
-  <link rel="stylesheet" href="_ds/keyframe-design-system-f9b40530-5292-49e7-b718-a100597d8be9/tokens/fonts.css">
-  <link rel="stylesheet" href="_ds/keyframe-design-system-f9b40530-5292-49e7-b718-a100597d8be9/tokens/colors.css">
-  <link rel="stylesheet" href="_ds/keyframe-design-system-f9b40530-5292-49e7-b718-a100597d8be9/tokens/typography.css">
-  <link rel="stylesheet" href="_ds/keyframe-design-system-f9b40530-5292-49e7-b718-a100597d8be9/tokens/spacing.css">
-  <script src="_ds/keyframe-design-system-f9b40530-5292-49e7-b718-a100597d8be9/_ds_bundle.js"></script>
-  <script src="image-slot.js"></script>
-  <style>
-    *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-    html,body{overflow-x:clip}
-    body{margin:0;background:#F5F1EA;color:var(--body,#A49EB0);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-    a{color:var(--strong,#E8E5EE);text-decoration:none}
-    a:hover{color:var(--accent,#C4B5FD)}
-    @keyframes kfPulse{0%,100%{opacity:1}50%{opacity:0.3}}
-    @keyframes kfMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-    @keyframes kfUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-    @keyframes kfDriftA{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(4%,3%,0) scale(1.08)}}
-    @keyframes kfDriftB{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-5%,-2%,0) scale(1.06)}}
-    @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}html{scroll-behavior:auto}}
-  </style>
-</helmet>
-<div id="top" style="{{ rootVars }};position:relative;min-height:100vh;background:var(--bg,linear-gradient(180deg,#000000 0%,#050308 18%,#08050D 42%,#03020A 70%,#000000 100%));overflow-x:clip;padding-bottom:var(--barH,84px)">
-  <div aria-hidden="true" style="position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden">
-    <div style="position:absolute;left:-20%;top:-10%;width:70vw;max-width:980px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.099) 0%,rgba(124,58,237,0.025) 45%,rgba(0,0,0,0) 70%);filter:blur(84px);opacity:var(--leak2,1);animation:kfDriftA 26s ease-in-out infinite;animation-play-state:var(--play,running)"></div>
-    <div style="position:absolute;right:-22%;top:24%;width:74vw;max-width:1040px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,0.07) 0%,rgba(124,58,237,0.028) 45%,rgba(0,0,0,0) 70%);filter:blur(84px);opacity:var(--leak2,1);animation:kfDriftB 32s ease-in-out infinite;animation-play-state:var(--play,running)"></div>
-    <div style="position:absolute;left:-16%;bottom:-20%;width:72vw;max-width:1020px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(76,29,149,0.062) 0%,rgba(124,58,237,0.026) 45%,rgba(0,0,0,0) 70%);filter:blur(84px);opacity:var(--leak2,1);animation:kfDriftA 38s ease-in-out infinite reverse;animation-play-state:var(--play,running)"></div>
-    <div style="position:absolute;inset:-10%;background:radial-gradient(ellipse at 50% 40%,rgba(0,0,0,0) 40%,var(--vig,rgba(0,0,0,0.55)) 100%)"></div>
-  </div>
-  <div aria-hidden="true" style="position:fixed;inset:0;z-index:61;pointer-events:none;opacity:var(--grainO,0.05);mix-blend-mode:var(--grainBlend,screen);background-image:var(--grain);background-size:180px 180px"></div>
+<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="grain" aria-hidden="true"></div>
 
-  <nav style="position:absolute;top:0;left:0;right:0;z-index:5;height:var(--navH,72px);display:flex;align-items:center">
-    <div style="max-width:1180px;width:100%;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px">
-      <a href="#top" style="display:inline-flex;align-items:center" aria-label="Keyframe home">
-        <sc-if value="{{ isLight }}" hint-placeholder-val="{{ false }}"><img src="assets/keyframe-wordmark-dark.png" alt="keyframe" style="display:block;height:var(--logoH,34px);width:auto" /></sc-if><sc-if value="{{ isDark }}" hint-placeholder-val="{{ true }}"><img src="assets/keyframe-wordmark.png" alt="keyframe" style="display:block;height:var(--logoH,34px);width:auto" /></sc-if>
-      </a>
-      <button type="button" onClick="{{ toggleTheme }}" aria-label="{{ themeAria }}" title="{{ themeAria }}" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 16px 0 13px;border-radius:999px;border:1px solid var(--line2,#2A2434);background:var(--glass);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);color:var(--strong,#E8E5EE);font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.1em;text-transform:lowercase;font-variant:small-caps;cursor:pointer;transition:border-color 0.35s ease-out,color 0.35s ease-out,background 0.35s ease-out" style-hover="border-color:rgba(168,85,247,0.45);color:var(--ink,#FFFFFF)"><sc-if value="{{ isDark }}" hint-placeholder-val="{{ true }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg></sc-if><sc-if value="{{ isLight }}" hint-placeholder-val="{{ false }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></sc-if>{{ themeLabel }}</button>
-    </div>
+<header class="top glass">
+  <a class="brand" href="#top" aria-label="SLATE by Keyframe, back to the top"><span class="brand-word" data-l="SLATE">SLATE</span><span class="brand-by">by Keyframe</span></a>
+  <nav class="topnav">
+    <a href="#play" class="hide-sm">Drafting table</a>
+    <a href="#reverse" class="hide-sm">Reverse SLATE</a>
+    <a href="#daily" class="hide-sm">Daily Frame</a>
+    <a href="#letters" class="hide-sm">The five</a>
+    <button type="button" class="theme" id="themeBtn" aria-label="Switch theme"><span class="theme-dot"></span><span id="themeLabel">LIGHT</span></button>
+    <button type="button" class="btn line" id="authBtn">Sign in</button>
   </nav>
+</header>
 
-  <header style="position:relative;z-index:1;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:calc(var(--navH,72px) + clamp(56px,9vw,132px)) 0 clamp(48px,7vw,104px)">
-    <div aria-hidden="true" style="position:absolute;left:50%;top:-34%;width:min(1500px,150vw);aspect-ratio:1.5;transform:translateX(-50%);pointer-events:none;opacity:var(--leak,1);background:radial-gradient(ellipse at 50% 50%,rgba(124,58,237,0.186) 0%,rgba(124,58,237,0.056) 38%,rgba(0,0,0,0) 68%);filter:blur(84px)"></div>
-    <div aria-hidden="true" style="position:absolute;left:0;right:0;top:var(--navH,72px);height:1px;pointer-events:none;background:linear-gradient(90deg,rgba(196,181,253,0) 0%,var(--accentLine,rgba(196,181,253,0.35)) 50%,rgba(196,181,253,0) 100%);opacity:var(--leak,1)"></div>
-    <div aria-hidden="true" style="position:absolute;right:-18%;top:34%;width:min(760px,80vw);aspect-ratio:1;pointer-events:none;opacity:var(--leak,1);background:radial-gradient(circle,rgba(168,85,247,0.087) 0%,rgba(0,0,0,0) 66%);filter:blur(84px)"></div>
-
-    <div style="position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:clamp(40px,5vw,72px);align-items:center">
-      <div style="flex:1 1 470px;min-width:min(100%,290px);display:flex;flex-direction:column;align-items:flex-start;gap:clamp(20px,2.2vw,28px)">
-
-        <div style="animation:var(--revA,none);animation-delay:0ms;animation-fill-mode:both;display:inline-flex;align-items:center;gap:12px;font-family:'Inter',sans-serif;font-weight:600;font-size:18px;letter-spacing:var(--lblLS,0.2em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--strong,#E8E5EE)">
-          <span aria-hidden="true" style="flex:none;width:9px;height:9px;border-radius:50%;background:#FF453A;box-shadow:0 0 10px rgba(255,69,58,0.55);animation:kfPulse 2.4s ease-in-out infinite;animation-play-state:var(--play,running)"></span>live workshop
-        </div>
-
-        <h1 style="animation:var(--revA,none);animation-delay:90ms;animation-fill-mode:both;margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH1);line-height:0.98;letter-spacing:-0.022em;color:var(--ink,#FFFFFF);text-wrap:pretty;max-width:14ch">Direct a real <span style="font-style:italic;color:var(--inkSoft,#E9E3F7);white-space:nowrap">AI film</span>, live.</h1>
-
-        <p style="animation:var(--revA,none);animation-delay:200ms;animation-fill-mode:both;margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.68;color:var(--body,#A49EB0);max-width:38ch;text-wrap:pretty">In one sitting, a blank idea becomes a finished film. The only AI workshop worth three hours of your Sunday.</p>
-
-        <div style="animation:var(--revA,none);animation-delay:300ms;animation-fill-mode:both;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
-          <span style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH1);line-height:0.95;letter-spacing:-0.018em;color:var(--ink,#FFFFFF)"><span style="font-family:'Inter',sans-serif;font-weight:500;font-size:0.68em;letter-spacing:0;vertical-align:0.06em">{{ curSym }}</span>{{ priceNow }}</span>
-          <span style="font-family:'Inter',sans-serif;font-size:19px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ priceWas }}</span>
-          <sc-if value="{{ showDiscount }}" hint-placeholder-val="{{ true }}"><span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:8px;white-space:nowrap;background:rgba(124,58,237,0.12);border:1px solid rgba(168,85,247,0.34);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4);font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent,#7C3AED)">{{ priceOff }}</span></sc-if>
-        </div>
-
-        <div style="animation:var(--revA,none);animation-delay:400ms;animation-fill-mode:both;display:flex;flex-direction:column;gap:10px;width:100%;max-width:440px"><sc-if value="{{ showInvite }}" hint-placeholder-val="{{ true }}"><a href="{{ inviteUrl }}" target="_blank" rel="noopener" style="align-self:flex-end;display:inline-flex;align-items:center;min-height:28px;font-family:'Inter',sans-serif;font-size:16px;font-weight:500;line-height:1.3;color:var(--strong,#E8E5EE);text-decoration:underline;text-decoration-color:var(--line2,#221D2C);text-underline-offset:4px;white-space:nowrap;transition:color 0.25s ease-out,text-decoration-color 0.25s ease-out" style-hover="color:var(--accent,#C4B5FD);text-decoration-color:var(--accent,#C4B5FD)">Have an invite code?</a></sc-if>
-        <a href="#price" style="animation:var(--revA,none);animation-delay:0ms;animation-fill-mode:none;display:inline-flex;align-items:center;justify-content:center;width:100%;max-width:440px;min-height:60px;padding:16px 30px;border-radius:14px;background:var(--btn,#FFFFFF);color:var(--btnInk,#000000);font-family:'Inter',sans-serif;font-weight:600;font-size:17px;letter-spacing:0.01em;border:1px solid transparent;transition:box-shadow 0.45s ease-out,background 0.5s cubic-bezier(0.22,0.61,0.36,1),border-color 0.45s ease-out,color 0.3s ease-out,transform 0.45s cubic-bezier(0.22,0.61,0.36,1),backdrop-filter 0.5s ease-out" style-hover="background:radial-gradient(130% 120% at 16% -10%,rgba(168,85,247,0.4) 0%,rgba(124,58,237,0.24) 45%,rgba(124,58,237,0.14) 100%),var(--glass);color:var(--ink,#FFFFFF);border-color:rgba(168,85,247,0.45);box-shadow:inset 0 1px 0 rgba(255,255,255,0.5),0 22px 56px -30px rgba(88,28,180,0.55);backdrop-filter:blur(30px) saturate(1.8);-webkit-backdrop-filter:blur(30px) saturate(1.8);transform:translateY(-2px)">{{ seatCta }}</a></div>
-
-        <div style="animation:var(--revA,none);animation-delay:500ms;animation-fill-mode:both;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;background-image:linear-gradient(90deg,var(--lineT),var(--line,#15121B) 8%,var(--line,#15121B) 92%,var(--lineT));background-size:100% 1px;background-repeat:no-repeat;background-position:0 0;padding-top:20px;width:100%;max-width:440px">
-          <div style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH3);line-height:1.2;color:var(--strong,#E8E5EE)">{{ sessionLabel }}</div>
-          <div style="font-family:'Inter',sans-serif;font-size:15px;letter-spacing:0.1em;color:var(--dim,#6F6A7A)">{{ countdown }}</div>
-        </div>
+<main>
+  <!-- OPENING: one real photograph, split into layers. The photos, the words and the labels all come from js/opening-frames.js. -->
+  <section id="top" class="open" aria-label="Walk onto the set">
+    <div class="op-pin" id="opPin">
+      <div class="op-lines" id="opLines">
+        <p class="on">Every frame is five decisions.<small>scroll, and walk onto the set</small></p>
+        <p><span></span><small></small></p><p><span></span><small></small></p><p><span></span><small></small></p><p><span></span><small></small></p><p><span></span><small></small></p>
       </div>
-
-      <sc-if value="{{ heroSide }}" hint-placeholder-val="{{ true }}">
-      <div style="flex:1 1 430px;min-width:min(100%,290px);width:100%;display:flex;flex-direction:column;gap:10px">
-        <div style="display:flex;align-items:flex-end;gap:6px;padding-right:8px">
-          <span style="font-family:'Caveat',cursive;font-weight:500;font-size:clamp(22px,1.9vw,28px);line-height:1.1;color:var(--strong,#E8E5EE)">My latest AI ad film</span>
-          <svg aria-hidden="true" width="54" height="48" viewBox="0 0 54 48" fill="none" style="flex:none;color:var(--accent,#C4B5FD);margin-bottom:-6px"><path d="M4 6c14 2 30 6 38 18 4 6 5 12 4 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"></path><path d="M38 36l8 7 5-10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
+      <div class="op-scale" id="opScale" aria-hidden="true"><div class="op-world" id="opWorld">
+        <div class="op-floor"></div>
+        <div class="op-cel op-bd" id="opBd">
+          <img class="bd-dull" id="opDull" alt="" decoding="async"><img class="bd-noon" id="opNoon" alt="" decoding="async"><img class="bd-gold" id="opGold" alt="" decoding="async"><img class="bd-final" id="opFinal" alt="" decoding="async">
+          <i class="bd-vig" id="opVig"></i>
         </div>
-        <div style="position:relative;border:1px solid var(--line2,#1E1A26);border-radius:20px;overflow:hidden;background:var(--surf,#07050A)">
-          <div style="position:relative;aspect-ratio:16/9">
-            <sc-if value="{{ hasHeroVid }}" hint-placeholder-val="{{ false }}"><iframe ref="{{ heroRef }}" src="{{ heroEmbed }}" title="Ninety seconds, then decide" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="allowfullscreen" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe><button type="button" onClick="{{ heroSound }}" style="position:absolute;right:14px;bottom:14px;z-index:2;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line2,#221D2C);background:var(--glass);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);color:var(--ink,#FFFFFF);font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.01em;cursor:pointer;transition:background 0.3s ease-out,border-color 0.3s ease-out" style-hover="background:radial-gradient(120% 120% at 30% 0%,rgba(168,85,247,0.24),rgba(124,58,237,0.1)),var(--glass);border-color:rgba(168,85,247,0.45)"><sc-if value="{{ heroMuted }}" hint-placeholder-val="{{ true }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><line x1="17" y1="9" x2="22" y2="14"></line><line x1="22" y1="9" x2="17" y2="14"></line></svg></sc-if><sc-if value="{{ heroLoud }}" hint-placeholder-val="{{ false }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M16.5 8.5a4.5 4.5 0 0 1 0 7"></path><path d="M19.5 5.8a8 8 0 0 1 0 12.4"></path></svg></sc-if>{{ heroSoundLabel }}</button></sc-if>
-            <sc-if value="{{ noHeroVid }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--surf,#07050A);font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim,#6F6A7A);text-align:center;padding:24px">the film goes here · paste its youtube link in tweaks</div></sc-if>
+        <div class="op-tag" id="opTagL"></div>
+        <div class="op-tag" id="opTagT"></div>
+        <div class="op-cel op-sub" id="opSub">
+          <svg viewBox="0 0 2048 1152" preserveAspectRatio="none"><path id="opOutline" d=""/></svg>
+          <img id="opSubImg" alt="" decoding="async">
+        </div>
+        <div class="op-tag" id="opTagS"></div>
+        <div class="op-cel op-gate" id="opGate"><i class="tv"></i><i class="th"></i><b class="bar t"></b><b class="bar b"></b></div>
+        <div class="op-tag" id="opTagA"></div>
+        <div class="op-tag" id="opTagE"></div>
+        <div class="op-card" id="opCam"><svg width="276" height="192" viewBox="-30 -24 60 42" style="margin:-96px 0 0 -138px"><rect class="acc" x="-24" y="-13" width="30" height="26" rx="3"/><rect class="acc" x="6" y="-8" width="12" height="16" rx="2"/><rect class="acc" x="-16" y="-20" width="12" height="7" rx="1"/></svg></div>
+      </div></div>
+      <div class="op-hud" id="opHud" aria-hidden="true"><span data-l="S">S</span><span data-l="L">L</span><span data-l="A">A</span><span data-l="T">T</span><span data-l="E">E</span></div>
+      <div class="op-flash" id="opFlash" aria-hidden="true"></div>
+      <div class="op-end entry-copy" id="opEnd">
+        <p class="op-action">Action. Your turn.</p>
+        <h1 class="entry-h">Who is in your frame, and what are they doing<span class="caret" aria-hidden="true"></span></h1>
+        <div class="entry-opts" id="entryOpts"></div>
+        <form class="entry-own" id="entryForm">
+          <label class="sr" for="entryInput">Type your own subject</label>
+          <input id="entryInput" type="text" placeholder="or type anything, in any language" autocomplete="off">
+          <button type="submit" class="btn solid">Start the sheet</button>
+        </form>
+      </div>
+      <span class="op-cue" id="opCue" aria-hidden="true">scroll ↓</span>
+      <div class="op-review" id="opReview" hidden></div>
+    </div>
+  </section>
+
+  <section id="play" class="play">
+    <div class="play-head">
+      <p class="note" id="note" aria-live="polite">Sheet 01. Pick a subject to start.</p>
+      <div class="meter">
+        <span class="eyebrow dim">specified</span>
+        <span class="ticks" id="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="count" id="count">0 / 5</span>
+        <button type="button" class="chip" id="randomBtn" title="Fill every blank the way the model would on its own">Random</button>
+        <button type="button" class="chip" id="autoBtn" title="Fill only the blanks, matched to what you chose">Auto-complete</button>
+      </div>
+    </div>
+
+    <div class="table">
+      <div class="board">
+        <div class="halo" id="halo" aria-hidden="true"></div>
+        <div class="sheet">
+          <svg id="stage" viewBox="0 0 800 450" role="img" aria-label="Live blueprint of the shot">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" class="gridline"/></pattern>
+              <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="hatchline"/></pattern>
+              <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop id="skyTop" offset="0" stop-color="#3A6AB0"/><stop id="skyBot" offset="1" stop-color="#A8CCF0"/></linearGradient>
+              <linearGradient id="coneG" gradientUnits="userSpaceOnUse" x1="230" y1="118" x2="400" y2="270"><stop id="cone1" offset="0" stop-color="#F4EFE6" stop-opacity=".55"/><stop id="cone2" offset="1" stop-color="#F4EFE6" stop-opacity=".03"/></linearGradient>
+              <radialGradient id="glowG"><stop id="glow1" offset="0" stop-color="#F4EFE6" stop-opacity=".9"/><stop id="glow2" offset="1" stop-color="#F4EFE6" stop-opacity="0"/></radialGradient>
+              <path id="personPath" d="M394 228 L406 228 L407 234 Q422 236 428 244 L434 300 Q434 306 429 306 L424 262 L422 300 L421 372 L405 372 L402 310 L398 310 L395 372 L379 372 L378 300 L376 262 L371 306 Q366 306 366 300 L372 244 Q378 236 393 234 Z"/>
+              <circle id="personHead" cx="400" cy="212" r="15"/>
+              <g id="personTpl"><path class="body" d="M394 228 L406 228 L407 234 Q422 236 428 244 L434 300 Q434 306 429 306 L424 262 L422 300 L421 372 L405 372 L402 310 L398 310 L395 372 L379 372 L378 300 L376 262 L371 306 Q366 306 366 300 L372 244 Q378 236 393 234 Z"/><circle class="body" cx="400" cy="212" r="15"/><path d="M400 312 L400 292" class="ink thin"/></g>
+              <clipPath id="personClip"><use href="#personPath"/><use href="#personHead"/></clipPath>
+            </defs>
+
+            <rect class="paper" width="800" height="450"/>
+            <rect width="800" height="450" fill="url(#grid)"/>
+            <rect id="sky" width="800" height="250" fill="url(#skyG)" opacity=".1"/>
+            <path class="ink faint" d="M40 250 Q400 -170 760 250" stroke-dasharray="2 7"/>
+            <g id="sunG"><circle id="sun" cx="400" cy="44" r="13" fill="#FFE9A8"/><circle class="pulse" id="sunPulse" cx="400" cy="44" r="18"/><circle class="hit" id="sunHit" cx="400" cy="44" r="30"/><text id="sunLab" class="mono lab" x="400" y="28" text-anchor="middle"></text></g>
+            <line x1="0" y1="250" x2="800" y2="250" class="ink" stroke-opacity=".6"/>
+            <g class="ink faint"><line x1="400" y1="250" x2="-300" y2="450"/><line x1="400" y1="250" x2="0" y2="450"/><line x1="400" y1="250" x2="200" y2="450"/><line x1="400" y1="250" x2="400" y2="450"/><line x1="400" y1="250" x2="600" y2="450"/><line x1="400" y1="250" x2="800" y2="450"/><line x1="400" y1="250" x2="1100" y2="450"/><line x1="0" y1="282" x2="800" y2="282"/><line x1="0" y1="330" x2="800" y2="330"/><line x1="0" y1="400" x2="800" y2="400"/></g>
+
+            <g id="rig">
+              <line id="stand" class="ink" x1="230" y1="130" x2="230" y2="396"/>
+              <path id="feet" class="ink" d="M214 404 L230 396 L246 404"/>
+              <polygon id="cone" fill="url(#coneG)" points="0,0"/>
+              <g id="lamp" transform="translate(230 118)">
+                <circle id="glow" r="30" fill="url(#glowG)"/>
+                <path class="inkfill" d="M-18 -11 H4 V11 H-18 Z"/>
+                <path class="ink" d="M4 -11 L14 -17 M4 11 L14 17"/>
+                <circle id="bulb" cx="4" cy="0" r="4" fill="#F4EFE6"/>
+                <circle class="pulse" r="20"/>
+                <circle class="hit" id="lampHit" r="32"/>
+              </g>
+              <text id="lampLab" class="mono lab" x="230" y="84" text-anchor="middle"></text>
+            </g>
+
+            <g id="crowd" opacity="0">
+              <g data-person="crowd" transform="translate(115 136) scale(.5)"></g>
+              <g data-person="crowd" transform="translate(175 140) scale(.5)"></g>
+              <g data-person="crowd" transform="translate(420 138) scale(.5)"></g>
+              <g data-person="crowd" transform="translate(490 136) scale(.5)"></g>
+            </g>
+            <ellipse id="floorShadow" cx="400" cy="374" rx="60" ry="8" class="shadowfill"/>
+            <g id="hero"><g data-person="main"></g><g clip-path="url(#personClip)"><rect id="shade" x="400" y="190" width="30" height="190" fill="url(#hatch)"/></g></g>
+            <g id="second" opacity="0"><g data-person="main" transform="translate(880 0) scale(-1 1)"></g></g>
+            <g id="cart" opacity="0"><path class="inkfill" d="M444 270 L550 270 L540 256 L454 256 Z"/><path class="ink" d="M458 270 V312 M536 270 V312"/><rect class="inkfill" x="448" y="312" width="96" height="40"/><circle class="inkfill" cx="466" cy="362" r="9"/><circle class="inkfill" cx="526" cy="362" r="9"/></g>
+            <g id="product" opacity="0"><rect class="inkfill" x="340" y="330" width="120" height="42"/><path class="inkfill" d="M388 330 L388 284 Q388 274 394 270 L394 254 L406 254 L406 270 Q412 274 412 284 L412 330 Z"/><path class="ink thin" d="M390 296 H410 M390 312 H410"/></g>
+            <g id="vehicle" opacity="0"><path class="inkfill" d="M240 360 L240 332 Q246 320 270 318 L322 314 Q350 290 380 286 L472 286 Q502 290 522 314 L552 318 Q566 322 566 340 L566 360 Z"/><path class="ink thin" d="M344 314 L380 292 L466 292 L496 314 Z M420 292 V314"/><circle class="inkfill" cx="296" cy="362" r="17"/><circle class="inkfill" cx="510" cy="362" r="17"/></g>
+            <g id="animal" opacity="0"><ellipse class="inkfill" cx="396" cy="330" rx="50" ry="17"/><circle class="inkfill" cx="452" cy="308" r="13"/><path class="ink" d="M444 298 L440 286 L450 294 M462 298 L466 287 L458 294 M364 342 V372 M380 344 V372 M414 344 V372 M430 342 V372 M348 326 Q330 316 332 300"/></g>
+            <text id="actLab" class="hand" x="446" y="318"></text>
+
+            <path id="ots" class="inkfill" opacity="0" d="M-10 452 L-10 330 Q50 286 120 300 Q170 312 184 452 Z"/>
+            <g id="frameG" transform="translate(400 280)">
+              <rect id="frame" class="acc dash" x="-190" y="-107" width="380" height="214"/>
+              <g id="thirds" class="acc faint"><line id="t1"/><line id="t2"/><line id="t3"/><line id="t4"/></g>
+              <line id="dim" class="acc"/><line id="dimL" class="acc"/><line id="dimR" class="acc"/>
+              <text id="dimLab" class="mono acc-text" text-anchor="middle"></text>
+            </g>
+            <g id="frust" class="acc faint"><line id="fr1"/><line id="fr2"/><line id="fr3"/><line id="fr4"/></g>
+            <g id="camG" transform="translate(160 300)">
+              <g id="camBody"><rect class="camfill" x="-24" y="-13" width="30" height="26" rx="3"/><rect class="camfill" x="6" y="-8" width="12" height="16" rx="2"/><rect class="camfill" x="-16" y="-20" width="12" height="7" rx="1"/></g>
+              <circle class="pulse" r="24"/>
+              <circle class="hit" id="camHit" r="34"/>
+            </g>
+            <text id="camLab" class="mono acc-text" x="136" y="270"></text>
+            <rect id="tint" width="800" height="450" fill="#000" opacity="0"/>
+            <text id="caption" x="776" y="434" text-anchor="end" class="mono acc-text"></text>
+          </svg>
+          <div class="stage-hint" id="stageHint">drag the lamp, camera or sun · pinch for lens</div>
+          <div class="slop glass" id="slop" role="status" tabindex="0" aria-label="Slop score 100 percent" title="How much of this frame is still what the model would pick on its own. Get it to zero.">
+            <span class="slop-k">slop</span><span class="slop-num"><span id="slopN">100</span><small>%</small></span>
+            <span class="slop-bar" aria-hidden="true"><i id="slopBar"></i></span>
+            <span class="slop-left" id="slopLeft">all of it is the model’s</span>
           </div>
+          <div class="lensctl glass" role="group" aria-label="Lens"><button type="button" id="lensMinus" aria-label="Wider lens">−</button><span id="lensVal">lens</span><button type="button" id="lensPlus" aria-label="Longer lens">+</button></div>
         </div>
-      </div>
-      </sc-if>
-    </div>
-  </header>
 
-  <section data-screen-label="Proof" style="position:relative;z-index:1;padding:0 0 clamp(56px,8vw,120px)">
-    <div style="max-width:1180px;margin:0 auto;padding:0 24px">
-      <div style="{{ proofGrid }};background-image:linear-gradient(90deg,var(--lineT),var(--line,#15121B) 8%,var(--line,#15121B) 92%,var(--lineT)),linear-gradient(90deg,var(--lineT),var(--line,#15121B) 8%,var(--line,#15121B) 92%,var(--lineT));background-size:100% 1px,100% 1px;background-repeat:no-repeat,no-repeat;background-position:0 0,0 100%">
-        <div style="{{ proofCell0 }};padding:clamp(22px,2.6vw,34px) 0;display:flex;flex-direction:column;gap:8px">
-          <div style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH2);line-height:0.95;letter-spacing:-0.018em;color:var(--ink,#FFFFFF)">3 hrs</div>
-          <div style="font-family:'Inter',sans-serif;font-size:16px;font-weight:500;letter-spacing:var(--lblLS,0.2em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)">one live sitting</div>
-        </div>
-        <div style="{{ proofCell1 }};padding:clamp(22px,2.6vw,34px) 0;display:flex;flex-direction:column;gap:8px">
-          <div style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH2);line-height:0.95;letter-spacing:-0.018em;color:var(--ink,#FFFFFF)">1 film</div>
-          <div style="font-family:'Inter',sans-serif;font-size:16px;font-weight:500;letter-spacing:var(--lblLS,0.2em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)">blank idea to final cut</div>
-        </div>
-        <div style="{{ proofCell1 }};padding:clamp(22px,2.6vw,34px) 0;display:flex;flex-direction:column;gap:8px">
-          <div style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH2);line-height:0.95;letter-spacing:-0.018em;color:var(--ink,#FFFFFF)">100%</div>
-          <div style="font-family:'Inter',sans-serif;font-size:16px;font-weight:500;letter-spacing:var(--lblLS,0.2em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)">refunded if it flops for you</div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="strip" id="strip" role="tablist" aria-label="The five decisions"><span class="strip-ind" id="stripInd" aria-hidden="true"></span></div>
 
-  <sc-if value="{{ promiseEarly }}" hint-placeholder-val="{{ true }}">
-  <section data-screen-label="Promise" style="position:relative;z-index:1;background:transparent;padding:clamp(56px,8vw,120px) 0;margin-bottom:clamp(56px,8vw,120px)">
-    <div aria-hidden="true" style="position:absolute;right:-10%;top:-30%;width:min(980px,90vw);aspect-ratio:1;pointer-events:none;opacity:var(--leak,1);background:radial-gradient(circle,rgba(124,58,237,0.26) 0%,rgba(168,85,247,0.099) 36%,rgba(0,0,0,0) 62%);filter:blur(84px)"></div>
-    <div aria-hidden="true" style="position:absolute;left:-14%;top:20%;width:min(640px,70vw);aspect-ratio:1;pointer-events:none;opacity:var(--leak,1);background:radial-gradient(circle,rgba(76,29,149,0.186) 0%,rgba(0,0,0,0) 60%);filter:blur(84px)"></div>
-    <div aria-hidden="true" style="position:absolute;left:-10%;bottom:-50%;width:min(700px,70vw);aspect-ratio:1;pointer-events:none;opacity:var(--warm,0);background:radial-gradient(circle,rgba(217,160,80,0.136) 0%,rgba(0,0,0,0) 60%);filter:blur(84px)"></div>
-    <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:20px">
-      <div style="max-width:800px;padding-left:clamp(22px,3vw,44px);background-image:linear-gradient(180deg,var(--accent,#C4B5FD),rgba(124,58,237,0));background-size:2px 100%;background-repeat:no-repeat;background-position:0 0;display:flex;flex-direction:column;gap:clamp(18px,2.2vw,26px)">
-        <div style="font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)">the promise</div>
-        <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(40px,5.4vw,74px);line-height:1.02;letter-spacing:-0.024em;color:var(--ink,#FFFFFF);max-width:17ch;text-wrap:pretty">Sit through it. If it wasn't worth it, I pay you back.</h2>
-        <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.7;color:var(--body,#A49EB0);max-width:52ch;text-wrap:pretty">Attend the whole session. If by the end {{ priceFull }} feels like too much, message within 24 hours. Full refund, no argument.</p>
-      </div>
-    </div>
-  </section>
-  </sc-if>
-
-  <section data-screen-label="Image first" style="position:relative;z-index:1;padding:0 0 clamp(56px,8vw,120px)">
-    <div style="max-width:1180px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:clamp(28px,3.4vw,48px)">
-      <div style="display:flex;flex-direction:column;gap:18px;max-width:700px">
-        <div style="position:relative;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)"><span aria-hidden="true" style="position:absolute;left:-0.05em;bottom:-0.22em;z-index:-1;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(96px,11vw,160px);line-height:1;letter-spacing:-0.04em;color:rgba(var(--chapRGB,255,255,255),var(--chapO,0));pointer-events:none;user-select:none;font-variant:normal;text-transform:none">01</span><span style="position:relative">the part nobody teaches</span></div>
-        <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH2);line-height:1.02;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">The film is won in the frame, not the render.</h2>
-        <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.68;color:var(--body,#A49EB0);max-width:58ch;text-wrap:pretty">Most people rush to video. You'll learn to direct the image first, with a system called SLATE. Get the frame right and the film follows.</p>
-      </div>
-
-      <div style="display:flex;flex-direction:column;gap:14px">
-      <div style="display:flex;align-items:center;gap:clamp(6px,1vw,14px);width:100vw;margin-left:calc(50% - 50vw);padding:0 clamp(12px,1.8vw,30px);box-sizing:border-box">
-        <button type="button" aria-label="Previous frame" onClick="{{ framePrev }}" style="flex:none;width:clamp(44px,3.6vw,50px);height:clamp(44px,3.6vw,50px);padding:0;border-radius:50%;border:1px solid var(--line2,#221D2C);background:var(--glass);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);color:var(--ink,#FFFFFF);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.35s ease-out,border-color 0.35s ease-out,transform 0.35s cubic-bezier(0.22,0.61,0.36,1)" style-hover="background:radial-gradient(120% 120% at 30% 0%,rgba(168,85,247,0.24),rgba(124,58,237,0.1)),var(--glass);border-color:rgba(168,85,247,0.45);transform:scale(1.07)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 5 8 12 15 19"></polyline></svg>
-        </button>
-        <div ref="{{ sliderRef }}" onPointerDown="{{ sliderDown }}" style="position:relative;flex:1;min-width:0;overflow:hidden;touch-action:none;cursor:ew-resize;user-select:none;{{ reelMask }}">
-          <div style="{{ trackStyle }};display:flex">
-            <sc-for list="{{ pairs }}" as="pair" hint-placeholder-count="5">
-            <div style="{{ pair.cell }}">
-              <div style="position:relative;width:100%;aspect-ratio:16/9;max-height:620px;border:1px solid var(--line2,#1E1A26);border-radius:20px;overflow:hidden;background:var(--surf,#07050A)">
-                <sc-if value="{{ pair.hasImg }}" hint-placeholder-val="{{ true }}"><img ref="{{ pair.beforeRef }}" alt="{{ pair.beforeAlt }}" loading="lazy" decoding="async" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none"></sc-if>
-                <sc-if value="{{ pair.noImg }}" hint-placeholder-val="{{ false }}"><image-slot id="{{ pair.beforeId }}" shape="rect" placeholder="{{ pair.beforePh }}" style="position:absolute;inset:0;width:100%;height:100%;color:var(--dim,#6F6A7A)"></image-slot></sc-if>
-                <div style="{{ pair.clip }};position:absolute;inset:0;overflow:hidden">
-                  <sc-if value="{{ pair.hasImg }}" hint-placeholder-val="{{ true }}"><img ref="{{ pair.afterRef }}" alt="{{ pair.afterAlt }}" loading="lazy" decoding="async" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none"></sc-if>
-                  <sc-if value="{{ pair.noImg }}" hint-placeholder-val="{{ false }}"><image-slot id="{{ pair.afterId }}" shape="rect" placeholder="{{ pair.afterPh }}" style="position:absolute;inset:0;width:100%;height:100%;color:var(--dim,#6F6A7A)"></image-slot></sc-if>
-                </div>
-                <div style="{{ pair.f }}">
-                  <div style="position:absolute;left:18px;bottom:18px;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:#FFFFFF;background:rgba(0,0,0,0.45);padding:6px 10px;border-radius:4px;backdrop-filter:blur(4px)">prompted</div>
-                  <div style="position:absolute;right:18px;bottom:18px;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:#FFFFFF;background:rgba(0,0,0,0.45);padding:6px 10px;border-radius:4px;backdrop-filter:blur(4px)">directed</div>
-                  <div style="{{ pair.handle }};position:absolute;top:0;bottom:0;width:1px;background:var(--ink,#FFFFFF)">
-                    <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;color:#FFFFFF;backdrop-filter:blur(3px)"><svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 2 2 7 6 12"></polyline><polyline points="12 2 16 7 12 12"></polyline></svg></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </sc-for>
-          </div>
-        </div>
-        <button type="button" aria-label="Next frame" onClick="{{ frameNext }}" style="flex:none;width:clamp(44px,3.6vw,50px);height:clamp(44px,3.6vw,50px);padding:0;border-radius:50%;border:1px solid var(--line2,#221D2C);background:var(--glass);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);color:var(--ink,#FFFFFF);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background 0.35s ease-out,border-color 0.35s ease-out,transform 0.35s cubic-bezier(0.22,0.61,0.36,1)" style-hover="background:radial-gradient(120% 120% at 30% 0%,rgba(168,85,247,0.24),rgba(124,58,237,0.1)),var(--glass);border-color:rgba(168,85,247,0.45);transform:scale(1.07)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg>
-        </button>
-      </div>
-      <div style="display:flex;align-items:center;gap:10px;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)">{{ frameCount }}<span style="flex:1;height:1px;background:linear-gradient(90deg,var(--line,#15121B),var(--lineT))"></span>drag the line</div>
-      </div>
-    </div>
-  </section>
-
-  <section data-screen-label="Gallery" style="position:relative;z-index:1;padding:0 0 clamp(56px,8vw,120px)">
-    <div style="max-width:1180px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:clamp(28px,3.4vw,44px)">
-      <div style="display:flex;flex-direction:column;gap:18px;max-width:700px">
-        <div style="position:relative;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)"><span aria-hidden="true" style="position:absolute;left:-0.05em;bottom:-0.22em;z-index:-1;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(96px,11vw,160px);line-height:1;letter-spacing:-0.04em;color:rgba(var(--chapRGB,255,255,255),var(--chapO,0));pointer-events:none;user-select:none;font-variant:normal;text-transform:none">02</span><span style="position:relative">the output</span></div>
-        <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH2);line-height:1.02;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">None of this was photographed.</h2>
-        <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.68;color:var(--body,#A49EB0);max-width:58ch;text-wrap:pretty">{{ galleryLine }}</p>
-      </div>
-      <div data-orb-stage="1" onPointerMove="{{ orbMove }}" onPointerLeave="{{ orbLeave }}" style="position:relative;width:min(840px,94vw);margin:0 auto;aspect-ratio:1;touch-action:pan-y">
-        <sc-for list="{{ tiles }}" as="tile" hint-placeholder-count="29"><div data-orb="{{ tile.n }}" onClick="{{ tile.tap }}" title="{{ tile.label }}" style="position:absolute;left:0;top:0;width:60px;height:60px;overflow:hidden;border-radius:6px;background:var(--surf,#07050A);border:1px solid var(--line2,#1E1A26);cursor:pointer;opacity:0.92;will-change:transform,opacity,filter;transform-origin:50% 50%"><img ref="{{ tile.ref }}" alt="{{ tile.label }}" loading="lazy" decoding="async" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none"></div></sc-for>
-      </div>
-    </div>
-  </section>
-
-  <section data-screen-label="Showreel" style="position:relative;z-index:1;overflow:hidden;padding:0 0 clamp(56px,8vw,120px)">
-    <div aria-hidden="true" style="position:absolute;left:50%;top:14%;width:min(1100px,110vw);aspect-ratio:1.6;transform:translateX(-50%);pointer-events:none;background:radial-gradient(ellipse,rgba(124,58,237,0.112) 0%,rgba(0,0,0,0) 65%);filter:blur(84px);opacity:var(--leak2,1)"></div>
-    <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:clamp(28px,3.4vw,48px)">
-      <div style="display:flex;flex-direction:column;gap:18px;max-width:700px">
-        <div style="position:relative;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)"><span aria-hidden="true" style="position:absolute;left:-0.05em;bottom:-0.22em;z-index:-1;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(96px,11vw,160px);line-height:1;letter-spacing:-0.04em;color:rgba(var(--chapRGB,255,255,255),var(--chapO,0));pointer-events:none;user-select:none;font-variant:normal;text-transform:none">03</span><span style="position:relative">the showreel</span></div>
-        <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH2);line-height:1.02;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">Taught by someone who gets paid to do this.</h2>
-        <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.68;color:var(--body,#A49EB0);text-wrap:pretty;max-width:58ch">Vishwas Girdher directs ad films with AI for real brands. A documentary cut from a thousand clips. 500+ teaching videos before it was fashionable. On Sunday he works the way he works for clients, live.</p>
-      </div>
-      <div style="position:relative;border:1px solid var(--line2,#221D2C);border-radius:20px;overflow:hidden;background:var(--surf,#07050A);box-shadow:0 0 40px rgba(124,58,237,calc(0.06 * var(--leak2,1)))">
-        <div style="position:relative;aspect-ratio:16/9">
-          <sc-if value="{{ hasReelVid }}" hint-placeholder-val="{{ false }}"><iframe ref="{{ reelRef }}" title="Showreel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="allowfullscreen" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe><button type="button" onClick="{{ reelSound }}" style="position:absolute;right:14px;bottom:14px;z-index:2;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line2,#221D2C);background:var(--glass);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);color:var(--ink,#FFFFFF);font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.01em;cursor:pointer;transition:background 0.3s ease-out,border-color 0.3s ease-out" style-hover="background:radial-gradient(120% 120% at 30% 0%,rgba(168,85,247,0.24),rgba(124,58,237,0.1)),var(--glass);border-color:rgba(168,85,247,0.45)"><sc-if value="{{ reelMuted }}" hint-placeholder-val="{{ true }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><line x1="17" y1="9" x2="22" y2="14"></line><line x1="22" y1="9" x2="17" y2="14"></line></svg></sc-if><sc-if value="{{ reelLoud }}" hint-placeholder-val="{{ false }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M16.5 8.5a4.5 4.5 0 0 1 0 7"></path><path d="M19.5 5.8a8 8 0 0 1 0 12.4"></path></svg></sc-if>{{ reelSoundLabel }}</button></sc-if>
-          <sc-if value="{{ noReelVid }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--surf,#07050A);font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim,#6F6A7A);text-align:center;padding:24px">the film goes here · paste its youtube link in tweaks</div></sc-if>
-        </div>
-      </div>
-      <div style="position:relative">
-        <div aria-hidden="true" style="position:absolute;right:-6%;bottom:-60%;width:44%;aspect-ratio:1;pointer-events:none;opacity:var(--warm,0);background:radial-gradient(circle,rgba(217,160,80,0.124),rgba(0,0,0,0) 62%);filter:blur(84px)"></div>
-        <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px">
-        <div style="display:flex;flex-direction:column;gap:14px;padding:clamp(22px,2.4vw,28px) clamp(20px,2.2vw,26px);border-radius:20px;background:var(--glass);border:1px solid var(--glassLine);backdrop-filter:blur(28px) saturate(1.5);-webkit-backdrop-filter:blur(28px) saturate(1.5);box-shadow:inset 0 1px 0 var(--glassHi);transition:background 0.5s cubic-bezier(0.22,0.61,0.36,1),border-color 0.45s ease-out,box-shadow 0.55s ease-out,transform 0.55s cubic-bezier(0.22,0.61,0.36,1),backdrop-filter 0.5s ease-out" style-hover="background:radial-gradient(130% 110% at 14% -10%,rgba(168,85,247,0.26) 0%,rgba(124,58,237,0.11) 45%,rgba(124,58,237,0.04) 100%),var(--glass);border-color:rgba(168,85,247,0.38);box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -20px 44px -28px rgba(124,58,237,0.5),0 24px 62px -34px rgba(88,28,180,0.48);backdrop-filter:blur(34px) saturate(1.9);-webkit-backdrop-filter:blur(34px) saturate(1.9);transform:translateY(-3px)">
-          <div style="display:inline-flex;align-self:flex-start;align-items:center;height:28px;padding:0 12px;border-radius:999px;background:var(--accent,#C4B5FD);color:var(--accentInk,#0B0A0E);font-family:'Inter',sans-serif;font-size:15px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase">one ad film</div>
-          <div style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH1);line-height:0.9;letter-spacing:-0.02em;color:var(--ink,#FFFFFF)"><span style="font-family:'Inter',sans-serif;font-weight:500;font-size:0.6em;letter-spacing:0;vertical-align:0.08em">₹</span>1.5L</div>
-          <div style="font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.55;color:var(--body,#A49EB0)">25 seconds, for a paying brand</div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:14px;padding:clamp(22px,2.4vw,28px) clamp(20px,2.2vw,26px);border-radius:20px;background:var(--glass);border:1px solid var(--glassLine);backdrop-filter:blur(28px) saturate(1.5);-webkit-backdrop-filter:blur(28px) saturate(1.5);box-shadow:inset 0 1px 0 var(--glassHi);transition:background 0.5s cubic-bezier(0.22,0.61,0.36,1),border-color 0.45s ease-out,box-shadow 0.55s ease-out,transform 0.55s cubic-bezier(0.22,0.61,0.36,1),backdrop-filter 0.5s ease-out" style-hover="background:radial-gradient(130% 110% at 14% -10%,rgba(168,85,247,0.26) 0%,rgba(124,58,237,0.11) 45%,rgba(124,58,237,0.04) 100%),var(--glass);border-color:rgba(168,85,247,0.38);box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -20px 44px -28px rgba(124,58,237,0.5),0 24px 62px -34px rgba(88,28,180,0.48);backdrop-filter:blur(34px) saturate(1.9);-webkit-backdrop-filter:blur(34px) saturate(1.9);transform:translateY(-3px)">
-          <div style="display:inline-flex;align-self:flex-start;align-items:center;height:28px;padding:0 12px;border-radius:999px;background:var(--accent,#C4B5FD);color:var(--accentInk,#0B0A0E);font-family:'Inter',sans-serif;font-size:15px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase">teaching</div>
-          <div style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH1);line-height:0.9;letter-spacing:-0.02em;color:var(--ink,#FFFFFF)">500+</div>
-          <div style="font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.55;color:var(--body,#A49EB0)">videos, before it was fashionable</div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:14px;padding:clamp(22px,2.4vw,28px) clamp(20px,2.2vw,26px);border-radius:20px;background:var(--glass);border:1px solid var(--glassLine);backdrop-filter:blur(28px) saturate(1.5);-webkit-backdrop-filter:blur(28px) saturate(1.5);box-shadow:inset 0 1px 0 var(--glassHi);transition:background 0.5s cubic-bezier(0.22,0.61,0.36,1),border-color 0.45s ease-out,box-shadow 0.55s ease-out,transform 0.55s cubic-bezier(0.22,0.61,0.36,1),backdrop-filter 0.5s ease-out" style-hover="background:radial-gradient(130% 110% at 14% -10%,rgba(168,85,247,0.26) 0%,rgba(124,58,237,0.11) 45%,rgba(124,58,237,0.04) 100%),var(--glass);border-color:rgba(168,85,247,0.38);box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -20px 44px -28px rgba(124,58,237,0.5),0 24px 62px -34px rgba(88,28,180,0.48);backdrop-filter:blur(34px) saturate(1.9);-webkit-backdrop-filter:blur(34px) saturate(1.9);transform:translateY(-3px)">
-          <div style="display:inline-flex;align-self:flex-start;align-items:center;height:28px;padding:0 12px;border-radius:999px;background:var(--accent,#C4B5FD);color:var(--accentInk,#0B0A0E);font-family:'Inter',sans-serif;font-size:15px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase">income</div>
-          <div style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH1);line-height:0.9;letter-spacing:-0.02em;color:var(--ink,#FFFFFF)">3×</div>
-          <div style="font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.55;color:var(--body,#A49EB0)">in under six months, once AI entered the workflow</div>
-        </div>
-        </div>
-      </div>
-      <blockquote style="margin:0;max-width:880px;display:flex;flex-direction:column;gap:16px">
-        <p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-style:italic;font-size:var(--fsH2);line-height:1.18;color:var(--ink,#FFFFFF);text-wrap:pretty">"One beautiful disconnected image anyone can make. A story told across frames is the profession."</p>
-        <cite style="font-style:normal;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)">Vishwas Girdher, founder, Keyframe</cite>
-      </blockquote>
-    </div>
-  </section>
-
-  <section data-screen-label="Three hours" style="position:relative;z-index:1;padding:0 0 clamp(56px,8vw,120px)">
-    <div style="max-width:1180px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:clamp(18px,2vw,30px)">
-      <div style="display:flex;flex-direction:column;gap:16px">
-        <div style="position:relative;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)"><span aria-hidden="true" style="position:absolute;left:-0.05em;bottom:-0.22em;z-index:-1;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(96px,11vw,160px);line-height:1;letter-spacing:-0.04em;color:rgba(var(--chapRGB,255,255,255),var(--chapO,0));pointer-events:none;user-select:none;font-variant:normal;text-transform:none">04</span><span style="position:relative">the three hours</span></div>
-        <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH2);line-height:1.02;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">What you'll actually watch.</h2>
-      </div>
-    <ol class="kfx-steps">
-      <sc-for list="{{ beats }}" as="beat" hint-placeholder-count="5">
-        <li class="kfx-step">
-          <span class="kfx-step-no">{{ beat.no }}</span>
-          <h3 class="kfx-step-h">{{ beat.h }}</h3>
-          <p class="kfx-step-p">{{ beat.p }}</p>
-        </li>
-      </sc-for>
-    </ol>
-    </div>
-  </section>
-
-  <sc-if value="{{ promiseLate }}" hint-placeholder-val="{{ false }}">
-  <section data-screen-label="Promise" style="position:relative;z-index:1;background:transparent;padding:clamp(56px,8vw,120px) 0">
-    <div aria-hidden="true" style="position:absolute;right:-10%;top:-30%;width:min(980px,90vw);aspect-ratio:1;pointer-events:none;opacity:var(--leak,1);background:radial-gradient(circle,rgba(124,58,237,0.26) 0%,rgba(168,85,247,0.099) 36%,rgba(0,0,0,0) 62%);filter:blur(84px)"></div>
-    <div aria-hidden="true" style="position:absolute;left:-14%;top:20%;width:min(640px,70vw);aspect-ratio:1;pointer-events:none;opacity:var(--leak,1);background:radial-gradient(circle,rgba(76,29,149,0.186) 0%,rgba(0,0,0,0) 60%);filter:blur(84px)"></div>
-    <div aria-hidden="true" style="position:absolute;left:-10%;bottom:-50%;width:min(700px,70vw);aspect-ratio:1;pointer-events:none;opacity:var(--warm,0);background:radial-gradient(circle,rgba(217,160,80,0.136) 0%,rgba(0,0,0,0) 60%);filter:blur(84px)"></div>
-    <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:20px">
-      <div style="max-width:800px;padding-left:clamp(22px,3vw,44px);background-image:linear-gradient(180deg,var(--accent,#C4B5FD),rgba(124,58,237,0));background-size:2px 100%;background-repeat:no-repeat;background-position:0 0;display:flex;flex-direction:column;gap:clamp(18px,2.2vw,26px)">
-        <div style="font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)">the promise</div>
-        <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(40px,5.4vw,74px);line-height:1.02;letter-spacing:-0.024em;color:var(--ink,#FFFFFF);max-width:17ch;text-wrap:pretty">Sit through it. If it wasn't worth it, I pay you back.</h2>
-        <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.7;color:var(--body,#A49EB0);max-width:52ch;text-wrap:pretty">Attend the whole session. If by the end {{ priceFull }} feels like too much, message within 24 hours. Full refund, no argument.</p>
-      </div>
-    </div>
-  </section>
-  </sc-if>
-
-  <section data-screen-label="Assets" style="position:relative;z-index:1;padding:clamp(20px,2.4vw,44px) 0 clamp(20px,2.6vw,44px)">
-    <div style="max-width:1180px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:clamp(28px,3.4vw,48px)">
-      <div style="display:flex;flex-direction:column;gap:18px;max-width:700px">
-        <div style="position:relative;font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)"><span aria-hidden="true" style="position:absolute;left:-0.05em;bottom:-0.22em;z-index:-1;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(96px,11vw,160px);line-height:1;letter-spacing:-0.04em;color:rgba(var(--chapRGB,255,255,255),var(--chapO,0));pointer-events:none;user-select:none;font-variant:normal;text-transform:none">05</span><span style="position:relative">what you walk away with</span></div>
-        <h2 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH2);line-height:1.02;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">You keep the tools after the session ends.</h2>
-        <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.68;color:var(--body,#A49EB0);max-width:58ch;text-wrap:pretty">Four assets, priced separately, included with your seat. {{ bundleVal }} worth of them.</p>
-      </div>
-
-      <div style="display:flex;flex-direction:column;gap:clamp(18px,2.4vw,28px)">
-        <div data-rise="0" style="position:sticky;top:calc(var(--navH,76px) + 14px);z-index:1;margin-bottom:66px;display:flex;flex-direction:column;gap:16px;padding:clamp(26px,3vw,44px);border-radius:var(--rad,36px);background:var(--tint1);border:1px solid var(--glassLine);box-shadow:0 -1px 0 var(--glassHi) inset,0 -18px 40px -24px rgba(0,0,0,0.25),0 26px 50px -34px rgba(0,0,0,0.5);opacity:0;transform:translateY(34px) scale(0.972);transition:opacity 0.72s cubic-bezier(0.22,0.61,0.36,1) 0s,transform 0.92s cubic-bezier(0.22,0.61,0.36,1) 0s;backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)">
-          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;background:var(--accent,#C4B5FD);color:var(--accentInk,#0B0A0E);font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.08em;text-transform:uppercase">free</span>
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ itmA }}</span>
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;letter-spacing:0.06em;color:var(--muted,#8E8899)">custom GPT · 10+ PDFs</span>
-          </div>
-          <h3 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH2);line-height:1.1;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">The Director's Desk, a custom GPT board</h3>
-          <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.6;color:var(--body,#A49EB0);max-width:54ch;text-wrap:pretty">Trained on the way we break a scene down. Ask it for a shot list, a continuity pass, a lookbook brief, a lighting plan. It writes back more than ten finished PDFs you can hand to a crew or a client.</p>
-        </div>
-        <div data-rise="1" style="position:sticky;top:calc(var(--navH,76px) + 36px);z-index:2;margin-bottom:44px;display:flex;flex-direction:column;gap:16px;padding:clamp(26px,3vw,44px);border-radius:var(--rad,36px);background:var(--tint2);border:1px solid var(--glassLine);box-shadow:0 -1px 0 var(--glassHi) inset,0 -18px 40px -24px rgba(0,0,0,0.25),0 26px 50px -34px rgba(0,0,0,0.5);opacity:0;transform:translateY(34px) scale(0.972);transition:opacity 0.72s cubic-bezier(0.22,0.61,0.36,1) 0.11s,transform 0.92s cubic-bezier(0.22,0.61,0.36,1) 0.11s;backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)">
-          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;background:var(--accent,#C4B5FD);color:var(--accentInk,#0B0A0E);font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.08em;text-transform:uppercase">free</span>
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ itmB }}</span>
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;letter-spacing:0.06em;color:var(--muted,#8E8899)">one-page PDF</span>
-          </div>
-          <h3 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH3);line-height:1.1;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">The Shot Breakdown Sheet</h3>
-          <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.6;color:var(--body,#A49EB0);max-width:54ch;text-wrap:pretty">The one-pager we fill before a shoot. Frame, lens, light, motion, cut.</p>
-        </div>
-        <div data-rise="2" style="position:sticky;top:calc(var(--navH,76px) + 58px);z-index:3;margin-bottom:22px;display:flex;flex-direction:column;gap:16px;padding:clamp(26px,3vw,44px);border-radius:var(--rad,36px);background:var(--tint3);border:1px solid var(--glassLine);box-shadow:0 -1px 0 var(--glassHi) inset,0 -18px 40px -24px rgba(0,0,0,0.25),0 26px 50px -34px rgba(0,0,0,0.5);opacity:0;transform:translateY(34px) scale(0.972);transition:opacity 0.72s cubic-bezier(0.22,0.61,0.36,1) 0.22s,transform 0.92s cubic-bezier(0.22,0.61,0.36,1) 0.22s;backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)">
-          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;background:var(--accent,#C4B5FD);color:var(--accentInk,#0B0A0E);font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.08em;text-transform:uppercase">free</span>
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ itmB }}</span>
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;letter-spacing:0.06em;color:var(--muted,#8E8899)">PDF · every prompt</span>
-          </div>
-          <h3 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH3);line-height:1.1;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">The Prompt Ledger</h3>
-          <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.6;color:var(--body,#A49EB0);max-width:54ch;text-wrap:pretty">Every prompt from the live session, written out, with the reason each line is there.</p>
-        </div>
-        <div data-rise="3" style="position:sticky;top:calc(var(--navH,76px) + 80px);z-index:4;margin-bottom:0px;display:flex;flex-direction:column;gap:16px;padding:clamp(26px,3vw,44px);border-radius:var(--rad,36px);background:var(--tint4);border:1px solid var(--glassLine);box-shadow:0 -1px 0 var(--glassHi) inset,0 -18px 40px -24px rgba(0,0,0,0.25),0 26px 50px -34px rgba(0,0,0,0.5);opacity:0;transform:translateY(34px) scale(0.972);transition:opacity 0.72s cubic-bezier(0.22,0.61,0.36,1) 0.33s,transform 0.92s cubic-bezier(0.22,0.61,0.36,1) 0.33s;backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)">
-          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;background:var(--accent,#C4B5FD);color:var(--accentInk,#0B0A0E);font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.08em;text-transform:uppercase">free</span>
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ itmB }}</span>
-            <span style="display:inline-flex;align-items:center;height:34px;padding:0 15px;border-radius:999px;border:1px solid var(--line2,#221D2C);font-family:'Inter',sans-serif;font-size:15px;letter-spacing:0.06em;color:var(--muted,#8E8899)">printable PDF</span>
-          </div>
-          <h3 style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH3);line-height:1.1;letter-spacing:-0.018em;color:var(--ink,#FFFFFF);text-wrap:pretty">The Continuity Checklist</h3>
-          <p style="margin:0;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.6;color:var(--body,#A49EB0);max-width:54ch;text-wrap:pretty">The small things nobody praises you for. Miss one and everybody notices.</p>
-        </div>
-        <div aria-hidden="true" style="flex:none;height:min(42vh,420px);pointer-events:none"></div>
-      </div>
-    </section>
-
-  <section id="price" data-screen-label="Price and FAQ" style="position:relative;z-index:1;overflow:hidden;padding:0 0 clamp(64px,8vw,120px)">
-    <div aria-hidden="true" style="position:absolute;left:50%;top:0;width:min(1200px,120vw);aspect-ratio:1.5;transform:translateX(-50%);pointer-events:none;opacity:var(--leak,1);background:radial-gradient(ellipse,rgba(124,58,237,0.236) 0%,rgba(168,85,247,0.087) 40%,rgba(0,0,0,0) 66%);filter:blur(84px)"></div>
-    <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;gap:clamp(44px,6vw,88px)">
-
-      <div style="width:100%;max-width:560px;background:var(--glass);border:1px solid var(--glassLine);border-radius:20px;backdrop-filter:blur(28px) saturate(1.5);-webkit-backdrop-filter:blur(28px) saturate(1.5);box-shadow:inset 0 1px 0 var(--glassHi),inset 0 -1px 0 rgba(0,0,0,0.06);padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:20px;transition:background 0.5s cubic-bezier(0.22,0.61,0.36,1),border-color 0.45s ease-out,box-shadow 0.55s ease-out,transform 0.55s cubic-bezier(0.22,0.61,0.36,1),backdrop-filter 0.5s ease-out" style-hover="background:radial-gradient(130% 110% at 14% -10%,rgba(168,85,247,0.26) 0%,rgba(124,58,237,0.11) 45%,rgba(124,58,237,0.04) 100%),var(--glass);border-color:rgba(168,85,247,0.38);box-shadow:inset 0 1px 0 rgba(255,255,255,0.6),inset 0 -20px 44px -28px rgba(124,58,237,0.5),0 28px 70px -34px rgba(88,28,180,0.5);backdrop-filter:blur(34px) saturate(1.9);-webkit-backdrop-filter:blur(34px) saturate(1.9);transform:translateY(-3px)">
-        <div style="font-family:'Inter',sans-serif;font-size:15px;font-weight:500;letter-spacing:var(--lblLS,0.22em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--muted,#8E8899)">reserve your seat</div>
-        <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap">
-          <span style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:var(--fsH1);line-height:0.92;letter-spacing:-0.022em;color:var(--ink,#FFFFFF)"><span style="font-family:'Inter',sans-serif;font-weight:500;font-size:0.68em;letter-spacing:0;vertical-align:0.06em">{{ curSym }}</span>{{ priceNow }}</span>
-          <span style="font-family:'Inter',sans-serif;font-size:19px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ priceWas }}</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:12px;background-image:linear-gradient(90deg,var(--lineT),var(--line,#15121B) 8%,var(--line,#15121B) 92%,var(--lineT));background-size:100% 1px;background-repeat:no-repeat;background-position:0 0;padding-top:20px">
-          <sc-for list="{{ includes }}" as="inc" hint-placeholder-count="5">
-            <div style="display:flex;gap:14px;align-items:flex-start">
-              <span aria-hidden="true" style="flex:none;width:5px;height:5px;margin-top:9px;border-radius:50%;background:var(--accent,#C4B5FD)"></span>
-              <span style="font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.6;color:var(--list,#C9C4D2)">{{ inc.t }}</span>
-            </div>
-          </sc-for>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:8px"><sc-if value="{{ showInvite }}" hint-placeholder-val="{{ true }}"><a href="{{ inviteUrl }}" target="_blank" rel="noopener" style="align-self:flex-end;display:inline-flex;align-items:center;min-height:28px;font-family:'Inter',sans-serif;font-size:16px;font-weight:500;line-height:1.3;color:var(--strong,#E8E5EE);text-decoration:underline;text-decoration-color:var(--line2,#221D2C);text-underline-offset:4px;white-space:nowrap;transition:color 0.25s ease-out,text-decoration-color 0.25s ease-out" style-hover="color:var(--accent,#C4B5FD);text-decoration-color:var(--accent,#C4B5FD)">Have an invite code?</a></sc-if>
-        <div style="position:relative;width:100%;display:flex"><div style="position:relative;overflow:hidden;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:100%;min-height:68px;padding:14px 24px;border-radius:14px;background:linear-gradient(140deg,#8B4BF0 0%,#7C3AED 46%,#5B21B6 100%);color:#FFFFFF;border:1px solid rgba(196,181,253,0.5);box-shadow:inset 0 1px 0 rgba(255,255,255,0.32),0 16px 40px -22px rgba(124,58,237,0.75);font-family:'Inter',sans-serif;transition:box-shadow 0.4s ease-out,transform 0.4s cubic-bezier(0.22,0.61,0.36,1),filter 0.4s ease-out" style-hover="transform:translateY(-2px);filter:brightness(1.08);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),0 24px 60px -24px rgba(124,58,237,0.95)"><span style="font-weight:600;font-size:18px;letter-spacing:-0.005em">{{ seatCta }}</span><span style="font-size:13px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#FFFFFF">launch price, 90% off</span><div ref="{{ rzpMount }}" style="position:absolute;inset:0;z-index:2;opacity:0.001;pointer-events:none;display:flex;align-items:center;justify-content:center"></div></div></div></div>
-        <div style="display:flex;flex-direction:column;gap:6px">
-          <div style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.55;color:var(--dim,#6F6A7A)">{{ payMethods }}</div>
-          <div style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.55;color:var(--dim,#6F6A7A)">100% refund if you attend fully and it wasn't worth it.</div>
+        <div class="drawer glass">
+          <div id="panels"></div>
         </div>
       </div>
 
-      <div style="width:100%;max-width:760px;display:flex;flex-direction:column">
-        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
-          <div style="background-image:linear-gradient(90deg,var(--lineT),var(--line,#15121B) 8%,var(--line,#15121B) 92%,var(--lineT));background-size:100% 1px;background-repeat:no-repeat;background-position:0 0;padding-top:23px">
-            <button type="button" onClick="{{ f.h }}" aria-expanded="{{ f.exp }}" style="width:100%;min-height:58px;padding:18px 2px;background:none;border:0;display:flex;align-items:center;justify-content:space-between;gap:18px;text-align:left;cursor:pointer">
-              <span style="font-family:'Inter',sans-serif;font-weight:500;font-size:18px;line-height:1.45;color:var(--ink,#FFFFFF)">{{ f.q }}</span>
-              <span aria-hidden="true" style="{{ f.i }};flex:none;width:11px;height:11px;border-right:1px solid var(--muted,#8E8899);border-bottom:1px solid var(--muted,#8E8899);transition:transform 0.3s ease-out"></span>
+      <aside class="prompt glass">
+        <span class="eyebrow">issued for</span>
+        <div class="tabs" id="modelTabs" role="tablist"></div>
+        <div class="promptbox" id="promptbox">
+          <p class="prompttext blurred" id="prompttext" aria-hidden="true"></p>
+          <div class="veil" id="veil">
+            <button type="button" class="btn wandbtn" id="revealBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20 14 10"/><path d="M15 4l1 2 2 1-2 1-1 2-1-2-2-1 2-1z"/><path d="M19 11l.6 1.2 1.4.6-1.4.6L19 14.6l-.6-1.2-1.4-.6 1.4-.6z"/></svg>
+              Reveal the prompt
             </button>
-            <div style="{{ f.a }};overflow:hidden;transition:max-height 0.35s ease-out,opacity 0.3s ease-out"><p style="margin:0;padding:0 2px 24px;font-family:'Inter',sans-serif;font-size:var(--fsBody);line-height:1.68;color:var(--body,#A49EB0);max-width:62ch">{{ f.p }}</p></div>
+            <span class="tiny" id="veilNote">Free. Sign in once. Ten a day.</span>
           </div>
-        </sc-for>
-        <div style="background-image:linear-gradient(90deg,var(--lineT),var(--line,#15121B) 8%,var(--line,#15121B) 92%,var(--lineT));background-size:100% 1px;background-repeat:no-repeat;background-position:0 0;padding-top:23px"></div>
-      </div>
-
+        </div>
+        <div class="prompt-actions" id="promptActions" hidden>
+          <button type="button" class="chip" id="copyBtn">Copy prompt</button>
+          <span class="tiny" id="quota"></span>
+        </div>
+        <div class="director" id="director">
+          <span class="eyebrow">you direct like</span>
+          <p class="dt-name empty" id="dtName">Make three decisions to find out.</p>
+          <p class="small" id="dtLine"></p>
+          <div class="dt-actions"><button type="button" class="chip" id="feedBtn" disabled>Feed card</button><button type="button" class="chip" id="storyBtn" disabled>Story card</button><button type="button" class="chip" id="shareBtn" disabled>Share</button></div>
+        </div>
+        <p class="small">Random fills every blank the way the model would on its own. That is slop. Auto-complete fills only your blanks, matched to what you already chose.</p>
+      </aside>
     </div>
   </section>
 
-  <footer style="position:relative;z-index:1;background-image:linear-gradient(90deg,var(--lineT),var(--line,#15121B) 8%,var(--line,#15121B) 92%,var(--lineT));background-size:100% 1px;background-repeat:no-repeat;background-position:0 0;padding:clamp(52px,6vw,88px) 0 clamp(36px,4vw,56px)">
-    <div style="max-width:1180px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:clamp(38px,4.6vw,64px)">
-      <div style="display:grid;grid-template-columns:minmax(0,1.5fr) repeat(auto-fit,minmax(min(100%,150px),1fr));gap:clamp(30px,4vw,56px);align-items:start">
-        <div style="display:flex;flex-direction:column;gap:18px;max-width:32ch">
-          <sc-if value="{{ isLight }}" hint-placeholder-val="{{ false }}"><img src="assets/keyframe-logo-dark.png" alt="keyframe · think like a director" style="display:block;align-self:flex-start;height:clamp(44px,4vw,54px);width:auto;max-width:100%;object-fit:contain" /></sc-if><sc-if value="{{ isDark }}" hint-placeholder-val="{{ true }}"><img src="assets/keyframe-logo.png" alt="keyframe · think like a director" style="display:block;align-self:flex-start;height:clamp(44px,4vw,54px);width:auto;max-width:100%;object-fit:contain" /></sc-if>
-          <p style="margin:0;font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;color:var(--body,#A49EB0);text-wrap:pretty">A teaching studio for directors working with generative tools. Craft before tools.</p>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:15px">
-          <div style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:21px;line-height:1.1;letter-spacing:-0.012em;color:var(--ink,#FFFFFF)">Company</div>
-          <div style="display:flex;flex-direction:column;gap:11px;font-family:'Inter',sans-serif;font-size:16px">
-            <a href="https://keyframe24.ai/terms">Terms</a>
-            <a href="https://keyframe24.ai/refund">Refund</a>
-            <a href="https://keyframe24.ai/privacy">Privacy</a>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:15px">
-          <div style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:21px;line-height:1.1;letter-spacing:-0.012em;color:var(--ink,#FFFFFF)">Workshop</div>
-          <div style="display:flex;flex-direction:column;gap:11px;font-family:'Inter',sans-serif;font-size:16px">
-            <a href="https://keyframe24.ai/pricing">Pricing</a>
-            <a href="https://keyframe24.ai/delivery">Delivery</a>
-            <a href="https://keyframe24.ai/contact">Contact</a>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:15px">
-          <div style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:21px;line-height:1.1;letter-spacing:-0.012em;color:var(--ink,#FFFFFF)">Elsewhere</div>
-          <div style="display:flex;flex-direction:column;gap:11px;font-family:'Inter',sans-serif;font-size:16px">
-            <a href="https://www.instagram.com/keyframe24.ai/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://whatsapp.com/channel/0029VbDd7jX2P59nGQkRLh29" target="_blank" rel="noopener">WhatsApp channel</a>
-          </div>
-        </div>
+  <section id="reverse" class="reverse" aria-labelledby="rTitle">
+    <div class="rev-copy">
+      <h2 class="daily-h" id="rTitle">Reverse SLATE</h2>
+      <p class="daily-how rev-how">Drop in any frame you love. A film still, an ad, your own shot. Get back the five decisions that made it, then open them on the board and change one.</p>
+      <div class="drop rev-drop" id="rDrop">
+        <img id="rPrev" alt="The frame being read">
+        <button type="button" class="drop-in" id="rPick"><b>Choose a frame</b><span>or drop it here · JPG, PNG, WebP</span></button>
+        <span class="rev-scan" aria-hidden="true"></span>
+        <input type="file" id="rFile" accept="image/*" hidden>
       </div>
-      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:clamp(20px,2.4vw,30px);background-image:linear-gradient(90deg,var(--lineT),var(--line,#15121B) 3%,var(--line,#15121B) 97%,var(--lineT));background-size:100% 1px;background-repeat:no-repeat;background-position:0 0">
-        <div style="font-family:'Inter',sans-serif;font-size:15px;color:var(--dim,#6F6A7A)">© 2026 Keyframe</div>
-        <a href="#top" style="font-family:'Inter',sans-serif;font-size:15px;font-weight:500;color:var(--muted,#8E8899)">Back to top</a>
+      <p class="pmsg" id="rMsg" role="alert"></p>
+      <p class="tiny">The frame is read once and never stored. Each read counts as one of your ten a day.</p>
+    </div>
+    <div class="rev-sheet">
+      <ul class="rrows" id="rRows"></ul>
+      <button type="button" class="btn solid wide" id="rOpen" disabled>Open this sheet on the board</button>
+    </div>
+  </section>
+
+  <section id="daily" class="daily" aria-labelledby="dBrief">
+    <div class="daily-head">
+      <div class="daily-brief">
+        <h2 class="daily-h" id="dBrief">Today's brief</h2>
+        <p class="daily-twist" id="dTwist" hidden></p>
+        <div class="daily-rule"><span class="rule-chip" id="dRule" hidden></span><span class="daily-clock">new brief in <b id="dClock">--:--:--</b></span></div>
+        <p class="daily-closed" id="dClosed" hidden></p>
+      </div>
+      <div class="daily-cta">
+        <p class="daily-how">One brief a day, one SLATE call locked. Shoot it in any model, post it, then see how everyone else shot the same idea. Open anyone's sheet and remix it.</p>
+        <button type="button" class="btn line" id="dUse">Build it on the board</button>
+        <button type="button" class="btn wandbtn" id="dPost">Post your frame</button>
+        <p class="tiny">Make it in any model. No names on the wall.</p>
       </div>
     </div>
-  </footer>
+    <div class="daily-bar"><button type="button" class="dnew" id="dNew" hidden></button></div>
+    <div class="wall" id="wall" aria-label="Frames people made for this brief"></div>
+  </section>
 
-  <sc-if value="{{ lightOpen }}" hint-placeholder-val="{{ false }}">
-    <div role="dialog" aria-modal="true" aria-label="Gallery frame" onClick="{{ lightClose }}" onPointerDown="{{ lightDown }}" onPointerUp="{{ lightUp }}" style="position:fixed;inset:0;z-index:70;background:rgba(0,0,0,0.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:24px;touch-action:pan-y">
-      <img ref="{{ lightRef }}" alt="{{ lightAlt }}" draggable="false" style="display:block;max-width:min(1200px,100%);max-height:74vh;width:auto;height:auto;border:1px solid var(--line2,#1E1A26);border-radius:20px;background:var(--surf,#07050A)">
-      <div style="display:flex;align-items:center;gap:12px">
-        <button type="button" data-nav="-1" style="width:50px;height:50px;border-radius:50%;border:1px solid var(--line2,#221D2C);background:var(--surf,#07050A);color:var(--ink,#FFFFFF);display:inline-flex;align-items:center;justify-content:center;cursor:pointer" aria-label="Previous frame"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 5 8 12 15 19"></polyline></svg></button>
-        <button type="button" data-nav="close" style="min-height:50px;padding:0 24px;border-radius:25px;border:1px solid var(--line2,#221D2C);background:var(--surf,#07050A);color:var(--ink,#FFFFFF);font-family:'Inter',sans-serif;font-weight:500;font-size:16px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer">close</button>
-        <button type="button" data-nav="1" style="width:50px;height:50px;border-radius:50%;border:1px solid var(--line2,#221D2C);background:var(--surf,#07050A);color:var(--ink,#FFFFFF);display:inline-flex;align-items:center;justify-content:center;cursor:pointer" aria-label="Next frame"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"></polyline></svg></button>
-      </div>
+  <section id="letters" class="letters rise">
+    <a href="#play" class="col" data-go="S"><span class="n">01</span><span class="big" data-l="S">S</span><span class="t">Subject + action</span><span class="d">Who is in the frame, and the one verb that moves them. One verb beats three adjectives.</span></a>
+    <a href="#play" class="col" data-go="L"><span class="n">02</span><span class="big" data-l="L">L</span><span class="t">Lighting + environment</span><span class="d">Where the key sits, how hard it falls, and the world it falls on.</span></a>
+    <a href="#play" class="col" data-go="A"><span class="n">03</span><span class="big" data-l="A">A</span><span class="t">Angle + lensing</span><span class="d">Where the camera stands and which glass is on it. This is what makes a frame look shot, not generated.</span></a>
+    <a href="#play" class="col" data-go="T"><span class="n">04</span><span class="big" data-l="T">T</span><span class="t">Time of day</span><span class="d">Sun height sets colour, contrast and shadow length before any grade does.</span></a>
+    <a href="#play" class="col" data-go="E"><span class="n">05</span><span class="big" data-l="E">E</span><span class="t">Emotion + genre</span><span class="d">What the viewer should feel, and which genre's palette carries it.</span></a>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-brand">
+    <a class="brand" href="#top"><span class="brand-word" data-l="SLATE">SLATE</span><span class="brand-by">by Keyframe</span></a>
+    <p>Random is what the model picks. Specified is what you pick.</p>
+  </div>
+  <nav class="foot-links" aria-label="Keyframe elsewhere">
+    <a href="https://www.instagram.com/keyframe24.ai/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span class="fl-t"><span>Instagram</span><b>@keyframe24.ai</b></span></a>
+    <a href="https://www.linkedin.com/in/vishwasgirdher/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.84-1.9 3.78-1.9 4.04 0 4.86 2.5 4.86 5.9V21h-4v-5.1c0-1.3-.03-2.9-1.85-2.9-1.85 0-2.15 1.4-2.15 2.8V21h-4z"/></svg><span class="fl-t"><span>LinkedIn</span><b>Vishwas Girdher</b></span></a>
+    <a href="https://x.com/GirdherVishwas" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78zm-1.08 16.17h1.7L7.4 4.74H5.58z"/></svg><span class="fl-t"><span>X</span><b>@GirdherVishwas</b></span></a>
+  </nav>
+  <p class="foot-copy"><span>© 2026 Keyframe</span><a href="/terms" target="_blank" rel="noopener">Terms</a><a href="/privacy" target="_blank" rel="noopener">Privacy</a><a href="/contact" target="_blank" rel="noopener">Contact</a></p>
+</footer>
+
+<div class="modal" id="authModal" hidden>
+  <div class="modal-card glass" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <svg class="wandart" width="120" height="100" viewBox="0 0 140 120" aria-hidden="true"><defs><linearGradient id="wg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4C1D95"/><stop offset="1" stop-color="#C4B5FD"/></linearGradient></defs><g class="wand"><path d="M22 104 L88 38" stroke="url(#wg)" stroke-width="7" stroke-linecap="round"/><path d="M22 104 L36 90" stroke="#F2C14E" stroke-width="7" stroke-linecap="round"/></g><g class="sparks"><path class="spark" d="M96 20 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z"/><path class="spark s2" d="M118 46 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z"/><path class="spark s3" d="M74 14 l1.6 4 4 1.6 -4 1.6 -1.6 4 -1.6 -4 -4 -1.6 4 -1.6z"/><circle class="spark s2" cx="128" cy="26" r="2" fill="#F2C14E"/></g></svg>
+    <p class="eyebrow" id="authSub">5 of 5 specified</p>
+    <h2 id="authTitle">Your prompt is ready.</h2>
+    <p class="small">Sign in free to reveal it. Ten reveals a day, every model, nothing to pay, no card.</p>
+    <button type="button" class="btn solid wide" id="googleBtn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23 12.3c0-.8-.1-1.5-.2-2.3H12v4.4h6.2c-.3 1.4-1.1 2.6-2.3 3.4v2.8h3.7c2.2-2 3.4-5 3.4-8.3z"/><path fill="#34A853" d="M12 24c3.1 0 5.7-1 7.6-2.8l-3.7-2.8c-1 .7-2.3 1.1-3.9 1.1-3 0-5.5-2-6.4-4.7H1.8v2.9C3.7 21.4 7.6 24 12 24z"/><path fill="#FBBC05" d="M5.6 14.8c-.2-.7-.4-1.4-.4-2.2s.1-1.5.4-2.2V7.5H1.8C1 9 .6 10.5.6 12.1s.4 3.1 1.2 4.6l3.8-2.9z"/><path fill="#EA4335" d="M12 4.7c1.7 0 3.2.6 4.4 1.7l3.3-3.3C17.7 1.2 15.1 0 12 0 7.6 0 3.7 2.6 1.8 6.3l3.8 2.9c.9-2.7 3.4-4.5 6.4-4.5z"/></svg>Continue with Google</button>
+    <button type="button" class="btn line wide" id="closeAuth">Not now</button>
+    <p class="tiny">Your decisions stay exactly as you left them. We email you about Keyframe workshops, rarely, and you can stop that in one tap.</p>
+  </div>
+</div>
+
+<div class="modal" id="postModal" hidden>
+  <div class="modal-card post-card" role="dialog" aria-modal="true" aria-labelledby="pTitle">
+    <p class="eyebrow" id="pNo">Daily Frame</p>
+    <h2 id="pTitle">Post your frame</h2>
+    <p class="small" id="pBrief"></p>
+    <div class="drop" id="pDrop">
+      <img id="pPrev" alt="Your frame">
+      <button type="button" class="drop-in" id="pPick"><b>Choose an image</b><span>or drop it here · JPG, PNG, WebP</span></button>
+      <input type="file" id="pFile" accept="image/*" hidden>
     </div>
-  </sc-if>
+    <label class="field"><span>Made with</span><select id="pModel"></select></label>
+    <label class="check"><input type="checkbox" id="pSheet"><span id="pSheetTxt">Attach my SLATE sheet</span></label>
+    <label class="check"><input type="checkbox" id="pOk"><span>I made this with AI. No real people's faces, nothing explicit, nothing that isn't mine to post.</span></label>
+    <p class="pmsg" id="pMsg" role="alert"></p>
+    <button type="button" class="btn wandbtn wide" id="pSend" disabled>Post to the wall</button>
+    <button type="button" class="btn line wide" id="pCancel">Not now</button>
+    <p class="tiny">No names, no profiles. Every image is checked before it goes up, and the location data inside your file is stripped. Three posts a day.</p>
+  </div>
+</div>
 
-  <div style="{{ barStyle }};position:fixed;left:0;right:0;bottom:0;z-index:55;align-items:center;transform:translateY(var(--barY,0));transition:transform 0.35s ease-out;background:var(--chrome,rgba(4,3,7,0.93));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background-image:linear-gradient(90deg,var(--lineT),var(--line2,#221D2C) 6%,var(--line2,#221D2C) 94%,var(--lineT));background-size:100% 1px;background-repeat:no-repeat;background-position:0 0">
-    <div style="max-width:1180px;width:100%;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px">
-      <div style="display:inline-flex;align-items:center;gap:11px;min-width:0;font-family:'Inter',sans-serif;font-size:var(--barFs,16px);font-weight:500;letter-spacing:var(--lblLS,0.2em);text-transform:var(--lblTT,uppercase);font-variant:var(--lblFV,normal);color:var(--body,#A49EB0);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
-        <span aria-hidden="true" style="flex:none;width:8px;height:8px;border-radius:50%;background:#FF453A;box-shadow:0 0 8px rgba(255,69,58,0.5);animation:kfPulse 2.4s ease-in-out infinite;animation-play-state:var(--play,running)"></span>{{ barLive }}
-      </div>
-      <div style="display:flex;align-items:center;gap:20px;flex:none">
-        <sc-if value="{{ desk }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex;align-items:baseline;gap:10px">
-            <span style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;letter-spacing:-0.018em;color:var(--ink,#FFFFFF)"><span style="font-family:'Inter',sans-serif;font-weight:500;font-size:0.68em;letter-spacing:0;vertical-align:0.06em">{{ curSym }}</span>{{ priceNow }}</span>
-            <span style="font-family:'Inter',sans-serif;font-size:16px;color:var(--dim,#6F6A7A);text-decoration:line-through">{{ priceWas }}</span>
-          </div>
-        </sc-if>
-        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px"><sc-if value="{{ showInvite }}" hint-placeholder-val="{{ true }}"><a href="{{ inviteUrl }}" target="_blank" rel="noopener" style="align-self:flex-end;display:inline-flex;align-items:center;min-height:28px;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;line-height:1.3;color:var(--strong,#E8E5EE);text-decoration:underline;text-decoration-color:var(--line2,#221D2C);text-underline-offset:4px;white-space:nowrap;transition:color 0.25s ease-out,text-decoration-color 0.25s ease-out" style-hover="color:var(--accent,#C4B5FD);text-decoration-color:var(--accent,#C4B5FD)">Have an invite code?</a></sc-if>
-        <a href="#price" style="display:inline-flex;align-items:center;justify-content:center;min-height:var(--barBtnH,52px);padding:0 var(--barPad,26px);border-radius:14px;background:var(--btn,#FFFFFF);color:var(--btnInk,#000000);font-family:'Inter',sans-serif;font-weight:600;font-size:16px;white-space:nowrap;transition:box-shadow 0.35s ease-out,background 0.25s ease-out,color 0.25s ease-out" style-hover="background:var(--bhBg,#FFFFFF);color:var(--bhFg,#000000);box-shadow:var(--bhSh,none)">{{ barCta }}</a></div>
+<div class="modal" id="frameModal" hidden>
+  <div class="modal-card frame-card" role="dialog" aria-modal="true" aria-labelledby="fNo">
+    <div class="f-img"><img id="fImg" alt=""></div>
+    <div class="f-side">
+      <div class="f-top"><span class="eyebrow" id="fCount"></span><button type="button" class="f-x" id="fClose" aria-label="Close">×</button></div>
+      <p class="eyebrow f-no" id="fNo"></p>
+      <div class="f-slop" id="fSlopBox"><b id="fSlop"></b><span>slop</span></div>
+      <p class="f-model" id="fModel"></p>
+      <ul class="f-lines" id="fLines"></ul>
+      <div class="f-act">
+        <button type="button" class="btn solid wide" id="fOpen">Open this sheet on the board</button>
+        <div class="f-nav"><button type="button" class="btn line" id="fPrev" aria-label="Previous frame">←</button><button type="button" class="btn line" id="fNext" aria-label="Next frame">→</button><button type="button" class="f-report" id="fReport">Report</button></div>
       </div>
     </div>
   </div>
-
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;heroYoutube&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/riY-IuDEBkQ&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Video links&quot;},&quot;showreelYoutube&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://youtu.be/zyUvU81B92w&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Video links&quot;},&quot;inviteCode&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Invite code&quot;},&quot;inviteFormUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://forms.gle/ZB5vk7DNB2CdivBf7&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Invite code&quot;}}">
-class Component extends DCLogic {
-  state = { mob: false, faq: -1, pcts: [], cd: '', label: '', light: -1, barHid: false, frame: 0, heroOn: false, reelOn: false, theme: this._savedTheme() };
-  sliderRef = React.createRef();
-  // locked art direction. only the two video links stay tweakable.
-  L = { heroVideo: 'side box', headlineReveal: true, showDiscount: true, labels: 'small caps', chapterNumerals: true, galleryTiles: 29, promiseFirst: true, sliderStart: 50, purple: 'one leak', warmLeak: true, glow: 100, grain: 14, buttonHover: 'invert', hideBarOnScroll: true, stickyBar: true, motion: 'full' };
-  static PAIRS = [
-    { b: 'assets/pairs/p3-before.webp', a: 'assets/pairs/p3-after.webp' },
-    { b: 'assets/pairs/p4-before.webp', a: 'assets/pairs/p4-after.webp' },
-    { b: 'assets/pairs/p5-before.webp', a: 'assets/pairs/p5-after.webp' },
-    { b: 'assets/pairs/p1-before.jpg', a: 'assets/pairs/p1-after.jpg' },
-    { b: 'assets/pairs/p2-before.jpg', a: 'assets/pairs/p2-after.jpg' }
-  ];
-  static GAL = [
-    ['assets/gallery/g01.jpg', 2048, 1152], ['assets/gallery/g23.jpg', 2752, 1536], ['assets/gallery/g21.jpg', 2560, 1440],
-    ['assets/gallery/g10.jpg', 1152, 2048], ['assets/gallery/g22.jpg', 2560, 1440], ['assets/gallery/g05.jpg', 2752, 1536],
-    ['assets/gallery/g12.jpg', 2048, 1152], ['assets/gallery/g27.jpg', 1728, 2304], ['assets/gallery/g06.jpg', 1086, 1448],
-    ['assets/gallery/g15.jpg', 2560, 1440], ['assets/gallery/g26.jpg', 1440, 2560], ['assets/gallery/g02.jpg', 1920, 1080],
-    ['assets/gallery/g07.jpg', 1760, 2352], ['assets/gallery/g24.jpg', 1920, 1080], ['assets/gallery/g20.jpg', 2560, 1440],
-    ['assets/gallery/g13.jpg', 2560, 1440], ['assets/gallery/g28.jpg', 1086, 1448], ['assets/gallery/g03.jpg', 900, 1612],
-    ['assets/gallery/g11.jpg', 2048, 1152], ['assets/gallery/g25.jpg', 1920, 1080], ['assets/gallery/g19.jpg', 2560, 1440],
-    ['assets/gallery/g17.jpg', 1440, 2560], ['assets/gallery/g29.jpg', 1760, 2352], ['assets/gallery/g16.jpg', 2048, 1152],
-    ['assets/gallery/g09.jpg', 2560, 1440], ['assets/gallery/g14.jpg', 2752, 1536], ['assets/gallery/g04.jpg', 1312, 736],
-    ['assets/gallery/g18.jpg', 5504, 3072], ['assets/gallery/g08.jpg', 2560, 1440]
-  ];
-  // Geo pricing. Three tiers, one block. Change a price here and every place it
-  // appears on the page follows. The visitor's country arrives as window.KF_COUNTRY,
-  // set by the Netlify edge function in netlify/edge-functions/geo.js.
-  static PRICING = {
-    INR: {
-      cur: '\u20b9', now: '49', was: '\u20b9500', off: '90% off',
-      bundle: '\u20b95,000', itmA: '\u20b92,000', itmB: '\u20b91,000',
-      pay: 'Secure payment via Razorpay. UPI, cards, netbanking.',
-      button: 'pl_ThaUpu2aqAfz6b',
-      tzOff: 330, timeLong: '11am to 2pm IST', timeShort: '11am', timeBar: '11am ist'
-    },
-    AED: {
-      cur: 'AED ', now: '49', was: 'AED 500', off: '90% off',
-      bundle: 'AED 899', itmA: 'AED 359', itmB: 'AED 180',
-      pay: 'Secure payment via Razorpay. Cards and wallets.',
-      button: 'pl_TkGd72jTJKbpf0',
-      tzOff: 240, timeLong: '9:30am to 12:30pm Dubai time', timeShort: '9:30am', timeBar: '9:30am dubai time'
-    },
-    USD: {
-      cur: '$', now: '19', was: '$99', off: '80% off',
-      bundle: '$49', itmA: '$19', itmB: '$10',
-      pay: 'Secure payment via Razorpay. Cards and wallets.',
-      button: 'pl_TkGbvlvMC1L3NT',
-      tzOff: 0, timeLong: '5:30am to 8:30am UTC', timeShort: '5:30 utc', timeBar: '5:30am utc'
-    }
-  };
-  // Nearby markets priced in rupees alongside India.
-  static GEO_INR = ['IN', 'NP', 'BD', 'PK', 'LK', 'BT', 'MM', 'AF'];
 
-  _tier() {
-    if (this._tierC) return this._tierC;
-    let cc = '';
-    try { cc = String(window.KF_COUNTRY || '').trim().toUpperCase(); } catch (e) {}
-    if (!cc) {
-      // No country header, so the edge function did not run (local preview or a
-      // direct file open). The device time zone is a reasonable stand-in.
-      try {
-        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-        if (/Calcutta|Kolkata|Colombo|Dhaka|Karachi|Kathmandu|Thimphu|Yangon|Kabul/i.test(tz)) cc = 'IN';
-        else if (/Dubai/i.test(tz)) cc = 'AE';
-      } catch (e) {}
-    }
-    const key = Component.GEO_INR.indexOf(cc) >= 0 ? 'INR' : (cc === 'AE' ? 'AED' : 'USD');
-    this._tierC = Component.PRICING[key];
-    return this._tierC;
-  }
+<canvas id="cardCanvas" width="1080" height="1350" hidden></canvas>
 
-  _savedTheme() { try { return localStorage.getItem('kf-theme') === 'dark' ? 'dark' : 'light'; } catch (e) { return 'light'; } }
-  _setTheme = t => { this.setState({ theme: t }, () => this._applyBody()); this._applyBody(t); try { localStorage.setItem('kf-theme', t); } catch (e) {} };
-  _applyBody(t) { document.body.style.background = (t || this.state.theme) === 'light' ? '#F5F1EA' : '#000000'; }
-
-  _calm() {
-    if (this.L.motion === 'calm') return true;
-    return typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  }
-  _next() {
-    // next sunday 11:00 IST (05:30 UTC); holds until the session ends at 14:00 IST, then rolls a week
-    const OFF = 330 * 60000, now = Date.now(), ist = new Date(now + OFF);
-    const start = Date.UTC(ist.getUTCFullYear(), ist.getUTCMonth(), ist.getUTCDate() + ((7 - ist.getUTCDay()) % 7), 11, 0) - OFF;
-    const first = Date.UTC(2026, 9, 11, 11, 0) - OFF;
-    const utc = now < first + 3 * 3600000 ? first : (now >= start + 3 * 3600000 ? start + 7 * 86400000 : start);
-    return { utc: utc, ist: new Date(utc + OFF) };
-  }
-  _barDate() {
-    // short session date for the sticky bar, e.g. "sun, 11 oct", in the tier's time zone
-    const d = new Date(this._next().utc + this._tier().tzOff * 60000);
-    return ['sun','mon','tue','wed','thu','fri','sat'][d.getUTCDay()] + ', ' + d.getUTCDate() + ' '
-      + ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'][d.getUTCMonth()];
-  }
-  _tick = () => {
-    const n = this._next(), T = this._tier(), loc = new Date(n.utc + T.tzOff * 60000);
-    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-    const ms = n.utc - Date.now();
-    const m = Math.max(0, Math.floor(ms / 60000)), dd = Math.floor(m / 1440), h = Math.floor((m % 1440) / 60), mi = m % 60;
-    const p = x => String(x).padStart(2, '0');
-    this.setState({
-      cd: ms <= 0 ? 'live now' : p(dd) + 'd · ' + p(h) + 'h · ' + p(mi) + 'm',
-      label: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][loc.getUTCDay()] + ', ' + loc.getUTCDate() + ((d => (d % 100 >= 11 && d % 100 <= 13) ? 'th' : ({1:'st',2:'nd',3:'rd'}[d % 10] || 'th'))(loc.getUTCDate())) + ' ' + months[loc.getUTCMonth()] + ' · ' + T.timeLong
-    });
-  };
-  _evenStack = () => {
-    // the stack only reads as four tabs if every card is the same height: with
-    // uneven heights the shorter middle cards end up fully covered by the next one
-    const els = document.querySelectorAll('[data-rise]');
-    if (els.length < 2) return;
-    const w = window.innerWidth;
-    if (this._stackW === w) return;
-    this._stackW = w;
-    let mx = 0;
-    els.forEach(e => { e.style.minHeight = ''; });
-    els.forEach(e => { mx = Math.max(mx, e.offsetHeight); });
-    els.forEach(e => { e.style.minHeight = mx + 'px'; });
-  };
-  _measure = () => {
-    const w = (document.documentElement && document.documentElement.clientWidth) || window.innerWidth;
-    const mob = w < 860;
-    if (mob !== this.state.mob) this.setState({ mob: mob });
-    this._evenStack();
-  };
-  componentDidMount() {
-    this._tick();
-    this._applyBody();
-    this._cdT = setInterval(this._tick, 30000);
-    this._onKey = e => {
-      if (!(this.state.light > 0)) return;
-      if (e.key === 'Escape') this.setState({ light: -1 });
-      else if (e.key === 'ArrowLeft') this._step(-1);
-      else if (e.key === 'ArrowRight') this._step(1);
-    };
-    window.addEventListener('keydown', this._onKey);
-    this._measure();
-    window.addEventListener('resize', this._measure);
-    const risers = document.querySelectorAll('[data-rise]');
-    if (risers.length && 'IntersectionObserver' in window) {
-      this._io = new IntersectionObserver(es => {
-        es.forEach(e => {
-          if (!e.isIntersecting) return;
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'none';
-          this._io.unobserve(e.target);
-        });
-      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
-      risers.forEach(r => this._io.observe(r));
-    } else {
-      risers.forEach(r => { r.style.opacity = '1'; r.style.transform = 'none'; });
-    }
-    this._revealScan();
-    let rs = 0;
-    this._revT = setInterval(() => { this._revealScan(); if (++rs > 20) { clearInterval(this._revT); this._revT = null; } }, 500);
-    this._mT = setInterval(this._measure, 400);
-    this._onScroll = () => {
-      const y = this._sc ? this._sc.scrollTop : (window.scrollY || document.documentElement.scrollTop || 0);
-      const dy = y - (this._ly || 0); this._ly = y;
-      const hid = this.L.hideBarOnScroll && y > 320 && dy > 4 ? true : (dy < -4 || y < 320 ? false : this.state.barHid);
-      if (hid !== this.state.barHid) this.setState({ barHid: hid });
-      this._road(0.016);
-    };
-    this._P = 0; this._V = 0;
-    this._road = (dt) => {
-      let el = this._trackEl;
-      if (!el || !el.isConnected) el = this._trackEl = document.querySelector('[data-road-track]');
-      if (!el) return;
-      let vp = this._stageEl;
-      if (!vp || !vp.isConnected) vp = this._stageEl = document.querySelector('[data-road-stage]');
-      if (!vp) return;
-      const W = vp.clientWidth || 1200, H = vp.clientHeight || 800;
-      const span = el.offsetHeight - H;
-      if (span < 2) return;
-      const raw = Math.max(0, Math.min(1, -el.getBoundingClientRect().top / span)) * 4;
-      // each stop holds while you scroll through the ends of its segment, then travels.
-      // the flat band is what makes a checkpoint easy to stop on.
-      const seg = Math.min(3, Math.floor(raw)), f = raw - seg, hold = 0.23;
-      const g = Math.max(0, Math.min(1, (f - hold) / (1 - 2 * hold)));
-      const target = seg + g * g * g * (g * (6 * g - 15) + 10);
-
-      // critically damped spring: liquid inertia, no jitter
-      const k = 78, c = 2 * Math.sqrt(k), h = Math.min(dt || 0.016, 0.05);
-      const a = k * (target - this._P) - c * this._V;
-      this._V += a * h; this._P += this._V * h;
-      if (Math.abs(target - this._P) < 0.0004 && Math.abs(this._V) < 0.0008) { this._P = target; this._V = 0; }
-      const p = this._P;
-
-      const svg = this._svg || (this._svg = vp.querySelector('[data-road-svg]'));
-      if (svg && this._svgW !== W) { this._svgW = W; svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H); }
-
-      const D = 640, camZ = p * D;
-      const mob = W < 860;
-      const pad = mob ? 16 : 28;
-      const bw = this._bw || (mob ? 300 : 560);
-      const scMax = mob ? 1.06 : 1.12, scMin = mob ? 0.84 : 0.8;
-      const gap = mob ? 18 : 30;
-      // single vanishing point below the frame. weight is strictly decreasing in
-      // stop index (hyperbolic near the camera, linear far out), so screen y is
-      // monotonic by construction and the road can never double back or jerk.
-      const wOf = t => { const u = Math.max(t, -0.9); return 0.55 * (1 - u / 5.2) + 0.45 * (1.6 / (u + 1.6)); };
-      const wNear = wOf(-0.9), xk = 0.6 + 0.4 * wNear;
-      const half = W / 2;
-      const loX = (-half + pad) / xk, hiX = (half - pad - (gap + bw) * scMax) / xk;
-      const fracs = mob ? [-0.94,-0.34,-0.9,-0.3,-0.86] : [-0.78,-0.14,-0.68,-0.1,-0.62];
-      // lateral origins are clamped once per width, never per frame, so nothing slides sideways as you scroll
-      const wx = fracs.map(f => Math.max(loX, Math.min(hiX, f * half)));
-      const st = Math.max(0, Math.min(1, p - 3));
-      const settle = st * st * (3 - 2 * st) * 0.17 * H;
-      const VPy = 0.972 * H + settle, SPAN = 0.672 * H;
-      const scs = [], pts = [];
-      for (let i = 0; i < 5; i++) {
-        const t = i - p, wv = wOf(t), d = t * D;
-        scs.push(Math.max(scMin, Math.min(scMax, 0.66 + 0.34 * wv)));
-        const behind = d < -1.25 * D ? Math.max(0, 1 + (d + 1.25 * D) / (0.75 * D)) : 1;
-        pts.push({ x: half + wx[i] * (0.6 + 0.4 * wv), y: VPy - SPAN * wv, d: d, vis: behind });
-      }
-      const fmt = q => q.x.toFixed(1) + ',' + q.y.toFixed(1);
-      // the road keeps running to the horizon past the last stop
-      const wE = wOf(5 - p);
-      const exit = { x: half + wx[4] * 0.45 * (0.6 + 0.4 * wE), y: VPy - SPAN * wE };
-      const ctrl = j => {
-        const a0 = pts[j - 1] || pts[j], a1 = pts[j], a2 = pts[j + 1], a3 = pts[j + 2] || (j + 1 === 4 ? exit : a2);
-        return 'M' + fmt(a1)
-          + ' C' + fmt({ x: a1.x + (a2.x - a0.x) / 6, y: a1.y + (a2.y - a0.y) / 6 })
-          + ' ' + fmt({ x: a2.x - (a3.x - a1.x) / 6, y: a2.y - (a3.y - a1.y) / 6 })
-          + ' ' + fmt(a2);
-      };
-      const segs = this._segs && this._segs.length ? this._segs : (this._segs = vp.querySelectorAll('[data-seg]'));
-      const ghosts = this._ghosts && this._ghosts.length ? this._ghosts : (this._ghosts = vp.querySelectorAll('[data-ghost]'));
-      const bloom = this._bloom || (this._bloom = vp.querySelector('[data-road-bloom]'));
-      const sig = pts.map(fmt).join('|');
-      const redraw = this._sig !== sig;
-      if (redraw) { this._sig = sig; this._segLen = this._segLen || []; }
-      let activeD = '';
-      for (let j = 0; j < 4; j++) {
-        const sp = segs[j], gp = ghosts[j];
-        if (!sp) continue;
-        if (redraw) {
-          const dstr = ctrl(j);
-          sp.setAttribute('d', dstr);
-          if (gp) gp.setAttribute('d', dstr);
-          this._segLen[j] = sp.getTotalLength ? sp.getTotalLength() : 0;
-        }
-        const dm = (pts[j].d + pts[j + 1].d) / 2;
-        const vis = pts[j + 1].vis;
-        const focus = 1 - Math.min(1, Math.abs(dm) / (1.25 * D));
-        // the stroke runs ahead of the camera and completes at the next stop,
-        // so it is never caught halfway between two points
-        const t = Math.max(0, Math.min(1, (p - j) / 0.62));
-        const draw = t * t * (3 - 2 * t);
-        const past = Math.max(0, Math.min(1, p - (j + 1)));
-        const dissolve = past * past * (3 - 2 * past);
-        const blur = Math.min(14, Math.abs(dm) / D * 5 + dissolve * 8);
-        const L = this._segLen[j] || 0;
-        sp.style.filter = blur > 0.25 ? 'blur(' + blur.toFixed(2) + 'px)' : 'none';
-        sp.setAttribute('opacity', (draw <= 0 ? 0 : (0.12 + 0.86 * focus) * vis * (1 - 0.88 * dissolve)).toFixed(3));
-        sp.setAttribute('stroke-width', (2.6 + 4.6 * focus * (1 - 0.5 * dissolve)).toFixed(2));
-        if (L) sp.setAttribute('stroke-dasharray', (L * draw).toFixed(1) + ' ' + (L + 8).toFixed(1));
-        const frac = draw;
-        if (gp) { gp.style.filter = sp.style.filter; gp.setAttribute('opacity', ((0.1 + 0.3 * focus) * vis).toFixed(3)); }
-        if (draw > 0.02 && past < 0.35 && vis > 0.5) activeD = sp.getAttribute('d');
-      }
-      if (bloom) {
-        if (activeD && bloom.getAttribute('d') !== activeD) bloom.setAttribute('d', activeD);
-        bloom.setAttribute('opacity', activeD ? '0.22' : '0');
-      }
-      const stops = this._stops && this._stops.length ? this._stops : (this._stops = vp.querySelectorAll('[data-stop]'));
-      if (this._bhW !== W) { this._bhW = W; let mx = 0; const bl = vp.querySelectorAll('[data-beat]'); for (let i = 0; i < bl.length; i++) mx = Math.max(mx, bl[i].offsetHeight || 0); this._bh = mx || 150; if (bl[0] && bl[0].offsetWidth) this._bw = bl[0].offsetWidth; }
-      const beats = this._beats && this._beats.length ? this._beats : (this._beats = vp.querySelectorAll('[data-beat]'));
-      for (let i = 0; i < 5; i++) {
-        const q = pts[i], d = q.d;
-        const near = Math.max(0, 1 - Math.min(1, Math.abs(d) / (1.15 * D)));
-        const st = stops[i];
-        if (st) {
-          st.setAttribute('cx', q.x.toFixed(1));
-          st.setAttribute('cy', q.y.toFixed(1));
-          st.setAttribute('r', (1.8 + 7.4 * near).toFixed(2));
-          st.setAttribute('opacity', ((0.16 + 0.84 * near) * q.vis).toFixed(3));
-          st.style.filter = near > 0.72 ? 'none' : 'blur(' + (Math.min(7, (1 - near) * 7)).toFixed(2) + 'px)';
-        }
-        const b = beats[i];
-        if (b) {
-          const blur = Math.min(16, Math.abs(d) / D * 6);
-          const op = d < 0 ? Math.max(0, 1 + d / (0.55 * D)) : Math.max(0, 1 - Math.max(0, d - 0.15 * D) / (2.1 * D));
-          const sc = scs[i];
-          const ch = b.offsetHeight || this._bh;
-          const bx = q.x - half + gap * sc;
-          const by = q.y - H / 2 - ch * sc * 0.5;
-          b.style.transformOrigin = '0 0';
-          b.style.transform = 'translate(' + bx.toFixed(1) + 'px,' + by.toFixed(1) + 'px) scale(' + sc.toFixed(3) + ')';
-          b.style.filter = 'blur(' + blur.toFixed(2) + 'px)';
-          b.style.opacity = op.toFixed(3);
-        }
-      }
-      const cEl = this._cnt || (this._cnt = vp.querySelector('[data-road-count]'));
-      if (cEl) { const n = '0' + Math.min(5, Math.max(1, Math.floor(p + 1.04))) + ' / 05'; if (cEl.textContent !== n) cEl.textContent = n; }
-    };
-    this._pulse = (dt) => {
-      const t = this._trackEl || document.querySelector('[data-road-track]');
-      const sy = (window.scrollY || document.documentElement.scrollTop || 0) || (this._sc ? this._sc.scrollTop : 0) || (t ? -(t.getBoundingClientRect().top) : 0);
-      const dy = sy - (this._ly2 || 0); this._ly2 = sy;
-      const hid = this.L.hideBarOnScroll && sy > 320 && dy > 2 ? true : ((dy < -2 || sy < 320) ? false : this.state.barHid);
-      if (hid !== this.state.barHid) this.setState({ barHid: hid });
-      this._road(dt);
-      this._orb(dt);
-    };
-    this._raf = (t) => { this._rafId = requestAnimationFrame(this._raf); const dt = this._t0 ? (t - this._t0) / 1000 : 0.016; this._t0 = t; try { this._pulse(dt); } catch (e) {} };
-    this._rafId = requestAnimationFrame(this._raf);
-    window.addEventListener('scroll', this._onScroll, { passive: true });
-    document.addEventListener('scroll', this._onScroll, { passive: true, capture: true });
-    let el = document.getElementById('top'); el = el && el.parentElement;
-    while (el && el !== document.body) { const o = getComputedStyle(el).overflowY; if (/(auto|scroll|overlay)/.test(o)) { this._sc = el; break; } el = el.parentElement; }
-    if (this._sc) this._sc.addEventListener('scroll', this._onScroll, { passive: true });
-  }
-  componentWillUnmount() {
-    if (this._revT) clearInterval(this._revT);
-    if (this._rio) this._rio.disconnect();
-    if (this._rzpWatch) clearInterval(this._rzpWatch);
-    if (this._reelIO) this._reelIO.disconnect();
-    if (this._slide) clearTimeout(this._slide);
-    if (this._io) this._io.disconnect();
-    clearInterval(this._cdT);
-    clearInterval(this._mT);
-    if (this._rafId) cancelAnimationFrame(this._rafId);
-    window.removeEventListener('resize', this._measure);
-    window.removeEventListener('keydown', this._onKey);
-    window.removeEventListener('scroll', this._onScroll);
-    document.removeEventListener('scroll', this._onScroll, true);
-    if (this._sc) this._sc.removeEventListener('scroll', this._onScroll);
-  }
-
-  _pct(i) { const a = this.state.pcts || []; return a[i] ?? this.L.sliderStart; }
-  _N() { return Component.PAIRS.length; }
-  _mid() { return Math.floor(this._N() / 2); }
-  _liveIdx() { const N = this._N(); return (((this.state.frame || 0) + (this.state.shift || 0)) % N + N) % N; }
-  _orbLayout(W, N) {
-    // real aspect ratios, packed tight to the edge of a circle, never overlapping
-    const G = Component.GAL, R = W / 2, cx = R, cy = R;
-    const mult = [1.85, 0.78, 1.2, 0.72, 1.5, 0.88, 1.02, 0.74, 1.32, 0.92, 0.7, 1.12];
-    const A = (Math.PI * R * R * 0.74) / N, cap = W * 0.3, pts = [], pad = W * 0.01;
-    for (let i = 0; i < N; i++) {
-      const g = G[i % G.length], ar = g[1] / g[2], ta = A * mult[i % mult.length];
-      let w = Math.sqrt(ta * ar), hh = Math.sqrt(ta / ar);
-      if (w > cap) { hh *= cap / w; w = cap; }
-      if (hh > cap) { w *= cap / hh; hh = cap; }
-      const th = i * 2.399963, rr = R * 0.8 * Math.sqrt((i + 0.35) / N);
-      pts.push({ x: cx + rr * Math.cos(th), y: cy + rr * Math.sin(th), w: w, h: hh });
-    }
-    const hold = it => {
-      for (let i = 0; i < N; i++) {
-        const p = pts[i], dx = p.x - cx, dy = p.y - cy, d = Math.sqrt(dx * dx + dy * dy) || 1;
-        const lim = R - Math.sqrt(p.w * p.w + p.h * p.h) / 2 * 0.99;
-        if (d > lim) { p.x = cx + (dx / d) * lim; p.y = cy + (dy / d) * lim; }
-        else if (it >= 0 && it < 280) { p.x -= (dx / d) * W * 0.0012; p.y -= (dy / d) * W * 0.0012; }
-      }
-    };
-    for (let it = 0; it < 400; it++) {
-      for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
-        const p = pts[i], q = pts[j];
-        const ox = (p.w + q.w) / 2 + pad - Math.abs(p.x - q.x);
-        const oy = (p.h + q.h) / 2 + pad - Math.abs(p.y - q.y);
-        if (ox <= 0 || oy <= 0) continue;
-        if (ox < oy) { const s = (p.x < q.x ? -1 : 1) * ox * 0.52; p.x += s; q.x -= s; }
-        else { const s = (p.y < q.y ? -1 : 1) * oy * 0.52; p.y += s; q.y -= s; }
-      }
-      hold(it);
-    }
-    // last resort: shrink whatever still touches, so nothing ever overlaps
-    for (let pass = 0; pass < 80; pass++) {
-      let bad = 0;
-      for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
-        const p = pts[i], q = pts[j];
-        const ox = (p.w + q.w) / 2 + pad * 0.5 - Math.abs(p.x - q.x);
-        const oy = (p.h + q.h) / 2 + pad * 0.5 - Math.abs(p.y - q.y);
-        if (ox <= 0 || oy <= 0) continue;
-        bad++;
-        if (ox < oy) { const s = (p.x < q.x ? -1 : 1) * ox * 0.5; p.x += s; q.x -= s; }
-        else { const s = (p.y < q.y ? -1 : 1) * oy * 0.5; p.y += s; q.y -= s; }
-        p.w *= 0.985; p.h *= 0.985; q.w *= 0.985; q.h *= 0.985;
-      }
-      hold(-1);
-      if (!bad) break;
-    }
-    return pts;
-  }
-  _orb(dt) {
-    let c = this._orbEl;
-    if (!c || !c.isConnected) c = this._orbEl = document.querySelector('[data-orb-stage]');
-    if (!c) return;
-    const W = c.clientWidth;
-    if (!W) return;
-    let els = this._orbEls;
-    if (!els || !els.length || !els[0].isConnected) els = this._orbEls = c.querySelectorAll('[data-orb]');
-    if (!els.length) return;
-    if (this._orbW !== W || this._orbN !== els.length) {
-      this._orbW = W; this._orbN = els.length;
-      this._orbPts = this._orbLayout(W, els.length);
-      this._orbCur = this._orbPts.map(() => 0);
-      for (let i = 0; i < els.length; i++) {
-        const p = this._orbPts[i], e = els[i];
-        e.style.width = p.w.toFixed(1) + 'px';
-        e.style.height = p.h.toFixed(1) + 'px';
-        e.style.left = (p.x - p.w / 2).toFixed(1) + 'px';
-        e.style.top = (p.y - p.h / 2).toFixed(1) + 'px';
-      }
-    }
-    const pts = this._orbPts, cur = this._orbCur, m = this._orbM;
-    const sig = W * 0.15, amp = 1.7, k = 1 - Math.exp(-(dt || 0.016) * 14);
-    for (let i = 0; i < pts.length; i++) {
-      const p = pts[i], e = els[i];
-      let t = 0, d = 0;
-      if (m) {
-        const dx = p.x - m.x, dy = p.y - m.y;
-        d = Math.sqrt(dx * dx + dy * dy);
-        t = amp * Math.exp(-(d * d) / (2 * sig * sig));
-      }
-      cur[i] += (t - cur[i]) * k;
-      const v = cur[i];
-      if (v < 0.0015 && !m) { e.style.transform = 'none'; e.style.opacity = '0.92'; e.style.filter = 'saturate(0.88)'; e.style.zIndex = 1 + i; continue; }
-      let ox = 0, oy = 0;
-      if (m && d > 0.5) {
-        // neighbours part outward to make room, the focused one stays put
-        const push = v * sig * 0.34 * Math.min(1, d / (sig * 0.85));
-        ox = ((p.x - m.x) / d) * push; oy = ((p.y - m.y) / d) * push;
-      }
-      const n01 = Math.min(1, v / amp);
-      e.style.transform = 'translate3d(' + ox.toFixed(1) + 'px,' + oy.toFixed(1) + 'px,0) scale(' + (1 + v).toFixed(3) + ')';
-      e.style.opacity = (0.92 + 0.08 * n01).toFixed(3);
-      e.style.filter = 'saturate(' + (0.88 + 0.12 * n01).toFixed(2) + ')';
-      e.style.borderRadius = (6 + 7 * n01).toFixed(1) + 'px';
-      e.style.zIndex = 1 + i + Math.round(v * 200);
-    }
-  }
-  _revealScan = () => {
-    if (this._calm()) return;
-    if (!this._rio) {
-      this._rio = new IntersectionObserver(es => {
-        es.forEach(e => {
-          if (!e.isIntersecting) return;
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'none';
-          this._rio.unobserve(e.target);
-        });
-      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
-    }
-    const sel = 'section[data-screen-label] h2, section[data-screen-label] h3, section[data-screen-label] p, section[data-screen-label] blockquote, section[data-screen-label] cite';
-    document.querySelectorAll(sel).forEach(el => {
-      // skip the hero (it reveals on load), the sticky cards and anything inside the orb
-      if (el.dataset.rev || el.style.animation || el.closest('[data-rise]') || el.closest('[data-orb-stage]')) return;
-      el.dataset.rev = '1';
-      const i = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
-      const d = Math.min(i * 80, 320) + 'ms';
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(16px)';
-      el.style.transition = 'opacity 0.75s cubic-bezier(0.22,0.61,0.36,1) ' + d + ',transform 0.75s cubic-bezier(0.22,0.61,0.36,1) ' + d;
-      this._rio.observe(el);
-    });
-  };
-  _rzp = el => {
-    if (!el || this._rzpEl === el) return;
-    this._rzpEl = el;
-    const ready = () => el.querySelector('iframe, .razorpay-payment-button, a[href*="razorpay"], button');
-    const inject = () => {
-      if (ready()) return;
-      el.textContent = '';
-      const f = document.createElement('form');
-      const s = document.createElement('script');
-      s.src = 'https://checkout.razorpay.com/v1/payment-button.js';
-      s.async = true;
-      s.setAttribute('data-payment_button_id', this._tier().button);
-      f.appendChild(s);
-      el.appendChild(f);
-    };
-    inject();
-    let tries = 0;
-    if (this._rzpWatch) clearInterval(this._rzpWatch);
-    this._rzpWatch = setInterval(() => {
-      if (ready()) {
-        el.style.pointerEvents = 'auto';
-        el.style.inset = 'auto';
-        el.style.position = 'absolute';
-        el.style.left = '50%';
-        el.style.top = '50%';
-        el.style.transform = 'translate(-50%,-50%)';
-        clearInterval(this._rzpWatch); this._rzpWatch = null;
-        return;
-      }
-      if (++tries > 4) { clearInterval(this._rzpWatch); this._rzpWatch = null; return; }
-      inject();
-    }, 2000);
-  };
-  _embed(id) {
-    // muted autoplay is the only autoplay browsers allow. the button turns sound on.
-    return 'https://www.youtube.com/embed/' + id + '?rel=0&modestbranding=1&playsinline=1'
-      + '&autoplay=1&mute=1&loop=1&playlist=' + id + '&enablejsapi=1';
-  }
-  _sound(which) {
-    const f = which === 'hero' ? this._heroFrame : this._reelFrame;
-    const on = which === 'hero' ? this.state.heroOn : this.state.reelOn;
-    if (!f || !f.contentWindow) return;
-    const send = fn => f.contentWindow.postMessage(JSON.stringify({ event: 'command', func: fn, args: [] }), '*');
-    if (on) { send('mute'); } else { send('unMute'); send('playVideo'); }
-    this.setState(which === 'hero' ? { heroOn: !on } : { reelOn: !on });
-  }
-  _ytId(v) {
-    const t = (v || '').trim();
-    if (!t) return '';
-    const m = t.match(/(?:youtu\.be\/|v=|embed\/|shorts\/|live\/)([A-Za-z0-9_-]{6,})/);
-    if (m) return m[1];
-    return /^[A-Za-z0-9_-]{6,}$/.test(t) ? t : '';
-  }
-  _live() { return this.state.mob ? 0.8 : 0.58; }
-  _reelBase() { const L = this._live(), N = this._N(); return (((1 - L) / 2 - this._mid() * L) / (N * L)) * 100; }
-  _reelMask() {
-    const edge = (1 - this._live()) / 2 * 100 + 0.4;
-    const ramp = (a, b, up) => {
-      const out = [];
-      for (let i = 0; i <= 24; i++) {
-        const t = i / 24, o = t * t * (3 - 2 * t);
-        out.push('rgba(0,0,0,' + (up ? o : 1 - o).toFixed(3) + ') ' + (a + (b - a) * t).toFixed(2) + '%');
-      }
-      return out.join(',');
-    };
-    const g = 'linear-gradient(90deg,' + ramp(0, edge, true) + ',rgba(0,0,0,1) ' + (100 - edge).toFixed(2) + '%,' + ramp(100 - edge, 100, false) + ')';
-    return '-webkit-mask-image:' + g + ';mask-image:' + g;
-  }
-  _cellStyle(i) {
-    // slots rotate so the live frame always sits in the middle: the reel loops
-    // forward past 3 into 1 without ever running backwards
-    const N = this._N(), order = ((i - (this.state.frame || 0) + this._mid()) % N + N) % N;
-    return 'flex:none;width:' + (100 / N).toFixed(4) + '%;padding:0 5px;box-sizing:border-box;order:' + order;
-  }
-  _go(d) {
-    if (this._slide) return;
-    this.setState({ shift: d });
-    this._slide = setTimeout(() => {
-      this._slide = null;
-      const N = this._N();
-      this.setState(st => ({ frame: (((st.frame || 0) + d) % N + N) % N, shift: 0 }));
-    }, 630);
-  }
-  _frameStyle(i) {
-    const live = this._liveIdx();
-    return 'position:absolute;inset:0;pointer-events:none;opacity:' + (live === i ? 1 : 0)
-      + ';transition:opacity 0.4s ease-out';
-  }
-  _setFromX(clientX) {
-    const el = this.sliderRef.current; if (!el) return;
-    const r = el.getBoundingClientRect();
-    // the live frame sits centred in the reel, with neighbours peeking either side
-    const f = this._live(), L = r.left + r.width * ((1 - f) / 2), W = r.width * f;
-    const v = Math.max(3, Math.min(97, ((clientX - L) / W) * 100)), i = this._liveIdx();
-    this.setState(st => { const a = (st.pcts || []).slice(); a[i] = v; return { pcts: a }; });
-  }
-  _down = e => {
-    e.preventDefault();
-    this._setFromX(e.clientX);
-    const move = ev => this._setFromX(ev.clientX);
-    const up = () => { window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
-    window.addEventListener('pointermove', move);
-    window.addEventListener('pointerup', up);
-  };
-  _step = d => {
-    const n = this.L.galleryTiles;
-    this.setState(st => ({ light: ((st.light - 1 + d) + n) % n + 1 }));
-  };
-
-  renderVals() {
-    const P = Object.assign({}, this.props, this.L), S = this.state;
-    const T = this._tier();
-    const calm = this._calm();
-    const n = P.galleryTiles ?? 28;
-    const heroMode = P.heroVideo ?? 'full-bleed';
-    const smallCaps = (P.labels ?? 'small caps') === 'small caps';
-    const invert = (P.buttonHover ?? 'invert') === 'invert';
-    const oneLeak = (P.purple ?? 'one leak') === 'one leak';
-    const light = S.theme === 'light';
-    const vars = [
-      '--fsBody:clamp(16px,1.2vw,18px)',
-      '--fsH3:clamp(25.9px,2.4vw,29.1px)',
-      '--fsH2:clamp(41.9px,4vw,47.1px)',
-      '--fsH1:clamp(67.8px,6.5vw,76.2px)',
-      '--fsBeatH:' + (S.mob ? 'clamp(38px,9.6vw,46px)' : 'clamp(50px,4.6vw,64px)'),
-      '--fsBeatP:' + (S.mob ? '18px' : 'clamp(19px,1.5vw,22px)'),
-      '--beatW:' + (S.mob ? 'calc(100vw - 62px)' : 'min(620px,47vw)'),
-      '--accentInk:' + (light ? '#FFFFFF' : '#0B0A0E'),
-      '--glass:' + (light ? 'linear-gradient(160deg,rgba(255,255,255,0.72),rgba(255,255,255,0.38))' : 'linear-gradient(160deg,rgba(255,255,255,0.11),rgba(255,255,255,0.03))'),
-      '--glassLine:' + (light ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.22)'),
-      '--rad:' + (S.mob ? '34px' : '48px'),
-      '--tint1:' + (light ? 'rgba(255,255,255,0.78)' : 'rgba(255,255,255,0.075)'),
-      '--tint2:' + (light ? 'rgba(247,243,255,0.82)' : 'rgba(146,109,222,0.10)'),
-      '--tint3:' + (light ? 'rgba(252,248,242,0.85)' : 'rgba(255,255,255,0.055)'),
-      '--tint4:' + (light ? 'rgba(248,250,247,0.85)' : 'rgba(124,58,237,0.09)'),
-      '--glassHi:' + (light ? 'rgba(255,255,255,1)' : 'rgba(255,255,255,0.35)'),
-      '--revA:' + ((P.headlineReveal ?? true) && !calm ? 'kfUp 0.9s ease-out' : 'none'),
-      '--lblTT:' + (smallCaps ? 'lowercase' : 'uppercase'),
-      '--lblFV:' + (smallCaps ? 'small-caps' : 'normal'),
-      '--lblLS:' + (smallCaps ? '0.1em' : '0.22em'),
-      '--bhBg:' + (invert ? (light ? '#F5F2EC' : '#000000') : (light ? '#0B0A0E' : '#FFFFFF')),
-      '--bhFg:' + (invert ? (light ? '#0B0A0E' : '#FFFFFF') : (light ? '#FFFFFF' : '#000000')),
-      '--bhSh:' + (invert ? (light ? 'inset 0 0 0 1px #0B0A0E' : 'inset 0 0 0 1px #FFFFFF') : '0 0 0 1px rgba(196,181,253,0.55),0 18px 50px rgba(124,58,237,0.42)'),
-      '--leak2:' + (oneLeak ? '0' : ((P.glow ?? 100) / 100)),
-      '--warm:' + ((P.warmLeak ?? true) ? '1' : '0'),
-      '--bg:' + (light ? 'linear-gradient(180deg,#F7F4EE 0%,#F3EFE8 40%,#F5F1EA 100%)' : 'linear-gradient(180deg,#000000 0%,#050308 18%,#08050D 42%,#03020A 70%,#000000 100%)'),
-      '--ink:' + (light ? '#0B0A0E' : '#FFFFFF'),
-      '--inkSoft:' + (light ? '#3B2A6B' : '#E9E3F7'),
-      '--strong:' + (light ? '#1A1720' : '#E8E5EE'),
-      '--list:' + (light ? '#2E2A36' : '#C9C4D2'),
-      '--body:' + (light ? '#4A4652' : '#A49EB0'),
-      '--muted:' + (light ? '#6E6878' : '#8E8899'),
-      '--dim:' + (light ? '#67616F' : '#8A8494'),
-      '--accent:' + (light ? '#7C3AED' : '#C4B5FD'),
-      '--accentLine:' + (light ? 'rgba(124,58,237,0.35)' : 'rgba(196,181,253,0.35)'),
-      '--line:' + (light ? '#E3DED6' : '#15121B'),
-      '--lineT:' + (light ? 'rgba(227,222,214,0)' : 'rgba(21,18,27,0)'),
-      '--line2:' + (light ? '#CFC8BE' : '#2A2434'),
-      '--surf:' + (light ? '#FFFFFF' : '#0C0912'),
-      '--chrome:' + (light ? 'rgba(247,244,238,0.84)' : 'rgba(0,0,0,0.78)'),
-      '--btn:' + (light ? '#0B0A0E' : '#FFFFFF'),
-      '--btnInk:' + (light ? '#FFFFFF' : '#000000'),
-      '--veil:' + (light ? 'linear-gradient(180deg,rgba(247,244,238,0.55) 0%,rgba(247,244,238,0.8) 55%,#F7F4EE 100%)' : 'linear-gradient(180deg,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.66) 55%,#000000 100%)'),
-      '--vig:' + (light ? 'rgba(60,40,90,0.08)' : 'rgba(0,0,0,0.55)'),
-      '--grainBlend:' + (light ? 'multiply' : 'screen'),
-      '--chapRGB:' + (light ? '11,10,14' : '255,255,255'),
-      '--chapO:' + ((P.chapterNumerals ?? true) ? '0.05' : '0'),
-      '--barY:' + (S.barHid ? '110%' : '0'),
-      '--barFs:' + (S.mob ? '15px' : '16px'),
-      '--barPad:' + (S.mob ? '18px' : '26px'),
-      '--navH:' + (S.mob ? '62px' : '76px'),
-      '--logoH:' + (S.mob ? '30px' : '36px'),
-      '--barH:' + ((P.stickyBar ?? true) ? (S.mob ? '78px' : '92px') : '0px'),
-      '--leak:' + ((P.glow ?? 100) / 100),
-      '--play:' + (calm ? 'paused' : 'running'),
-      '--grainO:' + ((P.grain ?? 5) / 100),
-      '--grain:' + "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.8 0 0 0 0 0.78 0 0 0 0 0.9 0 0 0 0.9 0'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>\")"
-    ].join(';');
-
-    const G = Component.GAL, tiles = [];
-    for (let i = 1; i <= G.length; i++) {
-      const src = G[i - 1][0];
-      tiles.push({ n: i, src: src, ref: el => { if (el && el.getAttribute('src') !== src) el.setAttribute('src', src); }, label: 'Frame ' + String(i).padStart(2, '0'), tap: () => this.setState({ light: i }) });
-    }
-
-    const faqSrc = [
-      ['I know nothing about AI or filmmaking. Will I keep up?', 'Yes. You rate yourself 1 to 10 when you register, so the session opens at the right level. Every tool gets named the first time it shows up.'],
-      ['Do I need to buy tools before Sunday?', 'No. Watch first, decide later. The pack lists the free tiers and what each paid tool actually costs.'],
-      ['Can I attend on my phone?', 'Yes. The live workshop runs on a phone. A laptop just makes the prompts easier to read.'],
-      ['Is this the full course?', 'No. The full Keyframe course runs 45 to 50 hours across ten chapters. People in the room get an offer that goes nowhere else.'],
-      ["Why " + T.cur + T.now + ", and what if it's not worth it?", 'A paid seat shows up, and the room is better for it. Sit through the whole thing, and if it wasn\u2019t worth it, message within 24 hours for a full refund.']
-    ];
-
-    const invite = P.inviteCode ?? true;
-    return {
-      rootVars: vars,
-      desk: !S.mob,
-      isLight: light,
-      isDark: !light,
-      toggleTheme: () => this._setTheme(light ? 'dark' : 'light'),
-      themeLabel: light ? 'dark' : 'light',
-      themeAria: light ? 'Switch to dark mode' : 'Switch to light mode',
-      heroSide: heroMode === 'side box',
-      showDiscount: !!(P.showDiscount ?? false),
-      promiseEarly: !!(P.promiseFirst ?? true),
-      promiseLate: !(P.promiseFirst ?? true),
-      sessionLabel: S.label || 'Sunday · ' + T.timeLong,
-      countdown: S.cd || 'counting down',
-      sliderRef: this.sliderRef,
-      sliderDown: this._down,
-      pairs: Component.PAIRS.map((p, i) => ({
-        cell: this._cellStyle(i),
-        clip: 'clip-path:inset(0 0 0 ' + this._pct(i) + '%)',
-        handle: 'left:' + this._pct(i) + '%',
-        f: this._frameStyle(i),
-        hasImg: !!p.b, noImg: !p.b,
-        beforeRef: el => { if (el && p.b && el.getAttribute('src') !== p.b) el.setAttribute('src', p.b); },
-        afterRef: el => { if (el && p.a && el.getAttribute('src') !== p.a) el.setAttribute('src', p.a); },
-        beforeAlt: 'Prompted frame ' + (i + 1), afterAlt: 'Directed frame ' + (i + 1),
-        beforeId: p.bId || 'v7-prompted-' + (i + 1), afterId: p.aId || 'v7-directed-' + (i + 1),
-        beforePh: 'PROMPTED · frame ' + (i + 1) + ', straight out of the model',
-        afterPh: 'DIRECTED · frame ' + (i + 1) + ', lit and blocked'
-      })),
-      frameCount: '0' + (this._liveIdx() + 1) + ' / 0' + this._N(),
-      trackStyle: 'width:' + (this._live() * this._N() * 100).toFixed(2) + '%;transform:translateX('
-        + (this._reelBase() - (100 / this._N()) * (this.state.shift || 0)).toFixed(4) + '%)'
-        + (this.state.shift ? ';transition:transform 0.62s cubic-bezier(0.22,0.61,0.36,1)' : ';transition:none'),
-      reelMask: this._reelMask(),
-      framePrev: () => this._go(-1),
-      frameNext: () => this._go(1),
-      galleryLine: S.mob ? "Frames made with the tools you'll learn to direct. Tap any to see it large." : "Frames made with the tools you'll learn to direct. Move across them, click any to see it large.",
-      hasHeroVid: !!this._ytId(P.heroYoutube),
-      noHeroVid: !this._ytId(P.heroYoutube),
-      hasReelVid: !!this._ytId(P.showreelYoutube),
-      noReelVid: !this._ytId(P.showreelYoutube),
-      heroEmbed: this._embed(this._ytId(P.heroYoutube)),
-      rzpMount: this._rzp,
-      heroRef: el => { this._heroFrame = el; },
-      heroSoundLabel: S.heroOn ? 'Mute' : 'Unmute',
-      heroMuted: !S.heroOn,
-      heroLoud: !!S.heroOn,
-      heroSound: () => this._sound('hero'),
-      reelRef: el => {
-        this._reelFrame = el;
-        // the showreel waits: it starts when it scrolls into view, not on page load
-        if (!el || el.dataset.armed) return;
-        el.dataset.armed = '1';
-        const src = this._embed(this._ytId(P.showreelYoutube));
-        if ('IntersectionObserver' in window) {
-          const io = new IntersectionObserver(es => {
-            if (!es.some(e => e.isIntersecting)) return;
-            io.disconnect();
-            if (!el.getAttribute('src')) el.setAttribute('src', src);
-          }, { threshold: 0.35 });
-          io.observe(el);
-          this._reelIO = io;
-        } else { el.setAttribute('src', src); }
-      },
-      reelSoundLabel: S.reelOn ? 'Mute' : 'Unmute',
-      reelMuted: !S.reelOn,
-      reelLoud: !!S.reelOn,
-      reelSound: () => this._sound('reel'),
-      tiles: tiles,
-      orbMove: e => {
-        const c = e.currentTarget.getBoundingClientRect();
-        this._orbM = { x: e.clientX - c.left, y: e.clientY - c.top };
-      },
-      orbLeave: () => { this._orbM = null; },
-      lightOpen: S.light > 0,
-      lightRef: el => { const s = G[(this.state.light > 0 ? this.state.light : 1) - 1][0]; if (el && el.getAttribute('src') !== s) el.setAttribute('src', s); },
-      lightAlt: 'Frame ' + String(S.light > 0 ? S.light : 1).padStart(2, '0'),
-      lightClose: e => {
-        if (this._swiped) { this._swiped = false; return; }
-        const b = e && e.target && e.target.closest ? e.target.closest('[data-nav]') : null;
-        if (b) { const v = b.getAttribute('data-nav'); if (v === 'close') this.setState({ light: -1 }); else this._step(+v); return; }
-        if (e && e.target !== e.currentTarget) return;
-        this.setState({ light: -1 });
-      },
-      lightPrev: e => { e.stopPropagation(); this._step(-1); },
-      lightNext: e => { e.stopPropagation(); this._step(1); },
-      lightDown: e => { this._sx = e.clientX; },
-      lightUp: e => { const d = e.clientX - (this._sx || 0); if (Math.abs(d) > 48) { this._swiped = true; this._step(d < 0 ? 1 : -1); } },
-      proofGrid: S.mob ? 'display:grid;grid-template-columns:1fr' : 'display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,48px)',
-      proofCell0: '',
-      proofCell1: S.mob ? 'border-top:1px solid var(--line,#15121B)' : '',
-      beats: [
-        { no: '01', h: 'I start with my own work.', p: 'You see the ceiling before we begin.' },
-        { no: '02', h: 'SLATE, in full.', p: 'How to direct a frame instead of describing it.' },
-        { no: '03', h: 'VFX that survives a second look.', p: 'The crew-level effects, done so they hold up.' },
-        { no: '04', h: 'A film, from nothing.', p: 'Idea to references to storyboard to cut. Live, nothing hidden.' },
-        { no: '05', h: 'Motion control to finish.', p: 'You move, the character moves. Newest model, live on screen.' }
-      ].map((b, i) => ({ i: i, no: b.no, h: b.h, p: b.p })),
-      includes: [
-        { t: 'Three hours, live workshop' },
-        { t: 'The workshop pack: every prompt, the shot board, the SLATE card' },
-        { t: "The live Frame Fix on an attendee's own frame" }
-      ],
-      faqs: faqSrc.map((x, i) => ({
-        q: x[0], p: x[1],
-        h: () => this.setState({ faq: S.faq === i ? -1 : i }),
-        exp: S.faq === i,
-        a: S.faq === i ? 'max-height:520px;opacity:1' : 'max-height:0px;opacity:0',
-        i: S.faq === i ? 'transform:rotate(-135deg) translate(-2px,-2px)' : 'transform:rotate(45deg) translateY(-3px)'
-      })),
-      barStyle: ((P.stickyBar ?? true) ? 'display:flex;' : 'display:none;') + 'height:' + (invite ? (S.mob ? '96px' : '106px') : (S.mob ? '78px' : '92px')) + ';--barBtnH:' + (invite && S.mob ? '48px' : '52px'),
-      barLive: S.mob ? this._barDate() + ' · ' + T.timeShort : this._barDate() + ' · ' + T.timeBar + ' · live workshop',
-      curSym: T.cur,
-      priceNow: T.now,
-      priceWas: T.was,
-      priceOff: T.off,
-      priceFull: T.cur + T.now,
-      seatCta: 'Reserve my seat \u00b7 ' + T.cur + T.now,
-      bundleVal: T.bundle,
-      itmA: T.itmA,
-      itmB: T.itmB,
-      payMethods: T.pay,
-      barCta: S.mob ? 'Reserve ' + T.cur + T.now : 'Reserve · ' + T.cur + T.now,
-      showInvite: invite,
-      inviteUrl: (P.inviteFormUrl || '').trim() || 'https://forms.gle/ZB5vk7DNB2CdivBf7'
-    };
-  }
-}
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="js/options.js"></script>
+<script src="js/app.js"></script>
+<script src="js/opening-frames.js"></script>
+<script src="js/opening.js"></script>
+<script src="js/briefs.js"></script>
+<script src="js/daily.js"></script>
+<script src="js/reverse.js"></script>
 </body>
 </html>

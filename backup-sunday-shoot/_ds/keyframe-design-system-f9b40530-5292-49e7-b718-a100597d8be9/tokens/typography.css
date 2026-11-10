@@ -1,0 +1,49 @@
+/* Keyframe — Typography
+   Headlines: tracking -0.03em, line-height 1.05, weight 800.
+   Body: Inter 400, line-height 1.6, left-aligned. Never centred.
+   Labels: lowercase, wide tracking 0.16em, Orchid Gray.
+   Never use Epilogue in body copy. Never use Cormorant Garamond outside the logo. */
+
+:root {
+  /* --- Families --- */
+  --font-display: 'Epilogue', system-ui, sans-serif;
+  --font-wordmark: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'SFMono-Regular', Menlo, monospace;
+
+  /* --- Weights --- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 800;
+
+  /* --- Type scale (display uses Epilogue; rest uses Inter) --- */
+  --text-display: 800 4.5rem/1.05 var(--font-display);   /* hero */
+  --text-h1: 800 3.25rem/1.05 var(--font-display);
+  --text-h2: 800 2.25rem/1.08 var(--font-display);
+  --text-h3: 700 1.5rem/1.15 var(--font-display);
+  --text-body-lg: 400 1.125rem/1.6 var(--font-body);
+  --text-body: 400 1rem/1.6 var(--font-body);
+  --text-body-sm: 400 0.875rem/1.55 var(--font-body);
+  --text-caption: 400 0.75rem/1.5 var(--font-body);
+
+  /* --- Tracking --- */
+  --tracking-display: -0.03em;   /* headlines */
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-label: 0.16em;      /* lowercase wide labels */
+
+  /* --- Line heights --- */
+  --leading-tight: 1.05;
+  --leading-snug: 1.2;
+  --leading-body: 1.6;
+}
+
+/* Label utility — lowercase, wide tracking, secondary colour */
+.kf-label {
+  font: var(--weight-semibold) 0.75rem/1 var(--font-body);
+  letter-spacing: var(--tracking-label);
+  text-transform: lowercase;
+  color: var(--text-secondary);
+}

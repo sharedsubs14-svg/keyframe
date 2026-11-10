@@ -1,0 +1,8 @@
+# Clean URLs used in the Sunday Shoot footer and by payment processors
+/about      /About%20Us.dc.html              200
+/privacy    /Privacy%20Policy.dc.html        200
+/refund     /Refund%20Policy.dc.html         200
+/terms      /Terms%20and%20Conditions.dc.html 200
+/pricing    /pricing.html                    200
+/delivery   /delivery.html                   200
+/contact    /contact.html                    200

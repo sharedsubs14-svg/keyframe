@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're in &middot; The Sunday Shoot</title>
+<meta name="robots" content="noindex">
+
+<!-- =========================================================
+     META PIXEL. Do not remove.
+     The Purchase event is created in Meta's Event Setup Tool
+     using a URL rule, so no extra tracking code is needed here.
+     This snippet alone is what makes that rule work.
+     ========================================================= -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1411312853753013');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"/></noscript>
+
+<!-- If the Facebook domain verification tag is not already on the
+     shared site template, paste it here as well. It looks like:
+     <meta name="facebook-domain-verification" content="..." /> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;800&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --void:#000000;
+    --obsidian:#0A0610;
+    --elevated:#120A1C;
+    --royal:#7C3AED;
+    --orchid:#A855F7;
+    --hairline:#1E1530;
+    --cream:#F0E2C8;
+    --orchid-gray:#B3AAC4;
+    --mauve:#6E6680;
+    --lavender:#9B8FB5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  body{
+    background:var(--obsidian);
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+    display:flex;flex-direction:column;
+    padding:34px 22px 0;
+  }
+
+  .shell{
+    width:100%;max-width:520px;
+    margin:0 auto;flex:1;
+    display:flex;flex-direction:column;
+    justify-content:center;
+    padding:26px 0 54px;
+  }
+
+  /* ---------- wordmark ---------- */
+  .wordmark{
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;color:var(--cream);
+    letter-spacing:0.01em;margin-bottom:46px;
+  }
+  .wordmark i{color:var(--lavender);font-style:normal}
+
+  /* ---------- confirmation ---------- */
+  .tick{
+    width:40px;height:40px;border-radius:50%;
+    border:1.5px solid var(--royal);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:24px;
+  }
+  .tick svg{width:17px;height:17px;stroke:var(--royal);
+    stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+  .label{
+    font-size:11px;letter-spacing:0.16em;text-transform:lowercase;
+    color:var(--orchid-gray);margin-bottom:14px;
+  }
+
+  h1{
+    font-family:'Epilogue',sans-serif;font-weight:800;
+    font-size:clamp(38px,9vw,54px);line-height:1.05;
+    letter-spacing:-0.03em;color:var(--cream);
+    margin-bottom:22px;
+  }
+  h1 span{color:var(--royal)}
+
+  .when{
+    display:inline-block;
+    border:1px solid var(--hairline);
+    background:var(--elevated);
+    border-radius:4px;padding:11px 16px;
+    font-size:13.5px;color:var(--orchid-gray);
+    margin-bottom:28px;
+  }
+  .when b{color:var(--cream);font-weight:600}
+
+  p.body{
+    font-size:15.5px;line-height:1.6;
+    color:var(--orchid-gray);font-weight:400;
+    margin-bottom:26px;
+  }
+
+  /* ---------- cta ---------- */
+  .cta{
+    display:block;text-align:center;text-decoration:none;
+    background:var(--royal);color:#fff;
+    padding:18px 22px;border-radius:6px;
+    font-size:15.5px;font-weight:600;
+    transition:background .15s ease;
+  }
+  .cta:hover{background:var(--orchid)}
+
+  .fine{
+    font-size:13px;line-height:1.6;color:var(--mauve);
+    margin-top:14px;
+  }
+  .fine a{color:var(--lavender);text-decoration:none}
+  .fine a:hover{text-decoration:underline}
+
+  /* ---------- on the day ---------- */
+  .rule{height:1px;background:var(--hairline);margin:38px 0 26px}
+
+  .label2{
+    font-size:11px;letter-spacing:0.16em;text-transform:lowercase;
+    color:var(--mauve);margin-bottom:16px;
+  }
+  .day p{
+    font-size:14.5px;line-height:1.6;color:var(--orchid-gray);
+    margin-bottom:11px;padding-left:18px;position:relative;
+  }
+  .day p::before{
+    content:'';position:absolute;left:0;top:8px;
+    width:5px;height:5px;background:var(--royal);
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--hairline);
+    padding:22px 0 30px;
+  }
+  .foot-in{max-width:520px;margin:0 auto}
+  .links{
+    display:flex;flex-wrap:wrap;gap:10px 20px;margin-bottom:14px;
+  }
+  .links a{
+    font-size:12.5px;color:var(--mauve);text-decoration:none;
+  }
+  .links a:hover{color:var(--orchid-gray)}
+  .copyright{font-size:11.5px;color:var(--mauve);opacity:.75}
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+</head>
+<body>
+
+<div class="shell">
+
+  <div class="wordmark">key<i>&phi;</i>rame</div>
+
+  <div class="tick">
+    <svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"></polyline></svg>
+  </div>
+
+  <div class="label">seat confirmed</div>
+
+  <h1>You're in.<br><span>See you Sunday.</span></h1>
+
+  <div class="when" id="kf-when"><b>Sunday 11 October</b> &nbsp;&middot;&nbsp; 11:00am to 2:00pm IST</div>
+
+  <p class="body">One thing left. The session link, the reminders and everything you need on the day go out through the WhatsApp community. Join it now so nothing reaches you late.</p>
+
+  <a class="cta" href="https://chat.whatsapp.com/Fwlct5jXzTlEuMYnvu11v3">Join the WhatsApp community</a>
+
+  <p class="fine">A confirmation email is on its way with the same link. Nothing after a few minutes? Check spam, or write to <a href="mailto:hello@keyframe24.ai">hello@keyframe24.ai</a>.</p>
+
+  <div class="rule"></div>
+
+  <div class="label2">what happens on the day</div>
+  <div class="day">
+    <p>Three hours, live on camera. Not a recording.</p>
+    <p>A blank idea becomes a finished film in one sitting.</p>
+    <p>Bring a laptop and an idea you have been sitting on.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="foot-in">
+    <div class="links">
+      <a href="/About%20Us.dc.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/Terms%20and%20Conditions.dc.html">Terms and Conditions</a>
+      <a href="/Privacy%20Policy.dc.html">Privacy Policy</a>
+      <a href="/Refund%20Policy.dc.html">Refund Policy</a>
+      <a href="/delivery.html">Delivery</a>
+    </div>
+    <div class="copyright">&copy; 2026 Keyframe. think like a director.</div>
+  </div>
+</footer>
+
+<script>
+// Session date and time in the buyer's own time zone, matched to the price tier
+// they paid in. Keep the country lists and times in step with the PRICING block
+// in index.html. The line above is the fallback if this script doesn't run.
+(function () {
+  var el = document.getElementById('kf-when');
+  if (!el) return;
+  var cc = '';
+  try { cc = String(window.KF_COUNTRY || '').trim().toUpperCase(); } catch (e) {}
+  if (!cc) {
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      if (/Calcutta|Kolkata|Colombo|Dhaka|Karachi|Kathmandu|Thimphu|Yangon|Kabul/i.test(tz)) cc = 'IN';
+      else if (/Dubai/i.test(tz)) cc = 'AE';
+    } catch (e) {}
+  }
+  var INR = ['IN', 'NP', 'BD', 'PK', 'LK', 'BT', 'MM', 'AF'];
+  var tier = INR.indexOf(cc) >= 0
+    ? { off: 330, time: '11:00am to 2:00pm IST' }
+    : cc === 'AE'
+      ? { off: 240, time: '9:30am to 12:30pm Dubai time' }
+      : { off: 0, time: '5:30am to 8:30am UTC' };
+
+  // Same rule as the homepage: next Sunday 11:00 IST, held until the session
+  // ends at 14:00 IST, never earlier than the first session on 11 October 2026.
+  var IST = 330 * 60000, now = Date.now(), ist = new Date(now + IST);
+  var start = Date.UTC(ist.getUTCFullYear(), ist.getUTCMonth(), ist.getUTCDate() + ((7 - ist.getUTCDay()) % 7), 11, 0) - IST;
+  var first = Date.UTC(2026, 9, 11, 11, 0) - IST;
+  var utc = now < first + 3 * 3600000 ? first : (now >= start + 3 * 3600000 ? start + 7 * 86400000 : start);
+
+  var d = new Date(utc + tier.off * 60000);
+  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  el.innerHTML = '<b>' + days[d.getUTCDay()] + ' ' + d.getUTCDate() + ' ' + months[d.getUTCMonth()] + '</b> &nbsp;&middot;&nbsp; ' + tier.time;
+})();
+</script>
+</body>
+</html>
