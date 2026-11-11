@@ -80,7 +80,12 @@
       });
     });
     dir += Math.min(10, Object.values(st.adv).filter(Boolean).length * 2.5);
-    return { score: Math.max(0, Math.min(100, Math.round(100 - dir))), left, words: [...new Set(words)] };
+    // A lenient read: the raw share of the frame still left to the model is eased down, so a sheet that is mostly
+    // directed reads as mostly directed. Once all five letters carry the director's own call, it always sits under 10.
+    const raw = Math.max(0, Math.min(100, 100 - dir));
+    const filled = LETTERS.filter(L => { const own = (st.own[L.toLowerCase()] || '').trim(); return own ? true : GROUPS[L].some(([k]) => st[k] != null && st.source[k] === 'user'); }).length;
+    const score = filled === LETTERS.length ? Math.min(9, Math.round(raw * 0.18)) : Math.round(100 * Math.pow(raw / 100, 1.3) * (1 - 0.12 * filled));
+    return { score, raw: Math.round(raw), filled, left, words: [...new Set(words)] };
   }
   let slopShown = 100, slopRaf = null;
   function renderSlop() {
@@ -352,15 +357,118 @@
     if (!session) { openAuth(); return; }
     await generate(session);
   }
+  // ---------- the wand writes the Keyframe F while Claude writes the prompt ----------
+  // Oval first, a pen lift, then the long stroke from the top ball to the bottom ball. Loops until the prompt lands,
+  // then finishes the letter quickly, throws a few sparks and hands over to the text.
+  const conjure = (() => {
+    const box = $('#conjure');
+    if (!box) return { start() {}, stop: () => Promise.resolve() };
+    const NS = 'http://www.w3.org/2000/svg';
+    const oval = $('#cjOval', box), stem = $('#cjStem', box), ink = $('#cjInk', box), wand = $('#cjWand', box), sheens = $$('.cj-sheen', box), sheenG = $('#cjSheenG', box), sparkG = $('#cjSparks', box);
+    const T = { oval: 1.05, lift: 0.26, stem: 0.95, hold: 0.85, fade: 0.38 };
+    const tLift = T.oval, tStem = tLift + T.lift, tHold = tStem + T.stem, tFade = tHold + T.hold, CYCLE = tFade + T.fade;
+    const REST = { x: 300, y: 470 };
+    const ease = (u) => u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2;
+    const ease2 = (u) => 0.5 - Math.cos(Math.PI * u) / 2;
+    const lerp = (a, b, u) => a + (b - a) * u;
+    let Lo = 0, Ls = 0, raf = 0, running = false, t = 0, last = 0, speed = 1, finishing = null, sparkClock = 0;
+    const sparks = [];
+    function measure() { if (!Lo) { Lo = oval.getTotalLength(); Ls = stem.getTotalLength(); } }
+    function dash(el, L, p) { el.style.strokeDasharray = `${L} ${L + 20}`; el.style.strokeDashoffset = `${L * (1 - p)}`; el.style.visibility = p > 0.001 ? 'visible' : 'hidden'; }
+    function placeWand(x, y, a) { wand.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${a.toFixed(1)})`); }
+    function spark(x, y, burst) {
+      let s = sparks.find(k => !k.live);
+      if (!s) { if (sparks.length > 40) return; const el = document.createElementNS(NS, 'path'); el.setAttribute('d', 'M0 -10 2 -2 10 0 2 2 0 10 -2 2 -10 0 -2 -2Z'); sparkG.appendChild(el); s = { el }; sparks.push(s); }
+      const ang = Math.random() * Math.PI * 2, v = burst ? 90 + Math.random() * 160 : 18 + Math.random() * 40;
+      Object.assign(s, { live: true, x: x + (Math.random() - 0.5) * 18, y: y + (Math.random() - 0.5) * 18, vx: Math.cos(ang) * v, vy: Math.sin(ang) * v + (burst ? 0 : 35), age: 0, life: 0.55 + Math.random() * 0.5, size: 0.5 + Math.random() * 0.9, rot: Math.random() * 90 });
+      s.el.setAttribute('fill', ['#fff', '#DDD6FE', '#C4B5FD', '#F2C14E'][Math.random() * 4 | 0]);
+    }
+    function tickSparks(dt) {
+      for (const s of sparks) {
+        if (!s.live) continue;
+        s.age += dt; if (s.age >= s.life) { s.live = false; s.el.setAttribute('opacity', 0); continue; }
+        s.vx *= 0.96; s.vy = s.vy * 0.96 + 30 * dt; s.x += s.vx * dt; s.y += s.vy * dt;
+        const k = 1 - s.age / s.life;
+        s.el.setAttribute('transform', `translate(${s.x.toFixed(1)} ${s.y.toFixed(1)}) rotate(${(s.rot + s.age * 160).toFixed(0)}) scale(${(s.size * (0.3 + 0.7 * k)).toFixed(2)})`);
+        s.el.setAttribute('opacity', (k * k).toFixed(2));
+      }
+    }
+    // draw the whole state for time u inside one cycle
+    function frame(u, dt) {
+      let po = 0, ps = 0, x, y, writing = false, inkA = 1, sh = -1;
+      const wob = Math.sin(t * 3.4) * 6;
+      if (u < tLift) { po = ease2(u / T.oval); const p = oval.getPointAtLength(Lo * po); x = p.x; y = p.y; writing = true; }
+      else if (u < tStem) {
+        po = 1; const k = ease((u - tLift) / T.lift), a = oval.getPointAtLength(Lo), b = stem.getPointAtLength(0);
+        x = lerp(a.x, b.x, k); y = lerp(a.y, b.y, k) - Math.sin(Math.PI * k) * 46;
+      } else if (u < tHold) { po = 1; ps = ease2((u - tStem) / T.stem); const p = stem.getPointAtLength(Ls * ps); x = p.x; y = p.y; writing = true; }
+      else if (u < tFade) {
+        po = ps = 1; const k = ease(Math.min(1, (u - tHold) / (T.hold * 0.6))), a = stem.getPointAtLength(Ls);
+        x = lerp(a.x, REST.x, k); y = lerp(a.y, REST.y, k); sh = (u - tHold) / T.hold;
+      } else {
+        po = ps = 1; inkA = 1 - ease((u - tFade) / T.fade);
+        const k = ease((u - tFade) / T.fade), b = oval.getPointAtLength(0);
+        x = lerp(REST.x, b.x, k); y = lerp(REST.y, b.y, k) - Math.sin(Math.PI * k) * 60;
+      }
+      dash(oval, Lo, po); dash(stem, Ls, ps);
+      ink.setAttribute('opacity', inkA.toFixed(3));
+      const shA = sh >= 0 ? (Math.sin(Math.PI * Math.min(1, sh)) * 0.55).toFixed(2) : 0;
+      sheens.forEach(el => el.setAttribute('opacity', shA));
+      if (sh >= 0) sheenG.setAttribute('gradientTransform', `translate(${(-40 + sh * 600).toFixed(0)} 0) rotate(-18)`);
+      placeWand(x, y, -52 + wob + (writing ? 0 : -8));
+      if (writing && !REDUCED) { sparkClock += dt; while (sparkClock > 0.045) { sparkClock -= 0.045; spark(x, y, false); } }
+    }
+    function loop(now) {
+      const dt = Math.min(0.05, (now - last) / 1000 || 0.016); last = now;
+      const before = t % CYCLE;
+      t += dt * speed;
+      let u = t % CYCLE;
+      if (finishing) {
+        // fast-forward to the end of the stem, then stop on the finished letter
+        if (u < before || before >= tHold || u >= tHold) {
+          u = tHold; t = Math.floor(t / CYCLE) * CYCLE + tHold;
+          frame(u, dt); const p = stem.getPointAtLength(Ls); for (let i = 0; i < 16; i++) spark(p.x, p.y, true);
+          const done = finishing; finishing = null; running = false;
+          // let the burst play out, then hand over
+          const tail = (n) => { const d2 = Math.min(0.05, (n - last) / 1000 || 0.016); last = n; tickSparks(d2); if (sparks.some(s => s.live)) requestAnimationFrame(tail); };
+          requestAnimationFrame(tail); setTimeout(done, 260); return;
+        }
+      }
+      frame(u, dt); tickSparks(dt);
+      if (running) raf = requestAnimationFrame(loop);
+    }
+    return {
+      start() {
+        measure(); cancelAnimationFrame(raf); t = 0; speed = 1; finishing = null; sparkClock = 0;
+        sparks.forEach(s => { s.live = false; s.el.setAttribute('opacity', 0); });
+        if (REDUCED) { dash(oval, Lo, 1); dash(stem, Ls, 1); ink.setAttribute('opacity', 1); placeWand(REST.x, REST.y, -52); return; }
+        running = true; last = performance.now(); raf = requestAnimationFrame(loop);
+      },
+      // ok = the prompt arrived: finish the F, then resolve. Not ok: stop at once.
+      stop(ok) {
+        if (!running || !ok || REDUCED) { running = false; cancelAnimationFrame(raf); return Promise.resolve(); }
+        speed = 2.6; return new Promise(res => { finishing = res; });
+      }
+    };
+  })();
+
   async function generate(session) {
-    state.busy = true; $('#revealBtn').classList.add('busy'); $('#veilNote').textContent = 'Writing it for ' + O.models.find(m => m.id === state.model).name + '…';
+    const pb = $('#promptbox');
+    state.busy = true; $('#revealBtn').classList.add('busy'); pb.classList.add('conjuring'); conjure.start();
+    $('#veilNote').textContent = 'Writing it for ' + O.models.find(m => m.id === state.model).name + '…';
+    let ok = false;
     try {
       const res = await fetch(CFG.FUNCTION_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + session.access_token }, body: JSON.stringify({ model: state.model, decisions: describe() }) });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Could not write the prompt');
-      state.revealed = data.prompt; state.revealedSig = signature(); $('#quota').textContent = typeof data.left === 'number' ? `${data.left}% of today’s allowance left` : ''; render();
-    } catch (err) { note(err.message); }
-    finally { state.busy = false; $('#revealBtn').classList.remove('busy'); $('#veilNote').textContent = 'Free. Sign in once. A daily allowance, no card.'; }
+      await conjure.stop(true);
+      state.revealed = data.prompt; state.revealedSig = signature(); $('#quota').textContent = typeof data.left === 'number' ? `${data.left}% of today’s allowance left` : ''; render(); ok = true;
+    } catch (err) { conjure.stop(false); note(err.message); }
+    finally {
+      state.busy = false; $('#revealBtn').classList.remove('busy');
+      // keep the finished F on screen while the veil fades, then reset it for next time
+      setTimeout(() => { pb.classList.remove('conjuring'); $('#veilNote').textContent = 'Free. Sign in once. A daily allowance, no card.'; }, ok ? 700 : 0);
+    }
   }
   let authReason = 'reveal', AUTH_TXT = null;
   const openAuth = (reason) => {
@@ -639,6 +747,18 @@
     $('#randomBtn').addEventListener('click', doRandom);
     $('#autoBtn').addEventListener('click', doAuto);
     $('#revealBtn').addEventListener('click', reveal);
+    // the header: the section you are reading is lit, and the highlight slides to it
+    (() => {
+      const nav = $('#secnav'); if (!nav) return;
+      const ind = nav.querySelector('.secnav-ind'), links = [...nav.querySelectorAll('a[data-sec]')];
+      const light = (id) => { const a = links.find(l => l.dataset.sec === id); links.forEach(l => l.classList.toggle('on', l === a)); nav.classList.toggle('lit', !!a);
+        if (a) { ind.style.width = a.offsetWidth + 'px'; ind.style.transform = `translateX(${a.offsetLeft}px)`; } };
+      if (!('IntersectionObserver' in window)) return;
+      const seen = new Map();
+      const io = new IntersectionObserver((es) => { es.forEach(e => seen.set(e.target.id, e.isIntersecting)); const cur = links.map(l => l.dataset.sec).filter(id => seen.get(id)).pop(); light(cur || null); }, { rootMargin: '-40% 0px -55% 0px' });
+      links.forEach(l => { const sec = document.getElementById(l.dataset.sec); if (sec) io.observe(sec); });
+      addEventListener('resize', () => { const a = links.find(l => l.classList.contains('on')); if (a) light(a.dataset.sec); });
+    })();
     $('#googleBtn').addEventListener('click', googleSignIn);
     $('#closeAuth').addEventListener('click', closeAuth);
     $('#authModal').addEventListener('click', e => { if (e.target.id === 'authModal') closeAuth(); });
@@ -652,7 +772,7 @@
 
     render();
     resumeAfterLogin();
-    window.SLATE_APP = { CFG, DEMO, LOCKED, soon, supa, LISTS, LETTERS, state, render, note, toast, openAuth, currentSession, exportState, importState, slopScore, letterValue, applyBrief,
+    window.SLATE_APP = { CFG, DEMO, LOCKED, soon, supa, conjure, LISTS, LETTERS, state, render, note, toast, openAuth, currentSession, exportState, importState, slopScore, letterValue, applyBrief,
       sheetLines: (st) => { const keep = JSON.parse(JSON.stringify(exportState())); if (st) Object.assign(state, st); const out = LETTERS.map(L => [L, letterValue(L) || '']); Object.assign(state, keep); return out; },
       openSheet: (st) => { const base = { s: null, act: null, l: null, env: null, a: null, lens: null, t: null, em: null, e: null, own: { s: '', l: '', a: '', t: '', e: '' }, adv: {}, source: {} }; importState(Object.assign(base, st || {})); render(); $('#play').scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' }); note('This is their sheet. Change one letter and make it yours.'); } };
     document.dispatchEvent(new Event('slate:ready'));

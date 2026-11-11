@@ -120,38 +120,67 @@
       $('#dNew').textContent = `${n} new frame${n > 1 ? 's' : ''} · show`; $('#dNew').hidden = false;
     }
 
-    // ---------- the moving wall ----------
-    function colCount() { const w = $('#wall').clientWidth || innerWidth; return w >= 1100 ? 5 : w >= 820 ? 4 : w >= 520 ? 3 : 2; }
+    // Frames on the wall are scored on a gentler 0 to 20 scale: anything posted here was already directed.
+    const wallSlop = (v) => v == null ? null : Math.max(0, Math.min(20, Math.round(v / 5)));
+
+    // ---------- the wall ----------
+    // Every frame shown whole, in justified rows. The frame under the cursor lifts toward you and its neighbours
+    // ease out of the way (the lens from the old Keyframe page), and the whole wall leans gently toward the cursor.
     function tileHTML(e, i, clone) {
-      const label = `Frame ${i + 1}${e.model ? ', made with ' + esc(e.model) : ''}${e.slop != null ? ', slop ' + e.slop + ' percent' : ''}`;
-      return `<button type="button" class="tile${e.fresh ? ' fresh' : ''}" data-i="${i}" style="aspect-ratio:${e.w || 4} / ${e.h || 5}" ${clone ? 'aria-hidden="true" tabindex="-1"' : `aria-label="${label}"`}>` +
+      const ws = wallSlop(e.slop), label = `Frame ${i + 1}${e.model ? ', made with ' + esc(e.model) : ''}${ws != null ? ', slop ' + ws + ' percent' : ''}`;
+      return `<button type="button" class="tile${e.fresh ? ' fresh' : ''}" data-i="${i}" style="--ar:${((e.w || 4) / (e.h || 5)).toFixed(4)};--d:${(-((i * 1.37) % 6)).toFixed(2)}s" ${clone ? 'aria-hidden="true" tabindex="-1"' : `aria-label="${label}"`}>` +
         `<img src="${esc(e.tile)}" alt="" loading="lazy" decoding="async" draggable="false">` +
-        (e.slop != null ? `<span class="tslop${e.slop <= 20 ? ' low' : ''}">${e.slop}%</span>` : '') +
+        (ws != null ? `<span class="tslop${ws <= 10 ? ' low' : ''}">${ws}%</span>` : '') +
         `<span class="tmeta">${esc(e.model || '')}</span></button>`;
     }
+    const SHOW = 36; let showAll = false;
     function buildWall() {
-      const wall = $('#wall'), cols = colCount();
+      const wall = $('#wall');
       wall.innerHTML = ''; wall.classList.toggle('empty', !entries.length);
       if (!entries.length) {
         wall.innerHTML = `<div class="wall-empty"><p class="eyebrow">the wall is empty</p><p>${viewing === today() ? 'Nobody has shot today’s frame yet. Be the first one up.' : 'Nobody posted for this brief.'}</p></div>`;
-        return;
+        lens.measure(); return;
       }
-      const tracks = [], heights = Array(cols).fill(0);
-      for (let c = 0; c < cols; c++) { const col = document.createElement('div'); col.className = 'wcol'; const tr = document.createElement('div'); tr.className = 'wtrack'; col.appendChild(tr); wall.appendChild(col); tracks.push(tr); }
-      entries.forEach((e, i) => { const c = heights.indexOf(Math.min(...heights)); tracks[c].insertAdjacentHTML('beforeend', tileHTML(e, i)); heights[c] += (e.h || 5) / (e.w || 4) + 0.06; });
-      requestAnimationFrame(() => {
-        const wh = wall.clientHeight;
-        tracks.forEach((tr, c) => {
-          const h = tr.scrollHeight; if (REDUCED || h < wh * 0.9) return;
-          Array.from(tr.children).forEach(n => { const d = n.cloneNode(true); d.setAttribute('aria-hidden', 'true'); d.tabIndex = -1; d.removeAttribute('aria-label'); tr.appendChild(d); });
-          const speed = 20 * (0.82 + ((c * 37) % 10) / 25);
-          tr.style.animationDuration = (h / speed).toFixed(1) + 's';
-          tr.style.animationDelay = (-(c * 7.3) % 20).toFixed(1) + 's';
-          tr.classList.add(c % 2 ? 'down' : 'up');
-        });
-        wall.classList.add('moving');
-      });
+      const list = showAll ? entries : entries.slice(0, SHOW);
+      const grid = document.createElement('div'); grid.className = 'wgrid';
+      grid.innerHTML = list.map((e, i) => tileHTML(e, i)).join('');
+      wall.appendChild(grid);
+      if (entries.length > list.length) { const more = document.createElement('button'); more.type = 'button'; more.className = 'btn line wall-more'; more.textContent = `See all ${entries.length} frames`; more.addEventListener('click', (ev) => { ev.stopPropagation(); showAll = true; buildWall(); }); wall.appendChild(more); }
+      requestAnimationFrame(() => { lens.measure(); wall.classList.add('moving'); });
     }
+    const lens = (() => {
+      const wall = $('#wall'); let tiles = [], pts = [], cur = [], m = null, raf = 0, last = 0, W = 1, H = 1, rx = 0, ry = 0;
+      const calm = () => REDUCED || !matchMedia('(pointer: fine)').matches;
+      function measure() {
+        tiles = [...wall.querySelectorAll('.wgrid .tile')]; W = wall.clientWidth || 1; H = wall.clientHeight || 1;
+        pts = tiles.map(t => ({ x: t.offsetLeft + t.offsetWidth / 2, y: t.offsetTop + t.offsetHeight / 2 })); cur = tiles.map(() => 0);
+      }
+      function frame(now) {
+        const dt = Math.min(.05, last ? (now - last) / 1000 : .016); last = now;
+        const sig = Math.max(150, W * .12), amp = 1, k = 1 - Math.exp(-dt * 11);
+        let busy = false;
+        tiles.forEach((t, i) => {
+          const p = pts[i]; let v = 0, d = 0, dx = 0, dy = 0;
+          if (m) { dx = p.x - m.x; dy = p.y - m.y; d = Math.hypot(dx, dy); v = amp * Math.exp(-(d * d) / (2 * sig * sig)); }
+          cur[i] += (v - cur[i]) * k; const c = cur[i];
+          if (Math.abs(v - c) > .002 || c > .002) busy = true;
+          if (c < .002 && !m) { t.style.transform = ''; t.style.zIndex = ''; t.classList.remove('lit'); return; }
+          const push = d > .5 ? c * sig * .22 * Math.min(1, d / (sig * .9)) : 0;
+          const ox = d > .5 ? (dx / d) * push : 0, oy = d > .5 ? (dy / d) * push : 0;
+          t.style.transform = `translate3d(${ox.toFixed(1)}px,${oy.toFixed(1)}px,${(c * 70).toFixed(1)}px) scale(${(1 + c * .14).toFixed(4)})`;
+          t.style.zIndex = String(2 + Math.round(c * 100)); t.classList.toggle('lit', c > .55);
+        });
+        const g = wall.querySelector('.wgrid');
+        if (g) { const tx = m ? (m.x / W - .5) * 5 : 0, ty = m ? (m.y / H - .5) * -4 : 0; rx += (tx - rx) * k; ry += (ty - ry) * k;
+          if (Math.abs(tx - rx) > .01 || Math.abs(ty - ry) > .01) busy = true;
+          g.style.transform = Math.abs(rx) + Math.abs(ry) > .01 ? `rotateY(${rx.toFixed(3)}deg) rotateX(${ry.toFixed(3)}deg)` : ''; }
+        raf = busy || m ? requestAnimationFrame(frame) : 0; if (!raf) last = 0;
+      }
+      const go = () => { if (!raf) raf = requestAnimationFrame(frame); };
+      wall.addEventListener('pointermove', (e) => { if (calm() || e.pointerType !== 'mouse' || !tiles.length) return; const r = wall.getBoundingClientRect(); m = { x: e.clientX - r.left, y: e.clientY - r.top }; go(); });
+      wall.addEventListener('pointerleave', () => { m = null; go(); });
+      return { measure };
+    })();
     let wallVisible = true;
 
     // ---------- one frame, opened ----------
@@ -161,8 +190,8 @@
       $('#fImg').src = e.img; $('#fImg').alt = `Frame made with ${e.model || 'an image model'} for: ${b.b}`;
       $('#fNo').textContent = `No. ${pad3(b.no)} · ${b.b}`;
       $('#fModel').textContent = e.model ? `Made with ${e.model}` : 'Model not given';
-      $('#fSlop').textContent = e.slop != null ? `${e.slop}%` : '–'; $('#fSlopBox').hidden = e.slop == null;
-      $('#fSlopBox').classList.toggle('low', e.slop != null && e.slop <= 20);
+      const fs = wallSlop(e.slop); $('#fSlop').textContent = fs != null ? `${fs}%` : '–'; $('#fSlopBox').hidden = fs == null;
+      $('#fSlopBox').classList.toggle('low', fs != null && fs <= 10);
       const ls = $('#fLines'); ls.innerHTML = '';
       if (Array.isArray(e.lines) && e.lines.length) e.lines.forEach(([L, v]) => { ls.insertAdjacentHTML('beforeend', `<li><b>${esc(L)}</b><span>${v ? esc(v) : '<i>left to the model</i>'}</span></li>`); });
       else ls.innerHTML = '<li class="none">No sheet attached. They kept their SLATE to themselves.</li>';
@@ -275,7 +304,7 @@
       if (!$('#postModal').hidden && e.key === 'Escape') closePost();
     });
     if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(en => { wallVisible = en.isIntersecting; $('#wall').classList.toggle('paused', !en.isIntersecting); }), { rootMargin: '200px' }).observe($('#wall'));
-    let rw = 0, lastCols = colCount(); addEventListener('resize', () => { clearTimeout(rw); rw = setTimeout(() => { if (colCount() !== lastCols) { lastCols = colCount(); buildWall(); } }, 200); });
+    let rw = 0; addEventListener('resize', () => { clearTimeout(rw); rw = setTimeout(() => lens.measure(), 200); });
 
     load(); tick(); setInterval(tick, 1000); setInterval(poll, 60e3);
     // Came back from signing in to post?
