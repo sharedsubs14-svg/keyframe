@@ -476,10 +476,73 @@
     if (!AUTH_TXT) AUTH_TXT = { t: $('#authTitle').textContent, s: $('#authModal .small').textContent };
     if (authReason === 'reverse') { $('#authSub').textContent = 'Reverse SLATE'; $('#authTitle').textContent = 'Read any frame.'; $('#authModal .small').textContent = 'Sign in free once, then drop the frame in again. Nothing to pay.'; }
     else if (authReason === 'upload') { $('#authSub').textContent = 'Daily Frame'; $('#authTitle').textContent = 'Post it to the wall.'; $('#authModal .small').textContent = 'Sign in free once. Your name never shows on the wall. Signing in only keeps spam and bots out.'; }
+    else if (authReason === 'header') { $('#authSub').textContent = 'SLATE'; $('#authTitle').textContent = 'Sign in to SLATE.'; $('#authModal .small').textContent = 'Free, once. A daily allowance renews every day. No card.'; }
     else { $('#authTitle').textContent = AUTH_TXT.t; $('#authModal .small').textContent = AUTH_TXT.s; }
-    $('#authModal').hidden = false; $('#googleBtn').focus();
+    $('#authModal').hidden = false;
+    showGsi(!DEMO && !LOCKED && gsiReady());
+    // Google's script may still be arriving: show the backup button now, swap in Google's own the moment it is ready
+    if (!DEMO && !LOCKED && !gsiReady()) initGsi().then(ok => { if (ok && !$('#authModal').hidden) showGsi(true); });
   };
+  function showGsi(on) {
+    $('#gsiWrap').hidden = !on; $('#googleBtn').hidden = on; $('#googleAlt').hidden = !on; $('#googleAlt').classList.remove('nudge');
+    if (on) renderGsi(); else $('#googleBtn').focus();
+  }
   const closeAuth = () => { $('#authModal').hidden = true; };
+
+  // ---------- Google's own sign-in button ----------
+  // The popup belongs to keyframe24.ai, so Google says "continue to keyframe24.ai". Google hands back a signed ID token,
+  // Supabase checks it and opens the session, no page reload. The older redirect sign-in stays as the backup.
+  const GSI = { on: false, raw: '' };
+  const bytesHex = (buf) => Array.from(new Uint8Array(buf), b => b.toString(16).padStart(2, '0')).join('');
+  async function freshNonce() {
+    const raw = bytesHex(crypto.getRandomValues(new Uint8Array(16)).buffer);
+    const hashed = bytesHex(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(raw)));
+    return { raw, hashed };
+  }
+  function gsiReady() { return GSI.on && !!(window.google && google.accounts && google.accounts.id); }
+  async function initGsi() {
+    if (DEMO || LOCKED || !CFG.GOOGLE_CLIENT_ID || !supa || !(window.crypto && crypto.subtle)) return false;
+    if (!(window.google && google.accounts && google.accounts.id)) return false;
+    try {
+      const n = await freshNonce(); GSI.raw = n.raw;
+      google.accounts.id.initialize({ client_id: CFG.GOOGLE_CLIENT_ID, callback: onGoogleCredential, nonce: n.hashed, ux_mode: 'popup', auto_select: false, cancel_on_tap_outside: true, itp_support: true, context: 'signin' });
+      GSI.on = true;
+    } catch (e) { GSI.on = false; }
+    return GSI.on;
+  }
+  function renderGsi() {
+    const box = $('#gsiBtn'), w = Math.max(220, Math.min(400, Math.round($('#gsiWrap').clientWidth || 320)));
+    box.innerHTML = '';
+    const dark = document.documentElement.dataset.theme === 'dark';
+    try { google.accounts.id.renderButton(box, { type: 'standard', theme: dark ? 'filled_black' : 'outline', size: 'large', text: 'continue_with', shape: 'pill', logo_alignment: 'center', width: w }); }
+    catch (e) { GSI.on = false; showGsi(false); }
+  }
+  async function onGoogleCredential(resp) {
+    $('#gsiBusy').hidden = false;
+    try {
+      const { data, error } = await supa.auth.signInWithIdToken({ provider: 'google', token: resp.credential, nonce: GSI.raw });
+      if (error || !data || !data.session) throw (error || new Error('No session'));
+      closeAuth(); await afterSignIn(data.session);
+    } catch (e) {
+      $('#googleAlt').hidden = false; $('#googleAlt').classList.add('nudge');
+      toast('THAT DID NOT GO THROUGH · TRY THE OTHER SIGN-IN BELOW');
+    } finally {
+      $('#gsiBusy').hidden = true;
+      await initGsi(); if (!$('#authModal').hidden && gsiReady()) renderGsi();   // a new nonce for the next try
+    }
+  }
+  // what the redirect flow does after the page comes back, done in place
+  async function afterSignIn(session) {
+    signedInUI();
+    hello(session);
+    if (authReason === 'reveal') { render(); await generate(session); }
+    else document.dispatchEvent(new CustomEvent('slate:signedin', { detail: { reason: authReason } }));
+  }
+  let SIGNED = false;
+  function signedInUI() { SIGNED = true; $('#authBtn').textContent = 'Sign out'; }
+  async function signOut() { try { if (window.google && google.accounts) google.accounts.id.disableAutoSelect(); } catch (er) {} await supa.auth.signOut(); location.reload(); }
+  // the script loads async; set it up as soon as it lands
+  window.addEventListener('load', () => { initGsi(); });
   async function googleSignIn() {
     if (LOCKED) { closeAuth(); soon(); return; }
     if (DEMO) {
@@ -509,7 +572,7 @@
   async function resumeAfterLogin() {
     if (DEMO) return;
     const session = await currentSession();
-    if (session) { $('#authBtn').textContent = 'Sign out'; $('#authBtn').onclick = async () => { await supa.auth.signOut(); location.reload(); }; }
+    if (session) signedInUI();
     let pending = null; try { pending = localStorage.getItem('slate_pending'); } catch (e) {}
     if (session && pending) { try { localStorage.removeItem('slate_pending'); importState(JSON.parse(pending)); render(); $('#play').scrollIntoView(); await generate(session); } catch (e) {} }
     else if (session) hello(session);
@@ -760,10 +823,11 @@
       addEventListener('resize', () => { const a = links.find(l => l.classList.contains('on')); if (a) light(a.dataset.sec); });
     })();
     $('#googleBtn').addEventListener('click', googleSignIn);
+    $('#googleAlt').addEventListener('click', googleSignIn);
     $('#closeAuth').addEventListener('click', closeAuth);
     $('#authModal').addEventListener('click', e => { if (e.target.id === 'authModal') closeAuth(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAuth(); });
-    $('#authBtn').addEventListener('click', () => { if (LOCKED) soon(); else if (DEMO) toast('PREVIEW · SIGN-IN IS WIRED ON THE LIVE SITE'); else googleSignIn(); });
+    $('#authBtn').addEventListener('click', () => { if (LOCKED) soon(); else if (DEMO) toast('PREVIEW · SIGN-IN IS WIRED ON THE LIVE SITE'); else if (SIGNED) signOut(); else openAuth('header'); });
     $('#copyBtn').addEventListener('click', async () => { try { await navigator.clipboard.writeText(state.revealed); toast('COPIED'); } catch (e) { toast('SELECT AND COPY THE TEXT'); } });
     $('#feedBtn').addEventListener('click', () => downloadFormat('feed'));
     $('#storyBtn').addEventListener('click', () => downloadFormat('story'));
