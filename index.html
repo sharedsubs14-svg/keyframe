@@ -18,7 +18,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Patrick+Hand&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Patrick+Hand&family=Inter:wght@400;500;600&family=Inter+Tight:wght@700&display=swap">
 <link rel="stylesheet" href="css/style.css">
 <script>
 // SLATE config. Leave the two Supabase values empty to run in preview mode (no sign-in, no backend).
@@ -51,11 +51,13 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 </head>
 <body>
+<!-- the Keyframe phi, drawn once and reused by the wordmark -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false"><defs><linearGradient id="kfPhiG" x1="40" y1="540" x2="350" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6D28D9"/><stop offset=".6" stop-color="#8B5CF6"/><stop offset="1" stop-color="#C4B5FD"/></linearGradient><path id="kfPhi" fill-rule="evenodd" d="M31.1 536C17.5 531.1 11.4 519 17 508C20.3 501.5 25.9 498.5 34.5 498.5C42.3 498.5 44.7 499.7 58 510.5C65 516.1 71.5 518.4 78.5 517.7C94.8 516 105.4 502.3 114.6 471.3C120.8 450.3 132.5 399.7 131.6 397.5C131.4 396.8 128.5 396 125.3 395.6C115.7 394.5 97.5 389.3 88.6 385.1C62.1 372.7 44.3 351 36.3 321.5C32.8 308.5 32.3 281 35.3 267C48.8 204 102 153.2 162.9 145.4C167.8 144.8 168.2 144.9 167.7 146.6C167.3 147.6 166.6 150.6 165.9 153.2C164.8 157.7 164.5 158 159.6 159.6C143.6 164.9 129.9 173.3 118.7 184.8C81.1 223.5 64.3 302.7 84.9 344.5C93.5 361.9 107.8 374.1 126.6 380C130.5 381.3 134.4 382.1 135.2 381.8C136.1 381.4 138.2 374.2 141.3 360.4C143.8 348.9 149 325.8 152.9 309C156.7 292.2 161.9 268.8 164.4 257C181.4 179 190.6 143.4 200.1 118.2C225.4 51.6 272.8 10.8 323.3 12.2C339.1 12.6 346 15.2 351.7 22.8C357.5 30.5 355.6 42.4 347.8 48.3C338.4 55.3 328 53.3 315.7 42.2C299.9 27.8 287.7 27.1 272.2 39.8C258.1 51.3 245.4 79.3 234.5 122.9C229.3 143.6 229.1 142.4 238.4 143.4C257.6 145.4 279.8 153.8 293.5 164.3C338.5 198.8 341 274.9 299.1 331.1C270.1 369.9 231.8 390.7 178.1 396.8L171.7 397.5L168.3 410.5C154.8 462 134.8 495 101.8 519.9C82 534.9 49 542.4 31.1 536ZM200.5 378.9C246.9 363.5 282.6 308.5 285.6 247.8C287.7 206.2 275 176.5 249.7 164.1C242.3 160.5 231.5 157 227.8 157C226.2 157 220.8 178.1 211.6 220.6C208.6 234.3 203.9 255.6 201 268C187.8 325.7 184.6 340.2 180 361.4C177.8 371.7 176 380.9 176 381.8C176 384.2 189.3 382.6 200.5 378.9Z"/></defs></svg>
 <div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="grain" aria-hidden="true"></div>
 
 <header class="top glass">
-  <a class="brand" href="#top" aria-label="SLATE by Keyframe, back to the top"><span class="brand-word" data-l="SLATE">SLATE</span><span class="brand-by">by Keyframe</span></a>
+  <a class="brand" href="#top" aria-label="SLATE by Keyframe, back to the top"><span class="brand-word" data-l="SLATE">SLATE</span><svg class="brand-phi" viewBox="10 8 350 534" aria-hidden="true" focusable="false"><use href="#kfPhi" fill="url(#kfPhiG)"/></svg><span class="sr-only"> by Keyframe</span></a>
   <nav class="secnav hide-sm" id="secnav" aria-label="Sections">
     <i class="secnav-ind" aria-hidden="true"></i>
     <a href="#play" data-sec="play"><b>01</b>Drafting table</a>
@@ -315,7 +317,7 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
 
 <footer class="foot">
   <div class="foot-brand">
-    <a class="brand" href="#top"><span class="brand-word" data-l="SLATE">SLATE</span><span class="brand-by">by Keyframe</span></a>
+    <a class="brand" href="#top"><span class="brand-word" data-l="SLATE">SLATE</span><svg class="brand-phi" viewBox="10 8 350 534" aria-hidden="true" focusable="false"><use href="#kfPhi" fill="url(#kfPhiG)"/></svg><span class="sr-only"> by Keyframe</span></a>
     <p>Random is what the model picks. Specified is what you pick.</p>
   </div>
   <nav class="foot-links" aria-label="Keyframe elsewhere">
