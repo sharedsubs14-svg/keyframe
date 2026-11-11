@@ -625,3 +625,11 @@ body{background:var(--bg)}
 .promptbox.conjuring #veilNote{font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;font-size:11px;color:var(--text)}
 :root:not([data-theme="light"]) .conjure .cj-glow{opacity:.8}
 @media (prefers-reduced-motion:reduce){.conjure .cj-tipglow{animation:none}}
+
+/* ---------- Google's own sign-in button + the backup ---------- */
+.gsi-wrap{width:100%;min-height:44px;display:flex;flex-direction:column;align-items:center;gap:8px}
+#gsiBtn{min-height:44px;display:flex;justify-content:center;width:100%}
+.gsi-busy{margin:0;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.gsi-alt{border:0;background:none;padding:2px 4px;font:inherit;font-size:12.5px;color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.gsi-alt:hover,.gsi-alt.nudge{color:var(--accent)}
+.gsi-alt.nudge{font-weight:600}

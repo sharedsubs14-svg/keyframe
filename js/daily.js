@@ -311,6 +311,13 @@
     let after = null; try { after = localStorage.getItem('slate_after'); localStorage.removeItem('slate_after'); } catch (e) {}
     if (after === 'reverse') setTimeout(() => { const r = document.getElementById('reverse'); if (r) r.scrollIntoView(); }, 400);
     if (after === 'daily') { setTimeout(async () => { $('#daily').scrollIntoView(); if (await A.currentSession()) openPost(); }, 400); }
+    // Signed in with Google's own button (no page reload): carry on with what they were doing
+    document.addEventListener('slate:signedin', (e) => {
+      const why = e.detail && e.detail.reason;
+      if (why === 'upload') openPost();
+      else if (why === 'reverse') { const r = document.getElementById('reverse'); if (r) r.scrollIntoView({ block: 'start' }); A.toast('SIGNED IN · DROP THE FRAME IN AGAIN'); }
+      else A.toast('SIGNED IN');
+    });
   }
   if (window.SLATE_APP) start(); else document.addEventListener('slate:ready', start, { once: true });
 })();
