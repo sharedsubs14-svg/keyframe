@@ -14,20 +14,8 @@ const MODEL = process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5';
 const TUNE = /claude-3|haiku-4|sonnet-4-5|sonnet-4-0|opus-4-1|opus-4-0/.test(MODEL) ? {} : { output_config: { effort: 'low' } };
 const textOf = (out) => (Array.isArray(out && out.content) ? out.content : []).filter(b => b && b.type === 'text').map(b => b.text).join('').trim();
 
-const GUIDES = {
-  gpt: `Target: OpenAI GPT Image. Write one or two natural-language paragraphs, like a brief to a photographer. Full sentences, concrete nouns. State the subject first, then setting, light, camera and lens, time of day, mood and colour. Say what should NOT appear in plain words ("no text, no watermark") rather than special syntax. Do not use parameter flags or keyword lists.`,
-  banana: `Target: Google Nano Banana (Gemini image model). Describe the scene as a narrative paragraph, not a list of keywords: who, doing what, where, lit how. Use real photography language (lens focal length, aperture, lighting pattern, time of day). Mention the intended aspect ratio in words if relevant. Keep it to one dense paragraph.`,
-  seedream: `Target: ByteDance Seedream. Structured and explicit: subject and action; environment; lighting pattern and direction; camera angle, lens and shot size; time of day and colour temperature; emotion, genre and palette; materials and textures. Long prompts are fine. Write as clear declarative sentences grouped in that order. No parameter flags.`,
-  mj: `Target: Midjourney. Front-load the most important elements. Concise comma-separated phrases, not full sentences. Put the subject and action first, then setting, lighting, lens, time, mood and palette. End with parameters: --ar (choose 16:9 for landscape, 2:1 for anamorphic, 4:5 for portrait when the shot calls for it) and --style raw. Use --no for exclusions instead of writing "no" in the prose.`,
-  universal: `Target: any image model. One solid descriptive paragraph in plain language that works everywhere: subject and action, setting, light, camera and lens, time of day, mood and palette, then "no text, no watermark". No flags, no keyword spam.`
-};
-
-const SYSTEM = `You are a cinematographer turning a director's decisions into an image-generation prompt.
-Rules:
-- Use ONLY what the director specified. Where something is marked unspecified, do not invent it; leave it out so the model decides. Never add "8k", "masterpiece", "trending", "ultra realistic" or similar filler.
-- Keep the vocabulary cinematic and precise (lighting patterns, lens focal lengths, angles, time of day). Translate the decisions into how the frame would actually look.
-- If the director wrote something in their own words (any language), keep its meaning and render it in natural English inside the prompt.
-- Output only the prompt text. No preamble, no title, no explanation, no quotes.`;
+// What Claude is told to do lives in its own file, so it can be edited without touching this code.
+const { PROMPT_WRITER, TARGETS } = require('../lib/prompt-writer.js');
 
 exports.handler = async (event) => {
   const cors = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Content-Type, Authorization', 'Access-Control-Allow-Methods': 'POST, OPTIONS' };
@@ -65,20 +53,21 @@ exports.handler = async (event) => {
   if (h.over) return json(429, { error: 'That’s today’s free allowance used. It resets at midnight IST.', left: 0 }, cors);
 
   // 4. Write the prompt.
-  const model = GUIDES[body.model] ? body.model : 'universal';
+  const model = TARGETS[body.model] ? body.model : 'universal';
   // Every field is cut to a sane length, so one request can never be made to cost more than the hold above.
   const raw = body.decisions && typeof body.decisions === 'object' ? body.decisions : {};
   const clip = (v, n) => String(v == null ? '' : v).slice(0, n).trim();
   const d = { subject: clip(raw.subject, 400), lighting: clip(raw.lighting, 400), camera: clip(raw.camera, 400), time: clip(raw.time, 400), mood: clip(raw.mood, 400), advanced: clip(raw.advanced, 600),
     unspecified: Array.isArray(raw.unspecified) ? raw.unspecified.slice(0, 6).map(x => clip(x, 40)).filter(Boolean) : [] };
+  const open = 'left to the model';
   const lines = [
-    `SUBJECT + ACTION: ${d.subject || 'unspecified'}`,
-    `LIGHTING + ENVIRONMENT: ${d.lighting || 'unspecified'}`,
-    `ANGLE + LENSING: ${d.camera || 'unspecified'}`,
-    `TIME OF DAY: ${d.time || 'unspecified'}`,
-    `EMOTION + GENRE: ${d.mood || 'unspecified'}`,
-    d.advanced ? `ANNOTATIONS: ${d.advanced}` : null,
-    d.unspecified.length ? `LEFT TO THE MODEL (do not invent): ${d.unspecified.join(', ')}` : null
+    `Subject: ${d.subject || open}`,
+    `Light: ${d.lighting || open}`,
+    `Angle: ${d.camera || open}`,
+    `Time: ${d.time || open}`,
+    `Emotion: ${d.mood || open}`,
+    d.advanced ? `Advanced notes: ${d.advanced}` : null,
+    d.unspecified.length ? `Left to the model (keep these open): ${d.unspecified.join(', ')}` : null
   ].filter(Boolean).join('\n');
 
   let ai;
@@ -86,7 +75,11 @@ exports.handler = async (event) => {
     ai = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: { 'x-api-key': ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'Content-Type': 'application/json' },
-      body: JSON.stringify(Object.assign({ model: MODEL, max_tokens: 1500, system: SYSTEM + '\n\n' + GUIDES[model], messages: [{ role: 'user', content: `Director's decisions:\n${lines}\n\nWrite the prompt.` }] }, TUNE))
+      // The instructions never change between calls, so they are cached: after the first call of every few minutes,
+      // Claude reads them at a tenth of the price. The sheet and the target model come after the cached part.
+      body: JSON.stringify(Object.assign({ model: MODEL, max_tokens: 1500,
+        system: [{ type: 'text', text: PROMPT_WRITER, cache_control: { type: 'ephemeral' } }],
+        messages: [{ role: 'user', content: `<sheet>\n${lines}\n</sheet>\n\nTarget model: ${TARGETS[model]}\n\nWrite the prompt.` }] }, TUNE))
     });
   } catch (e) { ai = null; }
   // A call that never produced an answer is refunded in full.
