@@ -93,7 +93,7 @@ This is the fiddliest part. Go slowly and copy addresses exactly.
    - Google asks you to authorise. If it warns you, click **Advanced**, then **Go to project**. It is your own script.
 5. Copy the **Web app URL** into `SHEET_WEBHOOK_URL`.
 
-## Part 6 · Give Claude the two public values (2 min)
+## Part 6 · Give Claude the two public values (2 min) · done
 
 In the Claude Code chat, send these two lines from your notes:
 
@@ -150,6 +150,8 @@ If sign-in bounces back with an error, it is almost always one address with a ty
 ## Changing things later
 
 Open Claude Code on this repo and say what you want. Claude pushes the change and gives you a link to merge. Netlify updates the live site about a minute after the merge. Examples:
+
+- **How prompts get written.** Claude follows the instructions in `netlify/lib/prompt-writer.js` (the SLATE PROMPT WRITER). Ask Claude Code to change the text there, or edit it on github.com, then merge. Keep it free of dates and names so it stays cached and cheap.
 
 - "Change the brief for 12 November in js/briefs.js to: A tea stall in heavy fog."
 - "Raise the daily allowance to ₹2 a person." (This one is a Netlify setting: Part 7, add `DAILY_BUDGET_INR` with the value `2`, then **Deploys**, **Trigger deploy**, **Deploy site**.)

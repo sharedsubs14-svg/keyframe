@@ -54,7 +54,9 @@ async function hold({ rest, svc, user, day, model, maxIn, maxOut }) {
 // Returns the percentage of the day's allowance still left, or null if that could not be read.
 async function settle({ rest, svc, user, day, model, held, usage, prompts, reads }) {
   try {
-    const actual = usage ? inr(model, usage.input_tokens || 0, usage.output_tokens || 0) : 0;
+    // Cached instructions are billed differently: writing them to the cache costs 1.25x the input price, reading them 0.1x.
+    const tin = usage ? (usage.input_tokens || 0) + 1.25 * (usage.cache_creation_input_tokens || 0) + 0.1 * (usage.cache_read_input_tokens || 0) : 0;
+    const actual = usage ? inr(model, tin, usage.output_tokens || 0) : 0;
     const r = await fetch(`${rest}/rpc/slate_settle`, { method: 'POST', headers: svc, body: JSON.stringify({ p_user: user.id, p_day: day, p_delta: r4(actual - held), p_prompts: prompts || 0, p_reads: reads || 0 }) });
     if (!r.ok) return null;
     const v = await r.json();
