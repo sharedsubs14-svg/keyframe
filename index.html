@@ -3,15 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SLATE by Keyframe</title>
-<meta name="description" content="A free drafting table for AI images. Five decisions, one directed prompt, written for the model you use.">
+<title>SLATE: direct your AI images · Free prompt builder by Keyframe</title>
+<meta name="description" content="Most AI images look the same because the model makes every decision you skip. SLATE walks you through five of them (subject, light, angle, time, emotion) and writes the prompt for ChatGPT, Gemini, Midjourney or Seedream. Free.">
 <link rel="canonical" href="https://keyframe24.ai/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SLATE by Keyframe">
-<meta property="og:title" content="SLATE by Keyframe">
-<meta property="og:description" content="A free drafting table for AI images. Five decisions, one directed prompt, written for the model you use.">
+<meta property="og:title" content="Most AI images are 100% slop. SLATE fixes yours.">
+<meta property="og:description" content="Five decisions (subject, light, angle, time, emotion), one prompt written for the model you use. Free, by Keyframe.">
 <meta property="og:url" content="https://keyframe24.ai/">
-<meta property="og:image" content="https://keyframe24.ai/img/open/boxer-plate.jpg">
+<meta property="og:image" content="https://keyframe24.ai/img/hero/og-before-after.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
@@ -50,27 +52,53 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 </head>
-<body>
+<body class="storm-on">
 <!-- the Keyframe phi, drawn once and reused by the wordmark -->
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false"><defs><linearGradient id="kfPhiG" x1="40" y1="540" x2="350" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6D28D9"/><stop offset=".6" stop-color="#8B5CF6"/><stop offset="1" stop-color="#C4B5FD"/></linearGradient><path id="kfPhi" fill-rule="evenodd" d="M31.1 536C17.5 531.1 11.4 519 17 508C20.3 501.5 25.9 498.5 34.5 498.5C42.3 498.5 44.7 499.7 58 510.5C65 516.1 71.5 518.4 78.5 517.7C94.8 516 105.4 502.3 114.6 471.3C120.8 450.3 132.5 399.7 131.6 397.5C131.4 396.8 128.5 396 125.3 395.6C115.7 394.5 97.5 389.3 88.6 385.1C62.1 372.7 44.3 351 36.3 321.5C32.8 308.5 32.3 281 35.3 267C48.8 204 102 153.2 162.9 145.4C167.8 144.8 168.2 144.9 167.7 146.6C167.3 147.6 166.6 150.6 165.9 153.2C164.8 157.7 164.5 158 159.6 159.6C143.6 164.9 129.9 173.3 118.7 184.8C81.1 223.5 64.3 302.7 84.9 344.5C93.5 361.9 107.8 374.1 126.6 380C130.5 381.3 134.4 382.1 135.2 381.8C136.1 381.4 138.2 374.2 141.3 360.4C143.8 348.9 149 325.8 152.9 309C156.7 292.2 161.9 268.8 164.4 257C181.4 179 190.6 143.4 200.1 118.2C225.4 51.6 272.8 10.8 323.3 12.2C339.1 12.6 346 15.2 351.7 22.8C357.5 30.5 355.6 42.4 347.8 48.3C338.4 55.3 328 53.3 315.7 42.2C299.9 27.8 287.7 27.1 272.2 39.8C258.1 51.3 245.4 79.3 234.5 122.9C229.3 143.6 229.1 142.4 238.4 143.4C257.6 145.4 279.8 153.8 293.5 164.3C338.5 198.8 341 274.9 299.1 331.1C270.1 369.9 231.8 390.7 178.1 396.8L171.7 397.5L168.3 410.5C154.8 462 134.8 495 101.8 519.9C82 534.9 49 542.4 31.1 536ZM200.5 378.9C246.9 363.5 282.6 308.5 285.6 247.8C287.7 206.2 275 176.5 249.7 164.1C242.3 160.5 231.5 157 227.8 157C226.2 157 220.8 178.1 211.6 220.6C208.6 234.3 203.9 255.6 201 268C187.8 325.7 184.6 340.2 180 361.4C177.8 371.7 176 380.9 176 381.8C176 384.2 189.3 382.6 200.5 378.9Z"/></defs></svg>
 <div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="grain" aria-hidden="true"></div>
 
 <header class="top glass">
-  <a class="brand" href="#top" aria-label="SLATE by Keyframe, back to the top"><span class="brand-word" data-l="SLATE">SLATE</span><svg class="brand-phi" viewBox="10 8 350 534" aria-hidden="true" focusable="false"><use href="#kfPhi" fill="url(#kfPhiG)"/></svg><span class="sr-only"> by Keyframe</span></a>
+  <a class="brand" href="#storm" aria-label="SLATE by Keyframe, back to the top"><span class="brand-word" data-l="SLATE">SLATE</span><svg class="brand-phi" viewBox="10 8 350 534" aria-hidden="true" focusable="false"><use href="#kfPhi" fill="url(#kfPhiG)"/></svg><span class="sr-only"> by Keyframe</span></a>
   <nav class="secnav hide-sm" id="secnav" aria-label="Sections">
     <i class="secnav-ind" aria-hidden="true"></i>
-    <a href="#play" data-sec="play"><b>01</b>Drafting table</a>
-    <a href="#reverse" data-sec="reverse"><b>02</b>Reverse SLATE</a>
-    <a href="#daily" data-sec="daily"><b>03</b>Daily Frame</a>
+    <a href="#play" data-sec="play"><b>01</b>Build a prompt</a>
+    <a href="#reverse" data-sec="reverse"><b>02</b>Read any image</a>
+    <a href="#daily" data-sec="daily"><b>03</b>Daily challenge</a>
   </nav>
   <nav class="topnav">
-    <button type="button" class="theme" id="themeBtn" aria-label="Switch theme"><span class="theme-dot"></span><span id="themeLabel">LIGHT</span></button>
+    <button type="button" class="theme" id="themeBtn" aria-label="Switch theme"><svg class="theme-ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.8a8.2 8.2 0 0 1 0 16.4z" fill="currentColor"/></svg><span id="themeLabel" class="sr-only">LIGHT</span></button>
     <button type="button" class="btn line" id="authBtn">Sign in</button>
   </nav>
 </header>
 
 <main>
+  <!-- THE SLOP STORM: the page opens buried in real AI slop (js/storm.js). One line, one button. The button
+       (or the first scroll) blasts the slop away and leaves one clean line. Then the rest of the page. -->
+  <section id="storm" class="storm" aria-labelledby="stormH">
+    <div class="storm-pin">
+      <div class="storm-pile" id="stormPile" aria-hidden="true"></div>
+      <i class="storm-veil" aria-hidden="true"></i>
+      <div class="storm-copy">
+        <h1 class="storm-h" id="stormH">You’re stuck<br> in <em>AI slop.</em></h1>
+        <button type="button" class="btn solid storm-go" id="stormGo">Get out of the slop</button>
+      </div>
+      <div class="storm-out" id="stormOut">
+        <p class="so-h">I’ll get you<br> out of <em>the slop.</em></p>
+        <p class="so-sub">And help you make images that look like you meant them.</p>
+        <form class="hero-go so-go" id="outForm" data-start>
+          <label class="sr" for="outInput">What do you want to make?</label>
+          <input id="outInput" type="text" placeholder="What do you want to make?" autocomplete="off" enterkeyhint="go">
+          <button type="submit" class="btn solid">Start directing <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="so-works">Free. Works with <b>ChatGPT, Gemini, Midjourney and Seedream</b>.</p>
+        <a class="so-cue" href="#top">or scroll, and see how it works <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </section>
+
+
+
   <!-- OPENING: one real photograph, split into layers. The photos, the words and the labels all come from js/opening-frames.js. -->
   <section id="top" class="open" aria-label="Walk onto the set">
     <div class="op-pin" id="opPin">
@@ -105,19 +133,20 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
         <form class="entry-own" id="entryForm">
           <label class="sr" for="entryInput">Type your own subject</label>
           <input id="entryInput" type="text" placeholder="or type anything, in any language" autocomplete="off">
-          <button type="submit" class="btn solid">Start the sheet</button>
+          <button type="submit" class="btn solid">Start directing</button>
         </form>
+        <p class="so-works entry-works">Free. Works with <b>ChatGPT, Gemini, Midjourney and Seedream</b>.</p>
       </div>
       <span class="op-cue" id="opCue" aria-hidden="true">scroll ↓</span>
       <div class="op-review" id="opReview" hidden></div>
     </div>
   </section>
 
-  <section id="play" class="play">
+  <section id="play" class="play" aria-label="Playground">
     <div class="play-head">
-      <p class="note" id="note" aria-live="polite">Sheet 01. Pick a subject to start.</p>
+      <p class="note" id="note" aria-live="polite">Step 1 of 5 · Who is in your frame? Pick one below or type your own.</p>
       <div class="meter">
-        <span class="eyebrow dim">specified</span>
+        <span class="eyebrow dim">decided</span>
         <span class="ticks" id="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
         <span class="count" id="count">0 / 5</span>
         <button type="button" class="chip" id="randomBtn" title="Fill every blank the way the model would on its own">Random</button>
@@ -214,7 +243,7 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
       </div>
 
       <aside class="prompt glass">
-        <span class="eyebrow">issued for</span>
+        <span class="eyebrow">write the prompt for</span>
         <div class="tabs" id="modelTabs" role="tablist"></div>
         <div class="promptbox" id="promptbox">
           <p class="prompttext blurred" id="prompttext" aria-hidden="true"></p>
@@ -253,6 +282,7 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
             <span class="tiny" id="veilNote" aria-live="polite">Free. Sign in once. A daily allowance, no card.</span>
           </div>
         </div>
+        <p class="small paste-note">SLATE writes the prompt. You paste it into your model and make the image there.</p>
         <div class="prompt-actions" id="promptActions" hidden>
           <button type="button" class="chip" id="copyBtn">Copy prompt</button>
           <span class="tiny" id="quota"></span>
@@ -268,10 +298,19 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
     </div>
   </section>
 
+  <section id="letters" class="letters rise">
+    <a href="#play" class="col" data-go="S"><span class="n">01</span><span class="big" data-l="S">S</span><span class="t">Subject + action</span><span class="d">Who is in the frame, and the one verb that moves them. One verb beats three adjectives.</span></a>
+    <a href="#play" class="col" data-go="L"><span class="n">02</span><span class="big" data-l="L">L</span><span class="t">Lighting + environment</span><span class="d">Where the key sits, how hard it falls, and the world it falls on.</span></a>
+    <a href="#play" class="col" data-go="A"><span class="n">03</span><span class="big" data-l="A">A</span><span class="t">Angle + lensing</span><span class="d">Where the camera stands and which glass is on it. This is what makes a frame look shot, not generated.</span></a>
+    <a href="#play" class="col" data-go="T"><span class="n">04</span><span class="big" data-l="T">T</span><span class="t">Time of day</span><span class="d">Sun height sets colour, contrast and shadow length before any grade does.</span></a>
+    <a href="#play" class="col" data-go="E"><span class="n">05</span><span class="big" data-l="E">E</span><span class="t">Emotion + genre</span><span class="d">What the viewer should feel, and which genre's palette carries it.</span></a>
+  </section>
+
   <section id="reverse" class="reverse" aria-labelledby="rTitle">
     <div class="rev-copy">
+      <p class="kicker"><b>02</b>Read any image</p>
       <h2 class="daily-h" id="rTitle">Reverse SLATE</h2>
-      <p class="daily-how rev-how">Drop in any frame you love. A film still, an ad, your own shot. Get back the five decisions that made it, then open them on the board and change one.</p>
+      <p class="daily-how rev-how">Drop in any frame you love. A film still, an ad, your own shot. Get back the five decisions that made it, then open them in the Playground and change one.</p>
       <div class="drop rev-drop" id="rDrop">
         <img id="rPrev" alt="The frame being read">
         <button type="button" class="drop-in" id="rPick"><b>Choose a frame</b><span>or drop it here · JPG, PNG, WebP</span></button>
@@ -283,21 +322,22 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
     </div>
     <div class="rev-sheet">
       <ul class="rrows" id="rRows"></ul>
-      <button type="button" class="btn solid wide" id="rOpen" disabled>Open this sheet on the board</button>
+      <button type="button" class="btn solid wide" id="rOpen" disabled>Open these decisions in the Playground</button>
     </div>
   </section>
 
   <section id="daily" class="daily" aria-labelledby="dBrief">
     <div class="daily-head">
       <div class="daily-brief">
+        <p class="kicker"><b>03</b>Daily Frame · today's challenge</p>
         <h2 class="daily-h" id="dBrief">Today's brief</h2>
         <p class="daily-twist" id="dTwist" hidden></p>
         <div class="daily-rule"><span class="rule-chip" id="dRule" hidden></span><span class="daily-clock">new brief in <b id="dClock">--:--:--</b></span></div>
         <p class="daily-closed" id="dClosed" hidden></p>
       </div>
       <div class="daily-cta">
-        <p class="daily-how">One brief a day, one SLATE call locked. Shoot it in any model, post it, then see how everyone else shot the same idea. Open anyone's sheet and remix it.</p>
-        <button type="button" class="btn line" id="dUse">Build it on the board</button>
+        <p class="daily-how">One brief a day, with one of the five decisions already made for you. Shoot it in any model, post it, then see how everyone else shot the same idea. Open anyone's decisions and remix them.</p>
+        <button type="button" class="btn line" id="dUse">Build it in the Playground</button>
         <button type="button" class="btn wandbtn" id="dPost">Post your frame</button>
         <p class="tiny">Make it in any model. No names on the wall.</p>
       </div>
@@ -306,18 +346,38 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
     <div class="wall" id="wall" aria-label="Frames people made for this brief"></div>
   </section>
 
-  <section id="letters" class="letters rise">
-    <a href="#play" class="col" data-go="S"><span class="n">01</span><span class="big" data-l="S">S</span><span class="t">Subject + action</span><span class="d">Who is in the frame, and the one verb that moves them. One verb beats three adjectives.</span></a>
-    <a href="#play" class="col" data-go="L"><span class="n">02</span><span class="big" data-l="L">L</span><span class="t">Lighting + environment</span><span class="d">Where the key sits, how hard it falls, and the world it falls on.</span></a>
-    <a href="#play" class="col" data-go="A"><span class="n">03</span><span class="big" data-l="A">A</span><span class="t">Angle + lensing</span><span class="d">Where the camera stands and which glass is on it. This is what makes a frame look shot, not generated.</span></a>
-    <a href="#play" class="col" data-go="T"><span class="n">04</span><span class="big" data-l="T">T</span><span class="t">Time of day</span><span class="d">Sun height sets colour, contrast and shadow length before any grade does.</span></a>
-    <a href="#play" class="col" data-go="E"><span class="n">05</span><span class="big" data-l="E">E</span><span class="t">Emotion + genre</span><span class="d">What the viewer should feel, and which genre's palette carries it.</span></a>
+  <!-- WHO + QUESTIONS: who is behind this, and the answers a first-time visitor is looking for -->
+  <section id="about" class="about" aria-labelledby="aboutH">
+    <div class="about-who">
+      <p class="kicker">Who made this</p>
+      <h2 class="sec-h" id="aboutH">A director’s method, made free.</h2>
+      <p>SLATE comes from Keyframe, a teaching studio for directors working with AI. Vishwas Girdher directs films and ads with generative AI and has made more than 500 teaching videos. SLATE is the five-decision method he teaches in his workshops, turned into a tool anyone can use.</p>
+      <p class="about-tag">Think like a director.</p>
+    </div>
+    <div class="faq">
+      <h3 class="faq-h">Questions people ask first</h3>
+      <details open><summary>Does SLATE make the image?</summary><p>SLATE writes the prompt. You paste it into the model you already use, like ChatGPT, Gemini, Midjourney or Seedream, and the image is made there. Every prompt is written for the model you pick.</p></details>
+      <details><summary>Is it really free?</summary><p>Yes. Sign in once with Google and you get a free allowance that renews every day. No card.</p></details>
+      <details><summary>What does “slop” mean?</summary><p>Merriam-Webster made it the word of the year for 2025: low-quality content made in bulk with AI. In pictures it looks like flat light, a centred subject and a camera at chest height. It happens when the model makes your decisions for you. The slop score in SLATE shows how much of your picture is still the model’s guess.</p></details>
+      <details><summary>Do I need to know photography or film?</summary><p>No. Every decision is a tap with a plain description of what it does to the picture. You pick up the director’s vocabulary as you go.</p></details>
+      <details><summary>What are the five decisions?</summary><p>Subject, light, angle, time and emotion. The first letters spell SLATE, like the clapperboard on a film set.</p></details>
+      <details><summary>What are Reverse SLATE and the Daily Frame?</summary><p>Reverse SLATE reads any image you upload and shows you the five decisions behind it. The Daily Frame is one brief a day: make it in any model, post it, and see how everyone else shot the same idea.</p></details>
+    </div>
+  </section>
+
+  <section id="go" class="lastcall" aria-labelledby="goH">
+    <h2 class="sec-h" id="goH">Your next image, <em>directed.</em></h2>
+    <form class="hero-go" id="lastForm" data-start>
+      <label class="sr" for="lastInput">What do you want to make?</label>
+      <input id="lastInput" type="text" placeholder="What do you want to make?" autocomplete="off" enterkeyhint="go">
+      <button type="submit" class="btn solid">Start directing <span aria-hidden="true">→</span></button>
+    </form>
   </section>
 </main>
 
 <footer class="foot">
   <div class="foot-brand">
-    <a class="brand" href="#top"><span class="brand-word" data-l="SLATE">SLATE</span><svg class="brand-phi" viewBox="10 8 350 534" aria-hidden="true" focusable="false"><use href="#kfPhi" fill="url(#kfPhiG)"/></svg><span class="sr-only"> by Keyframe</span></a>
+    <a class="brand" href="#storm"><span class="brand-word" data-l="SLATE">SLATE</span><svg class="brand-phi" viewBox="10 8 350 534" aria-hidden="true" focusable="false"><use href="#kfPhi" fill="url(#kfPhiG)"/></svg><span class="sr-only"> by Keyframe</span></a>
     <p>Random is what the model picks. Specified is what you pick.</p>
   </div>
   <nav class="foot-links" aria-label="Keyframe elsewhere">
@@ -353,7 +413,7 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
       <input type="file" id="pFile" accept="image/*" hidden>
     </div>
     <label class="field"><span>Made with</span><select id="pModel"></select></label>
-    <label class="check"><input type="checkbox" id="pSheet"><span id="pSheetTxt">Attach my SLATE sheet</span></label>
+    <label class="check"><input type="checkbox" id="pSheet"><span id="pSheetTxt">Attach my SLATE decisions</span></label>
     <label class="check"><input type="checkbox" id="pOk"><span>I made this with AI. No real people's faces, nothing explicit, nothing that isn't mine to post.</span></label>
     <p class="pmsg" id="pMsg" role="alert"></p>
     <button type="button" class="btn wandbtn wide" id="pSend" disabled>Post to the wall</button>
@@ -372,12 +432,14 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
       <p class="f-model" id="fModel"></p>
       <ul class="f-lines" id="fLines"></ul>
       <div class="f-act">
-        <button type="button" class="btn solid wide" id="fOpen">Open this sheet on the board</button>
+        <button type="button" class="btn solid wide" id="fOpen">Open these decisions in the Playground</button>
         <div class="f-nav"><button type="button" class="btn line" id="fPrev" aria-label="Previous frame">←</button><button type="button" class="btn line" id="fNext" aria-label="Next frame">→</button><button type="button" class="f-report" id="fReport">Report</button></div>
       </div>
     </div>
   </div>
 </div>
+
+<a class="mcta" id="mcta" href="#play" tabindex="-1" aria-hidden="true">Start directing <span aria-hidden="true">→</span></a>
 
 <canvas id="cardCanvas" width="1080" height="1350" hidden></canvas>
 
@@ -387,6 +449,8 @@ src="https://www.facebook.com/tr?id=1411312853753013&ev=PageView&noscript=1"
 <script src="js/app.js"></script>
 <script src="js/opening-frames.js"></script>
 <script src="js/opening.js"></script>
+<script src="js/storm.js"></script>
+<script src="js/hero.js"></script>
 <script src="js/briefs.js"></script>
 <script src="js/daily.js"></script>
 <script src="js/reverse.js"></script>

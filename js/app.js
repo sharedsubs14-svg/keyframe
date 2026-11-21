@@ -27,7 +27,8 @@
   const SHORT = { S: 'subject', L: 'light', A: 'camera', T: 'time', E: 'emotion' };
   const LISTS = { s: O.subjects, act: O.actions, l: O.lights, env: O.environments, a: O.angles, lens: O.lenses, t: O.times, em: O.emotions, e: O.genres };
   const OWN_PH = { S: 'or write the subject yourself, any language', L: 'or describe the light yourself', A: 'or describe the camera yourself', T: 'or write the hour yourself', E: 'or name the feeling yourself' };
-  const NEXT_NOTE = { L: 'Good. Now the light.', A: 'Now, where does the camera stand?', T: 'What time is it?', E: 'Last one. How should it feel?' };
+  const NEXT_NOTE = { S: 'Step 1 of 5 · Who is in your frame? Pick one below or type your own.', L: 'Step 2 of 5 · Where does the light come from?', A: 'Step 3 of 5 · Where does the camera stand?', T: 'Step 4 of 5 · What time is it?', E: 'Step 5 of 5 · Last one. How should it feel?' };
+  const modelLabel = (id) => { const m = O.models.find(x => x.id === id) || O.models[0]; return m.app ? `${m.app} (${m.name})` : m.name; };
   const letterOf = (k) => LETTERS.find(L => GROUPS[L].some(g => g[0] === k));
 
   // ---------- helpers ----------
@@ -201,7 +202,7 @@
     $('#lampLab').textContent = labels.lamp; $('#camLab').textContent = labels.cam; $('#dimLab').textContent = labels.dim; $('#sunLab').textContent = labels.sun; $('#actLab').textContent = labels.act;
     $('#sunLab').style.display = state.t == null ? 'none' : '';
     const n = LETTERS.filter(l => letterStatus(l) === 'user').length;
-    $('#caption').textContent = n === 0 ? 'NOTHING SPECIFIED YET' : `${n} / 5 SPECIFIED`;
+    $('#caption').textContent = n === 0 ? 'NOTHING DECIDED YET' : `${n} / 5 DECIDED`;
     const halo = $('#halo'); if (halo) halo.style.setProperty('--halo', state.t != null ? t.skyBot : (state.l != null ? t.lightC : (isLight() ? '#D8CCFF' : '#2A2366')));
     animateTo(t);
   }
@@ -213,7 +214,7 @@
       const b = document.createElement('button'); b.type = 'button'; b.className = 'cell' + (L === '+' ? ' notes' : ''); b.setAttribute('role', 'tab'); b.dataset.letter = L;
       b.innerHTML = L === '+' ? '<span class="top-row"><span class="L">+</span><span class="lbl">notes</span></span><span class="val empty" data-v>optional extras</span>'
         : `<span class="top-row"><span class="L">${L}</span><span class="lbl">${SHORT[L]}</span><span class="tag" data-tag hidden>auto</span></span><span class="val empty" data-v>choose</span>`;
-      b.addEventListener('click', () => openLetter(L));
+      b.addEventListener('click', () => { openLetter(L); if (NEXT_NOTE[L]) note(NEXT_NOTE[L]); });
       strip.appendChild(b);
     });
   }
@@ -271,7 +272,7 @@
     if (complete) advanceTimer = setTimeout(() => {
       const next = LETTERS.slice(LETTERS.indexOf(L) + 1).concat(LETTERS).find(x => letterStatus(x) !== 'user');
       if (next) { openLetter(next); note(NEXT_NOTE[next] || 'One more.'); }
-      else note('All five. That is a directed frame. Reveal it.');
+      else note('All five decided. That is a directed frame. Now reveal your prompt.');
     }, 700);
   }
 
@@ -319,7 +320,7 @@
     $$('#modelTabs .tab').forEach(b => b.classList.toggle('on', b.dataset.id === state.model));
     renderDirector();
     renderSlop();
-    $('#authSub').textContent = `${n} of 5 specified · written for ${O.models.find(m => m.id === state.model).name}`;
+    $('#authSub').textContent = `${n} of 5 decided · written for ${modelLabel(state.model)}`;
   }
 
   // ---------- random / auto ----------
@@ -455,7 +456,7 @@
   async function generate(session) {
     const pb = $('#promptbox');
     state.busy = true; $('#revealBtn').classList.add('busy'); pb.classList.add('conjuring'); conjure.start();
-    $('#veilNote').textContent = 'Writing it for ' + O.models.find(m => m.id === state.model).name + '…';
+    $('#veilNote').textContent = 'Writing it for ' + modelLabel(state.model) + '…';
     let ok = false;
     try {
       const res = await fetch(CFG.FUNCTION_URL, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + session.access_token }, body: JSON.stringify({ model: state.model, decisions: describe() }) });
@@ -547,7 +548,7 @@
     if (LOCKED) { closeAuth(); soon(); return; }
     if (DEMO) {
       closeAuth();
-      state.revealed = localDraft() + '\n\n(Preview. On the live site Claude rewrites this for ' + O.models.find(m => m.id === state.model).name + ' using its own prompting guide.)';
+      state.revealed = localDraft() + '\n\n(Preview. On the live site Claude rewrites this for ' + modelLabel(state.model) + ' using its own prompting guide.)';
       state.revealedSig = signature(); $('#quota').textContent = 'preview · no limit'; render(); return;
     }
     try { if (authReason === 'upload') localStorage.setItem('slate_after', 'daily'); else if (authReason === 'reverse') localStorage.setItem('slate_after', 'reverse'); else localStorage.setItem('slate_pending', JSON.stringify(exportState())); } catch (e) {}
@@ -556,7 +557,7 @@
   function applyBrief(text, k, i) {
     state.own.s = text; const si = $('[data-own="s"]'); if (si) si.value = text; ['s', 'act'].forEach(x => { state[x] = null; delete state.source[x]; });
     if (k && LISTS[k] && LISTS[k][i]) { const L = letterOf(k).toLowerCase(); state.own[L] = ''; const inp = $(`[data-own="${L}"]`); if (inp) inp.value = ''; setSilent(k, i, 'user'); openLetter(letterOf(k) === 'S' ? 'L' : (LETTERS.find(x => x !== letterOf(k) && !letterStatus(x) && x !== 'S') || 'L')); }
-    render(); note(k ? `Today's rule is set: ${LISTS[k][i].name}. Everything else is yours.` : 'The brief is on the sheet. Everything else is yours.');
+    render(); note(k ? `Today's rule is set: ${LISTS[k][i].name}. Everything else is yours.` : 'The brief is set in the Playground. Everything else is yours.');
     $('#play').scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' });
   }
   function exportState() { const { s, act, l, env, a, lens, t, em, e, own, adv, model, source } = state; return { s, act, l, env, a, lens, t, em, e, own, adv, model, source }; }
@@ -799,13 +800,21 @@
       b.addEventListener('click', () => { setSilent('s', si, 'user'); if (ai != null) setSilent('act', ai, 'user'); else { state.act = null; delete state.source.act; } state.own.s = ''; openLetter('L'); render(); note(NEXT_NOTE.L); $('#play').scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' }); });
       eo.appendChild(b);
     });
-    $('#entryForm').addEventListener('submit', e => { e.preventDefault(); const val = $('#entryInput').value.trim(); if (!val) return; state.own.s = val; ['s', 'act'].forEach(k => { state[k] = null; delete state.source[k]; }); $('[data-own="s"]').value = val; openLetter('L'); render(); note(NEXT_NOTE.L); $('#play').scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' }); });
+    // type a subject (first screen or the end of the scroll story) and land on step 2 with it filled in; nothing typed lands on step 1
+    const startWith = (val) => {
+      val = (val || '').trim();
+      if (val) { state.own.s = val; ['s', 'act'].forEach(k => { state[k] = null; delete state.source[k]; }); $('[data-own="s"]').value = val; openLetter('L'); render(); note(NEXT_NOTE.L); }
+      else { openLetter('S'); note(NEXT_NOTE.S); }
+      $('#play').scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' });
+    };
+    $('#entryForm').addEventListener('submit', e => { e.preventDefault(); const val = $('#entryInput').value.trim(); if (!val) return; startWith(val); });
+    document.querySelectorAll('form[data-start]').forEach(f => f.addEventListener('submit', e => { e.preventDefault(); const i = f.querySelector('input'); startWith(i ? i.value : ''); }));
 
     buildStrip(); buildPanels(); openLetter('S');
     $$('[data-go]').forEach(a => a.addEventListener('click', () => openLetter(a.dataset.go)));
 
     const mt = $('#modelTabs');
-    O.models.forEach(m => { const b = document.createElement('button'); b.type = 'button'; b.className = 'tab'; b.setAttribute('role', 'tab'); b.dataset.id = m.id; b.textContent = m.name; b.addEventListener('click', () => { state.model = m.id; render(); }); mt.appendChild(b); });
+    O.models.forEach(m => { const b = document.createElement('button'); b.type = 'button'; b.className = 'tab'; b.setAttribute('role', 'tab'); b.dataset.id = m.id; if (m.app) { b.textContent = m.app; const sm = document.createElement('small'); sm.textContent = m.name; b.appendChild(sm); b.title = `${m.app} (${m.name})`; } else b.textContent = m.name; b.addEventListener('click', () => { state.model = m.id; render(); }); mt.appendChild(b); });
 
     $('#randomBtn').addEventListener('click', doRandom);
     $('#autoBtn').addEventListener('click', doAuto);
@@ -838,7 +847,7 @@
     resumeAfterLogin();
     window.SLATE_APP = { CFG, DEMO, LOCKED, soon, supa, conjure, LISTS, LETTERS, state, render, note, toast, openAuth, currentSession, exportState, importState, slopScore, letterValue, applyBrief,
       sheetLines: (st) => { const keep = JSON.parse(JSON.stringify(exportState())); if (st) Object.assign(state, st); const out = LETTERS.map(L => [L, letterValue(L) || '']); Object.assign(state, keep); return out; },
-      openSheet: (st) => { const base = { s: null, act: null, l: null, env: null, a: null, lens: null, t: null, em: null, e: null, own: { s: '', l: '', a: '', t: '', e: '' }, adv: {}, source: {} }; importState(Object.assign(base, st || {})); render(); $('#play').scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' }); note('This is their sheet. Change one letter and make it yours.'); } };
+      openSheet: (st) => { const base = { s: null, act: null, l: null, env: null, a: null, lens: null, t: null, em: null, e: null, own: { s: '', l: '', a: '', t: '', e: '' }, adv: {}, source: {} }; importState(Object.assign(base, st || {})); render(); $('#play').scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' }); note('These are their decisions. Change one and make it yours.'); } };
     document.dispatchEvent(new Event('slate:ready'));
   }
   document.addEventListener('DOMContentLoaded', init);

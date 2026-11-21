@@ -194,7 +194,7 @@
       $('#fSlopBox').classList.toggle('low', fs != null && fs <= 10);
       const ls = $('#fLines'); ls.innerHTML = '';
       if (Array.isArray(e.lines) && e.lines.length) e.lines.forEach(([L, v]) => { ls.insertAdjacentHTML('beforeend', `<li><b>${esc(L)}</b><span>${v ? esc(v) : '<i>left to the model</i>'}</span></li>`); });
-      else ls.innerHTML = '<li class="none">No sheet attached. They kept their SLATE to themselves.</li>';
+      else ls.innerHTML = '<li class="none">No decisions attached. They kept their SLATE to themselves.</li>';
       $('#fOpen').hidden = !e.slate; $('#fReport').hidden = !!e.mine;
       $('#fCount').textContent = `${i + 1} / ${entries.length}`;
       $('#frameModal').hidden = false; $('#fClose').focus();
@@ -235,7 +235,7 @@
       const b = briefFor(today()), sc = A.slopScore().score, any = A.LETTERS.some(L => A.letterValue(L));
       $('#pNo').textContent = `Daily Frame · No. ${pad3(b.no)}`; $('#pBrief').textContent = b.b;
       $('#pSheet').checked = any; $('#pSheet').disabled = !any;
-      $('#pSheetTxt').textContent = any ? `Attach my SLATE sheet (slop ${sc}%) so people can remix it` : 'Attach my SLATE sheet (build one on the board first)';
+      $('#pSheetTxt').textContent = any ? `Attach my SLATE decisions (slop ${sc}%) so people can remix them` : 'Attach my SLATE decisions (make some in the Playground first)';
       $('#pMsg').textContent = ''; $('#postModal').hidden = false; $('#pPick').focus();
     }
     async function beginPost() {
