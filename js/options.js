@@ -97,11 +97,11 @@ window.SLATE_OPTIONS = {
     palette: ['teal and orange', 'monochrome', 'muted earth tones', 'one colour accent on grey', 'pastel', 'high saturation']
   },
   models: [
-    { id: 'gpt', name: 'GPT Image 2' },
-    { id: 'banana', name: 'Nano Banana 2.1' },
+    { id: 'gpt', name: 'GPT Image 2', app: 'ChatGPT' },
+    { id: 'banana', name: 'Nano Banana 2.1', app: 'Gemini' },
     { id: 'seedream', name: 'Seedream 5 Pro' },
     { id: 'mj', name: 'Midjourney' },
-    { id: 'universal', name: 'Universal' }
+    { id: 'universal', name: 'Any model' }
   ],
   // What the model picks on its own. This is "Random": the default, the slop.
   defaults: { l: 6, a: 0, lens: 2, t: 2, e: 5 },
