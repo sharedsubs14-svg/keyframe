@@ -781,11 +781,11 @@ body.storm-on .top{transform:translateY(-160%);opacity:0;pointer-events:none}
   60%{filter:drop-shadow(-3px 0 0 rgba(255,40,90,.6)) drop-shadow(3px 0 0 rgba(0,220,255,.6));transform:translateX(-1px)}
   100%{filter:drop-shadow(0 0 18px var(--bg)) drop-shadow(0 0 36px var(--bg));transform:none}}
 @keyframes goPop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
-.storm-flash{position:absolute;inset:0;z-index:50;pointer-events:none;opacity:0;background:radial-gradient(circle at 50% 52%,#fff 0%,rgba(255,255,255,.85) 30%,rgba(196,181,253,.35) 60%,transparent 85%)}
+.storm-flash{position:absolute;inset:0;z-index:50;pointer-events:none;opacity:0;background:radial-gradient(circle at 50% 52%,#fff 0%,rgba(255,255,255,.96) 38%,rgba(214,204,255,.75) 68%,rgba(196,181,253,.35) 100%)}
 .storm.blast .storm-flash{animation:sFlash .8s ease-out both}
-@keyframes sFlash{0%{opacity:0}12%{opacity:.95}100%{opacity:0}}
-.storm-ring{position:absolute;left:50%;top:52%;z-index:46;width:0;height:0;border-radius:50%;border:3px solid #7D6BFF;opacity:0;pointer-events:none;transform:translate(-50%,-50%)}
-.storm-ring.r2{border-color:#C4B5FD;border-width:2px}
+@keyframes sFlash{0%{opacity:0}9%{opacity:1}30%{opacity:.85}100%{opacity:0}}
+.storm-ring{position:absolute;left:50%;top:52%;z-index:51;width:0;height:0;border-radius:50%;border:7px solid #7D6BFF;box-shadow:0 0 40px 6px rgba(125,107,255,.75),inset 0 0 30px rgba(125,107,255,.5);opacity:0;pointer-events:none;transform:translate(-50%,-50%)}
+.storm-ring.r2{border-color:#C4B5FD;border-width:4px;box-shadow:0 0 30px 4px rgba(196,181,253,.7)}
 .storm.blast .storm-ring{animation:sRing .9s cubic-bezier(.2,.7,.3,1) both}
 .storm.blast .storm-ring.r2{animation-delay:.12s}
-@keyframes sRing{0%{width:0;height:0;opacity:.95}100%{width:230vmax;height:230vmax;opacity:0}}
+@keyframes sRing{0%{width:0;height:0;opacity:1}70%{opacity:.8}100%{width:230vmax;height:230vmax;opacity:0}}

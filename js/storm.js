@@ -108,7 +108,7 @@
     out = true; outAt = instant || REDUCED ? -1e9 : performance.now();
     document.body.classList.remove('storm-on');
     sec.classList.add('out');
-    if (!(instant || REDUCED)) setTimeout(() => { sec.classList.add('blast'); kick(26); }, 190);
+    if (!(instant || REDUCED)) setTimeout(() => { sec.classList.add('blast'); kick(28); }, 220);
     setTimeout(() => { pile.hidden = true; stop(); shakeEl.style.transform = ''; }, instant || REDUCED ? 0 : 1700);
   }
 
@@ -120,8 +120,8 @@
   function frame(now) {
     if (!born) born = now;
     const R = PHONE ? 130 : 240, far = Math.max(W, H) * 1.2;
-    const inhale = out ? easeOut(Math.min(1, (now - outAt) / 190)) : 0;
-    const bt = out ? Math.min(1, Math.max(0, (now - outAt - 190) / 1050)) : 0;
+    const inhale = out ? easeOut(Math.min(1, (now - outAt) / 220)) : 0;
+    const bt = out ? Math.min(1, Math.max(0, (now - outAt - 220) / 900)) : 0;
     // it never stops: after the first downpour, more slop keeps coming
     if (!out && !REDUCED && now - born > 2600 && now > nextDrop) {
       const pool = rnd() < 0.86 ? cards.filter(c => c.layer !== 'near') : cards.filter(c => c.layer === 'near');
@@ -150,11 +150,11 @@
       c.vx = (c.vx + (tx - c.px) * 0.09) * 0.74; c.vy = (c.vy + (ty - c.py) * 0.09) * 0.74; c.vr = (c.vr + (tr - c.pr) * 0.07) * 0.78;
       c.px += c.vx; c.py += c.vy; c.pr += c.vr;
       // the way out: a beat of suck toward the middle, then everything is blasted off the screen
-      const b = easeIn(Math.min(1, Math.max(0, (bt - c.bdelay) / (1 - c.bdelay)))), push = c.layer === 'near' ? 1.5 : c.layer === 'mid' ? 1.15 : 0.9;
-      x += c.px + (W / 2 - x) * inhale * 0.1 * (1 - b) + c.bx * b * far * push;
-      y += c.py + (H / 2 - y) * inhale * 0.1 * (1 - b) + c.by * b * far * push;
-      rot += c.pr + c.bspin * b; sc *= 1 - inhale * 0.06 * (1 - b) + b * (c.layer === 'near' ? 1.6 : 0.7);
-      op *= 1 - b;
+      const raw = Math.min(1, Math.max(0, (bt - c.bdelay * 0.5) / (1 - c.bdelay * 0.5))), b = easeOut(raw), push = c.layer === 'near' ? 1.5 : c.layer === 'mid' ? 1.15 : 0.9;
+      x += c.px + (W / 2 - x) * inhale * 0.16 * (1 - b) + c.bx * b * far * push;
+      y += c.py + (H / 2 - y) * inhale * 0.16 * (1 - b) + c.by * b * far * push;
+      rot += c.pr + c.bspin * b; sc *= 1 - inhale * 0.1 * (1 - b) + b * (c.layer === 'near' ? 1.6 : 0.7);
+      op *= 1 - Math.pow(raw, 1.6);
       const key = `${x.toFixed(1)},${y.toFixed(1)},${rot.toFixed(1)},${sc.toFixed(3)}`;
       if (key !== c.key) { c.el.style.transform = `translate(${x}px,${y}px) translate(-50%,-50%) rotate(${rot}deg) scale(${sc})`; c.key = key; }
       if (op !== c.op) { c.el.style.opacity = op; c.op = op; }
